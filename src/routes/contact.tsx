@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { cloneElement, type ReactElement } from "react";
 import { motion } from "framer-motion";
 import { Facebook, Instagram, MapPin, MessageCircle, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -64,10 +65,12 @@ function ContactPage() {
   </>;
 }
 
-function Field({ label, children }: { label: string; children: React.ReactElement }) {
-  return <label className="block"><span className="mb-1.5 block text-[11px] font-medium tracking-[0.5px] text-muted-foreground">{label}</span>{
-    // clone only to keep semantic styling centralized on every input type
-    /* eslint-disable-next-line react/no-clone-element */
-    children && (children.type === 'textarea' ? <textarea {...children.props} className="w-full rounded-lg border border-border bg-background px-4 py-[13px] text-[13px] font-light text-foreground outline-none transition focus:border-accent focus:shadow-[0_0_0_3px_rgb(232_160_32_/_0.1)]" /> : children.type === 'select' ? <select {...children.props} className="w-full rounded-lg border border-border bg-background px-4 py-[13px] text-[13px] font-light text-foreground outline-none transition focus:border-accent focus:shadow-[0_0_0_3px_rgb(232_160_32_/_0.1)]" /> : <input {...children.props} className="w-full rounded-lg border border-border bg-background px-4 py-[13px] text-[13px] font-light text-foreground outline-none transition focus:border-accent focus:shadow-[0_0_0_3px_rgb(232_160_32_/_0.1)]" />)
-  }</label>;
+function Field({ label, children }: { label: string; children: ReactElement }) {
+  const controlClass = "w-full rounded-lg border border-border bg-background px-4 py-[13px] text-[13px] font-light text-foreground outline-none transition focus:border-accent focus:shadow-[0_0_0_3px_rgb(232_160_32_/_0.1)]";
+  return (
+    <label className="block">
+      <span className="mb-1.5 block text-[11px] font-medium tracking-[0.5px] text-muted-foreground">{label}</span>
+      {cloneElement(children, { className: controlClass })}
+    </label>
+  );
 }

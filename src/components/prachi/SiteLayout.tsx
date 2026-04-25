@@ -101,7 +101,7 @@ export function FloatingActions() {
         <span className="rounded-full bg-footer px-3 py-1.5 text-[11px] text-primary-foreground opacity-0 shadow-card transition group-hover:opacity-100">
           Chat with Prachi
         </span>
-        <span className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-whatsapp text-primary-foreground shadow-[0_4px_16px_rgb(34_197_94_/_0.35)] transition group-hover:scale-108">
+        <span className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-whatsapp text-primary-foreground shadow-[0_4px_16px_rgb(34_197_94_/_0.35)] transition group-hover:scale-[1.08]">
           <MessageCircle size={22} />
         </span>
       </a>

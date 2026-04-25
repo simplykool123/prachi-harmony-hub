@@ -12,7 +12,7 @@ function NotFoundComponent() {
         <h1 className="pf-h1 mt-7">404</h1>
         <p className="pf-body mt-3">The page you're looking for doesn't exist or has been moved.</p>
         <div className="mt-8">
-          <Link to="/" className="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition hover:brightness-108">
+          <Link to="/" className="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition hover:brightness-[1.08]">
             Go home
           </Link>
         </div>
