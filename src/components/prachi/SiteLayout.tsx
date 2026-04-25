@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUp, Facebook, Instagram, MessageCircle, Youtube } from "lucide-react";
+import { ArrowUp, Instagram, MessageCircle, Youtube } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { navItems, whatsappUrl } from "./site-data";
