@@ -5,10 +5,10 @@ import { ImageComposition } from "@/components/prachi/ImageComposition";
 import { PageHero } from "@/components/prachi/PageHero";
 import { MotionSection, SectionIntro, fadeUp } from "@/components/prachi/Motion";
 import { awards, cities, globalPresence } from "@/components/prachi/site-data";
-import vastuPlanImage from "@/assets/prachi-vastu-plan.jpg";
-import celestialPalmImage from "@/assets/prachi-celestial-palm.jpg";
-import officeVastuImage from "@/assets/prachi-office-vastu.jpg";
-import familyHomeImage from "@/assets/prachi-family-home.jpg";
+import vastuPlanImage from "@/assets/site-images/prachi-vastu-plan.jpg";
+import celestialPalmImage from "@/assets/site-images/prachi-celestial-palm.jpg";
+import officeVastuImage from "@/assets/site-images/prachi-office-vastu.jpg";
+import familyHomeImage from "@/assets/site-images/prachi-family-home.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({ meta: [
