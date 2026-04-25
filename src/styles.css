@@ -138,9 +138,16 @@
   .pf-cta { transition: transform .2s ease, filter .2s ease; }
   .pf-cta:hover { transform: scale(1.02); filter: brightness(1.08); }
   .pf-compass-orbit { animation: pf-compass-spin 42s linear infinite; }
+  .pf-story-marquee { mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent); }
+  .pf-story-track { animation: pf-story-scroll 42s linear infinite; }
+  .pf-story-marquee:hover .pf-story-track { animation-play-state: paused; }
   @keyframes pf-compass-spin {
     from { rotate: 0deg; }
     to { rotate: 360deg; }
+  }
+  @keyframes pf-story-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
 }
 

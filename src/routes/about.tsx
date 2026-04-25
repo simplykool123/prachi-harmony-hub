@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin } from "lucide-react";
+import { Hand, MapPin } from "lucide-react";
 import { ImageComposition } from "@/components/prachi/ImageComposition";
 import { PageHero } from "@/components/prachi/PageHero";
 import { MotionSection, SectionIntro } from "@/components/prachi/Motion";
@@ -24,18 +24,21 @@ function AboutPage() {
   return <>
     <PageHero eyebrow="ABOUT" title="Where ancient wisdom meets modern clarity" copy="A rare combination of Palmistry and Vastu Shastra — personally guided." />
     <MotionSection className="pf-section overflow-hidden bg-card">
-      <div className="pf-container grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
-        <div className="relative min-h-[500px] sm:min-h-[560px]">
-          <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="absolute left-0 top-0 h-[350px] w-[82%] rounded-r-full object-cover object-[center_18%] shadow-card" />
-          <img src={celestialPalmImage} alt="Palmistry consultation details in warm light" width={1120} height={1328} loading="lazy" decoding="async" className="absolute bottom-0 right-0 h-[370px] w-[56%] rounded-t-full object-cover shadow-card" />
-          <div className="absolute left-[12%] top-[58%] hidden h-px w-[48%] bg-accent/40 md:block" />
+      <div className="pf-container grid items-center gap-10 lg:grid-cols-[31fr_38fr_31fr]">
+        <div className="relative min-h-[440px]">
+          <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="absolute inset-x-0 top-0 mx-auto h-[440px] w-[88%] rounded-t-full object-cover object-[center_8%] shadow-card" />
         </div>
-        <div>
-          <p className="pf-eyebrow">HER STORY</p>
+        <div className="text-center">
+          <p className="pf-eyebrow pf-eyebrow-center">HER STORY</p>
           <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>
-          <p className="pf-body mt-5">For over two decades, Prachi Fulfagar has been a trusted guide for thousands of people seeking clarity — through their palms, their homes, and the stars.</p>
-          <p className="pf-body mt-4">What sets Prachi apart is her rare combination of Palmistry and Vastu Shastra — a pairing that allows her to read both the person and their environment, aligning them together for results neither practice achieves alone.</p>
-          <p className="pf-body mt-4">Today, Prachi consults from offices in Mumbai, Pune, Nashik and Kopargaon, and works with clients across India and internationally.</p>
+          <p className="pf-body mx-auto mt-5 max-w-[430px]">For over two decades, Prachi Fulfagar has been a trusted guide for thousands of people seeking clarity — through their palms, their homes, and the stars.</p>
+          <p className="pf-body mx-auto mt-4 max-w-[430px]">What sets Prachi apart is her rare combination of Palmistry and Vastu Shastra — a pairing that allows her to read both the person and their environment, aligning them together for results neither practice achieves alone.</p>
+          <p className="pf-body mx-auto mt-4 max-w-[430px]">Today, Prachi consults from offices in Mumbai, Pune, Nashik and Kopargaon, and works with clients across India and internationally.</p>
+        </div>
+        <div className="relative min-h-[440px]">
+          <img src={celestialPalmImage} alt="Palmistry consultation details in warm light" width={1120} height={1328} loading="lazy" decoding="async" className="absolute inset-x-0 bottom-0 mx-auto h-[360px] w-[88%] rounded-b-full object-cover shadow-card" />
+          <div className="absolute right-0 top-10 hidden h-px w-[70%] bg-accent/40 md:block" />
+          <div className="absolute left-1/2 top-0 grid h-28 w-28 -translate-x-1/2 place-items-center rounded-t-full border border-border bg-background text-accent shadow-card"><Hand className="h-12 w-12" strokeWidth={1.3} /></div>
         </div>
       </div>
     </MotionSection>

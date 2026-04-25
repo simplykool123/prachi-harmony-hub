@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Compass, Hand, Leaf, MessageCircle, Moon, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ImageComposition } from "@/components/prachi/ImageComposition";
 import { CountUp, MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
 import { awards, globalPresence, remedyHighlights, services, whatsappUrl } from "@/components/prachi/site-data";
@@ -41,6 +40,9 @@ const testimonials = [
   ["Her Vastu consultation transformed our office energy entirely. The difference was almost immediate — smoother operations, happier team.", "Corporate Client", "Mumbai"],
   ["The palm reading revealed things about myself I had never been able to articulate. Deeply reassuring and accurate.", "Remote Client", "Dubai"],
   ["My child's focus improved after Prachi's Vastu corrections for the study room. Simple changes, profound results.", "Parent", "Nashik"],
+  ["Prachi explained every correction so calmly that the whole family could follow it without fear or confusion.", "Home Client", "Pune"],
+  ["Our shop entrance and seating changes brought a clear shift in enquiries and confidence within weeks.", "Business Owner", "Nashik"],
+  ["The online consultation was detailed, practical and personal. We felt guided even from another country.", "NRI Client", "Singapore"],
 ];
 
 const impactItems = [
@@ -59,27 +61,26 @@ const processItems = [
 function Index() {
   return (
     <>
-      <section className="relative min-h-[720px] overflow-hidden bg-background text-center">
-        <img src={vastuPlanImage} alt="Vastu floor plan with brass compass" width={960} height={655} loading="eager" decoding="async" fetchPriority="high" className="absolute inset-0 h-full w-full object-cover opacity-55" />
-        <div className="absolute inset-0 bg-foreground/30" />
-        <div className="absolute -top-[220px] left-1/2 h-[360px] w-[150vw] -translate-x-1/2 rounded-b-[100%] bg-background shadow-[0_30px_70px_rgb(0_0_0_/_0.08)]" />
-        <div className="absolute -bottom-[260px] left-1/2 h-[390px] w-[150vw] -translate-x-1/2 rounded-t-[100%] bg-background/92" />
-        <div className="pf-compass-orbit absolute left-1/2 top-[36%] h-[230px] w-[230px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary-foreground/40 before:absolute before:left-1/2 before:top-0 before:h-full before:w-px before:bg-primary-foreground/35 after:absolute after:left-0 after:top-1/2 after:h-px after:w-full after:bg-primary-foreground/35" />
-        <div className="absolute left-1/2 top-[36%] grid h-24 w-24 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-primary-foreground/65 text-primary-foreground"><Compass size={42} strokeWidth={1.15} /></div>
-        <div className="pf-container relative z-10 flex min-h-[720px] flex-col items-center justify-center pt-24 text-primary-foreground">
-          <p className="mb-6 font-heading text-[18px] italic tracking-[1px]">Unlock the Secrets of Your Life</p>
-          <h1 className="max-w-4xl font-heading text-[48px] font-light leading-[1.06] sm:text-[64px] lg:text-[76px]">
-            Revealing Your Space, One Energy at a Time
-          </h1>
-          <p className="mx-auto mt-6 max-w-[560px] text-[15px] font-light leading-relaxed tracking-[0.4px] text-primary-foreground/88">
-            Prachi Fulfagar guides homes, businesses and lives through Vastu Shastra, Palmistry and Vedic Astrology.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3.5">
-            <Button asChild variant="hero"><Link to="/contact">Book A Consultation</Link></Button>
-            <Button asChild variant="porcelain" className="border-primary-foreground/70 text-primary-foreground hover:border-primary-foreground"><Link to="/services">Explore Services</Link></Button>
-          </div>
-          <div className="absolute bottom-12 left-1/2 flex w-[120vw] -translate-x-1/2 items-center justify-center gap-10 overflow-hidden font-heading text-[70px] font-light leading-none text-primary-foreground/45 sm:text-[92px]">
-            <span>Positivity</span><Moon className="h-5 w-5 shrink-0 text-accent" /><span>Future</span><Sparkles className="h-5 w-5 shrink-0 text-accent" /><span>Wisdom</span><Hand className="h-5 w-5 shrink-0 text-accent" /><span>Peace</span>
+      <section className="relative min-h-[680px] overflow-hidden bg-background">
+        <div className="absolute inset-y-0 right-0 w-full bg-footer lg:w-[58%]" />
+        <img src={energyElementsImage} alt="Vastu energy elements arranged for harmony" width={1120} height={1328} loading="eager" decoding="async" fetchPriority="high" className="absolute inset-y-0 right-0 h-full w-full object-cover opacity-35 lg:w-[58%]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/92 to-background/30" />
+        <div className="absolute right-[8%] top-[20%] hidden h-[280px] w-[280px] rounded-full border border-accent/15 lg:block" />
+        <div className="pf-compass-orbit absolute right-[13%] top-[28%] hidden h-[190px] w-[190px] rounded-full border border-accent/20 before:absolute before:left-1/2 before:top-0 before:h-full before:w-px before:bg-accent/15 after:absolute after:left-0 after:top-1/2 after:h-px after:w-full after:bg-accent/15 lg:block" />
+        <div className="pf-container relative z-10 flex min-h-[680px] items-center pt-24">
+          <div className="max-w-[650px]">
+            <p className="pf-eyebrow">Prachifulfagar</p>
+            <h1 className="mt-8 max-w-3xl font-heading text-[56px] font-light leading-[1.04] text-foreground sm:text-[72px] lg:text-[88px]">
+              See the unseen change
+            </h1>
+            <p className="mt-5 font-heading text-[24px] italic text-accent">With Prachi Fulfagar</p>
+            <p className="mt-6 max-w-[520px] text-[16px] font-light leading-relaxed text-muted-foreground">
+              Vastu Consultant, Palmistry and Career Consultant guidance for homes, businesses and personal clarity.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3.5">
+              <Button asChild variant="hero"><Link to="/contact">Book A Consultation</Link></Button>
+              <Button asChild variant="porcelain"><Link to="/services">Explore Services</Link></Button>
+            </div>
           </div>
         </div>
       </section>
@@ -154,21 +155,23 @@ function Index() {
       </MotionSection>
 
       <MotionSection className="relative overflow-hidden bg-card py-16">
-        <div className="absolute left-0 top-0 h-full w-[42%] bg-background/65 [clip-path:ellipse(70%_80%_at_0%_50%)]" />
-        <div className="pf-container relative z-10 grid items-center gap-10 lg:grid-cols-[46fr_54fr] lg:gap-14">
-          <div>
-            <p className="pf-eyebrow">ABOUT PRACHI</p>
+        <div className="absolute left-1/2 top-0 h-full w-px bg-accent/20" />
+        <div className="pf-container relative z-10 grid items-center gap-8 lg:grid-cols-[32fr_36fr_32fr]">
+          <div className="relative min-h-[430px]">
+            <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="absolute inset-x-0 top-0 mx-auto h-[430px] w-[86%] rounded-t-full object-cover object-[center_8%] shadow-card" />
+          </div>
+          <div className="text-center">
+            <p className="pf-eyebrow pf-eyebrow-center">ABOUT PRACHI</p>
             <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>
-            <p className="pf-body mt-5">Prachi Fulfagar is one of India's most credentialled Vastu and Palmistry consultants — combining both in a rare integrated practice that aligns you from the inside out.</p>
-            <p className="pf-body mt-4">Consulting from Mumbai, Pune, Nashik and Kopargaon, she works with clients across India and internationally.</p>
+            <p className="pf-body mx-auto mt-5 max-w-[420px]">Prachi Fulfagar is one of India's most credentialled Vastu and Palmistry consultants — combining both in a rare integrated practice that aligns you from the inside out.</p>
+            <p className="pf-body mx-auto mt-4 max-w-[420px]">Consulting from Mumbai, Pune, Nashik and Kopargaon, she works with clients across India and internationally.</p>
             <Link to="/about" className="group mt-7 inline-flex text-[13px] font-medium text-accent">Read her full story <span className="transition group-hover:translate-x-1">→</span></Link>
           </div>
-          <div className="relative min-h-[540px] sm:min-h-[600px]">
-            <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="absolute right-0 top-0 h-[380px] w-[78%] rounded-l-full object-cover object-[center_14%] shadow-card" />
-            <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={1120} height={1328} loading="lazy" decoding="async" className="absolute bottom-0 right-0 h-[390px] w-[52%] rounded-t-full object-cover shadow-card" />
-            <div className="absolute left-[12%] top-[58%] hidden h-px w-[58%] bg-accent/45 md:block" />
-            <div className="absolute left-0 bottom-24 hidden rounded-t-full border border-border bg-background p-8 md:block">
-              <Hand className="h-12 w-12 text-accent" strokeWidth={1.3} />
+          <div className="relative min-h-[430px]">
+            <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={1120} height={1328} loading="lazy" decoding="async" className="absolute inset-x-0 bottom-0 mx-auto h-[360px] w-[86%] rounded-b-full object-cover shadow-card" />
+            <div className="absolute left-0 top-8 hidden h-px w-[72%] bg-accent/45 md:block" />
+            <div className="absolute left-1/2 top-0 grid h-28 w-28 -translate-x-1/2 place-items-center rounded-t-full border border-border bg-background text-accent shadow-card">
+              <Hand className="h-12 w-12" strokeWidth={1.3} />
             </div>
           </div>
         </div>
@@ -218,9 +221,10 @@ function Index() {
         <div className="absolute inset-0 bg-background/78" />
         <div className="pf-container relative z-10">
           <SectionIntro eyebrow="CLIENT STORIES" title="Lives that found balance" />
-          <div className="mt-14 grid gap-5 lg:grid-cols-3">
-            {testimonials.map(([quote, name, city], index) => (
-              <article key={name} className="pf-card overflow-hidden p-0">
+          <div className="pf-story-marquee mt-14 overflow-hidden">
+            <div className="pf-story-track flex w-max gap-5">
+              {[...testimonials, ...testimonials].map(([quote, name, city], index) => (
+              <article key={`${name}-${index}`} className="pf-card w-[310px] shrink-0 overflow-hidden p-0 sm:w-[360px]">
                 <div className="h-[3px] bg-accent" />
                 <div className="p-8">
                   <p className="font-heading text-[17px] italic leading-relaxed text-foreground">“{quote}”</p>
@@ -228,14 +232,18 @@ function Index() {
                   <p className="mt-0.5 text-[11px] text-muted-foreground">{city}</p>
                 </div>
               </article>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </MotionSection>
 
-      <MotionSection className="relative overflow-hidden border-y border-border bg-warm py-20 text-center">
-        <div className="pf-compass-orbit absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/10" />
-        <div className="pf-container">
+      <MotionSection className="relative min-h-[520px] overflow-hidden border-y border-border bg-warm py-20 text-center">
+        <img src={vastuPlanImage} alt="Vastu floor plan with brass compass" width={960} height={655} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-35" />
+        <div className="absolute inset-0 bg-background/62" />
+        <div className="absolute -top-[190px] left-1/2 h-[310px] w-[150vw] -translate-x-1/2 rounded-b-[100%] bg-background" />
+        <div className="pf-compass-orbit absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/20" />
+        <div className="pf-container relative z-10">
           <div className="mx-auto mb-8 h-px w-12 bg-accent" />
           <h2 className="pf-h2">Begin your journey to harmony</h2>
           <p className="pf-body mx-auto mt-4 max-w-xl">Book a consultation — in person or online, across India and internationally.</p>
