@@ -8,7 +8,6 @@ import { awards, cities, globalPresence } from "@/components/prachi/site-data";
 const vastuPlanImage = "/site-images/prachi-vastu-plan.jpg";
 const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
 const officeVastuImage = "/site-images/prachi-office-vastu.jpg";
-const familyHomeImage = "/site-images/prachi-family-home.jpg";
 const prachiPortraitImage = "/site-images/prachi-fulfagar-portrait.jpg";
 
 export const Route = createFileRoute("/about")({
