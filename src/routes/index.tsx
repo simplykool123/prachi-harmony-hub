@@ -141,9 +141,13 @@ function Index() {
             </div>
           </div>
           <div className="relative grid min-h-[540px] grid-cols-2 gap-5">
-            <img src={homeRemediesImage} alt="Practical Vastu home remedy with flowers and water in a real living room" width={1280} height={960} loading="lazy" decoding="async" className="row-span-2 h-[430px] w-full rounded-[28px] rounded-br-[120px] object-cover shadow-card" />
-            <img src={orangeArtworkImage} alt="Orange spiritual harmony artwork" width={1280} height={1280} loading="lazy" decoding="async" className="relative z-10 mx-auto h-[290px] w-[92%] translate-y-14 object-contain" />
-            <img src={energyElementsImage} alt="Vastu energy elements with plant water candle and stone" width={1120} height={1328} loading="lazy" decoding="async" className="col-start-2 -mt-20 h-[390px] w-full rounded-t-full object-cover shadow-card" />
+            <img src={homeRemediesImage} alt="Practical Vastu home remedy with flowers and water in a real living room" width={1280} height={960} loading="lazy" decoding="async" className="h-[310px] w-full rounded-[28px] rounded-br-[120px] object-cover shadow-card" />
+            <img src={orangeArtworkImage} alt="Orange spiritual harmony artwork" width={1280} height={1280} loading="lazy" decoding="async" className="h-[310px] w-full object-contain" />
+            <div className="relative mt-6 flex items-center justify-center rounded-t-full border border-border bg-background p-8">
+              <div className="pf-compass-orbit h-36 w-36 rounded-full border border-accent/25" />
+              <SunMoon className="absolute h-10 w-10 text-accent" strokeWidth={1.3} />
+            </div>
+            <img src={energyElementsImage} alt="Vastu energy elements with plant water candle and stone" width={1120} height={1328} loading="lazy" decoding="async" className="-mt-16 h-[390px] w-full rounded-t-full object-cover shadow-card" />
           </div>
         </div>
       </MotionSection>
