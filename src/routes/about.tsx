@@ -25,10 +25,11 @@ function AboutPage() {
     <PageHero eyebrow="ABOUT" title="Where ancient wisdom meets modern clarity" copy="A rare combination of Palmistry and Vastu Shastra — personally guided." />
     <MotionSection className="pf-section overflow-hidden bg-card">
       <div className="pf-container grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
-        <ImageComposition
-          primary={{ src: prachiPortraitImage, alt: "Prachi Fulfagar in her Vastu and Palmistry consultation studio", width: 900, height: 1350 }}
-          secondary={{ src: celestialPalmImage, alt: "Palmistry consultation details in warm light", width: 1120, height: 1328 }}
-        />
+        <div className="relative min-h-[500px] sm:min-h-[560px]">
+          <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="absolute left-0 top-0 h-[350px] w-[82%] rounded-r-full object-cover object-[center_18%] shadow-card" />
+          <img src={celestialPalmImage} alt="Palmistry consultation details in warm light" width={1120} height={1328} loading="lazy" decoding="async" className="absolute bottom-0 right-0 h-[370px] w-[56%] rounded-t-full object-cover shadow-card" />
+          <div className="absolute left-[12%] top-[58%] hidden h-px w-[48%] bg-accent/40 md:block" />
+        </div>
         <div>
           <p className="pf-eyebrow">HER STORY</p>
           <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>

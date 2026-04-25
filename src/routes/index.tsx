@@ -140,19 +140,19 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="bg-warm py-14">
+      <MotionSection className="bg-warm py-10">
         <div className="pf-container grid divide-y divide-border md:grid-cols-4 md:divide-x md:divide-y-0">
           {stats.map(([value, suffix, label]) => (
-            <div key={label} className="py-6 text-center md:py-0">
-              <div className="font-heading text-[52px] font-light leading-none text-accent"><CountUp value={Number(value)} suffix={String(suffix)} /></div>
-              <p className="mt-2 text-[11px] font-normal tracking-[0.5px] text-muted-foreground">{label}</p>
+            <div key={label} className="py-5 text-center md:py-0">
+              <div className="font-heading text-[44px] font-light leading-none text-accent"><CountUp value={Number(value)} suffix={String(suffix)} /></div>
+              <p className="mt-2 text-[11px] font-medium tracking-[0.4px] text-muted-foreground">{label}</p>
             </div>
           ))}
         </div>
       </MotionSection>
 
-      <MotionSection className="pf-section overflow-hidden bg-card">
-        <div className="pf-container grid items-center gap-12 lg:grid-cols-[48fr_52fr] lg:gap-16">
+      <MotionSection className="overflow-hidden bg-card py-16">
+        <div className="pf-container grid items-center gap-10 lg:grid-cols-[46fr_54fr] lg:gap-14">
           <div>
             <p className="pf-eyebrow">ABOUT PRACHI</p>
             <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>
@@ -160,10 +160,11 @@ function Index() {
             <p className="pf-body mt-4">Consulting from Mumbai, Pune, Nashik and Kopargaon, she works with clients across India and internationally.</p>
             <Link to="/about" className="group mt-7 inline-flex text-[13px] font-medium text-accent">Read her full story <span className="transition group-hover:translate-x-1">→</span></Link>
           </div>
-          <ImageComposition
-            primary={{ src: prachiPortraitImage, alt: "Prachi Fulfagar in her Vastu and Palmistry consultation studio", width: 900, height: 1350 }}
-            secondary={{ src: celestialPalmImage, alt: "Palmistry and astrology consultation details", width: 1120, height: 1328 }}
-          />
+          <div className="relative min-h-[500px] sm:min-h-[560px]">
+            <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="absolute right-0 top-0 h-[350px] w-[82%] rounded-l-full object-cover object-[center_18%] shadow-card" />
+            <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={1120} height={1328} loading="lazy" decoding="async" className="absolute bottom-0 right-0 h-[370px] w-[56%] rounded-t-full object-cover shadow-card" />
+            <div className="absolute left-[18%] top-[58%] hidden h-px w-[48%] bg-accent/40 md:block" />
+          </div>
         </div>
       </MotionSection>
 

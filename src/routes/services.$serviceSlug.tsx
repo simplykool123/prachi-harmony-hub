@@ -175,21 +175,36 @@ const serviceDetails: Record<string, Detail> = {
   },
 };
 
+const serviceImages: Record<string, { src: string; alt: string }> = {
+  "palm-vastu-combo": { src: "/site-images/prachi-celestial-palm.jpg", alt: "Palmistry and Vastu consultation table with charts" },
+  "residential-vastu": { src: "/site-images/prachi-family-home.jpg", alt: "Calm residential home interior arranged for Vastu balance" },
+  "commercial-vastu": { src: "/site-images/prachi-office-vastu.jpg", alt: "Office Vastu consultation with workspace planning" },
+  "industrial-vastu": { src: "/site-images/prachi-vastu-plan.jpg", alt: "Detailed Vastu floor plan for industrial layout planning" },
+  palmistry: { src: "/site-images/prachi-celestial-palm.jpg", alt: "Palmistry reading with hand and astrology chart" },
+  "geo-stress": { src: "/site-images/prachi-energy-elements.jpg", alt: "Energy elements used for geopathic stress correction" },
+  pyramidology: { src: "/site-images/prachi-vastu-plan.jpg", alt: "Vastu plan analysis for pyramidology remedies" },
+  "energy-balancing": { src: "/site-images/prachi-energy-elements.jpg", alt: "Five element balancing objects for space healing" },
+  "colour-guidelines": { src: "/site-images/prachi-home-remedies.jpg", alt: "Warm home styling and colour-based Vastu remedies" },
+  remote: { src: "/site-images/prachi-fulfagar-portrait.jpg", alt: "Prachi Fulfagar ready for online consultation" },
+  "plot-selection": { src: "/site-images/prachi-vastu-plan.jpg", alt: "Plot and floor plan review for Vastu selection" },
+  "career-astrology": { src: "/site-images/prachi-celestial-palm.jpg", alt: "Astrology and palmistry chart for career guidance" },
+};
+
 function DetailSection({ label, heading, children }: { label: string; heading: string; children: React.ReactNode }) {
   return (
-    <section className="mt-16">
+    <section className="mt-10">
       <p className="text-[10px] font-medium uppercase leading-none tracking-[3px] text-accent">{label}</p>
-      <h2 className="mt-5 font-heading text-[28px] font-light leading-tight text-foreground">{heading}</h2>
-      <div className="mt-6">{children}</div>
+      <h2 className="mt-3 font-heading text-[26px] font-light leading-tight text-foreground">{heading}</h2>
+      <div className="mt-4">{children}</div>
     </section>
   );
 }
 
 function DotList({ items }: { items: string[] }) {
   return (
-    <ul className="space-y-4">
+    <ul className="grid gap-3 sm:grid-cols-2">
       {items.map((item) => (
-        <li key={item} className="grid grid-cols-[auto_1fr] gap-3 text-[14px] font-light leading-relaxed text-foreground">
+        <li key={item} className="grid grid-cols-[auto_1fr] gap-3 rounded-xl border border-border bg-card p-4 text-[13px] font-light leading-relaxed text-foreground">
           <span className="mt-[0.65em] h-1.5 w-1.5 rounded-full bg-accent" />
           <span>{item}</span>
         </li>
@@ -206,26 +221,31 @@ function ServiceDetailPage() {
   if (!service || !detail) throw notFound();
 
   const Icon = service.icon;
+  const image = serviceImages[serviceSlug] ?? serviceImages["palm-vastu-combo"];
 
   return (
-    <main className="bg-background py-12 sm:py-16">
-      <div className="mx-auto w-[min(760px,calc(100%-40px))]">
+    <main className="bg-background py-8 sm:py-10">
+      <div className="mx-auto w-[min(920px,calc(100%-40px))]">
         <Link to="/services" className="text-[13px] font-medium text-accent underline-offset-4 hover:underline">
           ← Back to Services
         </Link>
 
-        <header className="relative mt-14 text-center">
-          {detail.badge && (
-            <span className="mb-6 inline-flex rounded-full bg-badge px-4 py-2 text-[10px] font-medium uppercase tracking-[2px] text-badge-foreground">
-              {detail.badge}
-            </span>
-          )}
-          <div className="mx-auto grid h-24 w-24 place-items-center rounded-full bg-muted text-muted-foreground">
-            <Icon size={48} strokeWidth={1.35} />
+        <header className="relative mt-6 grid overflow-hidden rounded-[28px] border border-border bg-card shadow-card lg:grid-cols-[54fr_46fr]">
+          <div className="p-7 sm:p-9">
+            {detail.badge && (
+              <span className="mb-5 inline-flex rounded-full bg-badge px-4 py-2 text-[10px] font-medium uppercase tracking-[2px] text-badge-foreground">
+                {detail.badge}
+              </span>
+            )}
+            <div className="flex items-center gap-5">
+              <div className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-badge text-accent">
+                <Icon size={34} strokeWidth={1.45} />
+              </div>
+              <h1 className="font-heading text-[38px] font-light leading-[1.06] text-foreground sm:text-[46px]">{service.name}</h1>
+            </div>
+            <p className="mt-5 max-w-xl text-[14px] font-light leading-relaxed text-muted-foreground">{service.description}</p>
           </div>
-          <h1 className="mx-auto mt-8 font-heading text-[52px] font-light leading-[1.08] text-foreground">{service.name}</h1>
-          <p className="mx-auto mt-5 max-w-xl text-[15px] font-light leading-relaxed text-muted-foreground">{service.description}</p>
-          <div className="mx-auto mt-8 h-px w-[60px] bg-accent" />
+          <img src={image.src} alt={image.alt} width={900} height={680} loading="eager" decoding="async" className="h-[240px] w-full object-cover object-center lg:h-full" />
         </header>
 
         <DetailSection label="Introduction" heading="A personal, practical approach">
@@ -241,27 +261,28 @@ function ServiceDetailPage() {
         </DetailSection>
 
         <DetailSection label="How it works" heading="The consultation flow">
-          <div className="space-y-8">
+          <div className="grid gap-4 lg:grid-cols-4">
             {detail.steps.map((step) => (
-              <article key={step.number} className="grid gap-4 sm:grid-cols-[72px_1fr]">
-                <div className="font-heading text-[36px] font-light leading-none text-accent">{step.number}</div>
+              <article key={step.number} className="relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-card">
+                <div className="absolute -right-2 -top-4 font-heading text-[74px] font-light leading-none text-accent/10">{step.number}</div>
                 <div>
-                  <h3 className="font-body text-[13px] font-medium leading-tight text-foreground">{step.title}</h3>
-                  <p className="mt-2 text-[13px] font-light leading-relaxed text-muted-foreground">{step.description}</p>
+                  <p className="font-heading text-[30px] font-light leading-none text-accent">{step.number}</p>
+                  <h3 className="mt-4 font-body text-[13px] font-medium leading-tight text-foreground">{step.title}</h3>
+                  <p className="mt-2 text-[12px] font-light leading-relaxed text-muted-foreground">{step.description}</p>
                 </div>
               </article>
             ))}
           </div>
         </DetailSection>
 
-        <section className="mt-16 border-t border-accent/45 pt-10 text-center">
+        <section className="mt-10 rounded-[28px] border border-accent/25 bg-warm p-7 text-center sm:p-9">
           <h2 className="font-heading text-[32px] font-light leading-tight text-foreground">Ready to begin?</h2>
           <p className="mx-auto mt-3 max-w-lg text-[15px] font-light leading-relaxed text-muted-foreground">Book a personal consultation with Prachi — in person or online.</p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3.5">
+          <div className="mt-6 flex flex-wrap justify-center gap-3.5">
             <Button asChild variant="hero"><Link to="/contact">Book a Consultation</Link></Button>
             <Button asChild variant="porcelain"><a href={whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle className="text-whatsapp" />WhatsApp Prachi</a></Button>
           </div>
-          <div className="mt-8 flex flex-wrap justify-center gap-2.5">
+          <div className="mt-6 flex flex-wrap justify-center gap-2.5">
             {cities.map((city) => <span key={city} className="rounded-full border border-border bg-card px-4 py-2 text-[11px] text-muted-foreground">{city}</span>)}
           </div>
           <p className="mt-4 text-[12px] font-light text-muted-foreground">Remote sessions available worldwide</p>
