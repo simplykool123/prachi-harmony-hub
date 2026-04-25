@@ -9,7 +9,6 @@ import { awards, globalPresence, remedyHighlights, services, whatsappUrl } from 
 import vastuPlanImage from "@/assets/prachi-vastu-plan.jpg";
 import celestialPalmImage from "@/assets/prachi-celestial-palm.jpg";
 import homeRemediesImage from "@/assets/prachi-home-remedies.jpg";
-import officeVastuImage from "@/assets/prachi-office-vastu.jpg";
 import energyElementsImage from "@/assets/prachi-energy-elements.jpg";
 import familyHomeImage from "@/assets/prachi-family-home.jpg";
 
