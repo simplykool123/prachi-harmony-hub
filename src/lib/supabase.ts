@@ -82,3 +82,21 @@ export interface VpCalendarItem {
   priority: "high" | "medium" | "low";
   notes: string | null;
 }
+
+export interface VpSetting {
+  key: string;
+  value: string | null;
+  description: string | null;
+  is_secret: boolean;
+  updated_at: string | null;
+}
+
+export interface VpSocialAccount {
+  platform: string;
+  account_name: string | null;
+  account_id: string | null;
+  is_connected: boolean;
+  postiz_channel_id: string | null;
+  connected_at: string | null;
+  updated_at: string | null;
+}
