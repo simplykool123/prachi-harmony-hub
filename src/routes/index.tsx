@@ -221,9 +221,10 @@ function Index() {
         <div className="absolute inset-0 bg-background/78" />
         <div className="pf-container relative z-10">
           <SectionIntro eyebrow="CLIENT STORIES" title="Lives that found balance" />
-          <div className="mt-14 grid gap-5 lg:grid-cols-3">
-            {testimonials.map(([quote, name, city], index) => (
-              <article key={name} className="pf-card overflow-hidden p-0">
+          <div className="pf-story-marquee mt-14 overflow-hidden">
+            <div className="pf-story-track flex w-max gap-5">
+              {[...testimonials, ...testimonials].map(([quote, name, city], index) => (
+              <article key={`${name}-${index}`} className="pf-card w-[310px] shrink-0 overflow-hidden p-0 sm:w-[360px]">
                 <div className="h-[3px] bg-accent" />
                 <div className="p-8">
                   <p className="font-heading text-[17px] italic leading-relaxed text-foreground">“{quote}”</p>
@@ -231,14 +232,18 @@ function Index() {
                   <p className="mt-0.5 text-[11px] text-muted-foreground">{city}</p>
                 </div>
               </article>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </MotionSection>
 
-      <MotionSection className="relative overflow-hidden border-y border-border bg-warm py-20 text-center">
-        <div className="pf-compass-orbit absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/10" />
-        <div className="pf-container">
+      <MotionSection className="relative min-h-[520px] overflow-hidden border-y border-border bg-warm py-20 text-center">
+        <img src={vastuPlanImage} alt="Vastu floor plan with brass compass" width={960} height={655} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-35" />
+        <div className="absolute inset-0 bg-background/62" />
+        <div className="absolute -top-[190px] left-1/2 h-[310px] w-[150vw] -translate-x-1/2 rounded-b-[100%] bg-background" />
+        <div className="pf-compass-orbit absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/20" />
+        <div className="pf-container relative z-10">
           <div className="mx-auto mb-8 h-px w-12 bg-accent" />
           <h2 className="pf-h2">Begin your journey to harmony</h2>
           <p className="pf-body mx-auto mt-4 max-w-xl">Book a consultation — in person or online, across India and internationally.</p>
