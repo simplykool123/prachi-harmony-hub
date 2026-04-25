@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { MessageCircle } from "lucide-react";
+import { Compass, Hand, Leaf, MessageCircle, Moon, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImageComposition } from "@/components/prachi/ImageComposition";
 import { CountUp, MotionSection, SectionIntro } from "@/components/prachi/Motion";
@@ -48,6 +48,13 @@ const impactItems = [
   ["Relationships", "Shared spaces are corrected for warmth, communication and emotional steadiness."],
   ["Business", "Entrances, seating and decision zones are aligned for confidence, clarity and growth."],
 ];
+
+const processItems = [
+  [Compass, "Discovery"],
+  [Moon, "Diagnosis"],
+  [Sparkles, "Design"],
+  [Leaf, "Alignment"],
+] as const;
 
 function Index() {
   return (
