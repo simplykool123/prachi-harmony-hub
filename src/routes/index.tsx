@@ -174,8 +174,10 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="bg-background py-12">
-        <div className="pf-container">
+      <MotionSection className="relative overflow-hidden bg-background py-14">
+        <img src={vastuPlanImage} alt="Faint Vastu plan background" width={960} height={655} loading="lazy" decoding="async" className="absolute left-0 top-0 h-full w-[46%] object-cover opacity-[0.08]" />
+        <div className="absolute right-[11%] top-16 h-44 w-44 rounded-full border border-border" />
+        <div className="pf-container relative z-10">
           <SectionIntro eyebrow="BEFORE & AFTER" title="The impact of alignment" copy="The goal is not decoration — it is a home or workplace that starts supporting the life inside it." />
           <div className="mt-9 grid gap-4 lg:grid-cols-3">
             {impactItems.map(([title, copy], index) => (
@@ -192,8 +194,9 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="bg-card py-12">
-        <div className="pf-container">
+      <MotionSection className="relative overflow-hidden bg-card py-14">
+        <div className="absolute -top-20 left-1/2 h-40 w-[120vw] -translate-x-1/2 rounded-b-[100%] bg-background/80" />
+        <div className="pf-container relative z-10">
           <SectionIntro eyebrow="AUTHORITY" title="Awards, recognition and global reach" copy="A trusted practice serving Indian and international clients with recognised expertise." />
           <div className="mt-9 grid gap-4 lg:grid-cols-2">
             {awards.map((award, index) => {
@@ -210,8 +213,10 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="pf-section bg-background">
-        <div className="pf-container">
+      <MotionSection className="relative overflow-hidden bg-background py-16">
+        <img src={celestialPalmImage} alt="Palmistry background for client stories" width={759} height={900} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-20" />
+        <div className="absolute inset-0 bg-background/78" />
+        <div className="pf-container relative z-10">
           <SectionIntro eyebrow="CLIENT STORIES" title="Lives that found balance" />
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
             {testimonials.map(([quote, name, city], index) => (
@@ -228,7 +233,8 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="border-y border-border bg-warm py-[100px] text-center">
+      <MotionSection className="relative overflow-hidden border-y border-border bg-warm py-20 text-center">
+        <div className="pf-compass-orbit absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/10" />
         <div className="pf-container">
           <div className="mx-auto mb-8 h-px w-12 bg-accent" />
           <h2 className="pf-h2">Begin your journey to harmony</h2>
