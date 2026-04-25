@@ -27,6 +27,7 @@ export function ImageComposition({
         width={primary.width}
         height={primary.height}
         loading="lazy"
+        decoding="async"
         className={`absolute top-0 h-[330px] w-[78%] object-cover shadow-card ${isRight ? "right-0 rounded-l-full" : "left-0 rounded-r-full"}`}
       />
       <img
@@ -35,6 +36,7 @@ export function ImageComposition({
         width={secondary.width}
         height={secondary.height}
         loading="lazy"
+        decoding="async"
         className={`absolute bottom-0 h-[390px] w-[54%] object-cover shadow-card ${isRight ? "left-0 rounded-t-full" : "right-0 rounded-t-full"}`}
       />
       <div className={`absolute top-[58%] hidden h-px w-[42%] bg-accent/40 md:block ${isRight ? "right-[9%]" : "left-[9%]"}`} />
