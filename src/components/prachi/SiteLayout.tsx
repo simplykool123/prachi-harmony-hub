@@ -2,8 +2,9 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUp, Instagram, MessageCircle, Youtube } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import logoWhite from "@/assets/site-images/prachi-fulfagar-logo-white.png";
 import { navItems, whatsappUrl } from "./site-data";
+
+const logoWhite = "/site-images/prachi-fulfagar-logo-white.png";
 
 function Logo({ light = false }: { light?: boolean }) {
   return (
