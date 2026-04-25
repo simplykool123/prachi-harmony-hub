@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Compass, Hand, Leaf, MessageCircle, Moon, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ImageComposition } from "@/components/prachi/ImageComposition";
 import { CountUp, MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
 import { awards, globalPresence, remedyHighlights, services, whatsappUrl } from "@/components/prachi/site-data";
@@ -41,6 +40,9 @@ const testimonials = [
   ["Her Vastu consultation transformed our office energy entirely. The difference was almost immediate — smoother operations, happier team.", "Corporate Client", "Mumbai"],
   ["The palm reading revealed things about myself I had never been able to articulate. Deeply reassuring and accurate.", "Remote Client", "Dubai"],
   ["My child's focus improved after Prachi's Vastu corrections for the study room. Simple changes, profound results.", "Parent", "Nashik"],
+  ["Prachi explained every correction so calmly that the whole family could follow it without fear or confusion.", "Home Client", "Pune"],
+  ["Our shop entrance and seating changes brought a clear shift in enquiries and confidence within weeks.", "Business Owner", "Nashik"],
+  ["The online consultation was detailed, practical and personal. We felt guided even from another country.", "NRI Client", "Singapore"],
 ];
 
 const impactItems = [
