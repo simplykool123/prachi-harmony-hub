@@ -59,43 +59,27 @@ const processItems = [
 function Index() {
   return (
     <>
-      <section className="relative grid min-h-[520px] place-items-center overflow-hidden bg-background text-center lg:min-h-[calc(58vh-32px)]">
-        <img
-          src={vastuPlanImage}
-          alt="Vastu floor plan with brass compass"
-          width={960}
-          height={655}
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
-          className="pointer-events-none absolute -left-24 top-12 hidden h-[440px] w-[440px] rounded-full object-cover lg:block"
-        />
-        <img
-          src={celestialPalmImage}
-          alt="Palmistry consultation with celestial chart"
-          width={759}
-          height={900}
-          loading="lazy"
-          decoding="async"
-          className="pointer-events-none absolute -right-16 bottom-0 hidden h-[460px] w-[360px] rounded-t-full object-cover lg:block"
-        />
-        <div className="pf-compass-orbit pointer-events-none absolute left-1/2 top-1/2 z-0 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/10 before:absolute before:left-1/2 before:top-0 before:h-full before:w-px before:bg-accent/10 after:absolute after:left-0 after:top-1/2 after:h-px after:w-full after:bg-accent/10" />
-        <div className="pf-compass-orbit pointer-events-none absolute left-1/2 top-1/2 z-0 h-[290px] w-[290px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/15" />
-        <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[190px] w-[190px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/8" />
-        <div className="pf-container relative z-10 py-10">
-          <p className="mb-7 text-[10px] font-medium uppercase tracking-[3px] text-accent">
-            Award-winning · Pan-India · International Sessions
-          </p>
-          <h1 className="pf-h1">
-            <span className="block">Ancient wisdom.</span>
-            <span className="block italic text-accent">A balanced, peaceful life.</span>
+      <section className="relative min-h-[720px] overflow-hidden bg-background text-center">
+        <img src={vastuPlanImage} alt="Vastu floor plan with brass compass" width={960} height={655} loading="eager" decoding="async" fetchPriority="high" className="absolute inset-0 h-full w-full object-cover opacity-55" />
+        <div className="absolute inset-0 bg-foreground/30" />
+        <div className="absolute -top-[220px] left-1/2 h-[360px] w-[150vw] -translate-x-1/2 rounded-b-[100%] bg-background shadow-[0_30px_70px_rgb(0_0_0_/_0.08)]" />
+        <div className="absolute -bottom-[260px] left-1/2 h-[390px] w-[150vw] -translate-x-1/2 rounded-t-[100%] bg-background/92" />
+        <div className="pf-compass-orbit absolute left-1/2 top-[36%] h-[230px] w-[230px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary-foreground/40 before:absolute before:left-1/2 before:top-0 before:h-full before:w-px before:bg-primary-foreground/35 after:absolute after:left-0 after:top-1/2 after:h-px after:w-full after:bg-primary-foreground/35" />
+        <div className="absolute left-1/2 top-[36%] grid h-24 w-24 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-primary-foreground/65 text-primary-foreground"><Compass size={42} strokeWidth={1.15} /></div>
+        <div className="pf-container relative z-10 flex min-h-[720px] flex-col items-center justify-center pt-24 text-primary-foreground">
+          <p className="mb-6 font-heading text-[18px] italic tracking-[1px]">Unlock the Secrets of Your Life</p>
+          <h1 className="max-w-4xl font-heading text-[48px] font-light leading-[1.06] sm:text-[64px] lg:text-[76px]">
+            Revealing Your Space, One Energy at a Time
           </h1>
-          <p className="pf-body mx-auto mt-6 max-w-[480px] text-[15px]">
-            Prachi Fulfagar guides you through Vastu Shastra, Palmistry and Vedic Astrology — helping homes, businesses and lives find their natural harmony.
+          <p className="mx-auto mt-6 max-w-[560px] text-[15px] font-light leading-relaxed tracking-[0.4px] text-primary-foreground/88">
+            Prachi Fulfagar guides homes, businesses and lives through Vastu Shastra, Palmistry and Vedic Astrology.
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-3.5">
-            <Button asChild variant="hero"><Link to="/contact">Book a Consultation</Link></Button>
-            <Button asChild variant="porcelain"><Link to="/services">Explore Services</Link></Button>
+          <div className="mt-8 flex flex-wrap justify-center gap-3.5">
+            <Button asChild variant="hero"><Link to="/contact">Book A Consultation</Link></Button>
+            <Button asChild variant="porcelain" className="border-primary-foreground/70 text-primary-foreground hover:border-primary-foreground"><Link to="/services">Explore Services</Link></Button>
+          </div>
+          <div className="absolute bottom-12 left-1/2 flex w-[120vw] -translate-x-1/2 items-center justify-center gap-10 overflow-hidden font-heading text-[70px] font-light leading-none text-primary-foreground/45 sm:text-[92px]">
+            <span>Positivity</span><Moon className="h-5 w-5 shrink-0 text-accent" /><span>Future</span><Sparkles className="h-5 w-5 shrink-0 text-accent" /><span>Wisdom</span><Hand className="h-5 w-5 shrink-0 text-accent" /><span>Peace</span>
           </div>
         </div>
       </section>
