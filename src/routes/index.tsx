@@ -6,11 +6,12 @@ import { ImageComposition } from "@/components/prachi/ImageComposition";
 import { CountUp, MotionSection, SectionIntro, fadeUp, staggerContainer, staggerItem } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
 import { awards, globalPresence, remedyHighlights, services, whatsappUrl } from "@/components/prachi/site-data";
-import vastuPlanImage from "@/assets/site-images/prachi-vastu-plan.jpg";
-import celestialPalmImage from "@/assets/site-images/prachi-celestial-palm.jpg";
-import homeRemediesImage from "@/assets/site-images/prachi-home-remedies.jpg";
-import energyElementsImage from "@/assets/site-images/prachi-energy-elements.jpg";
-import familyHomeImage from "@/assets/site-images/prachi-family-home.jpg";
+
+const vastuPlanImage = "/site-images/prachi-vastu-plan.jpg";
+const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
+const homeRemediesImage = "/site-images/prachi-home-remedies.jpg";
+const energyElementsImage = "/site-images/prachi-energy-elements.jpg";
+const familyHomeImage = "/site-images/prachi-family-home.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
