@@ -52,17 +52,15 @@ const processItems = [
 function Index() {
   return (
     <>
-      <section className="relative min-h-[690px] overflow-hidden bg-background">
-        <div className="absolute inset-y-0 right-0 hidden w-[48%] rounded-bl-[180px] bg-footer lg:block" />
-        <div className="absolute right-[7%] top-[18%] hidden h-[390px] w-[310px] overflow-hidden rounded-t-full rounded-br-[110px] shadow-card lg:block">
-          <img src={energyElementsImage} alt="Vastu energy elements arranged for harmony" width={1120} height={1328} loading="eager" decoding="async" fetchPriority="high" className="h-full w-full object-cover" />
-        </div>
-        <div className="absolute right-[31%] top-[46%] hidden h-[210px] w-[170px] overflow-hidden rounded-bl-[80px] rounded-tr-[80px] border-[10px] border-background shadow-card lg:block">
-          <img src={celestialPalmImage} alt="Palmistry and astrology details" width={759} height={900} loading="eager" decoding="async" className="h-full w-full object-cover" />
-        </div>
-        <div className="pf-compass-orbit absolute right-[17%] top-[15%] hidden h-[180px] w-[180px] rounded-full border border-accent/20 before:absolute before:left-1/2 before:top-0 before:h-full before:w-px before:bg-accent/15 after:absolute after:left-0 after:top-1/2 after:h-px after:w-full after:bg-accent/15 lg:block" />
-        <div className="pf-container relative z-10 flex min-h-[690px] items-center pt-24">
-          <div className="max-w-[620px]">
+      <section className="relative min-h-[700px] overflow-hidden bg-background">
+        <div className="pf-container relative z-10 grid min-h-[700px] items-center gap-8 pt-24 lg:grid-cols-[280px_minmax(0,1fr)_320px]">
+          <div className="relative order-2 hidden min-h-[430px] lg:order-1 lg:block">
+            <div className="pf-compass-drift absolute left-0 top-10 h-[330px] w-[330px] overflow-hidden rounded-full border border-accent/25 bg-card shadow-card">
+              <img src={vastuPlanImage} alt="Animated Vastu compass and floor plan" width={960} height={655} loading="eager" decoding="async" fetchPriority="high" className="h-full w-full scale-110 object-cover opacity-90" />
+            </div>
+            <div className="pf-compass-orbit absolute left-[78px] top-[88px] h-[174px] w-[174px] rounded-full border border-accent/45 before:absolute before:left-1/2 before:top-0 before:h-full before:w-px before:bg-accent/25 after:absolute after:left-0 after:top-1/2 after:h-px after:w-full after:bg-accent/25" />
+          </div>
+          <div className="order-1 mx-auto max-w-[620px] text-center lg:order-2">
             <p className="pf-eyebrow">Vastu • Palmistry • Astrology</p>
             <h1 className="mt-8 max-w-3xl font-heading text-[56px] font-light leading-[1.04] text-foreground sm:text-[72px] lg:text-[86px]">
               See the unseen change
@@ -74,6 +72,15 @@ function Index() {
               <Button asChild variant="hero"><Link to="/contact">Book A Consultation</Link></Button>
               <Button asChild variant="porcelain"><Link to="/services">Explore Services</Link></Button>
             </div>
+          </div>
+          <div className="relative order-3 hidden min-h-[500px] lg:block">
+            <div className="absolute right-0 top-0 h-[390px] w-[270px] overflow-hidden rounded-t-full rounded-bl-[90px] shadow-card">
+              <img src={energyElementsImage} alt="Vastu energy elements arranged for harmony" width={1120} height={1328} loading="eager" decoding="async" className="h-full w-full object-cover" />
+            </div>
+            <div className="absolute bottom-2 left-0 h-[230px] w-[185px] overflow-hidden rounded-br-[85px] rounded-tl-[85px] border-[10px] border-background shadow-card">
+              <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={759} height={900} loading="eager" decoding="async" className="h-full w-full object-cover" />
+            </div>
+            <div className="absolute bottom-28 right-5 h-px w-44 bg-accent/35" />
           </div>
         </div>
       </section>
@@ -96,7 +103,7 @@ function Index() {
         <div className="pf-container">
           <SectionIntro eyebrow="WHAT WE OFFER" title="Services for every space and soul" copy="From your palm to your home — a complete system of ancient wisdom." />
           <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {[services[0], services[1], services[2], services[4], services[9], services[11]].map((service, index) => <ServiceCard key={service.name} service={service} index={index} />)}
+            {services.slice(0, 6).map((service, index) => <ServiceCard key={service.name} service={service} index={index} />)}
           </div>
           <div className="mt-7 text-center"><Link to="/services" className="text-[13px] font-medium text-accent underline-offset-4 hover:underline">See all 12 services →</Link></div>
         </div>
