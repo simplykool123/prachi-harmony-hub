@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUp, Instagram, MessageCircle, Youtube } from "lucide-react";
+import { ArrowUp, ChevronDown, Instagram, MessageCircle, Youtube } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { navItems, whatsappUrl } from "./site-data";
+import { navItems, services, whatsappUrl } from "./site-data";
 
 const logoWhite = "/site-images/prachi-fulfagar-logo-white.png";
 
@@ -32,9 +32,30 @@ export function Header() {
         <Logo />
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
           {navItems.map((item) => (
-            <Link key={item.to} to={item.to} className="pf-nav-link">
-              {item.label}
-            </Link>
+            item.to === "/services" ? (
+              <div key={item.to} className="group relative py-4">
+                <Link to="/services" className="pf-nav-link inline-flex items-center gap-1.5">
+                  {item.label}<ChevronDown className="h-3.5 w-3.5 transition group-hover:rotate-180" />
+                </Link>
+                <div className="invisible absolute left-1/2 top-full z-50 w-[560px] -translate-x-1/2 translate-y-2 rounded-[18px] border border-border bg-card p-4 opacity-0 shadow-card-hover transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="grid grid-cols-2 gap-1.5">
+                    {services.map((service) => {
+                      const Icon = service.icon;
+                      return (
+                        <Link key={service.slug} to="/services/$serviceSlug" params={{ serviceSlug: service.slug }} className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[13px] font-medium text-foreground transition hover:bg-badge hover:text-primary">
+                          <Icon className="h-4 w-4 shrink-0 text-accent" strokeWidth={1.7} />
+                          <span>{service.name}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link key={item.to} to={item.to} className="pf-nav-link">
+                {item.label}
+              </Link>
+            )
           ))}
         </nav>
         <Button asChild size="sm" className="px-5 py-2.5 text-xs">
