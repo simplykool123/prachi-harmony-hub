@@ -42,16 +42,20 @@ function AboutPage() {
     <MotionSection className="pf-section bg-background">
       <div className="pf-container">
         <SectionIntro eyebrow="INTERNATIONAL RECOGNITION" title="Awards, authority and global presence" />
-        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {awards.map((award, index) => {
               const Icon = award.icon;
               return <article key={award.title} className="pf-card overflow-hidden">
-                <img src={award.image} alt={`${award.title} certificate`} width={800} height={600} loading="lazy" decoding="async" className="h-48 w-full object-cover object-top" />
-                <div className="p-6">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-badge text-accent"><Icon size={18} strokeWidth={1.6} /></div>
-                  <p className="mt-5 text-[9px] font-medium uppercase tracking-[2px] text-accent">AWARD 0{index + 1}</p>
-                  <h3 className="pf-h3 mt-2 text-[24px]">{award.title}</h3>
-                  <p className="mt-3 text-[13px] font-light leading-relaxed text-muted-foreground">{award.description}</p>
+                <div className="grid aspect-[4/3] place-items-center bg-card-soft p-3">
+                  <img src={award.image} alt={`${award.title} certificate`} width={800} height={600} loading="lazy" decoding="async" className="max-h-full w-full object-contain" />
+                </div>
+                <div className="p-5">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-badge text-accent"><Icon size={16} strokeWidth={1.6} /></div>
+                    <p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">AWARD 0{index + 1}</p>
+                  </div>
+                  <h3 className="pf-h3 mt-4 text-[22px]">{award.title}</h3>
+                  <p className="mt-2 text-[12px] font-light leading-relaxed text-muted-foreground">{award.description}</p>
                 </div>
               </article>;
             })}
