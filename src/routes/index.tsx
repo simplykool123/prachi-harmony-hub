@@ -87,7 +87,7 @@ function Index() {
       <MotionSection className="relative overflow-hidden bg-card py-12">
         <div className="absolute left-1/2 top-1/2 hidden h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border lg:block" />
         <div className="pf-container grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
-          <div className="grid divide-y divide-border md:grid-cols-3 md:divide-x md:divide-y-0 lg:col-span-2">
+          <div className="grid divide-y divide-border md:grid-cols-4 md:divide-x md:divide-y-0 lg:col-span-2">
             {stats.map(([value, suffix, label]) => (
               <div key={label} className="py-5 text-center md:py-0">
                 <div className="font-heading text-[48px] font-light leading-none text-accent"><CountUp value={Number(value)} suffix={String(suffix)} /></div>
@@ -133,12 +133,13 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="bg-warm py-10">
-        <div className="pf-container grid divide-y divide-border md:grid-cols-4 md:divide-x md:divide-y-0">
-          {stats.map(([value, suffix, label]) => (
-            <div key={label} className="py-5 text-center md:py-0">
-              <div className="font-heading text-[44px] font-light leading-none text-accent"><CountUp value={Number(value)} suffix={String(suffix)} /></div>
-              <p className="mt-2 text-[11px] font-medium tracking-[0.4px] text-muted-foreground">{label}</p>
+      <MotionSection className="relative overflow-hidden bg-warm py-12">
+        <div className="absolute left-[-8%] top-[-90px] h-[260px] w-[260px] rounded-full border border-accent/10" />
+        <div className="pf-container flex flex-wrap items-center justify-center gap-x-12 gap-y-5">
+          {processItems.map(([Icon, label]) => (
+            <div key={label} className="flex items-center gap-3 text-[13px] font-medium tracking-[0.6px] text-foreground">
+              <Icon className="h-4 w-4 text-accent" strokeWidth={1.8} />
+              <span>{label}</span>
             </div>
           ))}
         </div>
