@@ -1,10 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { cloneElement, type HTMLAttributes, type ReactElement } from "react";
-import { motion } from "framer-motion";
 import { Facebook, Instagram, MapPin, MessageCircle, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/prachi/PageHero";
-import { MotionSection, fadeUp } from "@/components/prachi/Motion";
+import { MotionSection } from "@/components/prachi/Motion";
 import { cities, services, whatsappUrl } from "@/components/prachi/site-data";
 
 export const Route = createFileRoute("/contact")({
@@ -22,7 +21,7 @@ function ContactPage() {
     <PageHero eyebrow="CONTACT" title="Begin your journey" copy="In-person across India, or online from anywhere in the world." />
     <MotionSection className="pf-section bg-background pt-10">
       <div className="pf-container grid gap-14 lg:grid-cols-[1fr_.9fr] lg:gap-[60px]">
-        <motion.form {...fadeUp} className="pf-card rounded-2xl p-9" onSubmit={(e) => e.preventDefault()}>
+        <form className="pf-card rounded-2xl p-9" onSubmit={(e) => e.preventDefault()}>
           <h2 className="pf-h3 mb-7">Send a message</h2>
           <div className="grid gap-5">
             <Field label="Full Name"><input type="text" /></Field>
@@ -39,8 +38,8 @@ function ContactPage() {
             <Field label="Message"><textarea rows={4} /></Field>
             <Button type="submit" variant="hero" className="w-full">Send Message</Button>
           </div>
-        </motion.form>
-        <motion.aside {...fadeUp}>
+        </form>
+        <aside>
           <h2 className="font-heading text-[28px] font-light text-foreground">How to reach Prachi</h2>
           <div className="mt-8">
             {cities.map((city) => <div key={city} className="flex gap-4 border-b border-border py-4">
@@ -59,7 +58,7 @@ function ContactPage() {
             <Youtube className="h-[18px] w-[18px] transition hover:text-accent" />
             <Facebook className="h-[18px] w-[18px] transition hover:text-accent" />
           </div>
-        </motion.aside>
+        </aside>
       </div>
     </MotionSection>
   </>;

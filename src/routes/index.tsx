@@ -1,16 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImageComposition } from "@/components/prachi/ImageComposition";
-import { CountUp, MotionSection, SectionIntro, fadeUp, staggerContainer, staggerItem } from "@/components/prachi/Motion";
+import { CountUp, MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
 import { awards, globalPresence, remedyHighlights, services, whatsappUrl } from "@/components/prachi/site-data";
-import vastuPlanImage from "@/assets/site-images/prachi-vastu-plan.jpg";
-import celestialPalmImage from "@/assets/site-images/prachi-celestial-palm.jpg";
-import homeRemediesImage from "@/assets/site-images/prachi-home-remedies.jpg";
-import energyElementsImage from "@/assets/site-images/prachi-energy-elements.jpg";
-import familyHomeImage from "@/assets/site-images/prachi-family-home.jpg";
+
+const vastuPlanImage = "/site-images/prachi-vastu-plan.jpg";
+const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
+const homeRemediesImage = "/site-images/prachi-home-remedies.jpg";
+const energyElementsImage = "/site-images/prachi-energy-elements.jpg";
+const familyHomeImage = "/site-images/prachi-family-home.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -53,45 +53,44 @@ function Index() {
   return (
     <>
       <section className="relative grid min-h-[560px] place-items-center overflow-hidden bg-background text-center lg:min-h-[calc(62vh-40px)]">
-        <motion.img
+        <img
           src={vastuPlanImage}
           alt="Vastu floor plan with brass compass"
-          width={1408}
-          height={960}
-          initial={{ opacity: 0, x: -36 }}
-          animate={{ opacity: 0.18, x: 0 }}
-          transition={{ duration: 1.1, ease: "easeOut" }}
+          width={960}
+          height={655}
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
           className="pointer-events-none absolute -left-24 top-12 hidden h-[440px] w-[440px] rounded-full object-cover lg:block"
         />
-        <motion.img
+        <img
           src={celestialPalmImage}
           alt="Palmistry consultation with celestial chart"
-          width={1120}
-          height={1328}
-          initial={{ opacity: 0, x: 36 }}
-          animate={{ opacity: 0.14, x: 0 }}
-          transition={{ duration: 1.1, ease: "easeOut", delay: 0.12 }}
+          width={759}
+          height={900}
+          loading="lazy"
+          decoding="async"
           className="pointer-events-none absolute -right-16 bottom-0 hidden h-[460px] w-[360px] rounded-t-full object-cover lg:block"
         />
         <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/8" />
         <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/12" />
         <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/7" />
-        <motion.div variants={staggerContainer} initial="hidden" animate="show" className="pf-container relative z-10 py-12">
-          <motion.p variants={staggerItem} className="mb-7 text-[10px] font-medium uppercase tracking-[3px] text-accent">
+        <div className="pf-container relative z-10 py-12">
+          <p className="mb-7 text-[10px] font-medium uppercase tracking-[3px] text-accent">
             Award-winning · Pan-India · International Sessions
-          </motion.p>
-          <motion.h1 className="pf-h1">
-            <motion.span className="block" variants={staggerItem}>Ancient wisdom.</motion.span>
-            <motion.span className="block italic text-accent" variants={staggerItem}>A balanced, peaceful life.</motion.span>
-          </motion.h1>
-          <motion.p variants={staggerItem} className="pf-body mx-auto mt-6 max-w-[480px] text-[15px]">
+          </p>
+          <h1 className="pf-h1">
+            <span className="block">Ancient wisdom.</span>
+            <span className="block italic text-accent">A balanced, peaceful life.</span>
+          </h1>
+          <p className="pf-body mx-auto mt-6 max-w-[480px] text-[15px]">
             Prachi Fulfagar guides you through Vastu Shastra, Palmistry and Vedic Astrology — helping homes, businesses and lives find their natural harmony.
-          </motion.p>
-          <motion.div variants={staggerItem} className="mt-10 flex flex-wrap justify-center gap-3.5">
+          </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-3.5">
             <Button asChild variant="hero"><Link to="/contact">Book a Consultation</Link></Button>
             <Button asChild variant="porcelain"><Link to="/services">Explore Services</Link></Button>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </section>
 
       <MotionSection className="bg-card py-14">
@@ -118,7 +117,7 @@ function Index() {
 
       <MotionSection className="pf-section overflow-hidden bg-card">
         <div className="pf-container grid items-center gap-16 lg:grid-cols-[46fr_54fr] lg:gap-20">
-          <motion.div {...fadeUp}>
+          <div>
             <p className="pf-eyebrow">HOME REMEDIES</p>
             <h2 className="pf-h2 mt-7">Small corrections that feel possible</h2>
             <p className="pf-body mt-5">Prachi’s work is solution-oriented — many improvements begin with simple placements, light, colour and element balance.</p>
@@ -132,7 +131,7 @@ function Index() {
                 </article>;
               })}
             </div>
-          </motion.div>
+          </div>
           <ImageComposition
             primary={{ src: homeRemediesImage, alt: "Practical Vastu home remedy with flowers and water in a real living room", width: 1280, height: 960 }}
             secondary={{ src: energyElementsImage, alt: "Vastu energy elements with plant water candle and stone", width: 1120, height: 1328 }}
@@ -154,13 +153,13 @@ function Index() {
 
       <MotionSection className="pf-section overflow-hidden bg-card">
         <div className="pf-container grid items-center gap-16 lg:grid-cols-[48fr_52fr] lg:gap-20">
-          <motion.div {...fadeUp}>
+          <div>
             <p className="pf-eyebrow">ABOUT PRACHI</p>
             <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>
             <p className="pf-body mt-5">Prachi Fulfagar is one of India's most credentialled Vastu and Palmistry consultants — combining both in a rare integrated practice that aligns you from the inside out.</p>
             <p className="pf-body mt-4">Consulting from Mumbai, Pune, Nashik and Kopargaon, she works with clients across India and internationally.</p>
             <Link to="/about" className="group mt-7 inline-flex text-[13px] font-medium text-accent">Read her full story <span className="transition group-hover:translate-x-1">→</span></Link>
-          </motion.div>
+          </div>
           <ImageComposition
             primary={{ src: familyHomeImage, alt: "Balanced family home interior after practical Vastu alignment", width: 1280, height: 960 }}
             secondary={{ src: celestialPalmImage, alt: "Palmistry and astrology consultation details", width: 1120, height: 1328 }}
@@ -173,14 +172,14 @@ function Index() {
           <SectionIntro eyebrow="BEFORE & AFTER" title="The impact of alignment" copy="The goal is not decoration — it is a home or workplace that starts supporting the life inside it." />
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
             {impactItems.map(([title, copy], index) => (
-              <motion.article {...fadeUp} key={title} transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.08 }} className="pf-card p-7">
+              <article key={title} className="pf-card p-7">
                 <p className="text-[10px] font-medium uppercase tracking-[2px] text-accent">Impact 0{index + 1}</p>
                 <h3 className="pf-h3 mt-4">{title}</h3>
                 <div className="my-5 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-[11px] text-muted-foreground">
                   <span>Blocked</span><span className="text-accent">→</span><span className="text-foreground">Aligned</span>
                 </div>
                 <p className="text-[13px] font-light leading-relaxed text-muted-foreground">{copy}</p>
-              </motion.article>
+              </article>
             ))}
           </div>
         </div>
@@ -192,10 +191,10 @@ function Index() {
           <div className="mt-14 grid gap-5 lg:grid-cols-2">
             {awards.map((award, index) => {
               const Icon = award.icon;
-              return <motion.article {...fadeUp} key={award.title} transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.08 }} className="pf-card grid gap-5 p-7 sm:grid-cols-[auto_1fr]">
+              return <article key={award.title} className="pf-card grid gap-5 p-7 sm:grid-cols-[auto_1fr]">
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-badge text-accent"><Icon size={22} strokeWidth={1.6} /></div>
                 <div><p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">Recognition 0{index + 1}</p><h3 className="pf-h3 mt-2">{award.title}</h3><p className="mt-2 text-[13px] font-light leading-relaxed text-muted-foreground">{award.description}</p></div>
-              </motion.article>;
+              </article>;
             })}
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-2.5">
@@ -209,21 +208,21 @@ function Index() {
           <SectionIntro eyebrow="CLIENT STORIES" title="Lives that found balance" />
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
             {testimonials.map(([quote, name, city], index) => (
-              <motion.article {...fadeUp} key={name} transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.08 }} className="pf-card overflow-hidden p-0">
+              <article key={name} className="pf-card overflow-hidden p-0">
                 <div className="h-[3px] bg-accent" />
                 <div className="p-8">
                   <p className="font-heading text-[17px] italic leading-relaxed text-foreground">“{quote}”</p>
                   <p className="mt-6 text-xs font-medium text-foreground">{name}</p>
                   <p className="mt-0.5 text-[11px] text-muted-foreground">{city}</p>
                 </div>
-              </motion.article>
+              </article>
             ))}
           </div>
         </div>
       </MotionSection>
 
       <MotionSection className="border-y border-border bg-warm py-[100px] text-center">
-        <motion.div {...fadeUp} className="pf-container">
+        <div className="pf-container">
           <div className="mx-auto mb-8 h-px w-12 bg-accent" />
           <h2 className="pf-h2">Begin your journey to harmony</h2>
           <p className="pf-body mx-auto mt-4 max-w-xl">Book a consultation — in person or online, across India and internationally.</p>
@@ -231,7 +230,7 @@ function Index() {
             <Button asChild variant="hero"><Link to="/contact">Book a Session</Link></Button>
             <Button asChild variant="porcelain"><a href={whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle className="text-whatsapp" />WhatsApp Now</a></Button>
           </div>
-        </motion.div>
+        </div>
       </MotionSection>
     </>
   );

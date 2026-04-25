@@ -1,8 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { fadeUp } from "@/components/prachi/Motion";
 import { cities, services, whatsappUrl } from "@/components/prachi/site-data";
 
 export const Route = createFileRoute("/services/$serviceSlug")({
@@ -179,11 +177,11 @@ const serviceDetails: Record<string, Detail> = {
 
 function DetailSection({ label, heading, children }: { label: string; heading: string; children: React.ReactNode }) {
   return (
-    <motion.section {...fadeUp} className="mt-16">
+    <section className="mt-16">
       <p className="text-[10px] font-medium uppercase leading-none tracking-[3px] text-accent">{label}</p>
       <h2 className="mt-5 font-heading text-[28px] font-light leading-tight text-foreground">{heading}</h2>
       <div className="mt-6">{children}</div>
-    </motion.section>
+    </section>
   );
 }
 
@@ -216,7 +214,7 @@ function ServiceDetailPage() {
           ← Back to Services
         </Link>
 
-        <motion.header {...fadeUp} className="relative mt-14 text-center">
+        <header className="relative mt-14 text-center">
           {detail.badge && (
             <span className="mb-6 inline-flex rounded-full bg-badge px-4 py-2 text-[10px] font-medium uppercase tracking-[2px] text-badge-foreground">
               {detail.badge}
@@ -228,7 +226,7 @@ function ServiceDetailPage() {
           <h1 className="mx-auto mt-8 font-heading text-[52px] font-light leading-[1.08] text-foreground">{service.name}</h1>
           <p className="mx-auto mt-5 max-w-xl text-[15px] font-light leading-relaxed text-muted-foreground">{service.description}</p>
           <div className="mx-auto mt-8 h-px w-[60px] bg-accent" />
-        </motion.header>
+        </header>
 
         <DetailSection label="Introduction" heading="A personal, practical approach">
           <p className="text-[15px] font-light leading-[1.85] text-muted-foreground">{detail.intro}</p>
@@ -256,7 +254,7 @@ function ServiceDetailPage() {
           </div>
         </DetailSection>
 
-        <motion.section {...fadeUp} className="mt-16 border-t border-accent/45 pt-10 text-center">
+        <section className="mt-16 border-t border-accent/45 pt-10 text-center">
           <h2 className="font-heading text-[32px] font-light leading-tight text-foreground">Ready to begin?</h2>
           <p className="mx-auto mt-3 max-w-lg text-[15px] font-light leading-relaxed text-muted-foreground">Book a personal consultation with Prachi — in person or online.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3.5">
@@ -267,7 +265,7 @@ function ServiceDetailPage() {
             {cities.map((city) => <span key={city} className="rounded-full border border-border bg-card px-4 py-2 text-[11px] text-muted-foreground">{city}</span>)}
           </div>
           <p className="mt-4 text-[12px] font-light text-muted-foreground">Remote sessions available worldwide</p>
-        </motion.section>
+        </section>
       </div>
     </main>
   );
