@@ -2,16 +2,14 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUp, Instagram, MessageCircle, Youtube } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import logoWhite from "@/assets/prachi-fulfagar-logo-white.png";
 import { navItems, whatsappUrl } from "./site-data";
 
 function Logo({ light = false }: { light?: boolean }) {
   return (
     <Link to="/" className="block leading-none" aria-label="Prachi Fulfagar home">
-      <div className={`font-heading text-xl font-light ${light ? "text-primary-foreground" : "text-foreground"}`}>
-        Prachi <span className="text-accent">·</span> Fulfagar
-      </div>
-      <div className="mt-1 font-body text-[10px] font-medium uppercase tracking-[1.5px] text-accent">
-        Vastu · Palmistry · Astrology
+      <div className={light ? "inline-flex rounded-sm bg-primary/35 px-3 py-2" : "inline-flex rounded-sm bg-accent/90 px-3 py-2"}>
+        <img src={logoWhite} alt="Prachi Fulfagar" width={1606} height={1098} className="h-11 w-auto object-contain" />
       </div>
     </Link>
   );
