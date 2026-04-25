@@ -84,15 +84,17 @@ function Index() {
         </div>
       </section>
 
-      <MotionSection className="bg-card py-14">
-        <div className="pf-container grid divide-y divide-border md:grid-cols-3 md:divide-x md:divide-y-0">
-          {pillars.map(([num, name, desc]) => (
-            <div key={num} className="px-10 py-8 text-center md:py-0">
-              <div className="font-heading text-[52px] font-light leading-none text-accent">{num}</div>
-              <h2 className="mt-4 font-body text-[13px] font-medium tracking-[0.5px] text-foreground">{name}</h2>
-              <p className="mx-auto mt-2 max-w-[180px] text-[13px] font-light leading-relaxed text-muted-foreground">{desc}</p>
-            </div>
-          ))}
+      <MotionSection className="relative overflow-hidden bg-card py-12">
+        <div className="absolute left-1/2 top-1/2 hidden h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border lg:block" />
+        <div className="pf-container grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+          <div className="grid divide-y divide-border md:grid-cols-3 md:divide-x md:divide-y-0 lg:col-span-2">
+            {stats.map(([value, suffix, label]) => (
+              <div key={label} className="py-5 text-center md:py-0">
+                <div className="font-heading text-[48px] font-light leading-none text-accent"><CountUp value={Number(value)} suffix={String(suffix)} /></div>
+                <p className="mt-2 text-[11px] font-medium tracking-[0.4px] text-muted-foreground">{label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </MotionSection>
 
