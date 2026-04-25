@@ -37,6 +37,13 @@ export type Service = {
   featured?: boolean;
 };
 
+export type AwardItem = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  image: string;
+};
+
 export const services: Service[] = [
   {
     name: "Palm + Vastu Combo",
@@ -120,9 +127,21 @@ export const remedyHighlights = [
   { title: "Work desk alignment", description: "Reorient desks and decision zones to strengthen focus, authority and business flow.", icon: BriefcaseBusiness },
 ];
 
-export const awards = [
-  { title: "Thailand Honorary Doctorate", description: "Conferred by the International Astrology Federation Inc. at the Thailand Triangle Summit.", icon: Award },
-  { title: "International Astro Purohit Award", description: "Awarded for outstanding contribution to the science of Vastu and Astrology.", icon: Landmark },
+export const awards: AwardItem[] = [
+  { title: "Thailand Honorary Doctorate", description: "Awarded by the International Astrology Federation Inc., an American Research Organization.", icon: Award, image: "/site-images/awards/thailand-honorary-doctorate.jpg" },
+  { title: "International Astro Purohit Award", description: "Awarded by the International Astrology Federation Inc. for participation in the Thailand Triangle Summit, Pattaya.", icon: Landmark, image: "/site-images/awards/international-astro-purohit-award.jpg" },
+  { title: "Indo Thailand-Vastu Brihaspati Award", description: "Recognition from the International Astrology Federation Inc. during the Thailand Triangle Summit held in Pattaya.", icon: Award, image: "/site-images/awards/indo-thailand-vastu-brihaspati-award.jpg" },
+  { title: "Indo Thailand Jyotish Puraskar Award", description: "Awarded for participation in the Thailand Triangle Summit covering medical astrology, numerology and Vastu.", icon: Landmark, image: "/site-images/awards/indo-thailand-jyotish-puraskar-award.jpg" },
+  { title: "Certified Medical Astrological Proficiency", description: "Certification received through the International Astrology Federation Inc. at the Thailand Triangle Summit.", icon: Award, image: "/site-images/awards/certified-medical-astrological-proficiency.jpg" },
+];
+
+export const customerStories = [
+  { quote: "When faced with tough decisions, I got some valuable advice and astrological guidance. Miss Prachi Fulfagar was very supportive and informative.", name: "Akshay Dixit", role: "Engineer" },
+  { quote: "I would highly recommend Arash Consultant to anyone looking for guidance and direction through astrology. Their honest approach and patience is unbelievable.", name: "Abhi Jain", role: "Owner, Pragati Turf" },
+  { quote: "One of the best Career Consultant organisations in Nashik. The counselling was truly satisfying and every point was explained in detail.", name: "Prashant Marathe", role: "Digital Marketer" },
+  { quote: "Your astrological insights have greatly enhanced our business strategy. Your advice is invaluable in guiding our decisions and navigating challenges.", name: "Rahul Bhingardive", role: "Business Manager" },
+  { quote: "Your thorough understanding of Vastu principles and practical recommendations have made a positive difference in our space.", name: "Krishna", role: "Pigmy Agent" },
+  { quote: "Your insights into astrological trends have been invaluable in identifying new business opportunities and have significantly contributed to our growth.", name: "Vaishali", role: "Business Development Manager" },
 ];
 
 export const globalPresence = ["India", "UAE", "UK", "USA", "Singapore", "Australia"];

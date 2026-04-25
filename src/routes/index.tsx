@@ -3,7 +3,7 @@ import { Compass, Hand, Leaf, MessageCircle, Moon, Sparkles } from "lucide-react
 import { Button } from "@/components/ui/button";
 import { CountUp, MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
-import { awards, globalPresence, remedyHighlights, services, whatsappUrl } from "@/components/prachi/site-data";
+import { awards, customerStories, globalPresence, remedyHighlights, services, whatsappUrl } from "@/components/prachi/site-data";
 
 const vastuPlanImage = "/site-images/prachi-vastu-plan.jpg";
 const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
@@ -34,15 +34,6 @@ const stats = [
   [5000, "+", "Clients worldwide"],
   [4, "", "City offices"],
   [12, "+", "Countries served"],
-];
-
-const testimonials = [
-  ["Her Vastu consultation transformed our office energy entirely. The difference was almost immediate — smoother operations, happier team.", "Corporate Client", "Mumbai"],
-  ["The palm reading revealed things about myself I had never been able to articulate. Deeply reassuring and accurate.", "Remote Client", "Dubai"],
-  ["My child's focus improved after Prachi's Vastu corrections for the study room. Simple changes, profound results.", "Parent", "Nashik"],
-  ["Prachi explained every correction so calmly that the whole family could follow it without fear or confusion.", "Home Client", "Pune"],
-  ["Our shop entrance and seating changes brought a clear shift in enquiries and confidence within weeks.", "Business Owner", "Nashik"],
-  ["The online consultation was detailed, practical and personal. We felt guided even from another country.", "NRI Client", "Singapore"],
 ];
 
 const impactItems = [
@@ -225,13 +216,13 @@ function Index() {
           <SectionIntro eyebrow="CLIENT STORIES" title="Lives that found balance" />
           <div className="pf-story-marquee mt-14 overflow-hidden">
             <div className="pf-story-track flex w-max gap-5">
-              {[...testimonials, ...testimonials].map(([quote, name, city], index) => (
-              <article key={`${name}-${index}`} className="pf-card w-[310px] shrink-0 overflow-hidden p-0 sm:w-[360px]">
+              {[...customerStories, ...customerStories].map((story, index) => (
+              <article key={`${story.name}-${index}`} className="pf-card w-[310px] shrink-0 overflow-hidden p-0 sm:w-[360px]">
                 <div className="h-[3px] bg-accent" />
                 <div className="p-8">
-                  <p className="font-heading text-[17px] italic leading-relaxed text-foreground">“{quote}”</p>
-                  <p className="mt-6 text-xs font-medium text-foreground">{name}</p>
-                  <p className="mt-0.5 text-[11px] text-muted-foreground">{city}</p>
+                  <p className="font-heading text-[17px] italic leading-relaxed text-foreground">“{story.quote}”</p>
+                  <p className="mt-6 text-xs font-medium text-foreground">{story.name}</p>
+                  <p className="mt-0.5 text-[11px] text-muted-foreground">{story.role}</p>
                 </div>
               </article>
               ))}
