@@ -192,19 +192,19 @@ const serviceImages: Record<string, { src: string; alt: string }> = {
 
 function DetailSection({ label, heading, children }: { label: string; heading: string; children: React.ReactNode }) {
   return (
-    <section className="mt-16">
+    <section className="mt-10">
       <p className="text-[10px] font-medium uppercase leading-none tracking-[3px] text-accent">{label}</p>
-      <h2 className="mt-5 font-heading text-[28px] font-light leading-tight text-foreground">{heading}</h2>
-      <div className="mt-6">{children}</div>
+      <h2 className="mt-3 font-heading text-[26px] font-light leading-tight text-foreground">{heading}</h2>
+      <div className="mt-4">{children}</div>
     </section>
   );
 }
 
 function DotList({ items }: { items: string[] }) {
   return (
-    <ul className="space-y-4">
+    <ul className="grid gap-3 sm:grid-cols-2">
       {items.map((item) => (
-        <li key={item} className="grid grid-cols-[auto_1fr] gap-3 text-[14px] font-light leading-relaxed text-foreground">
+        <li key={item} className="grid grid-cols-[auto_1fr] gap-3 rounded-xl border border-border bg-card p-4 text-[13px] font-light leading-relaxed text-foreground">
           <span className="mt-[0.65em] h-1.5 w-1.5 rounded-full bg-accent" />
           <span>{item}</span>
         </li>
