@@ -1,13 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hand, MapPin } from "lucide-react";
-import { ImageComposition } from "@/components/prachi/ImageComposition";
 import { PageHero } from "@/components/prachi/PageHero";
 import { MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { awards, cities, globalPresence } from "@/components/prachi/site-data";
 
-const vastuPlanImage = "/site-images/prachi-vastu-plan.jpg";
 const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
-const officeVastuImage = "/site-images/prachi-office-vastu.jpg";
 const prachiPortraitImage = "/site-images/prachi-fulfagar-portrait.jpg";
 
 export const Route = createFileRoute("/about")({
@@ -45,21 +42,19 @@ function AboutPage() {
     <MotionSection className="pf-section bg-background">
       <div className="pf-container">
         <SectionIntro eyebrow="INTERNATIONAL RECOGNITION" title="Awards, authority and global presence" />
-        <div className="mt-14 grid gap-10 lg:grid-cols-[58fr_42fr] lg:items-center">
-          <div className="grid gap-5">
+        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {awards.map((award, index) => {
               const Icon = award.icon;
-              return <article key={award.title} className="pf-card grid gap-5 border-l-[3px] border-l-accent p-7 sm:grid-cols-[auto_1fr]">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-badge text-accent"><Icon size={20} strokeWidth={1.6} /></div>
-                <div><p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">AWARD 0{index + 1}</p><h3 className="pf-h3 mt-2 text-[26px]">{award.title}</h3><p className="mt-3 text-[13px] font-light leading-relaxed text-muted-foreground">{award.description}</p></div>
+              return <article key={award.title} className="pf-card overflow-hidden">
+                <img src={award.image} alt={`${award.title} certificate`} width={800} height={600} loading="lazy" decoding="async" className="h-48 w-full object-cover object-top" />
+                <div className="p-6">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-badge text-accent"><Icon size={18} strokeWidth={1.6} /></div>
+                  <p className="mt-5 text-[9px] font-medium uppercase tracking-[2px] text-accent">AWARD 0{index + 1}</p>
+                  <h3 className="pf-h3 mt-2 text-[24px]">{award.title}</h3>
+                  <p className="mt-3 text-[13px] font-light leading-relaxed text-muted-foreground">{award.description}</p>
+                </div>
               </article>;
             })}
-          </div>
-          <ImageComposition
-            primary={{ src: officeVastuImage, alt: "Professional office Vastu consultation with plan and remedies", width: 1280, height: 960 }}
-            secondary={{ src: vastuPlanImage, alt: "Detailed Vastu floor plan consultation setting", width: 1408, height: 960 }}
-            align="right"
-          />
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-2.5">
           {globalPresence.map((place) => <span key={place} className="rounded-full border border-border bg-card px-4 py-2 text-[11px] text-muted-foreground">{place}</span>)}
