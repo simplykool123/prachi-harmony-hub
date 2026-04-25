@@ -168,32 +168,32 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="pf-section bg-background">
+      <MotionSection className="bg-background py-12">
         <div className="pf-container">
           <SectionIntro eyebrow="BEFORE & AFTER" title="The impact of alignment" copy="The goal is not decoration — it is a home or workplace that starts supporting the life inside it." />
-          <div className="mt-14 grid gap-5 lg:grid-cols-3">
+          <div className="mt-9 grid gap-4 lg:grid-cols-3">
             {impactItems.map(([title, copy], index) => (
-              <article key={title} className="pf-card p-7">
+              <article key={title} className="pf-card p-5">
                 <p className="text-[10px] font-medium uppercase tracking-[2px] text-accent">Impact 0{index + 1}</p>
-                <h3 className="pf-h3 mt-4">{title}</h3>
-                <div className="my-5 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-[11px] text-muted-foreground">
+                <h3 className="pf-h3 mt-3">{title}</h3>
+                <div className="my-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-[11px] text-muted-foreground">
                   <span>Blocked</span><span className="text-accent">→</span><span className="text-foreground">Aligned</span>
                 </div>
-                <p className="text-[13px] font-light leading-relaxed text-muted-foreground">{copy}</p>
+                <p className="text-[12px] font-light leading-relaxed text-muted-foreground">{copy}</p>
               </article>
             ))}
           </div>
         </div>
       </MotionSection>
 
-      <MotionSection className="pf-section bg-card">
+      <MotionSection className="bg-card py-12">
         <div className="pf-container">
           <SectionIntro eyebrow="AUTHORITY" title="Awards, recognition and global reach" copy="A trusted practice serving Indian and international clients with recognised expertise." />
-          <div className="mt-14 grid gap-5 lg:grid-cols-2">
+          <div className="mt-9 grid gap-4 lg:grid-cols-2">
             {awards.map((award, index) => {
               const Icon = award.icon;
-              return <article key={award.title} className="pf-card grid gap-5 p-7 sm:grid-cols-[auto_1fr]">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-badge text-accent"><Icon size={22} strokeWidth={1.6} /></div>
+              return <article key={award.title} className="pf-card grid gap-4 p-5 sm:grid-cols-[auto_1fr]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-badge text-accent"><Icon size={20} strokeWidth={1.6} /></div>
                 <div><p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">Recognition 0{index + 1}</p><h3 className="pf-h3 mt-2">{award.title}</h3><p className="mt-2 text-[13px] font-light leading-relaxed text-muted-foreground">{award.description}</p></div>
               </article>;
             })}
