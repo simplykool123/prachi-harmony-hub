@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUp, ChevronDown, Instagram, MessageCircle, Youtube } from "lucide-react";
+import { ArrowUp, Instagram, MessageCircle, Youtube } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { navItems, services, whatsappUrl } from "./site-data";
@@ -34,8 +34,8 @@ export function Header() {
           {navItems.map((item) => (
             item.to === "/services" ? (
               <div key={item.to} className="group relative py-4">
-                <Link to="/services" className="pf-nav-link inline-flex items-center gap-1.5">
-                  {item.label}<ChevronDown className="h-3.5 w-3.5 transition group-hover:rotate-180" />
+                <Link to="/services" className="pf-nav-link">
+                  {item.label}
                 </Link>
                 <div className="invisible absolute left-1/2 top-full z-50 w-[560px] -translate-x-1/2 translate-y-2 rounded-[18px] border border-border bg-card p-4 opacity-0 shadow-card-hover transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                   <div className="grid grid-cols-2 gap-1.5">
