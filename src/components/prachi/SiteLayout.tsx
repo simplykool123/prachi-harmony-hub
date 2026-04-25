@@ -10,7 +10,7 @@ function Logo({ light = false }: { light?: boolean }) {
   return (
     <Link to="/" className="block leading-none" aria-label="Prachi Fulfagar home">
       <div className={light ? "inline-flex px-1 py-1" : "inline-flex px-1 py-1"}>
-        <img src={logoWhite} alt="Prachi Fulfagar" width={360} height={246} className="h-11 w-auto object-contain" />
+        <img src={logoWhite} alt="Prachi Fulfagar" width={360} height={246} loading="eager" decoding="async" className="h-11 w-auto object-contain" />
       </div>
     </Link>
   );
