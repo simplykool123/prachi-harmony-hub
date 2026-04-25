@@ -2,13 +2,13 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUp, Instagram, MessageCircle, Youtube } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import logoWhite from "@/assets/prachi-fulfagar-logo-white.png";
+import logoWhite from "@/assets/site-images/prachi-fulfagar-logo-white.png";
 import { navItems, whatsappUrl } from "./site-data";
 
 function Logo({ light = false }: { light?: boolean }) {
   return (
     <Link to="/" className="block leading-none" aria-label="Prachi Fulfagar home">
-      <div className={light ? "inline-flex rounded-sm bg-primary/35 px-3 py-2" : "inline-flex rounded-sm bg-accent/90 px-3 py-2"}>
+      <div className={light ? "inline-flex px-1 py-1" : "inline-flex px-1 py-1"}>
         <img src={logoWhite} alt="Prachi Fulfagar" width={1606} height={1098} className="h-11 w-auto object-contain" />
       </div>
     </Link>
@@ -26,7 +26,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-40 border-b border-accent/25 bg-card/90 backdrop-blur-sm transition-shadow ${scrolled ? "shadow-nav" : ""}`}>
+    <header className={`sticky top-0 z-40 border-b border-primary-foreground/15 bg-footer text-primary-foreground transition-shadow ${scrolled ? "shadow-nav" : ""}`}>
       <div className="pf-container flex items-center justify-between gap-5 py-[18px]">
         <Logo />
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
@@ -47,7 +47,7 @@ export function Header() {
 export function Footer() {
   const footerLinks = navItems.filter((item) => item.to !== "/blog");
   return (
-    <footer className="border-t border-accent/20 bg-footer py-12 text-primary-foreground">
+    <footer className="border-t border-primary-foreground/15 bg-footer py-12 text-primary-foreground">
       <div className="pf-container grid gap-8 md:grid-cols-3 md:items-start">
         <div>
           <Logo light />
