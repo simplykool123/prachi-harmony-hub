@@ -10,6 +10,7 @@ const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
 const homeRemediesImage = "/site-images/prachi-home-remedies.jpg";
 const energyElementsImage = "/site-images/prachi-energy-elements.jpg";
 const prachiPortraitImage = "/site-images/prachi-fulfagar-portrait.jpg";
+const orangeArtworkImage = "/site-images/prachi-orange-artwork.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -141,10 +142,7 @@ function Index() {
           </div>
           <div className="relative grid min-h-[540px] grid-cols-2 gap-5">
             <img src={homeRemediesImage} alt="Practical Vastu home remedy with flowers and water in a real living room" width={1280} height={960} loading="lazy" decoding="async" className="h-[310px] w-full rounded-[28px] rounded-br-[120px] object-cover shadow-card" />
-            <div className="relative overflow-hidden rounded-full bg-footer p-10 text-center text-foreground shadow-card">
-              <Leaf className="mx-auto h-14 w-14 text-accent" strokeWidth={1.2} />
-              <p className="mt-5 font-heading text-[28px] leading-none">Harmony</p>
-            </div>
+            <img src={orangeArtworkImage} alt="Orange spiritual harmony artwork" width={1280} height={1280} loading="lazy" decoding="async" className="h-[310px] w-full object-contain" />
             <div className="relative mt-6 flex items-center justify-center rounded-t-full border border-border bg-background p-8">
               <div className="pf-compass-orbit h-36 w-36 rounded-full border border-accent/25" />
               <SunMoon className="absolute h-10 w-10 text-accent" strokeWidth={1.3} />
