@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Compass, Hand, Leaf, MessageCircle, Moon, Sparkles } from "lucide-react";
+import { Compass, Hand, Leaf, MessageCircle, Moon, SunMoon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CountUp, MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
@@ -45,7 +45,7 @@ const impactItems = [
 const processItems = [
   [Compass, "Discovery"],
   [Moon, "Diagnosis"],
-  [Sparkles, "Design"],
+  [SunMoon, "Design"],
   [Leaf, "Alignment"],
 ] as const;
 
@@ -147,7 +147,7 @@ function Index() {
             </div>
             <div className="relative mt-6 flex items-center justify-center rounded-t-full border border-border bg-background p-8">
               <div className="pf-compass-orbit h-36 w-36 rounded-full border border-accent/25" />
-              <Sparkles className="absolute h-10 w-10 text-accent" strokeWidth={1.3} />
+              <SunMoon className="absolute h-10 w-10 text-accent" strokeWidth={1.3} />
             </div>
             <img src={energyElementsImage} alt="Vastu energy elements with plant water candle and stone" width={1120} height={1328} loading="lazy" decoding="async" className="-mt-16 h-[390px] w-full rounded-t-full object-cover shadow-card" />
           </div>
