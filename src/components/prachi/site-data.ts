@@ -70,12 +70,6 @@ export const services: Service[] = [
     icon: Hand,
   },
   {
-    name: "Geo Stress Correction",
-    slug: "geo-stress",
-    description: "Identify disturbed zones and apply non-invasive remedies for beds, desks and high-use areas.",
-    icon: Zap,
-  },
-  {
     name: "Pyramidology",
     slug: "pyramidology",
     description: "Targeted pyramid placements to correct imbalances when renovation is not possible.",
@@ -110,6 +104,12 @@ export const services: Service[] = [
     slug: "career-astrology",
     description: "Chart-guided clarity for professional decisions, business timing and important transitions.",
     icon: Star,
+  },
+  {
+    name: "Geo Stress Correction",
+    slug: "geo-stress",
+    description: "Identify disturbed zones and apply non-invasive remedies for beds, desks and high-use areas.",
+    icon: Zap,
   },
 ];
 

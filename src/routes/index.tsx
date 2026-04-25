@@ -61,21 +61,23 @@ const processItems = [
 function Index() {
   return (
     <>
-      <section className="relative min-h-[680px] overflow-hidden bg-background">
-        <div className="absolute inset-y-0 right-0 w-full bg-footer lg:w-[58%]" />
-        <img src={energyElementsImage} alt="Vastu energy elements arranged for harmony" width={1120} height={1328} loading="eager" decoding="async" fetchPriority="high" className="absolute inset-y-0 right-0 h-full w-full object-cover opacity-35 lg:w-[58%]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/92 to-background/30" />
-        <div className="absolute right-[8%] top-[20%] hidden h-[280px] w-[280px] rounded-full border border-accent/15 lg:block" />
-        <div className="pf-compass-orbit absolute right-[13%] top-[28%] hidden h-[190px] w-[190px] rounded-full border border-accent/20 before:absolute before:left-1/2 before:top-0 before:h-full before:w-px before:bg-accent/15 after:absolute after:left-0 after:top-1/2 after:h-px after:w-full after:bg-accent/15 lg:block" />
-        <div className="pf-container relative z-10 flex min-h-[680px] items-center pt-24">
-          <div className="max-w-[650px]">
-            <p className="pf-eyebrow">Prachifulfagar</p>
-            <h1 className="mt-8 max-w-3xl font-heading text-[56px] font-light leading-[1.04] text-foreground sm:text-[72px] lg:text-[88px]">
+      <section className="relative min-h-[690px] overflow-hidden bg-background">
+        <div className="absolute inset-y-0 right-0 hidden w-[48%] rounded-bl-[180px] bg-footer lg:block" />
+        <div className="absolute right-[7%] top-[18%] hidden h-[390px] w-[310px] overflow-hidden rounded-t-full rounded-br-[110px] shadow-card lg:block">
+          <img src={energyElementsImage} alt="Vastu energy elements arranged for harmony" width={1120} height={1328} loading="eager" decoding="async" fetchPriority="high" className="h-full w-full object-cover" />
+        </div>
+        <div className="absolute right-[31%] top-[46%] hidden h-[210px] w-[170px] overflow-hidden rounded-bl-[80px] rounded-tr-[80px] border-[10px] border-background shadow-card lg:block">
+          <img src={celestialPalmImage} alt="Palmistry and astrology details" width={759} height={900} loading="eager" decoding="async" className="h-full w-full object-cover" />
+        </div>
+        <div className="pf-compass-orbit absolute right-[17%] top-[15%] hidden h-[180px] w-[180px] rounded-full border border-accent/20 before:absolute before:left-1/2 before:top-0 before:h-full before:w-px before:bg-accent/15 after:absolute after:left-0 after:top-1/2 after:h-px after:w-full after:bg-accent/15 lg:block" />
+        <div className="pf-container relative z-10 flex min-h-[690px] items-center pt-24">
+          <div className="max-w-[620px]">
+            <p className="pf-eyebrow">Vastu • Palmistry • Astrology</p>
+            <h1 className="mt-8 max-w-3xl font-heading text-[56px] font-light leading-[1.04] text-foreground sm:text-[72px] lg:text-[86px]">
               See the unseen change
             </h1>
-            <p className="mt-5 font-heading text-[24px] italic text-accent">With Prachi Fulfagar</p>
             <p className="mt-6 max-w-[520px] text-[16px] font-light leading-relaxed text-muted-foreground">
-              Vastu Consultant, Palmistry and Career Consultant guidance for homes, businesses and personal clarity.
+              Personal guidance for homes, businesses and life decisions through Vastu, Palmistry and Career Astrology.
             </p>
             <div className="mt-9 flex flex-wrap gap-3.5">
               <Button asChild variant="hero"><Link to="/contact">Book A Consultation</Link></Button>
@@ -103,7 +105,7 @@ function Index() {
         <div className="pf-container">
           <SectionIntro eyebrow="WHAT WE OFFER" title="Services for every space and soul" copy="From your palm to your home — a complete system of ancient wisdom." />
           <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {[services[0], services[1], services[2], services[9], services[4], services[5]].map((service, index) => <ServiceCard key={service.name} service={service} index={index} />)}
+            {[services[0], services[1], services[2], services[4], services[9], services[11]].map((service, index) => <ServiceCard key={service.name} service={service} index={index} />)}
           </div>
           <div className="mt-7 text-center"><Link to="/services" className="text-[13px] font-medium text-accent underline-offset-4 hover:underline">See all 12 services →</Link></div>
         </div>
