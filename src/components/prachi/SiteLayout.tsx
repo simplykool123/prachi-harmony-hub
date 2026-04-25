@@ -56,7 +56,6 @@ export function Footer() {
           <p className="mt-4 text-[11px] text-primary-foreground/30">© 2025 PrachiFulfagar.com</p>
         </div>
         <nav className="flex flex-wrap gap-x-6 gap-y-3 md:justify-center" aria-label="Footer navigation">
-          <Link to="/" className="text-xs text-primary-foreground/40 transition hover:text-primary-foreground/80">Home</Link>
           {footerLinks.map((item) => (
             <Link key={item.to} to={item.to} className="text-xs text-primary-foreground/40 transition hover:text-primary-foreground/80">
               {item.label}
