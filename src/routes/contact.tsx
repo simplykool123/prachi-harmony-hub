@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { cloneElement, type ReactElement } from "react";
+import { cloneElement, type HTMLAttributes, type ReactElement } from "react";
 import { motion } from "framer-motion";
 import { Facebook, Instagram, MapPin, MessageCircle, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/prachi/PageHero";
-import { fadeUp } from "@/components/prachi/Motion";
+import { MotionSection, fadeUp } from "@/components/prachi/Motion";
 import { cities, services, whatsappUrl } from "@/components/prachi/site-data";
 
 export const Route = createFileRoute("/contact")({
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   return <>
     <PageHero eyebrow="CONTACT" title="Begin your journey" copy="In-person across India, or online from anywhere in the world." />
-    <section className="pf-section bg-background pt-10">
+    <MotionSection className="pf-section bg-background pt-10">
       <div className="pf-container grid gap-14 lg:grid-cols-[1fr_.9fr] lg:gap-[60px]">
         <motion.form {...fadeUp} className="pf-card rounded-2xl p-9" onSubmit={(e) => e.preventDefault()}>
           <h2 className="pf-h3 mb-7">Send a message</h2>
@@ -61,11 +61,11 @@ function ContactPage() {
           </div>
         </motion.aside>
       </div>
-    </section>
+    </MotionSection>
   </>;
 }
 
-function Field({ label, children }: { label: string; children: ReactElement }) {
+function Field({ label, children }: { label: string; children: ReactElement<HTMLAttributes<HTMLElement>> }) {
   const controlClass = "w-full rounded-lg border border-border bg-background px-4 py-[13px] text-[13px] font-light text-foreground outline-none transition focus:border-accent focus:shadow-[0_0_0_3px_rgb(232_160_32_/_0.1)]";
   return (
     <label className="block">

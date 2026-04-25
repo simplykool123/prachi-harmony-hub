@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CountUp, SectionIntro, fadeUp } from "@/components/prachi/Motion";
+import { CountUp, MotionSection, SectionIntro, fadeUp, staggerContainer, staggerItem } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
 import { services, whatsappUrl } from "@/components/prachi/site-data";
 
@@ -44,25 +44,25 @@ function Index() {
         <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/8" />
         <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/12" />
         <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/7" />
-        <div className="pf-container relative z-10 py-20">
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1, duration: 0.7 }} className="mb-7 text-[10px] font-medium uppercase tracking-[3px] text-accent">
+        <motion.div variants={staggerContainer} initial="hidden" animate="show" className="pf-container relative z-10 py-20">
+          <motion.p variants={staggerItem} className="mb-7 text-[10px] font-medium uppercase tracking-[3px] text-accent">
             Award-winning · Pan-India · International Sessions
           </motion.p>
-          <motion.h1 className="pf-h1" initial="hidden" animate="show">
-            <motion.span className="block" variants={{ hidden: { opacity: 0, y: 26 }, show: { opacity: 1, y: 0, transition: { delay: 0.25, duration: 0.7, ease: "easeOut" } } }}>Ancient wisdom.</motion.span>
-            <motion.span className="block italic text-accent" variants={{ hidden: { opacity: 0, y: 26 }, show: { opacity: 1, y: 0, transition: { delay: 0.4, duration: 0.7, ease: "easeOut" } } }}>A balanced, peaceful life.</motion.span>
+          <motion.h1 className="pf-h1">
+            <motion.span className="block" variants={staggerItem}>Ancient wisdom.</motion.span>
+            <motion.span className="block italic text-accent" variants={staggerItem}>A balanced, peaceful life.</motion.span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.55, duration: 0.7 }} className="pf-body mx-auto mt-6 max-w-[480px] text-[15px]">
+          <motion.p variants={staggerItem} className="pf-body mx-auto mt-6 max-w-[480px] text-[15px]">
             Prachi Fulfagar guides you through Vastu Shastra, Palmistry and Vedic Astrology — helping homes, businesses and lives find their natural harmony.
           </motion.p>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7, duration: 0.7 }} className="mt-10 flex flex-wrap justify-center gap-3.5">
+          <motion.div variants={staggerItem} className="mt-10 flex flex-wrap justify-center gap-3.5">
             <Button asChild variant="hero"><Link to="/contact">Book a Consultation</Link></Button>
             <Button asChild variant="porcelain"><Link to="/services">Explore Services</Link></Button>
           </motion.div>
-        </div>
+        </motion.div>
       </section>
 
-      <section className="bg-card py-14">
+      <MotionSection className="bg-card py-14">
         <div className="pf-container grid divide-y divide-border md:grid-cols-3 md:divide-x md:divide-y-0">
           {pillars.map(([num, name, desc]) => (
             <div key={num} className="px-10 py-8 text-center md:py-0">
@@ -72,9 +72,9 @@ function Index() {
             </div>
           ))}
         </div>
-      </section>
+      </MotionSection>
 
-      <section className="pf-section bg-background">
+      <MotionSection className="pf-section bg-background">
         <div className="pf-container">
           <SectionIntro eyebrow="WHAT WE OFFER" title="Services for every space and soul" copy="From your palm to your home — a complete system of ancient wisdom." />
           <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -82,9 +82,9 @@ function Index() {
           </div>
           <div className="mt-10 text-center"><Link to="/services" className="text-[13px] font-medium text-accent underline-offset-4 hover:underline">See all 12 services →</Link></div>
         </div>
-      </section>
+      </MotionSection>
 
-      <section className="bg-warm py-14">
+      <MotionSection className="bg-warm py-14">
         <div className="pf-container grid divide-y divide-border md:grid-cols-4 md:divide-x md:divide-y-0">
           {stats.map(([value, suffix, label]) => (
             <div key={label} className="py-6 text-center md:py-0">
@@ -93,9 +93,9 @@ function Index() {
             </div>
           ))}
         </div>
-      </section>
+      </MotionSection>
 
-      <section className="pf-section bg-card">
+      <MotionSection className="pf-section bg-card">
         <div className="pf-container grid items-center gap-16 lg:grid-cols-[55fr_45fr] lg:gap-20">
           <motion.div {...fadeUp}>
             <p className="pf-eyebrow">ABOUT PRACHI</p>
@@ -114,9 +114,9 @@ function Index() {
             ))}
           </div>
         </div>
-      </section>
+      </MotionSection>
 
-      <section className="pf-section bg-background">
+      <MotionSection className="pf-section bg-background">
         <div className="pf-container">
           <SectionIntro eyebrow="CLIENT STORIES" title="Lives that found balance" />
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
@@ -132,9 +132,9 @@ function Index() {
             ))}
           </div>
         </div>
-      </section>
+      </MotionSection>
 
-      <section className="border-y border-border bg-warm py-[100px] text-center">
+      <MotionSection className="border-y border-border bg-warm py-[100px] text-center">
         <motion.div {...fadeUp} className="pf-container">
           <div className="mx-auto mb-8 h-px w-12 bg-accent" />
           <h2 className="pf-h2">Begin your journey to harmony</h2>
@@ -144,7 +144,7 @@ function Index() {
             <Button asChild variant="porcelain"><a href={whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle className="text-whatsapp" />WhatsApp Now</a></Button>
           </div>
         </motion.div>
-      </section>
+      </MotionSection>
     </>
   );
 }

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { PageHero } from "@/components/prachi/PageHero";
-import { SectionIntro, fadeUp } from "@/components/prachi/Motion";
+import { MotionSection, SectionIntro, fadeUp } from "@/components/prachi/Motion";
 import { cities } from "@/components/prachi/site-data";
 
 export const Route = createFileRoute("/about")({
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return <>
     <PageHero eyebrow="ABOUT" title="Where ancient wisdom meets modern clarity" copy="A rare combination of Palmistry and Vastu Shastra — personally guided." />
-    <section className="pf-section bg-card">
+    <MotionSection className="pf-section bg-card">
       <div className="pf-container grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
         <motion.div {...fadeUp} className="grid aspect-[4/5] place-items-center rounded-2xl bg-warm outline outline-1 outline-offset-8 outline-accent/30">
           <p className="font-heading text-3xl italic text-muted-foreground">Prachi Fulfagar</p>
@@ -31,8 +31,8 @@ function AboutPage() {
           <p className="pf-body mt-4">Today, Prachi consults from offices in Mumbai, Pune, Nashik and Kopargaon, and works with clients across India and internationally.</p>
         </motion.div>
       </div>
-    </section>
-    <section className="pf-section bg-background">
+    </MotionSection>
+    <MotionSection className="pf-section bg-background">
       <div className="pf-container">
         <SectionIntro eyebrow="INTERNATIONAL RECOGNITION" title="Globally recognised expertise" />
         <div className="mt-14 grid gap-6 md:grid-cols-2">
@@ -45,8 +45,8 @@ function AboutPage() {
           ))}
         </div>
       </div>
-    </section>
-    <section className="pf-section bg-card">
+    </MotionSection>
+    <MotionSection className="pf-section bg-card">
       <div className="pf-container text-center">
         <SectionIntro eyebrow="OFFICES" title="Where you can find Prachi" />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -59,6 +59,6 @@ function AboutPage() {
         </div>
         <p className="mt-9 font-heading text-base italic text-muted-foreground">Remote consultations available worldwide — via Zoom, WhatsApp or phone.</p>
       </div>
-    </section>
+    </MotionSection>
   </>;
 }

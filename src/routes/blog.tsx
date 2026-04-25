@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/prachi/PageHero";
+import { MotionSection } from "@/components/prachi/Motion";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({ meta: [
@@ -15,6 +16,6 @@ export const Route = createFileRoute("/blog")({
 function BlogPage() {
   return <>
     <PageHero eyebrow="BLOG" title="Insights for a balanced life" copy="Selected notes on homes, hands and planetary wisdom will arrive soon." />
-    <section className="pf-section bg-background pt-10 text-center"><Button asChild variant="porcelain"><Link to="/services">Explore Services</Link></Button></section>
+    <MotionSection className="pf-section bg-background pt-10 text-center"><Button asChild variant="porcelain"><Link to="/services">Explore Services</Link></Button></MotionSection>
   </>;
 }

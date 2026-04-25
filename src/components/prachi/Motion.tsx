@@ -1,5 +1,5 @@
 import { motion, useInView, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { type ReactNode, useEffect, useRef } from "react";
 
 export const fadeUp = {
   initial: { opacity: 0, y: 32 },
@@ -7,6 +7,24 @@ export const fadeUp = {
   viewport: { once: true, amount: 0.22 },
   transition: { duration: 0.7, ease: "easeOut" },
 } as const;
+
+export const staggerContainer = {
+  hidden: { opacity: 1 },
+  show: { opacity: 1, transition: { staggerChildren: 0.14, delayChildren: 0.12 } },
+} as const;
+
+export const staggerItem = {
+  hidden: { opacity: 0, y: 28 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.72, ease: "easeOut" } },
+} as const;
+
+export function MotionSection({ children, className }: { children: ReactNode; className?: string }) {
+  return (
+    <motion.section {...fadeUp} className={className}>
+      {children}
+    </motion.section>
+  );
+}
 
 export function SectionIntro({ eyebrow, title, copy, centered = true }: { eyebrow: string; title: string; copy?: string; centered?: boolean }) {
   return (
