@@ -221,26 +221,31 @@ function ServiceDetailPage() {
   if (!service || !detail) throw notFound();
 
   const Icon = service.icon;
+  const image = serviceImages[serviceSlug] ?? serviceImages["palm-vastu-combo"];
 
   return (
-    <main className="bg-background py-12 sm:py-16">
-      <div className="mx-auto w-[min(760px,calc(100%-40px))]">
+    <main className="bg-background py-8 sm:py-10">
+      <div className="mx-auto w-[min(920px,calc(100%-40px))]">
         <Link to="/services" className="text-[13px] font-medium text-accent underline-offset-4 hover:underline">
           ← Back to Services
         </Link>
 
-        <header className="relative mt-14 text-center">
-          {detail.badge && (
-            <span className="mb-6 inline-flex rounded-full bg-badge px-4 py-2 text-[10px] font-medium uppercase tracking-[2px] text-badge-foreground">
-              {detail.badge}
-            </span>
-          )}
-          <div className="mx-auto grid h-24 w-24 place-items-center rounded-full bg-muted text-muted-foreground">
-            <Icon size={48} strokeWidth={1.35} />
+        <header className="relative mt-6 grid overflow-hidden rounded-[28px] border border-border bg-card shadow-card lg:grid-cols-[54fr_46fr]">
+          <div className="p-7 sm:p-9">
+            {detail.badge && (
+              <span className="mb-5 inline-flex rounded-full bg-badge px-4 py-2 text-[10px] font-medium uppercase tracking-[2px] text-badge-foreground">
+                {detail.badge}
+              </span>
+            )}
+            <div className="flex items-center gap-5">
+              <div className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-badge text-accent">
+                <Icon size={34} strokeWidth={1.45} />
+              </div>
+              <h1 className="font-heading text-[38px] font-light leading-[1.06] text-foreground sm:text-[46px]">{service.name}</h1>
+            </div>
+            <p className="mt-5 max-w-xl text-[14px] font-light leading-relaxed text-muted-foreground">{service.description}</p>
           </div>
-          <h1 className="mx-auto mt-8 font-heading text-[52px] font-light leading-[1.08] text-foreground">{service.name}</h1>
-          <p className="mx-auto mt-5 max-w-xl text-[15px] font-light leading-relaxed text-muted-foreground">{service.description}</p>
-          <div className="mx-auto mt-8 h-px w-[60px] bg-accent" />
+          <img src={image.src} alt={image.alt} width={900} height={680} loading="eager" decoding="async" className="h-[240px] w-full object-cover object-center lg:h-full" />
         </header>
 
         <DetailSection label="Introduction" heading="A personal, practical approach">
