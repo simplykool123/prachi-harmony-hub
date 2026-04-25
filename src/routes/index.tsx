@@ -117,6 +117,31 @@ function Index() {
         </div>
       </MotionSection>
 
+      <MotionSection className="pf-section overflow-hidden bg-card">
+        <div className="pf-container grid items-center gap-16 lg:grid-cols-[46fr_54fr] lg:gap-20">
+          <motion.div {...fadeUp}>
+            <p className="pf-eyebrow">HOME REMEDIES</p>
+            <h2 className="pf-h2 mt-7">Small corrections that feel possible</h2>
+            <p className="pf-body mt-5">Prachi’s work is solution-oriented — many improvements begin with simple placements, light, colour and element balance.</p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {remedyHighlights.map((item) => {
+                const Icon = item.icon;
+                return <article key={item.title} className="border-l border-accent/40 pl-4">
+                  <Icon className="h-4 w-4 text-accent" strokeWidth={1.7} />
+                  <h3 className="mt-3 font-body text-[13px] font-medium text-foreground">{item.title}</h3>
+                  <p className="mt-1.5 text-xs font-light leading-relaxed text-muted-foreground">{item.description}</p>
+                </article>;
+              })}
+            </div>
+          </motion.div>
+          <ImageComposition
+            primary={{ src: homeRemediesImage, alt: "Practical Vastu home remedy with flowers and water in a real living room", width: 1280, height: 960 }}
+            secondary={{ src: energyElementsImage, alt: "Vastu energy elements with plant water candle and stone", width: 1120, height: 1328 }}
+            align="right"
+          />
+        </div>
+      </MotionSection>
+
       <MotionSection className="bg-warm py-14">
         <div className="pf-container grid divide-y divide-border md:grid-cols-4 md:divide-x md:divide-y-0">
           {stats.map(([value, suffix, label]) => (
