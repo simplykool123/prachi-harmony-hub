@@ -153,8 +153,9 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="overflow-hidden bg-card py-16">
-        <div className="pf-container grid items-center gap-10 lg:grid-cols-[46fr_54fr] lg:gap-14">
+      <MotionSection className="relative overflow-hidden bg-card py-16">
+        <div className="absolute left-0 top-0 h-full w-[42%] bg-background/65 [clip-path:ellipse(70%_80%_at_0%_50%)]" />
+        <div className="pf-container relative z-10 grid items-center gap-10 lg:grid-cols-[46fr_54fr] lg:gap-14">
           <div>
             <p className="pf-eyebrow">ABOUT PRACHI</p>
             <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>
@@ -162,10 +163,13 @@ function Index() {
             <p className="pf-body mt-4">Consulting from Mumbai, Pune, Nashik and Kopargaon, she works with clients across India and internationally.</p>
             <Link to="/about" className="group mt-7 inline-flex text-[13px] font-medium text-accent">Read her full story <span className="transition group-hover:translate-x-1">→</span></Link>
           </div>
-          <div className="relative min-h-[500px] sm:min-h-[560px]">
-            <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="absolute right-0 top-0 h-[350px] w-[82%] rounded-l-full object-cover object-[center_18%] shadow-card" />
-            <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={1120} height={1328} loading="lazy" decoding="async" className="absolute bottom-0 right-0 h-[370px] w-[56%] rounded-t-full object-cover shadow-card" />
-            <div className="absolute left-[18%] top-[58%] hidden h-px w-[48%] bg-accent/40 md:block" />
+          <div className="relative min-h-[540px] sm:min-h-[600px]">
+            <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="absolute right-0 top-0 h-[380px] w-[78%] rounded-l-full object-cover object-[center_14%] shadow-card" />
+            <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={1120} height={1328} loading="lazy" decoding="async" className="absolute bottom-0 right-0 h-[390px] w-[52%] rounded-t-full object-cover shadow-card" />
+            <div className="absolute left-[12%] top-[58%] hidden h-px w-[58%] bg-accent/45 md:block" />
+            <div className="absolute left-0 bottom-24 hidden rounded-t-full border border-border bg-background p-8 md:block">
+              <Hand className="h-12 w-12 text-accent" strokeWidth={1.3} />
+            </div>
           </div>
         </div>
       </MotionSection>
