@@ -217,14 +217,14 @@ function Index() {
           <div className="pf-story-marquee mt-14 overflow-hidden">
             <div className="pf-story-track flex w-max gap-5">
               {[...customerStories, ...customerStories].map((story, index) => (
-              <article key={`${story.name}-${index}`} className="pf-card w-[310px] shrink-0 overflow-hidden p-0 sm:w-[360px]">
-                <div className="h-[3px] bg-accent" />
-                <div className="p-8">
-                  <p className="font-heading text-[17px] italic leading-relaxed text-foreground">“{story.quote}”</p>
-                  <p className="mt-6 text-xs font-medium text-foreground">{story.name}</p>
-                  <p className="mt-0.5 text-[11px] text-muted-foreground">{story.role}</p>
-                </div>
-              </article>
+                <article key={`${story.name}-${story.role}-${index}`} className="pf-card w-[310px] shrink-0 overflow-hidden p-0 sm:w-[360px]">
+                  <div className="h-[3px] bg-accent" />
+                  <div className="p-8">
+                    <p className="font-heading text-[17px] italic leading-relaxed text-foreground">“{story.quote}”</p>
+                    <p className="mt-6 text-xs font-medium text-foreground">{story.name}</p>
+                    <p className="mt-0.5 text-[11px] text-muted-foreground">{story.role}</p>
+                  </div>
+                </article>
               ))}
             </div>
           </div>
