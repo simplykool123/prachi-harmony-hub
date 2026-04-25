@@ -10,7 +10,7 @@ export function ServiceCard({ service, index = 0 }: { service: Service; index?: 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.08 }}
-      className={cn("pf-card pf-card-hover relative overflow-hidden p-7", service.featured && "border-[1.5px] border-accent bg-badge")}
+      className={cn("pf-card pf-card-hover pf-infographic-card relative overflow-hidden", service.featured && "border-[1.5px] border-accent bg-badge")}
     >
       {service.featured && <div className="absolute inset-x-0 top-0 h-[3px] bg-accent" />}
       {service.featured && (
@@ -18,11 +18,12 @@ export function ServiceCard({ service, index = 0 }: { service: Service; index?: 
           Signature
         </span>
       )}
-      <div className={cn("flex h-11 w-11 items-center justify-center rounded-full bg-badge text-accent", service.featured && "bg-card") }>
-        <Icon size={18} strokeWidth={1.8} />
+      <div className={cn("pf-infographic-icon", service.featured && "text-accent") }>
+        <Icon size={32} strokeWidth={1.45} />
       </div>
-      <h3 className="mt-5 font-heading text-[24px] font-normal leading-tight text-foreground">{service.name}</h3>
-      <p className="mt-2.5 text-[13px] font-light leading-relaxed text-muted-foreground">{service.description}</p>
+      <h3 className={cn("mt-8 font-heading text-[28px] font-normal leading-tight text-foreground", service.featured && "text-accent")}>{service.name}</h3>
+      <p className="mt-4 max-w-[285px] text-[15px] font-light leading-relaxed text-muted-foreground">{service.description}</p>
+      <span className="mt-auto pt-8 text-[12px] font-medium text-primary underline-offset-4 transition hover:underline">Read More</span>
     </motion.article>
   );
 }
