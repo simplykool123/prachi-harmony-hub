@@ -3,10 +3,11 @@ import { Compass, Hand, Leaf, MessageCircle, Moon, Sparkles } from "lucide-react
 import { Button } from "@/components/ui/button";
 import { CountUp, MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
-import { awards, customerStories, globalPresence, services, whatsappUrl } from "@/components/prachi/site-data";
+import { awards, customerStories, globalPresence, remedyHighlights, services, whatsappUrl } from "@/components/prachi/site-data";
 
 const vastuPlanImage = "/site-images/prachi-vastu-plan.jpg";
 const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
+const homeRemediesImage = "/site-images/prachi-home-remedies.jpg";
 const energyElementsImage = "/site-images/prachi-energy-elements.jpg";
 const prachiPortraitImage = "/site-images/prachi-fulfagar-portrait.jpg";
 
@@ -121,7 +122,39 @@ function Index() {
       </MotionSection>
 
       <MotionSection className="relative overflow-hidden bg-card py-16">
-        <div className="absolute left-1/2 top-0 h-full w-px bg-accent/20" />
+        <div className="absolute -right-24 top-12 h-[360px] w-[360px] rounded-full border border-accent/10" />
+        <div className="pf-container grid items-center gap-12 lg:grid-cols-[45fr_55fr] lg:gap-16">
+          <div>
+            <p className="pf-eyebrow">HOME REMEDIES</p>
+            <h2 className="pf-h2 mt-7">Small corrections that feel possible</h2>
+            <p className="pf-body mt-5">Prachi’s work is solution-oriented — many improvements begin with simple placements, light, colour and element balance.</p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {remedyHighlights.map((item) => {
+                const Icon = item.icon;
+                return <article key={item.title} className="border-l border-accent/40 pl-4">
+                  <Icon className="h-4 w-4 text-accent" strokeWidth={1.7} />
+                  <h3 className="mt-3 font-body text-[13px] font-medium text-foreground">{item.title}</h3>
+                  <p className="mt-1.5 text-xs font-light leading-relaxed text-muted-foreground">{item.description}</p>
+                </article>;
+              })}
+            </div>
+          </div>
+          <div className="relative grid min-h-[540px] grid-cols-2 gap-5">
+            <img src={homeRemediesImage} alt="Practical Vastu home remedy with flowers and water in a real living room" width={1280} height={960} loading="lazy" decoding="async" className="h-[310px] w-full rounded-[28px] rounded-br-[120px] object-cover shadow-card" />
+            <div className="relative overflow-hidden rounded-full bg-footer p-10 text-center text-foreground shadow-card">
+              <Leaf className="mx-auto h-14 w-14 text-accent" strokeWidth={1.2} />
+              <p className="mt-5 font-heading text-[28px] leading-none">Harmony</p>
+            </div>
+            <div className="relative mt-6 flex items-center justify-center rounded-t-full border border-border bg-background p-8">
+              <div className="pf-compass-orbit h-36 w-36 rounded-full border border-accent/25" />
+              <Sparkles className="absolute h-10 w-10 text-accent" strokeWidth={1.3} />
+            </div>
+            <img src={energyElementsImage} alt="Vastu energy elements with plant water candle and stone" width={1120} height={1328} loading="lazy" decoding="async" className="-mt-16 h-[390px] w-full rounded-t-full object-cover shadow-card" />
+          </div>
+        </div>
+      </MotionSection>
+
+      <MotionSection className="relative overflow-hidden bg-card py-16">
         <div className="pf-container relative z-10 grid items-center gap-8 lg:grid-cols-[32fr_36fr_32fr]">
           <div className="relative min-h-[430px]">
             <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="absolute inset-x-0 top-0 mx-auto h-[430px] w-[86%] rounded-t-full object-cover object-[center_8%] shadow-card" />
