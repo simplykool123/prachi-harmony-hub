@@ -61,9 +61,6 @@ function Index() {
           loading="eager"
           decoding="async"
           fetchPriority="high"
-          initial={{ opacity: 0, x: -36 }}
-          animate={{ opacity: 0.18, x: 0 }}
-          transition={{ duration: 1.1, ease: "easeOut" }}
           className="pointer-events-none absolute -left-24 top-12 hidden h-[440px] w-[440px] rounded-full object-cover lg:block"
         />
         <img
@@ -73,9 +70,6 @@ function Index() {
           height={900}
           loading="lazy"
           decoding="async"
-          initial={{ opacity: 0, x: 36 }}
-          animate={{ opacity: 0.14, x: 0 }}
-          transition={{ duration: 1.1, ease: "easeOut", delay: 0.12 }}
           className="pointer-events-none absolute -right-16 bottom-0 hidden h-[460px] w-[360px] rounded-t-full object-cover lg:block"
         />
         <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/8" />
@@ -178,7 +172,7 @@ function Index() {
           <SectionIntro eyebrow="BEFORE & AFTER" title="The impact of alignment" copy="The goal is not decoration — it is a home or workplace that starts supporting the life inside it." />
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
             {impactItems.map(([title, copy], index) => (
-              <article key={title} transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.08 }} className="pf-card p-7">
+              <article key={title} className="pf-card p-7">
                 <p className="text-[10px] font-medium uppercase tracking-[2px] text-accent">Impact 0{index + 1}</p>
                 <h3 className="pf-h3 mt-4">{title}</h3>
                 <div className="my-5 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-[11px] text-muted-foreground">
@@ -197,7 +191,7 @@ function Index() {
           <div className="mt-14 grid gap-5 lg:grid-cols-2">
             {awards.map((award, index) => {
               const Icon = award.icon;
-              return <article key={award.title} transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.08 }} className="pf-card grid gap-5 p-7 sm:grid-cols-[auto_1fr]">
+              return <article key={award.title} className="pf-card grid gap-5 p-7 sm:grid-cols-[auto_1fr]">
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-badge text-accent"><Icon size={22} strokeWidth={1.6} /></div>
                 <div><p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">Recognition 0{index + 1}</p><h3 className="pf-h3 mt-2">{award.title}</h3><p className="mt-2 text-[13px] font-light leading-relaxed text-muted-foreground">{award.description}</p></div>
               </article>;
@@ -214,7 +208,7 @@ function Index() {
           <SectionIntro eyebrow="CLIENT STORIES" title="Lives that found balance" />
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
             {testimonials.map(([quote, name, city], index) => (
-              <article key={name} transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.08 }} className="pf-card overflow-hidden p-0">
+              <article key={name} className="pf-card overflow-hidden p-0">
                 <div className="h-[3px] bg-accent" />
                 <div className="p-8">
                   <p className="font-heading text-[17px] italic leading-relaxed text-foreground">“{quote}”</p>

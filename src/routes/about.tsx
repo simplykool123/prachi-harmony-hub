@@ -45,7 +45,7 @@ function AboutPage() {
           <div className="grid gap-5">
             {awards.map((award, index) => {
               const Icon = award.icon;
-              return <article key={award.title} transition={{ duration: .7, ease: "easeOut", delay: index * .08 }} className="pf-card grid gap-5 border-l-[3px] border-l-accent p-7 sm:grid-cols-[auto_1fr]">
+              return <article key={award.title} className="pf-card grid gap-5 border-l-[3px] border-l-accent p-7 sm:grid-cols-[auto_1fr]">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-badge text-accent"><Icon size={20} strokeWidth={1.6} /></div>
                 <div><p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">AWARD 0{index + 1}</p><h3 className="pf-h3 mt-2 text-[26px]">{award.title}</h3><p className="mt-3 text-[13px] font-light leading-relaxed text-muted-foreground">{award.description}</p></div>
               </article>;
