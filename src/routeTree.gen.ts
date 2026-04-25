@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VastuGuideRouteImport } from './routes/vastu-guide'
 import { Route as ServicesRouteImport } from './routes/services'
-import { Route as HeerRouteImport } from './routes/heer'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
@@ -25,11 +24,6 @@ const VastuGuideRoute = VastuGuideRouteImport.update({
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HeerRoute = HeerRouteImport.update({
-  id: '/heer',
-  path: '/heer',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -58,7 +52,6 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
-  '/heer': typeof HeerRoute
   '/services': typeof ServicesRoute
   '/vastu-guide': typeof VastuGuideRoute
 }
@@ -67,7 +60,6 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
-  '/heer': typeof HeerRoute
   '/services': typeof ServicesRoute
   '/vastu-guide': typeof VastuGuideRoute
 }
@@ -77,7 +69,6 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
-  '/heer': typeof HeerRoute
   '/services': typeof ServicesRoute
   '/vastu-guide': typeof VastuGuideRoute
 }
@@ -88,25 +79,16 @@ export interface FileRouteTypes {
     | '/about'
     | '/blog'
     | '/contact'
-    | '/heer'
     | '/services'
     | '/vastu-guide'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/blog'
-    | '/contact'
-    | '/heer'
-    | '/services'
-    | '/vastu-guide'
+  to: '/' | '/about' | '/blog' | '/contact' | '/services' | '/vastu-guide'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/blog'
     | '/contact'
-    | '/heer'
     | '/services'
     | '/vastu-guide'
   fileRoutesById: FileRoutesById
@@ -116,7 +98,6 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BlogRoute: typeof BlogRoute
   ContactRoute: typeof ContactRoute
-  HeerRoute: typeof HeerRoute
   ServicesRoute: typeof ServicesRoute
   VastuGuideRoute: typeof VastuGuideRoute
 }
@@ -135,13 +116,6 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/heer': {
-      id: '/heer'
-      path: '/heer'
-      fullPath: '/heer'
-      preLoaderRoute: typeof HeerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -180,7 +154,6 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BlogRoute: BlogRoute,
   ContactRoute: ContactRoute,
-  HeerRoute: HeerRoute,
   ServicesRoute: ServicesRoute,
   VastuGuideRoute: VastuGuideRoute,
 }

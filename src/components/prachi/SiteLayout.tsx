@@ -28,7 +28,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-40 border-b border-border bg-card transition-shadow ${scrolled ? "shadow-nav" : ""}`}>
+    <header className={`sticky top-0 z-40 border-b border-accent/25 bg-card/90 backdrop-blur-sm transition-shadow ${scrolled ? "shadow-nav" : ""}`}>
       <div className="pf-container flex items-center justify-between gap-5 py-[18px]">
         <Logo />
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
@@ -47,9 +47,9 @@ export function Header() {
 }
 
 export function Footer() {
-  const footerLinks = navItems.filter((item) => item.to !== "/heer" && item.to !== "/blog");
+  const footerLinks = navItems.filter((item) => item.to !== "/blog");
   return (
-    <footer className="border-t border-accent/15 bg-footer py-12 text-primary-foreground">
+    <footer className="border-t border-accent/20 bg-footer py-12 text-primary-foreground">
       <div className="pf-container grid gap-8 md:grid-cols-3 md:items-start">
         <div>
           <Logo light />

@@ -52,7 +52,7 @@ const impactItems = [
 function Index() {
   return (
     <>
-      <section className="relative grid min-h-[calc(100vh-81px)] place-items-center overflow-hidden bg-background text-center">
+      <section className="relative grid min-h-[560px] place-items-center overflow-hidden bg-background text-center lg:min-h-[calc(62vh-40px)]">
         <motion.img
           src={vastuPlanImage}
           alt="Vastu floor plan with brass compass"
@@ -61,7 +61,7 @@ function Index() {
           initial={{ opacity: 0, x: -36 }}
           animate={{ opacity: 0.18, x: 0 }}
           transition={{ duration: 1.1, ease: "easeOut" }}
-          className="pointer-events-none absolute -left-24 top-24 hidden h-[520px] w-[520px] rounded-full object-cover lg:block"
+          className="pointer-events-none absolute -left-24 top-12 hidden h-[440px] w-[440px] rounded-full object-cover lg:block"
         />
         <motion.img
           src={celestialPalmImage}
@@ -71,12 +71,12 @@ function Index() {
           initial={{ opacity: 0, x: 36 }}
           animate={{ opacity: 0.14, x: 0 }}
           transition={{ duration: 1.1, ease: "easeOut", delay: 0.12 }}
-          className="pointer-events-none absolute -right-16 bottom-8 hidden h-[560px] w-[420px] rounded-t-full object-cover lg:block"
+          className="pointer-events-none absolute -right-16 bottom-0 hidden h-[460px] w-[360px] rounded-t-full object-cover lg:block"
         />
-        <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/8" />
-        <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/12" />
+        <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/8" />
+        <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/12" />
         <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/7" />
-        <motion.div variants={staggerContainer} initial="hidden" animate="show" className="pf-container relative z-10 py-20">
+        <motion.div variants={staggerContainer} initial="hidden" animate="show" className="pf-container relative z-10 py-12">
           <motion.p variants={staggerItem} className="mb-7 text-[10px] font-medium uppercase tracking-[3px] text-accent">
             Award-winning · Pan-India · International Sessions
           </motion.p>
