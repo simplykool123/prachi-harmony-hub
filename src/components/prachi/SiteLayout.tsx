@@ -27,8 +27,8 @@ export function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-40 border-b border-primary-foreground/15 bg-footer text-primary-foreground transition-shadow ${scrolled ? "shadow-nav" : ""}`}>
-      <div className="pf-container flex items-center justify-between gap-5 py-[18px]">
+    <header className={`sticky top-0 z-40 border-b border-foreground/10 bg-footer text-foreground transition-shadow ${scrolled ? "shadow-nav" : ""}`}>
+      <div className="pf-container flex items-center justify-between gap-5 py-3">
         <Logo />
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
           {navItems.map((item) => (
@@ -48,24 +48,24 @@ export function Header() {
 export function Footer() {
   const footerLinks = navItems.filter((item) => item.to !== "/blog");
   return (
-    <footer className="border-t border-primary-foreground/15 bg-footer py-12 text-primary-foreground">
+    <footer className="border-t border-foreground/10 bg-footer py-10 text-foreground">
       <div className="pf-container grid gap-8 md:grid-cols-3 md:items-start">
         <div>
           <Logo light />
-          <p className="mt-4 text-[11px] text-primary-foreground/30">© 2025 PrachiFulfagar.com</p>
+          <p className="mt-4 text-[11px] text-foreground/55">© 2025 PrachiFulfagar.com</p>
         </div>
         <nav className="flex flex-wrap gap-x-6 gap-y-3 md:justify-center" aria-label="Footer navigation">
           {footerLinks.map((item) => (
-            <Link key={item.to} to={item.to} className="text-xs text-primary-foreground/40 transition hover:text-primary-foreground/80">
+            <Link key={item.to} to={item.to} className="text-xs text-foreground/60 transition hover:text-primary">
               {item.label}
             </Link>
           ))}
         </nav>
         <div className="md:text-right">
-          <p className="text-xs text-primary-foreground/30">prachifulfagar.com</p>
+          <p className="text-xs text-foreground/55">prachifulfagar.com</p>
           <div className="mt-4 flex gap-4 md:justify-end">
-            <Instagram className="h-[18px] w-[18px] text-primary-foreground/30 transition hover:text-accent" />
-            <Youtube className="h-[18px] w-[18px] text-primary-foreground/30 transition hover:text-accent" />
+            <Instagram className="h-[18px] w-[18px] text-foreground/55 transition hover:text-primary" />
+            <Youtube className="h-[18px] w-[18px] text-foreground/55 transition hover:text-primary" />
           </div>
         </div>
       </div>

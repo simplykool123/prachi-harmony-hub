@@ -10,7 +10,7 @@ const vastuPlanImage = "/site-images/prachi-vastu-plan.jpg";
 const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
 const homeRemediesImage = "/site-images/prachi-home-remedies.jpg";
 const energyElementsImage = "/site-images/prachi-energy-elements.jpg";
-const familyHomeImage = "/site-images/prachi-family-home.jpg";
+const prachiPortraitImage = "/site-images/prachi-fulfagar-portrait.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,7 +52,7 @@ const impactItems = [
 function Index() {
   return (
     <>
-      <section className="relative grid min-h-[560px] place-items-center overflow-hidden bg-background text-center lg:min-h-[calc(62vh-40px)]">
+      <section className="relative grid min-h-[520px] place-items-center overflow-hidden bg-background text-center lg:min-h-[calc(58vh-32px)]">
         <img
           src={vastuPlanImage}
           alt="Vastu floor plan with brass compass"
@@ -72,10 +72,10 @@ function Index() {
           decoding="async"
           className="pointer-events-none absolute -right-16 bottom-0 hidden h-[460px] w-[360px] rounded-t-full object-cover lg:block"
         />
-        <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/8" />
-        <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/12" />
-        <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/7" />
-        <div className="pf-container relative z-10 py-12">
+        <div className="pf-compass-orbit pointer-events-none absolute left-1/2 top-1/2 z-0 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/10 before:absolute before:left-1/2 before:top-0 before:h-full before:w-px before:bg-accent/10 after:absolute after:left-0 after:top-1/2 after:h-px after:w-full after:bg-accent/10" />
+        <div className="pf-compass-orbit pointer-events-none absolute left-1/2 top-1/2 z-0 h-[290px] w-[290px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/15" />
+        <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[190px] w-[190px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/8" />
+        <div className="pf-container relative z-10 py-10">
           <p className="mb-7 text-[10px] font-medium uppercase tracking-[3px] text-accent">
             Award-winning · Pan-India · International Sessions
           </p>
@@ -105,13 +105,13 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="pf-section bg-background">
+      <MotionSection className="bg-background py-12">
         <div className="pf-container">
           <SectionIntro eyebrow="WHAT WE OFFER" title="Services for every space and soul" copy="From your palm to your home — a complete system of ancient wisdom." />
-          <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {[services[0], services[1], services[2], services[9], services[4], services[5]].map((service, index) => <ServiceCard key={service.name} service={service} index={index} />)}
           </div>
-          <div className="mt-10 text-center"><Link to="/services" className="text-[13px] font-medium text-accent underline-offset-4 hover:underline">See all 12 services →</Link></div>
+          <div className="mt-7 text-center"><Link to="/services" className="text-[13px] font-medium text-accent underline-offset-4 hover:underline">See all 12 services →</Link></div>
         </div>
       </MotionSection>
 
@@ -152,7 +152,7 @@ function Index() {
       </MotionSection>
 
       <MotionSection className="pf-section overflow-hidden bg-card">
-        <div className="pf-container grid items-center gap-16 lg:grid-cols-[48fr_52fr] lg:gap-20">
+        <div className="pf-container grid items-center gap-12 lg:grid-cols-[48fr_52fr] lg:gap-16">
           <div>
             <p className="pf-eyebrow">ABOUT PRACHI</p>
             <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>
@@ -161,38 +161,38 @@ function Index() {
             <Link to="/about" className="group mt-7 inline-flex text-[13px] font-medium text-accent">Read her full story <span className="transition group-hover:translate-x-1">→</span></Link>
           </div>
           <ImageComposition
-            primary={{ src: familyHomeImage, alt: "Balanced family home interior after practical Vastu alignment", width: 1280, height: 960 }}
+            primary={{ src: prachiPortraitImage, alt: "Prachi Fulfagar in her Vastu and Palmistry consultation studio", width: 900, height: 1350 }}
             secondary={{ src: celestialPalmImage, alt: "Palmistry and astrology consultation details", width: 1120, height: 1328 }}
           />
         </div>
       </MotionSection>
 
-      <MotionSection className="pf-section bg-background">
+      <MotionSection className="bg-background py-12">
         <div className="pf-container">
           <SectionIntro eyebrow="BEFORE & AFTER" title="The impact of alignment" copy="The goal is not decoration — it is a home or workplace that starts supporting the life inside it." />
-          <div className="mt-14 grid gap-5 lg:grid-cols-3">
+          <div className="mt-9 grid gap-4 lg:grid-cols-3">
             {impactItems.map(([title, copy], index) => (
-              <article key={title} className="pf-card p-7">
+              <article key={title} className="pf-card p-5">
                 <p className="text-[10px] font-medium uppercase tracking-[2px] text-accent">Impact 0{index + 1}</p>
-                <h3 className="pf-h3 mt-4">{title}</h3>
-                <div className="my-5 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-[11px] text-muted-foreground">
+                <h3 className="pf-h3 mt-3">{title}</h3>
+                <div className="my-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-[11px] text-muted-foreground">
                   <span>Blocked</span><span className="text-accent">→</span><span className="text-foreground">Aligned</span>
                 </div>
-                <p className="text-[13px] font-light leading-relaxed text-muted-foreground">{copy}</p>
+                <p className="text-[12px] font-light leading-relaxed text-muted-foreground">{copy}</p>
               </article>
             ))}
           </div>
         </div>
       </MotionSection>
 
-      <MotionSection className="pf-section bg-card">
+      <MotionSection className="bg-card py-12">
         <div className="pf-container">
           <SectionIntro eyebrow="AUTHORITY" title="Awards, recognition and global reach" copy="A trusted practice serving Indian and international clients with recognised expertise." />
-          <div className="mt-14 grid gap-5 lg:grid-cols-2">
+          <div className="mt-9 grid gap-4 lg:grid-cols-2">
             {awards.map((award, index) => {
               const Icon = award.icon;
-              return <article key={award.title} className="pf-card grid gap-5 p-7 sm:grid-cols-[auto_1fr]">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-badge text-accent"><Icon size={22} strokeWidth={1.6} /></div>
+              return <article key={award.title} className="pf-card grid gap-4 p-5 sm:grid-cols-[auto_1fr]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-badge text-accent"><Icon size={20} strokeWidth={1.6} /></div>
                 <div><p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">Recognition 0{index + 1}</p><h3 className="pf-h3 mt-2">{award.title}</h3><p className="mt-2 text-[13px] font-light leading-relaxed text-muted-foreground">{award.description}</p></div>
               </article>;
             })}

@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useLocation } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/prachi/PageHero";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
@@ -16,6 +16,12 @@ export const Route = createFileRoute("/services")({
 });
 
 function ServicesPage() {
+  const location = useLocation();
+
+  if (location.pathname !== "/services") {
+    return <Outlet />;
+  }
+
   return <>
     <PageHero eyebrow="SERVICES" title="Every dimension of harmony" copy="From your palm to your home — twelve services, one vision." />
     <MotionSection className="pf-section bg-background pt-10">
