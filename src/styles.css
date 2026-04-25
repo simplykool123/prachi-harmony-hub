@@ -137,6 +137,8 @@
   .pf-nav-link:hover::after, .pf-nav-link[data-status="active"]::after { transform: scaleX(1); }
   .pf-cta { transition: transform .2s ease, filter .2s ease; }
   .pf-cta:hover { transform: scale(1.02); filter: brightness(1.08); }
+  .pf-compass-orbit { animation: pf-compass-spin 42s linear infinite; }
+  @keyframes pf-compass-spin { to { transform: rotate(360deg); } }
 }
 
 @media (prefers-reduced-motion: reduce) {
