@@ -1,5 +1,4 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts, useLocation } from "@tanstack/react-router";
-import { motion, AnimatePresence } from "framer-motion";
 
 import { FloatingActions, Footer, Header } from "@/components/prachi/SiteLayout";
 import appCss from "../styles.css?url";
@@ -60,11 +59,9 @@ function RootComponent() {
   return (
     <>
       <Header />
-      <AnimatePresence mode="wait">
-        <motion.main key={location.pathname} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }}>
-          <Outlet />
-        </motion.main>
-      </AnimatePresence>
+      <main key={location.pathname}>
+        <Outlet />
+      </main>
       <Footer />
       <FloatingActions />
     </>
