@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { CountUp, MotionSection, SectionIntro, fadeUp, staggerContainer, staggerItem } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
 import { services, whatsappUrl } from "@/components/prachi/site-data";
+import vastuPlanImage from "@/assets/prachi-vastu-plan.jpg";
+import celestialPalmImage from "@/assets/prachi-celestial-palm.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,6 +43,26 @@ function Index() {
   return (
     <>
       <section className="relative grid min-h-[calc(100vh-81px)] place-items-center overflow-hidden bg-background text-center">
+        <motion.img
+          src={vastuPlanImage}
+          alt="Vastu floor plan with brass compass"
+          width={1408}
+          height={960}
+          initial={{ opacity: 0, x: -36 }}
+          animate={{ opacity: 0.18, x: 0 }}
+          transition={{ duration: 1.1, ease: "easeOut" }}
+          className="pointer-events-none absolute -left-24 top-24 hidden h-[520px] w-[520px] rounded-full object-cover lg:block"
+        />
+        <motion.img
+          src={celestialPalmImage}
+          alt="Palmistry consultation with celestial chart"
+          width={1120}
+          height={1328}
+          initial={{ opacity: 0, x: 36 }}
+          animate={{ opacity: 0.14, x: 0 }}
+          transition={{ duration: 1.1, ease: "easeOut", delay: 0.12 }}
+          className="pointer-events-none absolute -right-16 bottom-8 hidden h-[560px] w-[420px] rounded-t-full object-cover lg:block"
+        />
         <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/8" />
         <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/12" />
         <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[200px] w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/7" />
