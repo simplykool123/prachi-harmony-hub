@@ -108,8 +108,9 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="pf-section overflow-hidden bg-card">
-        <div className="pf-container grid items-center gap-16 lg:grid-cols-[46fr_54fr] lg:gap-20">
+      <MotionSection className="relative overflow-hidden bg-card py-16">
+        <div className="absolute -right-24 top-12 h-[360px] w-[360px] rounded-full border border-accent/10" />
+        <div className="pf-container grid items-center gap-12 lg:grid-cols-[45fr_55fr] lg:gap-16">
           <div>
             <p className="pf-eyebrow">HOME REMEDIES</p>
             <h2 className="pf-h2 mt-7">Small corrections that feel possible</h2>
@@ -125,11 +126,18 @@ function Index() {
               })}
             </div>
           </div>
-          <ImageComposition
-            primary={{ src: homeRemediesImage, alt: "Practical Vastu home remedy with flowers and water in a real living room", width: 1280, height: 960 }}
-            secondary={{ src: energyElementsImage, alt: "Vastu energy elements with plant water candle and stone", width: 1120, height: 1328 }}
-            align="right"
-          />
+          <div className="relative grid min-h-[540px] grid-cols-2 gap-5">
+            <img src={homeRemediesImage} alt="Practical Vastu home remedy with flowers and water in a real living room" width={1280} height={960} loading="lazy" decoding="async" className="h-[310px] w-full rounded-[28px] rounded-br-[120px] object-cover shadow-card" />
+            <div className="relative overflow-hidden rounded-full bg-footer p-10 text-center text-foreground shadow-card">
+              <Leaf className="mx-auto h-14 w-14 text-accent" strokeWidth={1.2} />
+              <p className="mt-5 font-heading text-[28px] leading-none">Harmony</p>
+            </div>
+            <div className="relative mt-6 flex items-center justify-center rounded-t-full border border-border bg-background p-8">
+              <div className="pf-compass-orbit h-36 w-36 rounded-full border border-accent/25" />
+              <Sparkles className="absolute h-10 w-10 text-accent" strokeWidth={1.3} />
+            </div>
+            <img src={energyElementsImage} alt="Vastu energy elements with plant water candle and stone" width={1120} height={1328} loading="lazy" decoding="async" className="-mt-16 h-[390px] w-full rounded-t-full object-cover shadow-card" />
+          </div>
         </div>
       </MotionSection>
 
