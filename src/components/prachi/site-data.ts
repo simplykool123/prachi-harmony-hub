@@ -136,12 +136,12 @@ export const awards: AwardItem[] = [
 ];
 
 export const customerStories = [
-  { quote: "When faced with tough decisions, I got some valuable advice and astrological guidance. Miss Prachi Fulfagar was very supportive and informative.", name: "Akshay Dixit", role: "Engineer", image: "https://prachifulfagar.com/ui-assets/images/content/akshay.jpeg" },
-  { quote: "I would highly recommend Arash Consultant to anyone looking for guidance and direction through astrology. Their honest approach and patience is unbelievable.", name: "Abhi Jain", role: "Owner, Pragati Turf", image: "https://prachifulfagar.com/ui-assets/images/content/abhijain.jpg" },
-  { quote: "One of the best Career Consultant organisations in Nashik. The counselling was truly satisfying and every point was explained in detail.", name: "Prashant Marathe", role: "Digital Marketer", image: "https://prachifulfagar.com/ui-assets/images/content/prashant.jpeg" },
-  { quote: "Your astrological insights have greatly enhanced our business strategy. Your advice is invaluable in guiding our decisions and navigating challenges.", name: "Rahul Bhingardive", role: "Business Manager", image: "https://prachifulfagar.com/ui-assets/images/content/man.png" },
-  { quote: "Your thorough understanding of Vastu principles and practical recommendations have made a positive difference in our space.", name: "Krishna", role: "Pigmy Agent", image: "https://prachifulfagar.com/ui-assets/images/content/man.png" },
-  { quote: "Your insights into astrological trends have been invaluable in identifying new business opportunities and have significantly contributed to our growth.", name: "Vaishali", role: "Business Development Manager", image: "https://prachifulfagar.com/ui-assets/images/content/woman.png" },
+  { quote: "When faced with tough decisions, I got some valuable advice and astrological guidance. Miss Prachi Fulfagar was very supportive and informative.", name: "Akshay Dixit", role: "Engineer" },
+  { quote: "I would highly recommend Arash Consultant to anyone looking for guidance and direction through astrology. Their honest approach and patience is unbelievable.", name: "Abhi Jain", role: "Owner, Pragati Turf" },
+  { quote: "One of the best Career Consultant organisations in Nashik. The counselling was truly satisfying and every point was explained in detail.", name: "Prashant Marathe", role: "Digital Marketer" },
+  { quote: "Your astrological insights have greatly enhanced our business strategy. Your advice is invaluable in guiding our decisions and navigating challenges.", name: "Rahul Bhingardive", role: "Business Manager" },
+  { quote: "Your thorough understanding of Vastu principles and practical recommendations have made a positive difference in our space.", name: "Krishna", role: "Pigmy Agent" },
+  { quote: "Your insights into astrological trends have been invaluable in identifying new business opportunities and have significantly contributed to our growth.", name: "Vaishali", role: "Business Development Manager" },
 ];
 
 export const globalPresence = ["India", "UAE", "UK", "USA", "Singapore", "Australia"];
