@@ -71,6 +71,7 @@ const NAV = [
   { to: "/admin/social", label: "Social Posts", icon: "◈" },
   { to: "/admin/calendar", label: "Content Calendar", icon: "◷" },
   { to: "/admin/leads", label: "Contact Leads", icon: "◎" },
+  { to: "/admin/settings", label: "Settings", icon: "⚙" },
 ];
 
 function AdminLayout() {

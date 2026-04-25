@@ -21,6 +21,52 @@ const PLATFORMS = [
 const inputClass = "w-full rounded-lg border border-border bg-background px-4 py-3 text-[13px] text-foreground outline-none transition focus:border-accent";
 const labelClass = "mb-1.5 block text-[10px] font-medium tracking-[0.5px] text-muted-foreground uppercase";
 
+async function tryPostizPush(draftId: string, captionInstagram: string): Promise<string | null> {
+  const { data: settingsData } = await supabase
+    .from("vp_settings")
+    .select("key, value")
+    .in("key", ["auto_push_to_postiz", "postiz_api_key", "postiz_base_url"]);
+
+  if (!settingsData) return null;
+
+  const sm: Record<string, string> = {};
+  settingsData.forEach((s: { key: string; value: string | null }) => { sm[s.key] = s.value || ""; });
+
+  if (sm["auto_push_to_postiz"] !== "true" || !sm["postiz_api_key"] || !sm["postiz_base_url"]) {
+    return null;
+  }
+
+  const { data: accountsData } = await supabase
+    .from("vp_social_accounts")
+    .select("postiz_channel_id")
+    .eq("is_connected", true);
+
+  const channels = (accountsData || [])
+    .map((a: { postiz_channel_id: string | null }) => a.postiz_channel_id)
+    .filter(Boolean);
+
+  if (channels.length === 0) return null;
+
+  try {
+    const res = await fetch(`${sm["postiz_base_url"]}/api/posts`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${sm["postiz_api_key"]}`,
+      },
+      body: JSON.stringify({ content: captionInstagram, channels }),
+    });
+
+    if (res.ok) {
+      await supabase.from("vp_social_drafts").update({ status: "scheduled" }).eq("id", draftId);
+      return "pushed";
+    }
+    return "error";
+  } catch {
+    return "error";
+  }
+}
+
 function AdminSocial() {
   const [view, setView] = useState<"list" | "create" | "result">("list");
   const [drafts, setDrafts] = useState<VpSocialDraft[]>([]);
@@ -33,6 +79,7 @@ function AdminSocial() {
   const [generating, setGenerating] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
+  const [postizMsg, setPostizMsg] = useState("");
   const hasKey = !!import.meta.env.VITE_ANTHROPIC_API_KEY;
 
   useEffect(() => { loadDrafts(); }, []);
@@ -55,14 +102,46 @@ function AdminSocial() {
   async function handleSave(status: "draft" | "approved") {
     if (!result) return;
     setSaving(true);
-    const { error: err } = await supabase.from("vp_social_drafts").insert({ topic, content_pillar: pillar, ...editResult, status, platform_targets: ["instagram", "facebook", "youtube", "linkedin"] });
+    setPostizMsg("");
+
+    const { data: insertData, error: err } = await supabase
+      .from("vp_social_drafts")
+      .insert({ topic, content_pillar: pillar, ...editResult, status, platform_targets: ["instagram", "facebook", "youtube", "linkedin"] })
+      .select("id")
+      .single();
+
     setSaving(false);
-    if (!err) { setView("list"); setResult(null); setTopic(""); loadDrafts(); }
-    else setError(err.message);
+    if (err) { setError(err.message); return; }
+
+    if (status === "approved" && insertData?.id) {
+      const pushResult = await tryPostizPush(insertData.id, editResult.caption_instagram || "");
+      if (pushResult === "pushed") setPostizMsg("Pushed to Postiz successfully");
+      else if (pushResult === "error") setPostizMsg("Postiz push failed — saved as approved");
+    }
+
+    setView("list");
+    setResult(null);
+    setTopic("");
+    loadDrafts();
   }
 
   async function updateStatus(id: string, status: string) {
     await supabase.from("vp_social_drafts").update({ status }).eq("id", id);
+
+    if (status === "approved") {
+      const { data: draftData } = await supabase
+        .from("vp_social_drafts")
+        .select("caption_instagram")
+        .eq("id", id)
+        .single();
+
+      if (draftData) {
+        const pushResult = await tryPostizPush(id, draftData.caption_instagram || "");
+        if (pushResult === "pushed") setPostizMsg("Pushed to Postiz successfully");
+        else if (pushResult === "error") setPostizMsg("Postiz push failed — saved as approved");
+      }
+    }
+
     loadDrafts();
   }
 
@@ -71,6 +150,12 @@ function AdminSocial() {
       <p className="pf-eyebrow mb-2">Admin</p>
       <h1 className="font-heading text-[32px] font-light text-foreground mb-1">Social Post Drafter</h1>
       <p className="pf-body mb-6">One topic → Claude writes captions for all 6 platforms at once.</p>
+
+      {postizMsg && (
+        <div className={`mb-4 rounded-lg px-4 py-3 text-[13px] ${postizMsg.includes("successfully") ? "bg-green-50 border border-green-200 text-green-700" : "bg-amber-50 border border-amber-200 text-amber-700"}`}>
+          {postizMsg}
+        </div>
+      )}
 
       <div className="flex gap-2 mb-6">
         {(["list", "create"] as const).map((v) => (
@@ -199,7 +284,12 @@ function AdminSocial() {
                     <td className="max-w-[260px] truncate px-4 py-3 font-medium text-foreground">{d.topic}</td>
                     <td className="px-4 py-3 text-muted-foreground">{d.content_pillar}</td>
                     <td className="px-4 py-3">
-                      <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-medium ${d.status === "approved" ? "bg-green-50 text-green-700" : d.status === "posted" ? "bg-blue-50 text-blue-700" : "bg-gray-100 text-gray-500"}`}>
+                      <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-medium ${
+                        d.status === "approved" ? "bg-green-50 text-green-700"
+                        : d.status === "scheduled" ? "bg-purple-50 text-purple-700"
+                        : d.status === "posted" ? "bg-blue-50 text-blue-700"
+                        : "bg-gray-100 text-gray-500"
+                      }`}>
                         {d.status}
                       </span>
                     </td>
@@ -210,6 +300,9 @@ function AdminSocial() {
                       )}
                       {d.status === "approved" && (
                         <button onClick={() => updateStatus(d.id, "posted")} className="text-[11px] font-medium text-blue-700 hover:underline">Mark Posted</button>
+                      )}
+                      {d.status === "scheduled" && (
+                        <button onClick={() => updateStatus(d.id, "posted")} className="text-[11px] font-medium text-purple-700 hover:underline">Mark Posted</button>
                       )}
                     </td>
                   </tr>
