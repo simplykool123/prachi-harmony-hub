@@ -147,7 +147,7 @@ function Index() {
               <div className="pf-compass-orbit h-36 w-36 rounded-full border border-accent/25" />
               <SunMoon className="absolute h-10 w-10 text-accent" strokeWidth={1.3} />
             </div>
-            <img src={energyElementsImage} alt="Vastu energy elements with plant water candle and stone" width={1120} height={1328} loading="lazy" decoding="async" className="-mt-16 h-[390px] w-full rounded-t-full object-cover shadow-card" />
+            <img src={energyElementsImage} alt="Vastu energy elements with plant water candle and stone" width={1120} height={1328} loading="lazy" decoding="async" className="h-[390px] w-full rounded-t-full object-cover shadow-card" />
           </div>
         </div>
       </MotionSection>
