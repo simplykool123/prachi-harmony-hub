@@ -117,8 +117,8 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="pf-section bg-card">
-        <div className="pf-container grid items-center gap-16 lg:grid-cols-[55fr_45fr] lg:gap-20">
+      <MotionSection className="pf-section overflow-hidden bg-card">
+        <div className="pf-container grid items-center gap-16 lg:grid-cols-[48fr_52fr] lg:gap-20">
           <motion.div {...fadeUp}>
             <p className="pf-eyebrow">ABOUT PRACHI</p>
             <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>
@@ -126,7 +126,13 @@ function Index() {
             <p className="pf-body mt-4">Consulting from Mumbai, Pune, Nashik and Kopargaon, she works with clients across India and internationally.</p>
             <Link to="/about" className="group mt-7 inline-flex text-[13px] font-medium text-accent">Read her full story <span className="transition group-hover:translate-x-1">→</span></Link>
           </motion.div>
-          <div className="grid gap-4">
+          <motion.div {...fadeUp} className="relative min-h-[520px]">
+            <img src={vastuPlanImage} alt="Refined Vastu floor plan consultation setting" width={1408} height={960} loading="lazy" className="absolute left-0 top-2 h-[310px] w-[68%] rounded-r-full object-cover shadow-card" />
+            <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={1120} height={1328} loading="lazy" className="absolute bottom-0 right-0 h-[420px] w-[58%] rounded-t-full object-cover shadow-card" />
+            <div className="absolute left-[9%] top-[56%] hidden h-px w-[44%] bg-accent/40 md:block" />
+          </motion.div>
+        </div>
+        <div className="pf-container mt-16 grid gap-4 md:grid-cols-2">
             {["Thailand Honorary Doctorate", "International Astro Purohit Award"].map((title, index) => (
               <motion.article {...fadeUp} key={title} transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.08 }} className="rounded-xl border border-l-[3px] border-border border-l-accent bg-card-soft p-5">
                 <p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">AWARD 0{index + 1}</p>
@@ -134,7 +140,6 @@ function Index() {
                 <p className="mt-2 text-xs font-light leading-relaxed text-muted-foreground">{index === 0 ? "Conferred by the International Astrology Federation Inc. at the Thailand Triangle Summit." : "Awarded by the International Astrology Federation for outstanding contribution to Vastu and Astrology."}</p>
               </motion.article>
             ))}
-          </div>
         </div>
       </MotionSection>
 
