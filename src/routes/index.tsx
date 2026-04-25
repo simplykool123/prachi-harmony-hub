@@ -2,11 +2,15 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ImageComposition } from "@/components/prachi/ImageComposition";
 import { CountUp, MotionSection, SectionIntro, fadeUp, staggerContainer, staggerItem } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
-import { services, whatsappUrl } from "@/components/prachi/site-data";
+import { awards, globalPresence, remedyHighlights, services, whatsappUrl } from "@/components/prachi/site-data";
 import vastuPlanImage from "@/assets/prachi-vastu-plan.jpg";
 import celestialPalmImage from "@/assets/prachi-celestial-palm.jpg";
+import homeRemediesImage from "@/assets/prachi-home-remedies.jpg";
+import energyElementsImage from "@/assets/prachi-energy-elements.jpg";
+import familyHomeImage from "@/assets/prachi-family-home.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,6 +41,12 @@ const testimonials = [
   ["Her Vastu consultation transformed our office energy entirely. The difference was almost immediate — smoother operations, happier team.", "Corporate Client", "Mumbai"],
   ["The palm reading revealed things about myself I had never been able to articulate. Deeply reassuring and accurate.", "Remote Client", "Dubai"],
   ["My child's focus improved after Prachi's Vastu corrections for the study room. Simple changes, profound results.", "Parent", "Nashik"],
+];
+
+const impactItems = [
+  ["Health", "Restful rooms, balanced elements and less environmental stress support calmer daily routines."],
+  ["Relationships", "Shared spaces are corrected for warmth, communication and emotional steadiness."],
+  ["Business", "Entrances, seating and decision zones are aligned for confidence, clarity and growth."],
 ];
 
 function Index() {
@@ -106,6 +116,31 @@ function Index() {
         </div>
       </MotionSection>
 
+      <MotionSection className="pf-section overflow-hidden bg-card">
+        <div className="pf-container grid items-center gap-16 lg:grid-cols-[46fr_54fr] lg:gap-20">
+          <motion.div {...fadeUp}>
+            <p className="pf-eyebrow">HOME REMEDIES</p>
+            <h2 className="pf-h2 mt-7">Small corrections that feel possible</h2>
+            <p className="pf-body mt-5">Prachi’s work is solution-oriented — many improvements begin with simple placements, light, colour and element balance.</p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {remedyHighlights.map((item) => {
+                const Icon = item.icon;
+                return <article key={item.title} className="border-l border-accent/40 pl-4">
+                  <Icon className="h-4 w-4 text-accent" strokeWidth={1.7} />
+                  <h3 className="mt-3 font-body text-[13px] font-medium text-foreground">{item.title}</h3>
+                  <p className="mt-1.5 text-xs font-light leading-relaxed text-muted-foreground">{item.description}</p>
+                </article>;
+              })}
+            </div>
+          </motion.div>
+          <ImageComposition
+            primary={{ src: homeRemediesImage, alt: "Practical Vastu home remedy with flowers and water in a real living room", width: 1280, height: 960 }}
+            secondary={{ src: energyElementsImage, alt: "Vastu energy elements with plant water candle and stone", width: 1120, height: 1328 }}
+            align="right"
+          />
+        </div>
+      </MotionSection>
+
       <MotionSection className="bg-warm py-14">
         <div className="pf-container grid divide-y divide-border md:grid-cols-4 md:divide-x md:divide-y-0">
           {stats.map(([value, suffix, label]) => (
@@ -126,20 +161,46 @@ function Index() {
             <p className="pf-body mt-4">Consulting from Mumbai, Pune, Nashik and Kopargaon, she works with clients across India and internationally.</p>
             <Link to="/about" className="group mt-7 inline-flex text-[13px] font-medium text-accent">Read her full story <span className="transition group-hover:translate-x-1">→</span></Link>
           </motion.div>
-          <motion.div {...fadeUp} className="relative min-h-[520px]">
-            <img src={vastuPlanImage} alt="Refined Vastu floor plan consultation setting" width={1408} height={960} loading="lazy" className="absolute left-0 top-2 h-[310px] w-[68%] rounded-r-full object-cover shadow-card" />
-            <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={1120} height={1328} loading="lazy" className="absolute bottom-0 right-0 h-[420px] w-[58%] rounded-t-full object-cover shadow-card" />
-            <div className="absolute left-[9%] top-[56%] hidden h-px w-[44%] bg-accent/40 md:block" />
-          </motion.div>
+          <ImageComposition
+            primary={{ src: familyHomeImage, alt: "Balanced family home interior after practical Vastu alignment", width: 1280, height: 960 }}
+            secondary={{ src: celestialPalmImage, alt: "Palmistry and astrology consultation details", width: 1120, height: 1328 }}
+          />
         </div>
-        <div className="pf-container mt-16 grid gap-4 md:grid-cols-2">
-            {["Thailand Honorary Doctorate", "International Astro Purohit Award"].map((title, index) => (
-              <motion.article {...fadeUp} key={title} transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.08 }} className="rounded-xl border border-l-[3px] border-border border-l-accent bg-card-soft p-5">
-                <p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">AWARD 0{index + 1}</p>
-                <h3 className="pf-h3 mt-2 text-xl">{title}</h3>
-                <p className="mt-2 text-xs font-light leading-relaxed text-muted-foreground">{index === 0 ? "Conferred by the International Astrology Federation Inc. at the Thailand Triangle Summit." : "Awarded by the International Astrology Federation for outstanding contribution to Vastu and Astrology."}</p>
+      </MotionSection>
+
+      <MotionSection className="pf-section bg-background">
+        <div className="pf-container">
+          <SectionIntro eyebrow="BEFORE & AFTER" title="The impact of alignment" copy="The goal is not decoration — it is a home or workplace that starts supporting the life inside it." />
+          <div className="mt-14 grid gap-5 lg:grid-cols-3">
+            {impactItems.map(([title, copy], index) => (
+              <motion.article {...fadeUp} key={title} transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.08 }} className="pf-card p-7">
+                <p className="text-[10px] font-medium uppercase tracking-[2px] text-accent">Impact 0{index + 1}</p>
+                <h3 className="pf-h3 mt-4">{title}</h3>
+                <div className="my-5 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-[11px] text-muted-foreground">
+                  <span>Blocked</span><span className="text-accent">→</span><span className="text-foreground">Aligned</span>
+                </div>
+                <p className="text-[13px] font-light leading-relaxed text-muted-foreground">{copy}</p>
               </motion.article>
             ))}
+          </div>
+        </div>
+      </MotionSection>
+
+      <MotionSection className="pf-section bg-card">
+        <div className="pf-container">
+          <SectionIntro eyebrow="AUTHORITY" title="Awards, recognition and global reach" copy="A trusted practice serving Indian and international clients with recognised expertise." />
+          <div className="mt-14 grid gap-5 lg:grid-cols-2">
+            {awards.map((award, index) => {
+              const Icon = award.icon;
+              return <motion.article {...fadeUp} key={award.title} transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.08 }} className="pf-card grid gap-5 p-7 sm:grid-cols-[auto_1fr]">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-badge text-accent"><Icon size={22} strokeWidth={1.6} /></div>
+                <div><p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">Recognition 0{index + 1}</p><h3 className="pf-h3 mt-2">{award.title}</h3><p className="mt-2 text-[13px] font-light leading-relaxed text-muted-foreground">{award.description}</p></div>
+              </motion.article>;
+            })}
+          </div>
+          <div className="mt-10 flex flex-wrap justify-center gap-2.5">
+            {globalPresence.map((place) => <span key={place} className="rounded-full border border-border bg-card-soft px-4 py-2 text-[11px] text-muted-foreground">{place}</span>)}
+          </div>
         </div>
       </MotionSection>
 

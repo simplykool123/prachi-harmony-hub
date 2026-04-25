@@ -1,11 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
+import { ImageComposition } from "@/components/prachi/ImageComposition";
 import { PageHero } from "@/components/prachi/PageHero";
 import { MotionSection, SectionIntro, fadeUp } from "@/components/prachi/Motion";
-import { cities } from "@/components/prachi/site-data";
+import { awards, cities, globalPresence } from "@/components/prachi/site-data";
 import vastuPlanImage from "@/assets/prachi-vastu-plan.jpg";
 import celestialPalmImage from "@/assets/prachi-celestial-palm.jpg";
+import officeVastuImage from "@/assets/prachi-office-vastu.jpg";
+import familyHomeImage from "@/assets/prachi-family-home.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({ meta: [
@@ -22,11 +25,10 @@ function AboutPage() {
     <PageHero eyebrow="ABOUT" title="Where ancient wisdom meets modern clarity" copy="A rare combination of Palmistry and Vastu Shastra — personally guided." />
     <MotionSection className="pf-section overflow-hidden bg-card">
       <div className="pf-container grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
-        <motion.div {...fadeUp} className="relative min-h-[560px]">
-          <img src={vastuPlanImage} alt="Luxury Vastu plan and compass setting" width={1408} height={960} loading="lazy" className="absolute left-0 top-0 h-[360px] w-[82%] rounded-r-full object-cover shadow-card" />
-          <img src={celestialPalmImage} alt="Palmistry consultation details in warm light" width={1120} height={1328} loading="lazy" className="absolute bottom-0 right-0 h-[380px] w-[52%] rounded-t-full object-cover shadow-card" />
-          <div className="absolute bottom-16 left-8 hidden h-px w-[42%] bg-accent/40 md:block" />
-        </motion.div>
+        <ImageComposition
+          primary={{ src: familyHomeImage, alt: "Real home interior balanced with practical Vastu guidance", width: 1280, height: 960 }}
+          secondary={{ src: celestialPalmImage, alt: "Palmistry consultation details in warm light", width: 1120, height: 1328 }}
+        />
         <motion.div {...fadeUp}>
           <p className="pf-eyebrow">HER STORY</p>
           <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>
@@ -38,15 +40,25 @@ function AboutPage() {
     </MotionSection>
     <MotionSection className="pf-section bg-background">
       <div className="pf-container">
-        <SectionIntro eyebrow="INTERNATIONAL RECOGNITION" title="Globally recognised expertise" />
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {["Thailand Honorary Doctorate", "International Astro Purohit Award"].map((title, index) => (
-            <motion.article {...fadeUp} key={title} transition={{ duration: .7, ease: "easeOut", delay: index * .08 }} className="pf-card border-t-[3px] border-t-accent p-8">
-              <p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">AWARD 0{index + 1}</p>
-              <h3 className="pf-h3 mt-3 text-[26px]">{title}</h3>
-              <p className="mt-3 text-[13px] font-light leading-relaxed text-muted-foreground">{index === 0 ? "Conferred by the International Astrology Federation Inc. — an American Research Organisation — at the Thailand Triangle Summit. One of the highest international recognitions in the field." : "Awarded by the International Astrology Federation for outstanding contribution to the science of Vastu and Astrology — recognised for excellence in practice and community outreach."}</p>
-            </motion.article>
-          ))}
+        <SectionIntro eyebrow="INTERNATIONAL RECOGNITION" title="Awards, authority and global presence" />
+        <div className="mt-14 grid gap-10 lg:grid-cols-[58fr_42fr] lg:items-center">
+          <div className="grid gap-5">
+            {awards.map((award, index) => {
+              const Icon = award.icon;
+              return <motion.article {...fadeUp} key={award.title} transition={{ duration: .7, ease: "easeOut", delay: index * .08 }} className="pf-card grid gap-5 border-l-[3px] border-l-accent p-7 sm:grid-cols-[auto_1fr]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-badge text-accent"><Icon size={20} strokeWidth={1.6} /></div>
+                <div><p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">AWARD 0{index + 1}</p><h3 className="pf-h3 mt-2 text-[26px]">{award.title}</h3><p className="mt-3 text-[13px] font-light leading-relaxed text-muted-foreground">{award.description}</p></div>
+              </motion.article>;
+            })}
+          </div>
+          <ImageComposition
+            primary={{ src: officeVastuImage, alt: "Professional office Vastu consultation with plan and remedies", width: 1280, height: 960 }}
+            secondary={{ src: vastuPlanImage, alt: "Detailed Vastu floor plan consultation setting", width: 1408, height: 960 }}
+            align="right"
+          />
+        </div>
+        <div className="mt-8 flex flex-wrap justify-center gap-2.5">
+          {globalPresence.map((place) => <span key={place} className="rounded-full border border-border bg-card px-4 py-2 text-[11px] text-muted-foreground">{place}</span>)}
         </div>
       </div>
     </MotionSection>
