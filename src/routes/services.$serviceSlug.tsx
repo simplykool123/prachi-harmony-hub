@@ -261,7 +261,7 @@ function ServiceDetailPage() {
         </DetailSection>
 
         <DetailSection label="How it works" heading="The consultation flow">
-          <div className="grid gap-4 lg:grid-cols-3">
+          <div className="grid gap-4 lg:grid-cols-4">
             {detail.steps.map((step) => (
               <article key={step.number} className="relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-card">
                 <div className="absolute -right-2 -top-4 font-heading text-[74px] font-light leading-none text-accent/10">{step.number}</div>
