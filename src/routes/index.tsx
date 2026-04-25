@@ -2,11 +2,16 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ImageComposition } from "@/components/prachi/ImageComposition";
 import { CountUp, MotionSection, SectionIntro, fadeUp, staggerContainer, staggerItem } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
-import { services, whatsappUrl } from "@/components/prachi/site-data";
+import { awards, globalPresence, remedyHighlights, services, whatsappUrl } from "@/components/prachi/site-data";
 import vastuPlanImage from "@/assets/prachi-vastu-plan.jpg";
 import celestialPalmImage from "@/assets/prachi-celestial-palm.jpg";
+import homeRemediesImage from "@/assets/prachi-home-remedies.jpg";
+import officeVastuImage from "@/assets/prachi-office-vastu.jpg";
+import energyElementsImage from "@/assets/prachi-energy-elements.jpg";
+import familyHomeImage from "@/assets/prachi-family-home.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,6 +42,12 @@ const testimonials = [
   ["Her Vastu consultation transformed our office energy entirely. The difference was almost immediate — smoother operations, happier team.", "Corporate Client", "Mumbai"],
   ["The palm reading revealed things about myself I had never been able to articulate. Deeply reassuring and accurate.", "Remote Client", "Dubai"],
   ["My child's focus improved after Prachi's Vastu corrections for the study room. Simple changes, profound results.", "Parent", "Nashik"],
+];
+
+const impactItems = [
+  ["Health", "Restful rooms, balanced elements and less environmental stress support calmer daily routines."],
+  ["Relationships", "Shared spaces are corrected for warmth, communication and emotional steadiness."],
+  ["Business", "Entrances, seating and decision zones are aligned for confidence, clarity and growth."],
 ];
 
 function Index() {
