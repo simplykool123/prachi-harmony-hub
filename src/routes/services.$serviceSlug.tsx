@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { fadeUp } from "@/components/prachi/Motion";
 import { cities, services, whatsappUrl } from "@/components/prachi/site-data";
 
-export const Route = createFileRoute("/services/")({
+export const Route = createFileRoute("/services/$serviceSlug")({
   component: ServiceDetailPage,
 });
 

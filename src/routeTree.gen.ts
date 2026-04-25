@@ -15,7 +15,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ServicesRouteImport } from './routes/services.'
+import { Route as ServicesServiceSlugRouteImport } from './routes/services.$serviceSlug'
 
 const VastuGuideRoute = VastuGuideRouteImport.update({
   id: '/vastu-guide',
@@ -47,9 +47,9 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/',
-  path: '/',
+const ServicesServiceSlugRoute = ServicesServiceSlugRouteImport.update({
+  id: '/$serviceSlug',
+  path: '/$serviceSlug',
   getParentRoute: () => ServicesRoute,
 } as any)
 
@@ -60,15 +60,16 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRouteWithChildren
   '/vastu-guide': typeof VastuGuideRoute
-  '/services/': typeof ServicesRoute
+  '/services/$serviceSlug': typeof ServicesServiceSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
   '/contact': typeof ContactRoute
+  '/services': typeof ServicesRouteWithChildren
   '/vastu-guide': typeof VastuGuideRoute
-  '/services': typeof ServicesRoute
+  '/services/$serviceSlug': typeof ServicesServiceSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -78,7 +79,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRouteWithChildren
   '/vastu-guide': typeof VastuGuideRoute
-  '/services/': typeof ServicesRoute
+  '/services/$serviceSlug': typeof ServicesServiceSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -89,9 +90,16 @@ export interface FileRouteTypes {
     | '/contact'
     | '/services'
     | '/vastu-guide'
-    | '/services/'
+    | '/services/$serviceSlug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/blog' | '/contact' | '/vastu-guide' | '/services'
+  to:
+    | '/'
+    | '/about'
+    | '/blog'
+    | '/contact'
+    | '/services'
+    | '/vastu-guide'
+    | '/services/$serviceSlug'
   id:
     | '__root__'
     | '/'
@@ -100,7 +108,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/services'
     | '/vastu-guide'
-    | '/services/'
+    | '/services/$serviceSlug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -156,22 +164,22 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/': {
-      id: '/services/'
-      path: '/'
-      fullPath: '/services/'
-      preLoaderRoute: typeof ServicesRouteImport
+    '/services/$serviceSlug': {
+      id: '/services/$serviceSlug'
+      path: '/$serviceSlug'
+      fullPath: '/services/$serviceSlug'
+      preLoaderRoute: typeof ServicesServiceSlugRouteImport
       parentRoute: typeof ServicesRoute
     }
   }
 }
 
 interface ServicesRouteChildren {
-  ServicesRoute: typeof ServicesRoute
+  ServicesServiceSlugRoute: typeof ServicesServiceSlugRoute
 }
 
 const ServicesRouteChildren: ServicesRouteChildren = {
-  ServicesRoute: ServicesRoute,
+  ServicesServiceSlugRoute: ServicesServiceSlugRoute,
 }
 
 const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
