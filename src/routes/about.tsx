@@ -1,11 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
+import { ImageComposition } from "@/components/prachi/ImageComposition";
 import { PageHero } from "@/components/prachi/PageHero";
 import { MotionSection, SectionIntro, fadeUp } from "@/components/prachi/Motion";
-import { cities } from "@/components/prachi/site-data";
+import { awards, cities, globalPresence } from "@/components/prachi/site-data";
 import vastuPlanImage from "@/assets/prachi-vastu-plan.jpg";
 import celestialPalmImage from "@/assets/prachi-celestial-palm.jpg";
+import officeVastuImage from "@/assets/prachi-office-vastu.jpg";
+import familyHomeImage from "@/assets/prachi-family-home.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({ meta: [
@@ -22,11 +25,10 @@ function AboutPage() {
     <PageHero eyebrow="ABOUT" title="Where ancient wisdom meets modern clarity" copy="A rare combination of Palmistry and Vastu Shastra — personally guided." />
     <MotionSection className="pf-section overflow-hidden bg-card">
       <div className="pf-container grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
-        <motion.div {...fadeUp} className="relative min-h-[560px]">
-          <img src={vastuPlanImage} alt="Luxury Vastu plan and compass setting" width={1408} height={960} loading="lazy" className="absolute left-0 top-0 h-[360px] w-[82%] rounded-r-full object-cover shadow-card" />
-          <img src={celestialPalmImage} alt="Palmistry consultation details in warm light" width={1120} height={1328} loading="lazy" className="absolute bottom-0 right-0 h-[380px] w-[52%] rounded-t-full object-cover shadow-card" />
-          <div className="absolute bottom-16 left-8 hidden h-px w-[42%] bg-accent/40 md:block" />
-        </motion.div>
+        <ImageComposition
+          primary={{ src: familyHomeImage, alt: "Real home interior balanced with practical Vastu guidance", width: 1280, height: 960 }}
+          secondary={{ src: celestialPalmImage, alt: "Palmistry consultation details in warm light", width: 1120, height: 1328 }}
+        />
         <motion.div {...fadeUp}>
           <p className="pf-eyebrow">HER STORY</p>
           <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>
