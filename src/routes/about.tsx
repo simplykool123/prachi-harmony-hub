@@ -42,23 +42,41 @@ function AboutPage() {
     <MotionSection className="pf-section bg-background">
       <div className="pf-container">
         <SectionIntro eyebrow="INTERNATIONAL RECOGNITION" title="Awards, authority and global presence" />
-        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {awards.map((award, index) => {
+        <div className="mt-10 grid gap-4 lg:grid-cols-[0.92fr_1.65fr]">
+          {awards.slice(0, 1).map((award, index) => {
+            const Icon = award.icon;
+            return <article key={award.title} className="pf-card overflow-hidden">
+              <div className="grid aspect-[3/4] place-items-center bg-card-soft p-3">
+                <img src={award.image} alt={`${award.title} certificate`} width={800} height={1067} loading="lazy" decoding="async" className="max-h-full w-full object-contain" />
+              </div>
+              <div className="p-5">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-badge text-accent"><Icon size={16} strokeWidth={1.6} /></div>
+                  <p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">AWARD 0{index + 1}</p>
+                </div>
+                <h3 className="pf-h3 mt-4 text-[22px]">{award.title}</h3>
+                <p className="mt-2 text-[12px] font-light leading-relaxed text-muted-foreground">{award.description}</p>
+              </div>
+            </article>;
+          })}
+          <div className="grid gap-4 md:grid-cols-2">
+            {awards.slice(1).map((award, index) => {
               const Icon = award.icon;
               return <article key={award.title} className="pf-card overflow-hidden">
-                <div className="grid aspect-[4/3] place-items-center bg-card-soft p-3">
-                  <img src={award.image} alt={`${award.title} certificate`} width={800} height={600} loading="lazy" decoding="async" className="max-h-full w-full object-contain" />
+                <div className="grid aspect-[16/10] place-items-center bg-card-soft p-3">
+                  <img src={award.image} alt={`${award.title} certificate`} width={900} height={563} loading="lazy" decoding="async" className="max-h-full w-full object-contain" />
                 </div>
-                <div className="p-5">
+                <div className="p-4">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-badge text-accent"><Icon size={16} strokeWidth={1.6} /></div>
-                    <p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">AWARD 0{index + 1}</p>
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-badge text-accent"><Icon size={15} strokeWidth={1.6} /></div>
+                    <p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">AWARD 0{index + 2}</p>
                   </div>
-                  <h3 className="pf-h3 mt-4 text-[22px]">{award.title}</h3>
-                  <p className="mt-2 text-[12px] font-light leading-relaxed text-muted-foreground">{award.description}</p>
+                  <h3 className="pf-h3 mt-3 text-[20px]">{award.title}</h3>
+                  <p className="mt-1.5 text-[12px] font-light leading-relaxed text-muted-foreground">{award.description}</p>
                 </div>
               </article>;
             })}
+          </div>
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-2.5">
           {globalPresence.map((place) => <span key={place} className="rounded-full border border-border bg-card px-4 py-2 text-[11px] text-muted-foreground">{place}</span>)}
