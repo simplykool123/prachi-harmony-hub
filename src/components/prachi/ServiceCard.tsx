@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 import type { Service } from "./site-data";
 
@@ -12,6 +13,7 @@ export function ServiceCard({ service, index = 0 }: { service: Service; index?: 
       transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.08 }}
       className={cn("pf-card pf-card-hover pf-infographic-card relative overflow-hidden", service.featured && "border-[1.5px] border-accent bg-badge")}
     >
+      <Link to="/services/$serviceSlug" params={{ serviceSlug: service.slug }} className="absolute inset-0 z-10" aria-label={`Read more about ${service.name}`} />
       {service.featured && <div className="absolute inset-x-0 top-0 h-[3px] bg-accent" />}
       {service.featured && (
         <span className="absolute right-5 top-5 rounded-full bg-card px-2.5 py-1 text-[9px] font-medium uppercase tracking-[1.5px] text-badge-foreground shadow-card">
