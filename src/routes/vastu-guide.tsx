@@ -1,8 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/prachi/PageHero";
-import { MotionSection, fadeUp } from "@/components/prachi/Motion";
+import { MotionSection } from "@/components/prachi/Motion";
 
 export const Route = createFileRoute("/vastu-guide")({
   head: () => ({ meta: [
@@ -33,7 +32,7 @@ function VastuGuidePage() {
   return <>
     <PageHero eyebrow="FREE RESOURCE" title="The Vastu directional guide" copy="Ancient principles — one room at a time. A starting point before your personal consultation with Prachi." />
     <MotionSection className="pf-section bg-background pt-10">
-      <motion.div {...fadeUp} className="pf-container">
+      <div className="pf-container">
         <div className="overflow-hidden rounded-[14px] border border-border bg-card">
           <div className="grid grid-cols-1 bg-foreground text-primary-foreground md:grid-cols-[1.1fr_1fr_1.7fr]">
             {['Room / Zone', 'Ideal Direction', 'Why it matters'].map((head) => <div key={head} className="px-6 py-4 text-[11px] font-medium uppercase tracking-[1px]">{head}</div>)}
@@ -50,7 +49,7 @@ function VastuGuidePage() {
           <p className="pf-body mb-6">Need a personal Vastu consultation? Book with Prachi</p>
           <Button asChild variant="hero"><Link to="/contact">Book Now</Link></Button>
         </div>
-      </motion.div>
+      </div>
     </MotionSection>
   </>;
 }

@@ -20,19 +20,19 @@ export const staggerItem = {
 
 export function MotionSection({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <motion.section {...fadeUp} className={className}>
+    <section className={className}>
       {children}
-    </motion.section>
+    </section>
   );
 }
 
 export function SectionIntro({ eyebrow, title, copy, centered = true }: { eyebrow: string; title: string; copy?: string; centered?: boolean }) {
   return (
-    <motion.div {...fadeUp} className={centered ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
+    <div className={centered ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
       <p className={`pf-eyebrow ${centered ? "pf-eyebrow-center" : ""}`}>{eyebrow}</p>
       <h2 className="pf-h2 mt-7">{title}</h2>
       {copy && <p className="pf-body mx-auto mt-4 max-w-xl">{copy}</p>}
-    </motion.div>
+    </div>
   );
 }
 
@@ -47,5 +47,5 @@ export function CountUp({ value, suffix = "" }: { value: number; suffix?: string
     if (inView) motionValue.set(value);
   }, [inView, motionValue, value]);
 
-  return <motion.span ref={ref}>{rounded}</motion.span>;
+  return <span ref={ref}>{rounded}</span>;
 }

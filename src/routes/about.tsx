@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { ImageComposition } from "@/components/prachi/ImageComposition";
 import { PageHero } from "@/components/prachi/PageHero";
-import { MotionSection, SectionIntro, fadeUp } from "@/components/prachi/Motion";
+import { MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { awards, cities, globalPresence } from "@/components/prachi/site-data";
 
 const vastuPlanImage = "/site-images/prachi-vastu-plan.jpg";
@@ -30,13 +29,13 @@ function AboutPage() {
           primary={{ src: familyHomeImage, alt: "Real home interior balanced with practical Vastu guidance", width: 1280, height: 960 }}
           secondary={{ src: celestialPalmImage, alt: "Palmistry consultation details in warm light", width: 1120, height: 1328 }}
         />
-        <motion.div {...fadeUp}>
+        <div>
           <p className="pf-eyebrow">HER STORY</p>
           <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>
           <p className="pf-body mt-5">For over two decades, Prachi Fulfagar has been a trusted guide for thousands of people seeking clarity — through their palms, their homes, and the stars.</p>
           <p className="pf-body mt-4">What sets Prachi apart is her rare combination of Palmistry and Vastu Shastra — a pairing that allows her to read both the person and their environment, aligning them together for results neither practice achieves alone.</p>
           <p className="pf-body mt-4">Today, Prachi consults from offices in Mumbai, Pune, Nashik and Kopargaon, and works with clients across India and internationally.</p>
-        </motion.div>
+        </div>
       </div>
     </MotionSection>
     <MotionSection className="pf-section bg-background">
@@ -46,10 +45,10 @@ function AboutPage() {
           <div className="grid gap-5">
             {awards.map((award, index) => {
               const Icon = award.icon;
-              return <motion.article {...fadeUp} key={award.title} transition={{ duration: .7, ease: "easeOut", delay: index * .08 }} className="pf-card grid gap-5 border-l-[3px] border-l-accent p-7 sm:grid-cols-[auto_1fr]">
+              return <article key={award.title} transition={{ duration: .7, ease: "easeOut", delay: index * .08 }} className="pf-card grid gap-5 border-l-[3px] border-l-accent p-7 sm:grid-cols-[auto_1fr]">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-badge text-accent"><Icon size={20} strokeWidth={1.6} /></div>
                 <div><p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">AWARD 0{index + 1}</p><h3 className="pf-h3 mt-2 text-[26px]">{award.title}</h3><p className="mt-3 text-[13px] font-light leading-relaxed text-muted-foreground">{award.description}</p></div>
-              </motion.article>;
+              </article>;
             })}
           </div>
           <ImageComposition
@@ -67,12 +66,12 @@ function AboutPage() {
       <div className="pf-container text-center">
         <SectionIntro eyebrow="OFFICES" title="Where you can find Prachi" />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {cities.map((city) => <motion.article {...fadeUp} key={city} className="rounded-xl border border-border bg-card-soft p-7 text-center">
+          {cities.map((city) => <article key={city} className="rounded-xl border border-border bg-card-soft p-7 text-center">
             <MapPin className="mx-auto h-5 w-5 text-accent" />
             <h3 className="pf-h3 mt-3 text-[22px]">{city}</h3>
             <p className="mt-1 text-[11px] text-muted-foreground">Office space</p>
             {city === "Kopargaon" && <p className="mt-1.5 text-[10px] text-accent">+ travels all over India on request</p>}
-          </motion.article>)}
+          </article>)}
         </div>
         <p className="mt-9 font-heading text-base italic text-muted-foreground">Remote consultations available worldwide — via Zoom, WhatsApp or phone.</p>
       </div>

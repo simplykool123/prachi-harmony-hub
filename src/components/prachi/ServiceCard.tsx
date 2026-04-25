@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 import type { Service } from "./site-data";
@@ -6,7 +5,7 @@ import type { Service } from "./site-data";
 export function ServiceCard({ service, index = 0 }: { service: Service; index?: number }) {
   const Icon = service.icon;
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -30,6 +29,6 @@ export function ServiceCard({ service, index = 0 }: { service: Service; index?: 
         <p className="mt-4 max-w-[285px] text-[15px] font-light leading-relaxed text-muted-foreground">{service.description}</p>
         <span className="mt-auto pt-8 text-[12px] font-medium text-primary underline-offset-4 transition hover:underline">Read More</span>
       </Link>
-    </motion.div>
+    </div>
   );
 }

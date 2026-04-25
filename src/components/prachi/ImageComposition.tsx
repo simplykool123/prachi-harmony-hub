@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-import { fadeUp } from "./Motion";
 
 type CompositionImage = {
   src: string;
@@ -20,7 +18,7 @@ export function ImageComposition({
   const isRight = align === "right";
 
   return (
-    <motion.div {...fadeUp} className="relative min-h-[500px] sm:min-h-[540px]">
+    <div className="relative min-h-[500px] sm:min-h-[540px]">
       <img
         src={primary.src}
         alt={primary.alt}
@@ -40,6 +38,6 @@ export function ImageComposition({
         className={`absolute bottom-0 h-[390px] w-[54%] object-cover shadow-card ${isRight ? "left-0 rounded-t-full" : "right-0 rounded-t-full"}`}
       />
       <div className={`absolute top-[58%] hidden h-px w-[42%] bg-accent/40 md:block ${isRight ? "right-[9%]" : "left-[9%]"}`} />
-    </motion.div>
+    </div>
   );
 }
