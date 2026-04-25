@@ -6,6 +6,15 @@ import { fadeUp } from "@/components/prachi/Motion";
 import { cities, services, whatsappUrl } from "@/components/prachi/site-data";
 
 export const Route = createFileRoute("/services/$serviceSlug")({
+  head: ({ params }) => {
+    const service = services.find((item) => item.slug === params.serviceSlug);
+    return { meta: [
+      { title: service ? `${service.name} | Prachi Fulfagar Services` : "Service | Prachi Fulfagar" },
+      { name: "description", content: service?.description ?? "Premium Vastu, Palmistry and Astrology services by Prachi Fulfagar." },
+      { property: "og:title", content: service ? `${service.name} | Prachi Fulfagar` : "Prachi Fulfagar Service" },
+      { property: "og:description", content: service?.description ?? "Premium Vastu, Palmistry and Astrology consultations." },
+    ] };
+  },
   component: ServiceDetailPage,
 });
 
