@@ -10,7 +10,6 @@ const vastuPlanImage = "/site-images/prachi-vastu-plan.jpg";
 const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
 const homeRemediesImage = "/site-images/prachi-home-remedies.jpg";
 const energyElementsImage = "/site-images/prachi-energy-elements.jpg";
-const familyHomeImage = "/site-images/prachi-family-home.jpg";
 const prachiPortraitImage = "/site-images/prachi-fulfagar-portrait.jpg";
 
 export const Route = createFileRoute("/")({
