@@ -155,21 +155,23 @@ function Index() {
       </MotionSection>
 
       <MotionSection className="relative overflow-hidden bg-card py-16">
-        <div className="absolute left-0 top-0 h-full w-[42%] bg-background/65 [clip-path:ellipse(70%_80%_at_0%_50%)]" />
-        <div className="pf-container relative z-10 grid items-center gap-10 lg:grid-cols-[46fr_54fr] lg:gap-14">
-          <div>
-            <p className="pf-eyebrow">ABOUT PRACHI</p>
+        <div className="absolute left-1/2 top-0 h-full w-px bg-accent/20" />
+        <div className="pf-container relative z-10 grid items-center gap-8 lg:grid-cols-[32fr_36fr_32fr]">
+          <div className="relative min-h-[430px]">
+            <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="absolute inset-x-0 top-0 mx-auto h-[430px] w-[86%] rounded-t-full object-cover object-[center_8%] shadow-card" />
+          </div>
+          <div className="text-center">
+            <p className="pf-eyebrow pf-eyebrow-center">ABOUT PRACHI</p>
             <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>
-            <p className="pf-body mt-5">Prachi Fulfagar is one of India's most credentialled Vastu and Palmistry consultants — combining both in a rare integrated practice that aligns you from the inside out.</p>
-            <p className="pf-body mt-4">Consulting from Mumbai, Pune, Nashik and Kopargaon, she works with clients across India and internationally.</p>
+            <p className="pf-body mx-auto mt-5 max-w-[420px]">Prachi Fulfagar is one of India's most credentialled Vastu and Palmistry consultants — combining both in a rare integrated practice that aligns you from the inside out.</p>
+            <p className="pf-body mx-auto mt-4 max-w-[420px]">Consulting from Mumbai, Pune, Nashik and Kopargaon, she works with clients across India and internationally.</p>
             <Link to="/about" className="group mt-7 inline-flex text-[13px] font-medium text-accent">Read her full story <span className="transition group-hover:translate-x-1">→</span></Link>
           </div>
-          <div className="relative min-h-[540px] sm:min-h-[600px]">
-            <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="absolute right-0 top-0 h-[380px] w-[78%] rounded-l-full object-cover object-[center_14%] shadow-card" />
-            <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={1120} height={1328} loading="lazy" decoding="async" className="absolute bottom-0 right-0 h-[390px] w-[52%] rounded-t-full object-cover shadow-card" />
-            <div className="absolute left-[12%] top-[58%] hidden h-px w-[58%] bg-accent/45 md:block" />
-            <div className="absolute left-0 bottom-24 hidden rounded-t-full border border-border bg-background p-8 md:block">
-              <Hand className="h-12 w-12 text-accent" strokeWidth={1.3} />
+          <div className="relative min-h-[430px]">
+            <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={1120} height={1328} loading="lazy" decoding="async" className="absolute inset-x-0 bottom-0 mx-auto h-[360px] w-[86%] rounded-b-full object-cover shadow-card" />
+            <div className="absolute left-0 top-8 hidden h-px w-[72%] bg-accent/45 md:block" />
+            <div className="absolute left-1/2 top-0 grid h-28 w-28 -translate-x-1/2 place-items-center rounded-t-full border border-border bg-background text-accent shadow-card">
+              <Hand className="h-12 w-12" strokeWidth={1.3} />
             </div>
           </div>
         </div>
