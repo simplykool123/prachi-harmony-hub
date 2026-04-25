@@ -217,7 +217,7 @@ function Index() {
           <div className="pf-story-marquee mt-14 overflow-hidden">
             <div className="pf-story-track flex w-max gap-5">
               {[...customerStories, ...customerStories].map((story, index) => (
-              <article key={`${name}-${index}`} className="pf-card w-[310px] shrink-0 overflow-hidden p-0 sm:w-[360px]">
+              <article key={`${story.name}-${index}`} className="pf-card w-[310px] shrink-0 overflow-hidden p-0 sm:w-[360px]">
                 <div className="h-[3px] bg-accent" />
                 <div className="p-8">
                   <p className="font-heading text-[17px] italic leading-relaxed text-foreground">“{story.quote}”</p>
