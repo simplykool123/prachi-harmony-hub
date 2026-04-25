@@ -9,6 +9,7 @@ const vastuPlanImage = "/site-images/prachi-vastu-plan.jpg";
 const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
 const officeVastuImage = "/site-images/prachi-office-vastu.jpg";
 const familyHomeImage = "/site-images/prachi-family-home.jpg";
+const prachiPortraitImage = "/site-images/prachi-fulfagar-portrait.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({ meta: [
@@ -26,7 +27,7 @@ function AboutPage() {
     <MotionSection className="pf-section overflow-hidden bg-card">
       <div className="pf-container grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
         <ImageComposition
-          primary={{ src: familyHomeImage, alt: "Real home interior balanced with practical Vastu guidance", width: 1280, height: 960 }}
+          primary={{ src: prachiPortraitImage, alt: "Prachi Fulfagar in her Vastu and Palmistry consultation studio", width: 900, height: 1350 }}
           secondary={{ src: celestialPalmImage, alt: "Palmistry consultation details in warm light", width: 1120, height: 1328 }}
         />
         <div>
