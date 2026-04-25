@@ -162,20 +162,46 @@ function Index() {
             <p className="pf-body mt-4">Consulting from Mumbai, Pune, Nashik and Kopargaon, she works with clients across India and internationally.</p>
             <Link to="/about" className="group mt-7 inline-flex text-[13px] font-medium text-accent">Read her full story <span className="transition group-hover:translate-x-1">→</span></Link>
           </motion.div>
-          <motion.div {...fadeUp} className="relative min-h-[520px]">
-            <img src={vastuPlanImage} alt="Refined Vastu floor plan consultation setting" width={1408} height={960} loading="lazy" className="absolute left-0 top-2 h-[310px] w-[68%] rounded-r-full object-cover shadow-card" />
-            <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={1120} height={1328} loading="lazy" className="absolute bottom-0 right-0 h-[420px] w-[58%] rounded-t-full object-cover shadow-card" />
-            <div className="absolute left-[9%] top-[56%] hidden h-px w-[44%] bg-accent/40 md:block" />
-          </motion.div>
+          <ImageComposition
+            primary={{ src: familyHomeImage, alt: "Balanced family home interior after practical Vastu alignment", width: 1280, height: 960 }}
+            secondary={{ src: celestialPalmImage, alt: "Palmistry and astrology consultation details", width: 1120, height: 1328 }}
+          />
         </div>
-        <div className="pf-container mt-16 grid gap-4 md:grid-cols-2">
-            {["Thailand Honorary Doctorate", "International Astro Purohit Award"].map((title, index) => (
-              <motion.article {...fadeUp} key={title} transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.08 }} className="rounded-xl border border-l-[3px] border-border border-l-accent bg-card-soft p-5">
-                <p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">AWARD 0{index + 1}</p>
-                <h3 className="pf-h3 mt-2 text-xl">{title}</h3>
-                <p className="mt-2 text-xs font-light leading-relaxed text-muted-foreground">{index === 0 ? "Conferred by the International Astrology Federation Inc. at the Thailand Triangle Summit." : "Awarded by the International Astrology Federation for outstanding contribution to Vastu and Astrology."}</p>
+      </MotionSection>
+
+      <MotionSection className="pf-section bg-background">
+        <div className="pf-container">
+          <SectionIntro eyebrow="BEFORE & AFTER" title="The impact of alignment" copy="The goal is not decoration — it is a home or workplace that starts supporting the life inside it." />
+          <div className="mt-14 grid gap-5 lg:grid-cols-3">
+            {impactItems.map(([title, copy], index) => (
+              <motion.article {...fadeUp} key={title} transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.08 }} className="pf-card p-7">
+                <p className="text-[10px] font-medium uppercase tracking-[2px] text-accent">Impact 0{index + 1}</p>
+                <h3 className="pf-h3 mt-4">{title}</h3>
+                <div className="my-5 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-[11px] text-muted-foreground">
+                  <span>Blocked</span><span className="text-accent">→</span><span className="text-foreground">Aligned</span>
+                </div>
+                <p className="text-[13px] font-light leading-relaxed text-muted-foreground">{copy}</p>
               </motion.article>
             ))}
+          </div>
+        </div>
+      </MotionSection>
+
+      <MotionSection className="pf-section bg-card">
+        <div className="pf-container">
+          <SectionIntro eyebrow="AUTHORITY" title="Awards, recognition and global reach" copy="A trusted practice serving Indian and international clients with recognised expertise." />
+          <div className="mt-14 grid gap-5 lg:grid-cols-2">
+            {awards.map((award, index) => {
+              const Icon = award.icon;
+              return <motion.article {...fadeUp} key={award.title} transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.08 }} className="pf-card grid gap-5 p-7 sm:grid-cols-[auto_1fr]">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-badge text-accent"><Icon size={22} strokeWidth={1.6} /></div>
+                <div><p className="text-[9px] font-medium uppercase tracking-[2px] text-accent">Recognition 0{index + 1}</p><h3 className="pf-h3 mt-2">{award.title}</h3><p className="mt-2 text-[13px] font-light leading-relaxed text-muted-foreground">{award.description}</p></div>
+              </motion.article>;
+            })}
+          </div>
+          <div className="mt-10 flex flex-wrap justify-center gap-2.5">
+            {globalPresence.map((place) => <span key={place} className="rounded-full border border-border bg-card-soft px-4 py-2 text-[11px] text-muted-foreground">{place}</span>)}
+          </div>
         </div>
       </MotionSection>
 
