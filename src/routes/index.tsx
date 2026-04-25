@@ -57,8 +57,11 @@ function Index() {
         <motion.img
           src={vastuPlanImage}
           alt="Vastu floor plan with brass compass"
-          width={1408}
-          height={960}
+          width={960}
+          height={655}
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
           initial={{ opacity: 0, x: -36 }}
           animate={{ opacity: 0.18, x: 0 }}
           transition={{ duration: 1.1, ease: "easeOut" }}
@@ -67,8 +70,10 @@ function Index() {
         <motion.img
           src={celestialPalmImage}
           alt="Palmistry consultation with celestial chart"
-          width={1120}
-          height={1328}
+          width={759}
+          height={900}
+          loading="lazy"
+          decoding="async"
           initial={{ opacity: 0, x: 36 }}
           animate={{ opacity: 0.14, x: 0 }}
           transition={{ duration: 1.1, ease: "easeOut", delay: 0.12 }}
