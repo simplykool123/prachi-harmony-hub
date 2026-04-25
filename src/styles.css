@@ -72,7 +72,7 @@
   --button-outline: oklch(0.834 0.005 73.68);
   --badge: oklch(0.975 0.035 69.5);
   --badge-foreground: oklch(0.52 0.139 49.2);
-  --footer: oklch(0.205 0.07 42.8);
+  --footer: oklch(0.47 0.16 42.8);
   --whatsapp: oklch(0.722 0.192 149.58);
   --shadow-card: 0 2px 16px rgb(0 0 0 / 0.04);
   --shadow-card-hover: 0 14px 34px rgb(0 0 0 / 0.07);
@@ -118,7 +118,7 @@
 
 @layer components {
   .pf-container { width: min(1100px, calc(100% - 40px)); margin-inline: auto; }
-  .pf-section { padding-block: 110px; }
+  .pf-section { padding-block: 88px; }
   .pf-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--color-accent); line-height: 1.4; }
   .pf-eyebrow::after { content: ""; display: block; width: 40px; height: 1px; margin-top: 18px; background: var(--color-accent); }
   .pf-eyebrow-center::after { margin-inline: auto; }
