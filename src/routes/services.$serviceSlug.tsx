@@ -261,27 +261,28 @@ function ServiceDetailPage() {
         </DetailSection>
 
         <DetailSection label="How it works" heading="The consultation flow">
-          <div className="space-y-8">
+          <div className="grid gap-4 lg:grid-cols-3">
             {detail.steps.map((step) => (
-              <article key={step.number} className="grid gap-4 sm:grid-cols-[72px_1fr]">
-                <div className="font-heading text-[36px] font-light leading-none text-accent">{step.number}</div>
+              <article key={step.number} className="relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-card">
+                <div className="absolute -right-2 -top-4 font-heading text-[74px] font-light leading-none text-accent/10">{step.number}</div>
                 <div>
-                  <h3 className="font-body text-[13px] font-medium leading-tight text-foreground">{step.title}</h3>
-                  <p className="mt-2 text-[13px] font-light leading-relaxed text-muted-foreground">{step.description}</p>
+                  <p className="font-heading text-[30px] font-light leading-none text-accent">{step.number}</p>
+                  <h3 className="mt-4 font-body text-[13px] font-medium leading-tight text-foreground">{step.title}</h3>
+                  <p className="mt-2 text-[12px] font-light leading-relaxed text-muted-foreground">{step.description}</p>
                 </div>
               </article>
             ))}
           </div>
         </DetailSection>
 
-        <section className="mt-16 border-t border-accent/45 pt-10 text-center">
+        <section className="mt-10 rounded-[28px] border border-accent/25 bg-warm p-7 text-center sm:p-9">
           <h2 className="font-heading text-[32px] font-light leading-tight text-foreground">Ready to begin?</h2>
           <p className="mx-auto mt-3 max-w-lg text-[15px] font-light leading-relaxed text-muted-foreground">Book a personal consultation with Prachi — in person or online.</p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3.5">
+          <div className="mt-6 flex flex-wrap justify-center gap-3.5">
             <Button asChild variant="hero"><Link to="/contact">Book a Consultation</Link></Button>
             <Button asChild variant="porcelain"><a href={whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle className="text-whatsapp" />WhatsApp Prachi</a></Button>
           </div>
-          <div className="mt-8 flex flex-wrap justify-center gap-2.5">
+          <div className="mt-6 flex flex-wrap justify-center gap-2.5">
             {cities.map((city) => <span key={city} className="rounded-full border border-border bg-card px-4 py-2 text-[11px] text-muted-foreground">{city}</span>)}
           </div>
           <p className="mt-4 text-[12px] font-light text-muted-foreground">Remote sessions available worldwide</p>
