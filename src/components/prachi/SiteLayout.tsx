@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { navItems, services, socialLinks, whatsappUrl } from "./site-data";
 
-const logoWhite = "/site-images/prachi-fulfagar-logo-white.png";
-const celestialSunImage = "/site-images/prachi-celestial-sun.png";
+const logoWhite = "/logo-1.png";
+const celestialSunImage = "/logo-2.png";
 
 function Logo({ light = false }: { light?: boolean }) {
   return (
