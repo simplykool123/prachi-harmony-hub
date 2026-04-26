@@ -57,8 +57,8 @@ function CelestialMotion({ className = "" }: { className?: string }) {
   return (
     <div className={`pointer-events-none ${className}`} aria-hidden="true">
       <div className="relative h-full w-full">
-        <img src={celestialRingImage} alt="" loading="lazy" decoding="async" className="pf-celestial-ring absolute inset-0 h-full w-full object-contain opacity-80" />
-        <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="absolute left-1/2 top-1/2 h-[46%] w-[46%] -translate-x-1/2 -translate-y-1/2 object-contain" />
+        <img src={celestialRingImage} alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-contain opacity-80" />
+        <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="absolute left-1/2 top-1/2 h-[58%] w-[58%] -translate-x-1/2 -translate-y-1/2 object-contain" />
         <img src={celestialMoonImage} alt="" loading="lazy" decoding="async" className="pf-png-moon-orbit absolute left-1/2 top-1/2 h-[26%] w-[26%] object-contain" />
       </div>
     </div>
