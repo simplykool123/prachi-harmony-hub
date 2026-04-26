@@ -16,6 +16,7 @@ const celestialSunImage = "/site-images/prachi-celestial-sun.png";
 const celestialMoonImage = "/site-images/prachi-celestial-moon.png";
 const impactHealthImage = "/site-images/prachi-impact-health.png";
 const impactRelationshipImage = "/site-images/prachi-impact-relationship.png";
+const impactBusinessImage = "/site-images/prachi-impact-business.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -70,11 +71,11 @@ function CelestialMotion({ className = "" }: { className?: string }) {
 }
 
 function ImpactIllustration({ type }: { type: string }) {
-  const image = type === "sunrise" ? impactHealthImage : type === "hands" ? impactRelationshipImage : null;
+  const image = type === "sunrise" ? impactHealthImage : type === "hands" ? impactRelationshipImage : type === "growth" ? impactBusinessImage : null;
 
   if (image) {
     return (
-      <div className="relative h-36 w-24 shrink-0">
+      <div className="relative h-40 w-28 shrink-0">
         <img src={image} alt="" loading="lazy" decoding="async" className="h-full w-full object-contain" />
       </div>
     );
