@@ -170,8 +170,9 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="bg-background py-9">
-        <div className="pf-container">
+      <MotionSection className="relative overflow-hidden bg-background py-9">
+        <img src={celestialRingImage} alt="" loading="lazy" decoding="async" className="pointer-events-none absolute -right-24 top-1/2 hidden h-[430px] w-[430px] -translate-y-1/2 object-contain opacity-[0.07] lg:block" />
+        <div className="pf-container relative z-10">
           <SectionIntro eyebrow="WHAT WE OFFER" title="Services for every space and soul" copy="From your palm to your home — a complete system of ancient wisdom." />
           <div className="mx-auto mt-6 grid max-w-[940px] gap-3 md:grid-cols-2 lg:grid-cols-3">
             {services.slice(0, 6).map((service, index) => <ServiceCard key={service.name} service={service} index={index} />)}
