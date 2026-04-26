@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Hand, MapPin } from "lucide-react";
 import { PageHero } from "@/components/prachi/PageHero";
 import { MotionSection, SectionIntro } from "@/components/prachi/Motion";
+import { CelestialDecor, DoubleLineMark } from "@/components/prachi/CelestialDecor";
 import { awards, cities, globalPresence } from "@/components/prachi/site-data";
 
 const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
@@ -20,27 +21,34 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return <>
     <PageHero eyebrow="ABOUT" title="Where ancient wisdom meets modern clarity" copy="A rare combination of Palmistry and Vastu Shastra — personally guided." />
-    <MotionSection className="pf-section overflow-hidden bg-card">
-      <div className="pf-container grid items-center gap-10 lg:grid-cols-[31fr_38fr_31fr]">
-        <div className="relative min-h-[440px]">
-          <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="absolute inset-x-0 top-0 mx-auto h-[440px] w-[88%] rounded-t-full object-cover object-[center_8%] shadow-card" />
+    <MotionSection className="pf-section pf-celestial-section overflow-hidden bg-card">
+      <CelestialDecor variant="compass" className="pointer-events-none absolute -left-12 top-12 hidden h-52 w-52 text-accent/10 lg:block" />
+      <CelestialDecor variant="moon" className="pointer-events-none absolute right-10 bottom-10 hidden h-32 w-32 text-accent/12 lg:block" />
+      <div className="pf-container relative z-10 grid items-center gap-10 lg:grid-cols-[31fr_38fr_31fr]">
+        <div className="pf-about-portrait-wrap relative mx-auto min-h-[440px] w-full max-w-[320px]">
+          <span className="pf-about-arch-orbit pf-about-arch-orbit-outer" aria-hidden="true" />
+          <span className="pf-about-arch-orbit pf-about-arch-orbit-inner" aria-hidden="true" />
+          <div className="pf-about-image-frame pf-about-image-arch absolute inset-x-0 top-0 mx-auto h-[430px] w-[88%]">
+            <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_8%]" />
+          </div>
         </div>
         <div className="text-center">
+          <DoubleLineMark className="mx-auto mb-7 w-[250px] text-accent/55" />
           <p className="pf-eyebrow pf-eyebrow-center">HER STORY</p>
           <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>
           <p className="pf-body mx-auto mt-5 max-w-[430px]">For over two decades, Prachi Fulfagar has been a trusted guide for thousands of people seeking clarity — through their palms, their homes, and the stars.</p>
           <p className="pf-body mx-auto mt-4 max-w-[430px]">What sets Prachi apart is her rare combination of Palmistry and Vastu Shastra — a pairing that allows her to read both the person and their environment, aligning them together for results neither practice achieves alone.</p>
           <p className="pf-body mx-auto mt-4 max-w-[430px]">Today, Prachi consults from offices in Mumbai, Pune, Nashik and Kopargaon, and works with clients across India and internationally.</p>
         </div>
-        <div className="relative min-h-[440px]">
-          <img src={celestialPalmImage} alt="Palmistry consultation details in warm light" width={1120} height={1328} loading="lazy" decoding="async" className="absolute inset-x-0 bottom-0 mx-auto h-[360px] w-[88%] rounded-b-full object-cover shadow-card" />
-          <div className="absolute right-0 top-10 hidden h-px w-[70%] bg-accent/40 md:block" />
+        <div className="pf-about-side-wrap relative min-h-[440px]">
+          <img src={celestialPalmImage} alt="Palmistry consultation details in warm light" width={1120} height={1328} loading="lazy" decoding="async" className="absolute inset-x-0 bottom-0 mx-auto h-[360px] w-[88%] rounded-b-full border border-accent/20 object-cover p-1.5 shadow-card" />
           <div className="absolute left-1/2 top-0 grid h-28 w-28 -translate-x-1/2 place-items-center rounded-t-full border border-border bg-background text-accent shadow-card"><Hand className="h-12 w-12" strokeWidth={1.3} /></div>
         </div>
       </div>
     </MotionSection>
-    <MotionSection className="pf-section bg-background">
-      <div className="pf-container">
+    <MotionSection className="pf-section pf-celestial-section bg-background">
+      <CelestialDecor variant="sun" className="pointer-events-none absolute -right-10 top-10 hidden h-48 w-48 text-accent/10 lg:block" />
+      <div className="pf-container relative z-10">
         <SectionIntro eyebrow="INTERNATIONAL RECOGNITION" title="Awards, authority and global presence" />
         <div className="mt-10 grid gap-4 lg:grid-cols-[0.92fr_1.65fr]">
           {awards.slice(0, 1).map((award, index) => {
@@ -83,8 +91,9 @@ function AboutPage() {
         </div>
       </div>
     </MotionSection>
-    <MotionSection className="pf-section bg-card">
-      <div className="pf-container text-center">
+    <MotionSection className="pf-section pf-celestial-section bg-card">
+      <CelestialDecor variant="star" className="pointer-events-none absolute left-10 top-14 hidden h-24 w-24 text-accent/12 lg:block" />
+      <div className="pf-container relative z-10 text-center">
         <SectionIntro eyebrow="OFFICES" title="Where you can find Prachi" />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {cities.map((city) => <article key={city} className="rounded-xl border border-border bg-card-soft p-7 text-center">

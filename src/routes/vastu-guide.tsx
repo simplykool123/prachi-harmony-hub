@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/prachi/PageHero";
 import { MotionSection } from "@/components/prachi/Motion";
+import { CelestialDecor } from "@/components/prachi/CelestialDecor";
 
 export const Route = createFileRoute("/vastu-guide")({
   head: () => ({ meta: [
@@ -31,8 +32,9 @@ const rows = [
 function VastuGuidePage() {
   return <>
     <PageHero eyebrow="FREE RESOURCE" title="The Vastu directional guide" copy="Ancient principles — one room at a time. A starting point before your personal consultation with Prachi." />
-    <MotionSection className="pf-section bg-background pt-10">
-      <div className="pf-container">
+    <MotionSection className="pf-section pf-celestial-section bg-background pt-10">
+      <CelestialDecor variant="compass" className="pointer-events-none absolute -right-16 top-12 hidden h-64 w-64 text-accent/10 lg:block" />
+      <div className="pf-container relative z-10">
         <div className="overflow-hidden rounded-[14px] border border-border bg-card">
           <div className="grid grid-cols-1 bg-foreground text-primary-foreground md:grid-cols-[1.1fr_1fr_1.7fr]">
             {['Room / Zone', 'Ideal Direction', 'Why it matters'].map((head) => <div key={head} className="px-6 py-4 text-[11px] font-medium uppercase tracking-[1px]">{head}</div>)}
