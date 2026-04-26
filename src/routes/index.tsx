@@ -18,7 +18,7 @@ const impactHealthImage = "/site-images/prachi-impact-health.png";
 const impactRelationshipImage = "/site-images/prachi-impact-relationship.png";
 const impactBusinessImage = "/site-images/prachi-impact-business.png";
 const heroLeftImage = "/site-images/prachi-hero-left-reference.png";
-const heroRightImage = "/site-images/prachi-hero-right-upload.png";
+const heroRightImage = "/site-images/prachi-hero-right-cropped.png";
 const heroMandalaImage = "/site-images/prachi-hero-mandala-upload.png";
 
 export const Route = createFileRoute("/")({
@@ -125,7 +125,7 @@ function Index() {
         <div className="pf-hero-cream-overlay absolute inset-0" aria-hidden="true" />
         <div className="pf-hero-vignette absolute inset-0" aria-hidden="true" />
         <img src={heroLeftImage} alt="Vastu consultation still life with compass, candle and crystals" width={670} height={1020} loading="eager" decoding="async" fetchPriority="high" className="pf-hero-side-image pf-hero-side-left" />
-        <img src={heroRightImage} alt="Palmistry chart with crystal sphere" width={1080} height={1920} loading="eager" decoding="async" className="pf-hero-side-image pf-hero-side-right" />
+        <img src={heroRightImage} alt="Palmistry chart with crystal sphere" width={1012} height={970} loading="eager" decoding="async" className="pf-hero-side-image pf-hero-side-right" />
         <img src={heroMandalaImage} alt="" width={1792} height={1536} loading="eager" decoding="async" className="pf-hero-center-compass" aria-hidden="true" />
         <div className="pf-container relative z-10 grid min-h-[630px] items-center py-16 md:min-h-[680px] md:py-20 lg:min-h-[700px]">
           <div className="relative mx-auto max-w-[720px] text-center">
