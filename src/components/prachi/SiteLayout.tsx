@@ -4,14 +4,18 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { navItems, services, socialLinks, whatsappUrl } from "./site-data";
 
-const logoWhite = "/logo-1.png";
-const celestialSunImage = "/logo-2.png";
+const logoMark = "/site-images/prachi-logo-mark.png";
+const logoWordmark = "/site-images/prachi-logo-wordmark.png";
+const celestialSunImage = "/site-images/prachi-celestial-sun.png";
 
-function Logo({ light = false }: { light?: boolean }) {
+function Logo({ placement = "header" }: { placement?: "header" | "footer" }) {
+  const isFooter = placement === "footer";
+
   return (
     <Link to="/" className="block leading-none" aria-label="Prachi Fulfagar home">
-      <div className={light ? "inline-flex px-1 py-1" : "inline-flex px-1 py-1"}>
-        <img src={logoWhite} alt="Prachi Fulfagar" width={360} height={246} loading="eager" decoding="async" className="h-11 w-auto object-contain" />
+      <div className={isFooter ? "flex flex-col items-center gap-3" : "flex items-center gap-3"}>
+        <img src={logoMark} alt="" width={256} height={256} loading="eager" decoding="async" className={isFooter ? "h-16 w-16 object-contain" : "h-11 w-11 shrink-0 object-contain"} />
+        <img src={logoWordmark} alt="Prachi Fulfagar — Vastu, Palmist, Astrologer" width={680} height={160} loading="eager" decoding="async" className={isFooter ? "h-12 w-auto max-w-[240px] object-contain" : "h-9 w-auto max-w-[260px] object-contain"} />
       </div>
     </Link>
   );
@@ -81,8 +85,8 @@ export function Footer() {
     <footer className="relative overflow-hidden border-t border-foreground/10 bg-footer py-7 text-foreground">
       <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="absolute -right-8 top-6 hidden h-56 w-56 object-contain opacity-10 lg:block" />
       <div className="pf-container relative z-10 grid gap-7 lg:grid-cols-[1.1fr_0.9fr_0.9fr_1.1fr] lg:gap-9">
-        <div className="lg:pr-8">
-          <Logo light />
+        <div className="flex flex-col items-center text-center lg:pr-8">
+          <Logo placement="footer" />
           <p className="mt-4 max-w-[300px] text-[13px] leading-relaxed text-foreground/60">Guiding homes, businesses and lives with ancient wisdom and intuitive precision.</p>
           <div className="mt-4 flex items-center gap-4 text-primary" aria-hidden="true"><span className="h-px w-16 bg-primary/35" /><span className="text-xl leading-none">✧</span><span className="h-px w-16 bg-primary/35" /></div>
         </div>
