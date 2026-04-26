@@ -180,34 +180,38 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="relative overflow-hidden bg-card py-16">
-        <div className="absolute -right-24 top-12 h-[360px] w-[360px] rounded-full border border-accent/10" />
-        <div className="pf-container grid items-center gap-12 lg:grid-cols-[45fr_55fr] lg:gap-16">
-          <div>
-            <p className="pf-eyebrow">HOME REMEDIES</p>
-            <h2 className="pf-h2 mt-7">Small corrections that feel possible</h2>
-            <p className="pf-body mt-5">Prachi’s work is solution-oriented — many improvements begin with simple placements, light, colour and element balance.</p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {remedyHighlights.map((item) => {
-                const Icon = item.icon;
-                return <article key={item.title} className="border-l border-accent/40 pl-4">
-                  <Icon className="h-4 w-4 text-accent" strokeWidth={1.7} />
-                  <h3 className="mt-3 font-body text-[13px] font-medium text-foreground">{item.title}</h3>
-                  <p className="mt-1.5 text-xs font-light leading-relaxed text-muted-foreground">{item.description}</p>
-                </article>;
-              })}
+      <MotionSection className="bg-card py-12">
+        <div className="pf-container">
+          <div className="pf-remedies-panel relative overflow-hidden rounded-[22px] border border-border bg-background px-6 py-9 md:px-10 lg:px-14 lg:py-12">
+            <div className="grid items-center gap-9 lg:grid-cols-[56fr_44fr] lg:gap-12">
+              <div className="relative z-10">
+                <p className="pf-eyebrow">HOME REMEDIES</p>
+                <h2 className="pf-h2 mt-7 max-w-[480px]">Small corrections that feel <em className="font-heading font-light italic text-accent">possible</em></h2>
+                <p className="pf-body mt-5 max-w-[460px]">Prachi’s work is solution-oriented — many improvements begin with simple placements, light, colour and element balance.</p>
+                <div className="mt-9 grid gap-y-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-y-0">
+                  {remedyHighlights.map((item) => {
+                    const Icon = item.icon;
+                    return <article key={item.title} className="pf-remedy-item px-3 text-center first:pl-0 last:pr-0">
+                      <div className="pf-remedy-icon mx-auto">
+                        <Icon className="h-7 w-7 text-accent" strokeWidth={1.45} />
+                      </div>
+                      <h3 className="mt-4 font-body text-[13px] font-medium leading-snug text-foreground">{item.title}</h3>
+                      <span className="mx-auto mt-4 block h-px w-6 bg-accent" />
+                      <p className="mx-auto mt-4 max-w-[150px] text-[12px] font-light leading-relaxed text-muted-foreground">{item.description}</p>
+                    </article>;
+                  })}
+                </div>
+              </div>
+              <div className="pf-remedy-visual relative z-10 mx-auto w-full max-w-[410px] py-8 lg:py-0">
+                <div className="pf-remedy-orbits" aria-hidden="true" />
+                <span className="pf-remedy-star pf-remedy-star-a" aria-hidden="true">✦</span>
+                <span className="pf-remedy-star pf-remedy-star-b" aria-hidden="true">✦</span>
+                <img src={homeRemediesImage} alt="Practical Vastu home remedy with flowers and water in a real living room" width={1280} height={960} loading="lazy" decoding="async" className="pf-remedy-main-image relative z-10 h-[420px] w-full object-cover shadow-card" />
+                <div className="pf-remedy-artwork absolute left-0 top-[34%] z-20 grid h-28 w-28 -translate-x-1/3 place-items-center rounded-full border border-accent/45 bg-background shadow-card md:h-32 md:w-32">
+                  <img src={orangeArtworkImage} alt="Sacred Vastu harmony line artwork" width={1280} height={1280} loading="lazy" decoding="async" className="h-[78%] w-[78%] object-contain" />
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="relative grid min-h-[540px] grid-cols-2 gap-5">
-            <img src={homeRemediesImage} alt="Practical Vastu home remedy with flowers and water in a real living room" width={1280} height={960} loading="lazy" decoding="async" className="h-[310px] w-full rounded-[28px] rounded-br-[120px] object-cover shadow-card" />
-            <div className="relative h-[310px] w-full items-center justify-center rounded-full bg-badge shadow-card flex flex-row bg-[#cac2b4]">
-              <img src={orangeArtworkImage} alt="Orange spiritual harmony artwork" width={1280} height={1280} loading="lazy" decoding="async" className="h-[72%] w-[72%] object-cover" />
-            </div>
-            <div className="relative mt-6 flex items-center justify-center rounded-t-full border border-border bg-background p-8">
-              <div className="pf-compass-orbit h-36 w-36 rounded-full border border-accent/25" />
-              <SunMoon className="absolute h-10 w-10 text-accent" strokeWidth={1.3} />
-            </div>
-            <img src={energyElementsImage} alt="Vastu energy elements with plant water candle and stone" width={1120} height={1328} loading="lazy" decoding="async" className="-mt-16 h-[390px] w-full rounded-t-full object-cover shadow-card" />
           </div>
         </div>
       </MotionSection>
