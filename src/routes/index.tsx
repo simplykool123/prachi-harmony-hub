@@ -119,29 +119,38 @@ function Index() {
   return (
     <>
       <section className="relative overflow-hidden bg-hero-cream">
+        <div className="pf-hero-motion-bg absolute inset-0" aria-hidden="true" />
+        <div className="pf-hero-cream-overlay absolute inset-0" aria-hidden="true" />
+        <div className="pf-hero-vignette absolute inset-0" aria-hidden="true" />
         <div className="pf-container relative z-10 grid min-h-[780px] items-center gap-12 py-28 md:py-32 lg:grid-cols-[300px_minmax(0,1fr)_300px] lg:gap-10 lg:py-36">
           <div className="relative order-2 hidden min-h-[420px] lg:order-1 lg:block">
-            <div className="pf-hero-image-shadow absolute left-0 top-1/2 h-[300px] w-[300px] -translate-y-1/2 overflow-hidden rounded-full border border-hero-orange/15 bg-card">
-              <img src={vastuPlanImage} alt="Bright Vastu compass and floor plan" width={960} height={655} loading="eager" decoding="async" fetchPriority="high" className="h-full w-full scale-105 object-cover" />
+            <div className="pf-hero-image-shadow pf-hero-slide-left pf-hero-image-frame absolute left-0 top-1/2 h-[300px] w-[300px] -translate-y-1/2 overflow-hidden rounded-full border border-hero-orange/15 bg-card">
+              <img src={vastuPlanImage} alt="Bright Vastu compass and floor plan" width={960} height={655} loading="eager" decoding="async" fetchPriority="high" className="pf-hero-image-hover h-full w-full scale-105 object-cover" />
             </div>
           </div>
           <div className="relative order-1 mx-auto max-w-[680px] text-center lg:order-2">
-            <div className="pf-hero-radial absolute left-1/2 top-[46%] -z-10 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2" aria-hidden="true" />
+            <div className="pf-sacred-symbol mx-auto mb-7 text-hero-orange/70" aria-hidden="true">
+              <svg viewBox="0 0 72 72" fill="none" className="h-12 w-12">
+                <circle cx="36" cy="36" r="20" stroke="currentColor" strokeWidth="1" />
+                <path d="M36 16v40M16 36h40M22 22l28 28M50 22 22 50" stroke="currentColor" strokeWidth="0.9" strokeLinecap="round" />
+                <circle cx="36" cy="36" r="5" stroke="currentColor" strokeWidth="0.9" />
+              </svg>
+            </div>
             <p className="pf-eyebrow pf-eyebrow-center text-[12px] sm:text-[13px]">Vastu • Palmistry • Astrology</p>
-            <h1 className="mx-auto mt-11 max-w-3xl font-heading text-[64px] font-light leading-[1.08] text-foreground sm:text-[82px] lg:text-[96px]">
+            <h1 className="pf-hero-fade-up mx-auto mt-11 max-w-3xl font-heading text-[64px] font-light leading-[1.08] text-foreground sm:text-[82px] lg:text-[96px]">
               See the unseen change
             </h1>
-            <p className="mx-auto mt-9 max-w-[500px] text-[15px] font-light leading-relaxed text-hero-muted sm:text-[16px]">
+            <p className="pf-hero-fade-up pf-hero-delay-1 mx-auto mt-9 max-w-[500px] text-[15px] font-light leading-relaxed text-hero-muted sm:text-[16px]">
               Personal guidance for homes, businesses and life decisions through Vastu, Palmistry and Career Astrology.
             </p>
-            <div className="mt-12 flex flex-wrap justify-center gap-5">
+            <div className="pf-hero-fade-up pf-hero-delay-2 mt-12 flex flex-wrap justify-center gap-5">
               <Button asChild variant="hero" className="bg-hero-orange text-primary-foreground shadow-none hover:bg-hero-orange"><Link to="/contact">Book A Consultation</Link></Button>
               <Button asChild variant="porcelain" className="border-foreground/15 bg-transparent text-foreground hover:border-hero-orange/45"><Link to="/services">Explore Services</Link></Button>
             </div>
           </div>
           <div className="relative order-3 hidden min-h-[420px] lg:block">
-            <div className="pf-hero-image-shadow absolute right-0 top-1/2 h-[390px] w-[260px] -translate-y-1/2 overflow-hidden rounded-full border border-hero-orange/15 bg-card">
-              <img src={premiumPalmReadingImage} alt="Warm close-up palm reading consultation" width={1024} height={1280} loading="eager" decoding="async" className="h-full w-full object-cover object-[50%_45%]" />
+            <div className="pf-hero-image-shadow pf-hero-slide-right pf-hero-image-frame absolute right-0 top-1/2 h-[390px] w-[260px] -translate-y-1/2 overflow-hidden rounded-full border border-hero-orange/15 bg-card">
+              <img src={premiumPalmReadingImage} alt="Warm close-up palm reading consultation" width={1024} height={1280} loading="eager" decoding="async" className="pf-hero-image-hover h-full w-full object-cover object-[50%_45%]" />
             </div>
           </div>
         </div>
