@@ -1,10 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUp, Instagram, MapPin, MessageCircle, Phone, Youtube } from "lucide-react";
+import { ArrowRight, ArrowUp, Facebook, Instagram, Mail, MapPin, MessageCircle, Phone, Youtube } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { navItems, services, whatsappUrl } from "./site-data";
+import { navItems, services, socialLinks, whatsappUrl } from "./site-data";
 
 const logoWhite = "/site-images/prachi-fulfagar-logo-white.png";
+const celestialSunImage = "/site-images/prachi-celestial-sun.png";
 
 function Logo({ light = false }: { light?: boolean }) {
   return (
