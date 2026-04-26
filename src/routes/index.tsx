@@ -241,6 +241,12 @@ function Index() {
       <MotionSection className="relative overflow-hidden bg-card py-12">
         <div className="pf-container relative z-10 grid items-center gap-10 lg:grid-cols-[31fr_38fr_31fr]">
           <div className="pf-about-portrait-wrap relative mx-auto min-h-[440px] w-full max-w-[320px]">
+            <span className="pf-about-arch-orbit pf-about-arch-orbit-outer" aria-hidden="true" />
+            <span className="pf-about-arch-orbit pf-about-arch-orbit-inner" aria-hidden="true" />
+            <span className="pf-about-arch-dot pf-about-arch-dot-a" aria-hidden="true" />
+            <span className="pf-about-arch-dot pf-about-arch-dot-b" aria-hidden="true" />
+            <span className="pf-about-arch-dot pf-about-arch-dot-c" aria-hidden="true" />
+            <span className="pf-about-arch-moon" aria-hidden="true">☾</span>
             <div className="pf-about-image-frame pf-about-image-arch absolute inset-x-0 top-0 mx-auto h-[430px] w-[88%]">
               <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_6%]" />
             </div>
