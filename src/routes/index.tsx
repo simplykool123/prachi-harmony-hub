@@ -180,11 +180,11 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="bg-background py-20">
-        <div className="pf-container pf-process-panel relative overflow-hidden">
-          <div className="pf-process-sun" aria-hidden="true" />
-          <div className="pf-process-orbit" aria-hidden="true" />
-          <div className="relative z-10 grid gap-y-10 md:grid-cols-4 md:gap-y-0">
+      <MotionSection className="relative overflow-hidden bg-warm py-20">
+        <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="pf-process-side-image left-4 top-8 h-28 w-28 md:left-10 md:h-40 md:w-40" />
+        <img src={celestialRingImage} alt="" loading="lazy" decoding="async" className="pf-process-side-image bottom-8 right-4 h-32 w-32 md:right-10 md:h-44 md:w-44" />
+        <div className="pf-container relative z-10">
+          <div className="mx-auto grid max-w-[920px] grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-4 md:gap-y-0">
             {processItems.map((item, index) => {
               const Icon = item.icon;
               return (
