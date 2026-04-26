@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Hand, MessageCircle, Moon, SunMoon } from "lucide-react";
+import { Compass, Flower2, Hand, Leaf, MessageCircle, Moon, MoonStar, SunMoon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CountUp, MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
@@ -51,10 +51,10 @@ const impactItems = [
 ];
 
 const processItems = [
-  { image: celestialSunImage, label: "Discovery" },
-  { image: celestialMoonImage, label: "Diagnosis" },
-  { image: orangeArtworkImage, label: "Design" },
-  { image: celestialRingImage, label: "Alignment" },
+  { icon: Compass, label: "Discovery", copy: "Understanding your space, goals & energy" },
+  { icon: MoonStar, label: "Diagnosis", copy: "Analyzing energy patterns & identifying imbalances" },
+  { icon: Flower2, label: "Design", copy: "Creating a Vastu-aligned space plan" },
+  { icon: Leaf, label: "Alignment", copy: "Fine-tuning elements for harmony & flow" },
 ] as const;
 
 function CelestialMotion({ className = "" }: { className?: string }) {
@@ -180,20 +180,24 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="relative overflow-hidden bg-warm py-20">
-        <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="pf-process-side-image left-4 top-8 h-28 w-28 md:left-10 md:h-40 md:w-40" />
-        <img src={celestialRingImage} alt="" loading="lazy" decoding="async" className="pf-process-side-image bottom-8 right-4 h-32 w-32 md:right-10 md:h-44 md:w-44" />
-        <div className="pf-container relative z-10">
-          <div className="mx-auto grid max-w-[820px] grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-4">
-            {processItems.map((item, index) => (
-              <div key={item.label} className="relative flex flex-col items-center text-center">
+      <MotionSection className="bg-background py-20">
+        <div className="pf-container pf-process-panel relative overflow-hidden">
+          <div className="pf-process-sun" aria-hidden="true" />
+          <div className="pf-process-orbit" aria-hidden="true" />
+          <div className="relative z-10 grid gap-y-10 md:grid-cols-4 md:gap-y-0">
+            {processItems.map((item, index) => {
+              const Icon = item.icon;
+              return (
+              <div key={item.label} className="pf-process-step relative flex flex-col items-center text-center">
                 <div className="pf-process-icon-frame">
-                  <img src={item.image} alt={`${item.label} visual`} loading="lazy" decoding="async" className="h-full w-full object-contain" />
+                  <Icon className="h-8 w-8 text-accent" strokeWidth={1.45} />
                 </div>
-                <span className="mt-4 text-[10px] font-medium tracking-[2px] text-accent">0{index + 1}</span>
-                <p className="mt-1 font-heading text-[24px] font-normal leading-none text-foreground">{item.label}</p>
+                <span className="mt-5 font-heading text-[30px] font-light leading-none text-accent/30">0{index + 1}</span>
+                <p className="mt-2 font-heading text-[30px] font-normal leading-none text-foreground">{item.label}</p>
+                <p className="mx-auto mt-4 max-w-[190px] text-[14px] font-light leading-relaxed text-muted-foreground">{item.copy}</p>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </MotionSection>
