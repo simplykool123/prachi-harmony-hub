@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Compass, Flower2, Hand, Leaf, MessageCircle, Moon, MoonStar, SunMoon } from "lucide-react";
+import { Building2, Compass, Flower2, Globe2, Hand, Leaf, MessageCircle, Moon, MoonStar, Sparkles, SunMoon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CountUp, MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
@@ -7,7 +7,6 @@ import { awards, customerStories, globalPresence, remedyHighlights, services, wh
 
 const vastuPlanImage = "/site-images/prachi-vastu-plan.jpg";
 const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
-const premiumPalmReadingImage = "/site-images/prachi-premium-palm-reading.jpg";
 const homeRemediesImage = "/site-images/prachi-home-remedies.jpg";
 const energyElementsImage = "/site-images/prachi-energy-elements.jpg";
 const prachiPortraitImage = "/site-images/prachi-fulfagar-portrait.jpg";
@@ -18,6 +17,9 @@ const celestialMoonImage = "/site-images/prachi-celestial-moon.png";
 const impactHealthImage = "/site-images/prachi-impact-health.png";
 const impactRelationshipImage = "/site-images/prachi-impact-relationship.png";
 const impactBusinessImage = "/site-images/prachi-impact-business.png";
+const heroLeftImage = "/site-images/prachi-hero-left-reference.png";
+const heroRightImage = "/site-images/prachi-hero-right-reference.png";
+const heroCompassImage = "/site-images/prachi-hero-compass-reference.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,10 +40,10 @@ const pillars = [
 ];
 
 const stats = [
-  [20, "+", "Years of practice"],
-  [5000, "+", "Clients worldwide"],
-  [4, "", "City offices"],
-  [12, "+", "Countries served"],
+  { value: 20, suffix: "+", label: "Years of practice", icon: Flower2 },
+  { value: 5000, suffix: "+", label: "Clients worldwide", icon: Globe2 },
+  { value: 4, suffix: "", label: "City offices", icon: Building2 },
+  { value: 12, suffix: "+", label: "Countries served", icon: Sparkles },
 ];
 
 const impactItems = [
@@ -122,48 +124,37 @@ function Index() {
         <div className="pf-hero-motion-bg absolute inset-0" aria-hidden="true" />
         <div className="pf-hero-cream-overlay absolute inset-0" aria-hidden="true" />
         <div className="pf-hero-vignette absolute inset-0" aria-hidden="true" />
-        <div className="pf-container relative z-10 grid min-h-[780px] items-center gap-12 py-28 md:py-32 lg:grid-cols-[300px_minmax(0,1fr)_300px] lg:gap-10 lg:py-36">
-          <div className="relative order-2 hidden min-h-[420px] lg:order-1 lg:block">
-            <div className="pf-hero-image-shadow pf-hero-slide-left pf-hero-image-frame absolute left-0 top-1/2 h-[300px] w-[300px] -translate-y-1/2 overflow-hidden rounded-full border border-hero-orange/15 bg-card">
-              <img src={vastuPlanImage} alt="Bright Vastu compass and floor plan" width={960} height={655} loading="eager" decoding="async" fetchPriority="high" className="pf-hero-image-hover h-full w-full object-cover" />
-            </div>
-          </div>
-          <div className="relative order-1 mx-auto max-w-[680px] text-center lg:order-2">
-            <div className="pf-sacred-symbol mx-auto mb-7 text-hero-orange/70" aria-hidden="true">
-              <svg viewBox="0 0 72 72" fill="none" className="h-12 w-12">
-                <circle cx="36" cy="36" r="20" stroke="currentColor" strokeWidth="1" />
-                <path d="M36 16v40M16 36h40M22 22l28 28M50 22 22 50" stroke="currentColor" strokeWidth="0.9" strokeLinecap="round" />
-                <circle cx="36" cy="36" r="5" stroke="currentColor" strokeWidth="0.9" />
-              </svg>
-            </div>
+        <img src={heroLeftImage} alt="Vastu consultation still life with compass, candle and crystals" width={670} height={1020} loading="eager" decoding="async" fetchPriority="high" className="pf-hero-side-image pf-hero-side-left" />
+        <img src={heroRightImage} alt="Palmistry chart with crystal sphere and celestial artwork" width={709} height={1020} loading="eager" decoding="async" className="pf-hero-side-image pf-hero-side-right" />
+        <img src={heroCompassImage} alt="" width={655} height={690} loading="eager" decoding="async" className="pf-hero-center-compass" aria-hidden="true" />
+        <div className="pf-container relative z-10 grid min-h-[630px] items-center py-16 md:min-h-[680px] md:py-20 lg:min-h-[700px]">
+          <div className="relative mx-auto max-w-[720px] text-center">
+            <div className="pf-hero-mini-rule mx-auto mb-8 text-hero-orange/70" aria-hidden="true"><span />✦<span /></div>
             <p className="pf-eyebrow pf-eyebrow-center text-[12px] sm:text-[13px]">Vastu • Palmistry • Astrology</p>
-            <h1 className="pf-hero-fade-up mx-auto mt-11 max-w-3xl font-heading text-[64px] font-light leading-[1.08] text-foreground sm:text-[82px] lg:text-[96px]">
-              See the unseen change
+            <h1 className="pf-hero-fade-up mx-auto mt-9 max-w-[760px] font-heading text-[52px] font-light leading-[1.04] text-foreground sm:text-[72px] lg:text-[82px]">
+              Ancient wisdom. <em className="font-heading font-light italic text-hero-orange">A balanced,</em> peaceful life.
             </h1>
-            <p className="pf-hero-fade-up pf-hero-delay-1 mx-auto mt-9 max-w-[500px] text-[15px] font-light leading-relaxed text-hero-muted sm:text-[16px]">
-              Personal guidance for homes, businesses and life decisions through Vastu, Palmistry and Career Astrology.
+            <p className="pf-hero-fade-up pf-hero-delay-1 mx-auto mt-8 max-w-[590px] text-[15px] font-light leading-relaxed text-hero-muted sm:text-[16px]">
+              Prachi Fulfagar guides you through Vastu Shastra, Palmistry and Vedic Astrology — helping homes, businesses and lives find their natural harmony.
             </p>
-            <div className="pf-hero-fade-up pf-hero-delay-2 mt-12 flex flex-wrap justify-center gap-5">
+            <div className="pf-hero-fade-up pf-hero-delay-2 mt-10 flex flex-wrap justify-center gap-5">
               <Button asChild variant="hero" className="bg-hero-orange text-primary-foreground shadow-none hover:bg-hero-orange"><Link to="/contact">Book A Consultation</Link></Button>
               <Button asChild variant="porcelain" className="border-foreground/15 bg-transparent text-foreground hover:border-hero-orange/45"><Link to="/services">Explore Services</Link></Button>
-            </div>
-          </div>
-          <div className="relative order-3 hidden min-h-[420px] lg:block">
-            <div className="pf-hero-image-shadow pf-hero-slide-right pf-hero-image-frame absolute right-0 top-1/2 h-[390px] w-[260px] -translate-y-1/2 overflow-hidden rounded-full border border-hero-orange/15 bg-card">
-              <img src={premiumPalmReadingImage} alt="Warm close-up palm reading consultation" width={1024} height={1280} loading="eager" decoding="async" className="pf-hero-image-hover h-full w-full object-cover object-[50%_45%]" />
             </div>
           </div>
         </div>
       </section>
 
-      <MotionSection className="relative overflow-hidden bg-card py-12">
-        <div className="absolute left-1/2 top-1/2 hidden h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border lg:block" />
-        <div className="pf-container grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
-          <div className="grid divide-y divide-border md:grid-cols-4 md:divide-x md:divide-y-0 lg:col-span-2">
-            {stats.map(([value, suffix, label]) => (
-              <div key={label} className="py-5 text-center md:py-0">
-                <div className="font-heading text-[48px] font-light leading-none text-accent"><CountUp value={Number(value)} suffix={String(suffix)} /></div>
-                <p className="mt-2 text-[11px] font-medium tracking-[0.4px] text-muted-foreground">{label}</p>
+      <MotionSection className="relative overflow-hidden bg-card py-7">
+        <div className="pf-container">
+          <div className="grid divide-y divide-border/80 md:grid-cols-4 md:divide-x md:divide-y-0">
+            {stats.map(({ value, suffix, label, icon: Icon }) => (
+              <div key={label} className="flex items-center justify-center gap-5 py-5 text-left md:py-0">
+                <div className="pf-hero-stat-icon"><Icon className="h-7 w-7" strokeWidth={1.35} /></div>
+                <div>
+                  <div className="font-heading text-[34px] font-light leading-none text-accent sm:text-[40px]"><CountUp value={value} suffix={suffix} /></div>
+                  <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.5px] text-muted-foreground">{label}</p>
+                </div>
               </div>
             ))}
           </div>
