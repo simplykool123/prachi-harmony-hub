@@ -189,27 +189,17 @@ function Index() {
               <p className="pf-body mt-5 max-w-[460px]">Prachi’s work is solution-oriented — many improvements begin with simple placements, light, colour and element balance.</p>
               <div className="mt-9 grid gap-y-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-y-0">
                 {remedyHighlights.map((item) => {
-                  const Icon = item.icon;
                   return <article key={item.title} className="pf-remedy-item px-3 text-center first:pl-0 last:pr-0">
-                    <div className="pf-remedy-icon mx-auto">
-                      <Icon className="h-7 w-7 text-accent" strokeWidth={1.45} />
-                    </div>
-                    <h3 className="mt-4 font-body text-[13px] font-medium leading-snug text-foreground">{item.title}</h3>
+                    <h3 className="font-body text-[13px] font-medium leading-snug text-foreground">{item.title}</h3>
                     <span className="mx-auto mt-4 block h-px w-6 bg-accent" />
                     <p className="mx-auto mt-4 max-w-[150px] text-[12px] font-light leading-relaxed text-muted-foreground">{item.description}</p>
                   </article>;
                 })}
               </div>
             </div>
-            <div className="pf-remedy-visual relative z-10 mx-auto w-full max-w-[410px] py-8 lg:py-0">
-              <div className="pf-remedy-orbits" aria-hidden="true" />
-              <span className="pf-remedy-star pf-remedy-star-a" aria-hidden="true">✦</span>
-              <span className="pf-remedy-star pf-remedy-star-b" aria-hidden="true">✦</span>
-              <div className="pf-remedy-image-shell relative z-10 h-[500px] w-full">
+            <div className="pf-remedy-visual relative z-10 mx-auto w-full max-w-[430px] py-8 lg:py-0">
+              <div className="pf-remedy-image-shell relative z-10 h-[360px] w-full">
                 <img src={homeRemediesImage} alt="Practical Vastu home remedy with flowers and water in a real living room" width={1280} height={960} loading="lazy" decoding="async" className="h-full w-full object-cover" />
-              </div>
-              <div className="pf-remedy-artwork absolute left-0 top-[34%] z-20 grid h-28 w-28 -translate-x-1/3 place-items-center rounded-full border border-accent/45 bg-card shadow-card md:h-32 md:w-32">
-                <img src={orangeArtworkImage} alt="Sacred Vastu harmony line artwork" width={1280} height={1280} loading="lazy" decoding="async" className="h-[78%] w-[78%] object-contain" />
               </div>
             </div>
           </div>
