@@ -179,10 +179,10 @@
   .pf-about-image-frame img { border: 1px solid color-mix(in oklab, var(--hero-orange) 10%, transparent); }
   .pf-about-portrait-wrap::before { content: ""; position: absolute; left: -20px; top: 312px; z-index: 3; width: 124px; height: 1px; background: color-mix(in oklab, var(--hero-orange) 18%, transparent); }
   .pf-about-portrait-wrap::after { content: "✦"; position: absolute; left: 82px; top: 300px; z-index: 16; color: var(--color-hero-orange); font-size: 14px; line-height: 1; opacity: .66; }
-  .pf-about-image-arch, .pf-about-image-arch img { border-radius: 999px 999px 38px 108px / 999px 999px 34px 86px; }
+  .pf-about-image-arch, .pf-about-image-arch img { border-radius: 999px 999px 38px 142px / 999px 999px 34px 112px; }
   .pf-about-arch-orbit { position: absolute; pointer-events: none; border-color: color-mix(in oklab, var(--hero-orange) 22%, transparent); }
-  .pf-about-arch-orbit-outer { left: -22px; top: -24px; z-index: 1; width: 352px; height: 482px; border-width: 1px; border-style: dashed; border-radius: 999px 999px 52px 124px / 999px 999px 44px 96px; }
-  .pf-about-arch-orbit-inner { left: 24px; top: -10px; z-index: 1; width: 286px; height: 452px; border-width: 1px; border-style: solid; border-radius: 999px 999px 42px 112px / 999px 999px 36px 88px; opacity: .62; }
+  .pf-about-arch-orbit-outer { left: -22px; top: -24px; z-index: 1; width: 352px; height: 482px; border-width: 1px; border-style: dashed; border-radius: 999px 999px 52px 158px / 999px 999px 44px 122px; }
+  .pf-about-arch-orbit-inner { left: 24px; top: -10px; z-index: 1; width: 286px; height: 452px; border-width: 1px; border-style: solid; border-radius: 999px 999px 42px 146px / 999px 999px 36px 112px; opacity: .62; }
   .pf-about-arch-dot { position: absolute; z-index: 4; width: 8px; height: 8px; border: 2px solid color-mix(in oklab, var(--hero-orange) 54%, transparent); border-radius: 999px; background: var(--color-card); }
   .pf-about-arch-dot-a { left: -7px; top: 170px; }
   .pf-about-arch-dot-b { right: 8px; top: 34px; }
@@ -201,6 +201,10 @@
   .pf-about-top-mark { display: grid; place-items: center; width: 62px; height: 68px; border-radius: 999px 999px 12px 12px; border: 1px solid color-mix(in oklab, var(--accent) 34%, var(--border)); background: color-mix(in oklab, var(--card) 84%, var(--hero-cream)); }
   .pf-about-side-wrap::before { content: ""; position: absolute; right: 4px; top: 78px; z-index: 0; width: 86px; height: 1px; background: color-mix(in oklab, var(--accent) 38%, transparent); }
   .pf-about-side-wrap::after { content: "✦"; position: absolute; right: 82px; top: 66px; z-index: 4; color: var(--color-accent); font-size: 17px; line-height: 1; opacity: .82; }
+  .pf-footer-heading { position: relative; width: fit-content; font-size: 12px; font-weight: 500; letter-spacing: 4px; line-height: 1.2; text-transform: uppercase; color: var(--color-primary); }
+  .pf-footer-heading::after { content: ""; display: block; width: 32px; height: 1px; margin-top: 12px; background: var(--color-primary); }
+  .pf-footer-social { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 999px; border: 1px solid color-mix(in oklab, var(--foreground) 34%, transparent); color: color-mix(in oklab, var(--foreground) 58%, transparent); transition: border-color .2s ease, color .2s ease, transform .2s ease; }
+  .pf-footer-social:hover { border-color: var(--color-primary); color: var(--color-primary); transform: translateY(-2px); }
   .pf-story-marquee { mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent); }
   .pf-story-track { animation: pf-story-scroll 42s linear infinite; }
   .pf-story-marquee:hover .pf-story-track { animation-play-state: paused; }

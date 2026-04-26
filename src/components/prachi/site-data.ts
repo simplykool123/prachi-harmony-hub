@@ -148,5 +148,11 @@ export const globalPresence = ["India", "UAE", "UK", "USA", "Singapore", "Austra
 
 export const cities = ["Mumbai", "Pune", "Nashik", "Kopargaon"];
 
+export const socialLinks = {
+  instagram: "https://instagram.com",
+  facebook: "https://facebook.com",
+  youtube: "https://youtube.com",
+} as const;
+
 export const whatsappUrl =
   "https://wa.me/91XXXXXXXXXX?text=Hi%20Prachi%2C%20I%20would%20like%20to%20book%20a%20consultation.";

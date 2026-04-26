@@ -1,10 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUp, Instagram, MapPin, MessageCircle, Phone, Youtube } from "lucide-react";
+import { ArrowRight, ArrowUp, Facebook, Instagram, Mail, MapPin, MessageCircle, Phone, Youtube } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { navItems, services, whatsappUrl } from "./site-data";
+import { navItems, services, socialLinks, whatsappUrl } from "./site-data";
 
 const logoWhite = "/site-images/prachi-fulfagar-logo-white.png";
+const celestialSunImage = "/site-images/prachi-celestial-sun.png";
 
 function Logo({ light = false }: { light?: boolean }) {
   return (
@@ -67,49 +68,56 @@ export function Header() {
 }
 
 export function Footer() {
+  const footerServices = services.slice(1, 7);
+  const quickLinks = [
+    { label: "About Prachi", to: "/about" },
+    { label: "Vastu Guide", to: "/vastu-guide" },
+    { label: "Blog", to: "/blog" },
+    { label: "Contact", to: "/contact" },
+    { label: "Book a Session", to: "/contact" },
+  ] as const;
+
   return (
-    <footer className="border-t border-foreground/10 bg-footer py-12 text-foreground">
-      <div className="pf-container grid gap-10 lg:grid-cols-[1fr_1.25fr_1fr] lg:items-start">
-        <div>
+    <footer className="relative overflow-hidden border-t border-foreground/10 bg-footer py-12 text-foreground">
+      <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="absolute -right-10 top-8 hidden h-64 w-64 object-contain opacity-10 lg:block" />
+      <div className="pf-container relative z-10 grid gap-10 lg:grid-cols-[1.1fr_0.9fr_0.9fr_1.1fr] lg:gap-12">
+        <div className="lg:pr-8">
           <Logo light />
-          <h2 className="mt-5 font-heading text-[26px] font-light leading-tight">About Prachi Fulfagar</h2>
-          <p className="mt-3 max-w-[280px] text-[12px] leading-relaxed text-foreground/60">
-            Vastu, Palmistry and Vedic Astrology guidance for homes, businesses and life decisions across India and worldwide.
-          </p>
-          <Link to="/about" className="mt-4 inline-flex text-[12px] font-medium text-primary underline-offset-4 hover:underline">Know more about Prachi</Link>
-          <p className="mt-6 text-[11px] text-foreground/55">© 2025 PrachiFulfagar.com</p>
+          <p className="mt-7 max-w-[300px] text-[14px] leading-loose text-foreground/60">Guiding homes, businesses and lives with ancient wisdom and intuitive precision.</p>
+          <div className="mt-8 flex items-center gap-4 text-primary" aria-hidden="true"><span className="h-px w-16 bg-primary/35" /><span className="text-xl leading-none">✧</span><span className="h-px w-16 bg-primary/35" /></div>
         </div>
-        <nav aria-label="Footer services navigation">
-          <h2 className="font-heading text-[26px] font-light leading-tight">Full Services Menu</h2>
-          <div className="mt-4 grid gap-x-6 gap-y-2 sm:grid-cols-2">
-            {services.map((service) => (
-              <Link key={service.slug} to="/services/$serviceSlug" params={{ serviceSlug: service.slug }} className="text-[12px] leading-relaxed text-foreground/60 transition hover:text-primary">
-                {service.name}
-              </Link>
-            ))}
+        <nav className="border-foreground/10 lg:border-l lg:pl-12" aria-label="Footer services navigation">
+          <h2 className="pf-footer-heading">Services</h2>
+          <div className="mt-5 space-y-3.5">
+            {footerServices.map((service) => {
+              const Icon = service.icon;
+              return <Link key={service.slug} to="/services/$serviceSlug" params={{ serviceSlug: service.slug }} className="flex items-center gap-3 text-[14px] text-foreground/60 transition hover:text-primary"><Icon className="h-4 w-4 shrink-0 text-primary" strokeWidth={1.45} />{service.name}</Link>;
+            })}
+          </div>
+          <Link to="/services" className="mt-5 inline-flex items-center gap-2 text-[13px] font-medium text-primary">View all services <ArrowRight className="h-3.5 w-3.5" /></Link>
+        </nav>
+        <nav className="border-foreground/10 lg:border-l lg:pl-12" aria-label="Footer quick links navigation">
+          <h2 className="pf-footer-heading">Quick Links</h2>
+          <div className="mt-5 space-y-4">
+            {quickLinks.map((item) => <Link key={item.label} to={item.to} className="flex items-center justify-between gap-4 text-[14px] text-foreground/60 transition hover:text-primary"><span>{item.label}</span><ArrowRight className="h-3.5 w-3.5 opacity-70" /></Link>)}
           </div>
         </nav>
-        <div>
-          <h2 className="font-heading text-[26px] font-light leading-tight">Contact Details</h2>
-          <div className="mt-4 space-y-3 text-[12px] leading-relaxed text-foreground/60">
-            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-start gap-3 transition hover:text-primary">
-              <Phone className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.7} />
-              <span>+91 XXXXX XXXXX</span>
-            </a>
-            <p className="flex items-start gap-3">
-              <MapPin className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.7} />
-              <span>Mumbai, Pune, Nashik and Kopargaon consultations by appointment.</span>
-            </p>
-            <Link to="/contact" className="inline-flex font-medium text-primary underline-offset-4 hover:underline">
-              Book a consultation
-            </Link>
+        <div className="border-foreground/10 lg:border-l lg:pl-12">
+          <h2 className="pf-footer-heading">Connect</h2>
+          <div className="mt-5 space-y-4 text-[14px] leading-relaxed text-foreground/60">
+            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-start gap-4 transition hover:text-primary"><Phone className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.6} /><span>+91 XXXXX XXXXX</span></a>
+            <a href="mailto:hello@prachifulfagar.com" className="flex items-start gap-4 transition hover:text-primary"><Mail className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.6} /><span>hello@prachifulfagar.com</span></a>
+            <p className="flex items-start gap-4"><MapPin className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.6} /><span>Mumbai, Pune, Nashik & Kopargaon</span></p>
           </div>
+          <Button asChild variant="outline" className="mt-6 border-primary/45 bg-transparent px-6 text-primary hover:bg-primary/10"><Link to="/contact">Book a Consultation <ArrowRight className="h-4 w-4" /></Link></Button>
           <div className="mt-6 flex gap-4">
-            <Instagram className="h-[18px] w-[18px] text-foreground/55 transition hover:text-primary" />
-            <Youtube className="h-[18px] w-[18px] text-foreground/55 transition hover:text-primary" />
+            <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="pf-footer-social"><Instagram className="h-4 w-4" /></a>
+            <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="pf-footer-social"><Youtube className="h-4 w-4" /></a>
+            <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="pf-footer-social"><Facebook className="h-4 w-4" /></a>
           </div>
         </div>
       </div>
+      <div className="pf-container relative z-10 mt-12 flex items-center justify-center gap-6 border-t border-primary/15 pt-6 text-center text-[13px] text-foreground/55 before:h-px before:flex-1 before:bg-primary/15 after:h-px after:flex-1 after:bg-primary/15"><span className="text-primary">✦</span><span>© 2025 Prachi Fulfagar. All rights reserved.</span><span className="text-primary">✦</span></div>
     </footer>
   );
 }
