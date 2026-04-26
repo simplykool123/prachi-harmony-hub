@@ -15,6 +15,7 @@ const orangeArtworkImage = "/site-images/prachi-orange-artwork.png";
 const celestialRingImage = "/site-images/prachi-celestial-ring.png";
 const celestialSunImage = "/site-images/prachi-celestial-sun.png";
 const celestialMoonImage = "/site-images/prachi-celestial-moon.png";
+const servicesBackgroundSymbolImage = "/site-images/prachi-services-background-symbol.jpg";
 const impactHealthImage = "/site-images/prachi-impact-health.png";
 const impactRelationshipImage = "/site-images/prachi-impact-relationship.png";
 const impactBusinessImage = "/site-images/prachi-impact-business.png";
@@ -171,7 +172,7 @@ function Index() {
       </MotionSection>
 
       <MotionSection className="relative overflow-hidden bg-background py-9">
-        <img src={celestialRingImage} alt="" loading="lazy" decoding="async" className="pointer-events-none absolute -right-24 top-1/2 hidden h-[430px] w-[430px] -translate-y-1/2 object-contain opacity-[0.07] lg:block" />
+        <img src={servicesBackgroundSymbolImage} alt="" loading="lazy" decoding="async" className="pointer-events-none absolute -right-20 top-1/2 hidden h-[560px] w-[330px] -translate-y-1/2 object-contain opacity-[0.055] mix-blend-multiply grayscale sepia lg:block xl:-right-10" />
         <div className="pf-container relative z-10">
           <SectionIntro eyebrow="WHAT WE OFFER" title="Services for every space and soul" copy="From your palm to your home — a complete system of ancient wisdom." />
           <div className="mx-auto mt-6 grid max-w-[940px] gap-3 md:grid-cols-2 lg:grid-cols-3">
