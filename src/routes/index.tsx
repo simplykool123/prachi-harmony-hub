@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Award, Compass, Flower2, Globe2, Hand, Leaf, MessageCircle, Moon, MoonStar, ShieldCheck, SunMoon, Users } from "lucide-react";
+import { Compass, Flower2, Hand, Leaf, MessageCircle, Moon, MoonStar, SunMoon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CountUp, MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
@@ -55,13 +55,6 @@ const processItems = [
   { icon: MoonStar, label: "Diagnosis", copy: "Analyzing energy patterns & identifying imbalances" },
   { icon: Flower2, label: "Design", copy: "Creating a Vastu-aligned space plan" },
   { icon: Leaf, label: "Alignment", copy: "Fine-tuning elements for harmony & flow" },
-] as const;
-
-const aboutStats = [
-  { icon: Award, value: "20+", label: "Years of Practice" },
-  { icon: Users, value: "5000+", label: "Clients Worldwide" },
-  { icon: Globe2, value: "India &", label: "Worldwide" },
-  { icon: ShieldCheck, value: "Trusted by", label: "Generations" },
 ] as const;
 
 function CelestialMotion({ className = "" }: { className?: string }) {
@@ -245,10 +238,10 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="relative overflow-hidden bg-card py-16">
+      <MotionSection className="relative overflow-hidden bg-card py-12">
         <div className="pf-container relative z-10 grid items-center gap-10 lg:grid-cols-[31fr_38fr_31fr]">
-          <div className="pf-about-portrait-wrap relative mx-auto min-h-[470px] w-full max-w-[320px]">
-            <div className="pf-about-image-frame pf-about-image-arch absolute inset-x-0 top-0 mx-auto h-[455px] w-[88%]">
+          <div className="pf-about-portrait-wrap relative mx-auto min-h-[440px] w-full max-w-[320px]">
+            <div className="pf-about-image-frame pf-about-image-arch absolute inset-x-0 top-0 mx-auto h-[430px] w-[88%]">
               <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_6%]" />
             </div>
             <div className="pf-about-badge pf-about-badge-left">
@@ -267,19 +260,7 @@ function Index() {
             <h2 className="pf-h2 mx-auto mt-7 max-w-[430px]">Two decades. One rare combination.</h2>
             <p className="pf-body mx-auto mt-5 max-w-[430px]">Prachi Fulfagar is one of India's most credentialled Vastu and Palmistry consultants — combining both in a rare integrated practice that aligns you from the inside out.</p>
             <p className="pf-body mx-auto mt-4 max-w-[430px]">Consulting from Mumbai, Pune, Nashik and Kopargaon, she works with clients across India and internationally.</p>
-            <div className="mt-9 grid grid-cols-2 gap-y-7 sm:grid-cols-4 sm:divide-x sm:divide-border">
-              {aboutStats.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div key={item.label} className="px-3 text-center">
-                    <div className="pf-about-stat-icon mx-auto"><Icon className="h-6 w-6 text-accent" strokeWidth={1.35} /></div>
-                    <p className="mt-3 font-heading text-[22px] font-light leading-none text-accent">{item.value}</p>
-                    <p className="mt-1 text-[12px] font-light leading-snug text-muted-foreground">{item.label}</p>
-                  </div>
-                );
-              })}
-            </div>
-            <Link to="/about" className="group mt-8 inline-flex text-[13px] font-medium text-accent">Read her full story <span className="transition group-hover:translate-x-1">→</span></Link>
+            <Link to="/about" className="group mt-7 inline-flex text-[13px] font-medium text-accent">Read her full story <span className="transition group-hover:translate-x-1">→</span></Link>
           </div>
           <div className="pf-about-side-wrap relative mx-auto min-h-[430px] w-full max-w-[330px]">
             <div className="pf-about-image-frame pf-about-image-soft absolute inset-x-0 bottom-0 mx-auto h-[385px] w-[92%]">

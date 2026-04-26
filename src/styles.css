@@ -177,7 +177,9 @@
   .pf-remedy-star-b { right: -5%; top: 12%; font-size: 22px; }
   .pf-about-image-frame { overflow: hidden; border: 1px solid color-mix(in oklab, var(--accent) 26%, var(--border)); padding: 8px; background: var(--color-card); box-shadow: none; }
   .pf-about-image-frame img { border: 1px solid color-mix(in oklab, var(--accent) 8%, transparent); }
-  .pf-about-image-arch, .pf-about-image-arch img { border-radius: 999px 999px 112px 24px / 999px 999px 78px 18px; }
+  .pf-about-portrait-wrap::before { content: ""; position: absolute; left: 10px; top: 54px; z-index: 0; width: 78px; height: 1px; background: color-mix(in oklab, var(--accent) 42%, transparent); }
+  .pf-about-portrait-wrap::after { content: "✦"; position: absolute; left: 82px; top: 42px; z-index: 4; color: var(--color-accent); font-size: 18px; line-height: 1; opacity: .88; }
+  .pf-about-image-arch, .pf-about-image-arch img { border-radius: 999px 999px 120px 18px / 999px 999px 92px 14px; }
   .pf-about-image-soft, .pf-about-image-soft img { border-radius: 26px 98px 30px 96px; }
   .pf-about-badge { position: absolute; z-index: 12; display: grid; place-items: center; width: 94px; height: 94px; border-radius: 999px; border: 1px solid color-mix(in oklab, var(--accent) 28%, var(--border)); background: var(--color-card); color: var(--color-accent); box-shadow: var(--shadow-card); }
   .pf-about-badge::before { content: ""; position: absolute; inset: 12px; border-radius: inherit; border: 1px solid color-mix(in oklab, var(--accent) 18%, transparent); }
@@ -189,7 +191,8 @@
   .pf-about-title-mark > span:first-child::after { right: -10px; }
   .pf-about-title-mark > span:last-child::after { left: -10px; }
   .pf-about-top-mark { display: grid; place-items: center; width: 62px; height: 68px; border-radius: 999px 999px 12px 12px; border: 1px solid color-mix(in oklab, var(--accent) 34%, var(--border)); background: color-mix(in oklab, var(--card) 84%, var(--hero-cream)); }
-  .pf-about-stat-icon { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 999px; border: 1px solid color-mix(in oklab, var(--accent) 16%, var(--border)); background: color-mix(in oklab, var(--card) 84%, var(--hero-cream)); }
+  .pf-about-side-wrap::before { content: ""; position: absolute; right: 4px; top: 78px; z-index: 0; width: 86px; height: 1px; background: color-mix(in oklab, var(--accent) 38%, transparent); }
+  .pf-about-side-wrap::after { content: "✦"; position: absolute; right: 82px; top: 66px; z-index: 4; color: var(--color-accent); font-size: 17px; line-height: 1; opacity: .82; }
   .pf-story-marquee { mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent); }
   .pf-story-track { animation: pf-story-scroll 42s linear infinite; }
   .pf-story-marquee:hover .pf-story-track { animation-play-state: paused; }
