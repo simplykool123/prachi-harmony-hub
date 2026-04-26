@@ -196,6 +196,11 @@
   .pf-about-top-mark { display: grid; place-items: center; width: 62px; height: 68px; border-radius: 999px 999px 12px 12px; border: 1px solid color-mix(in oklab, var(--accent) 34%, var(--border)); background: color-mix(in oklab, var(--card) 84%, var(--hero-cream)); }
   .pf-about-side-wrap::before { content: ""; position: absolute; right: 4px; top: 78px; z-index: 0; width: 86px; height: 1px; background: color-mix(in oklab, var(--accent) 38%, transparent); }
   .pf-about-side-wrap::after { content: "✦"; position: absolute; right: 82px; top: 66px; z-index: 4; color: var(--color-accent); font-size: 17px; line-height: 1; opacity: .82; }
+  .pf-double-line { display: grid; grid-template-columns: minmax(48px, 1fr) auto minmax(48px, 1fr); align-items: center; gap: 14px; }
+  .pf-double-line span { height: 3px; border-block: 1px solid currentColor; opacity: .7; }
+  .pf-double-line i { font-style: normal; font-size: 16px; line-height: 1; color: currentColor; }
+  .pf-celestial-section { position: relative; overflow: hidden; }
+  .pf-celestial-section::before { content: ""; position: absolute; inset: 16px; pointer-events: none; border: 1px solid color-mix(in oklab, var(--accent) 10%, transparent); }
   .pf-footer-heading { position: relative; width: fit-content; font-size: 12px; font-weight: 500; letter-spacing: 4px; line-height: 1.2; text-transform: uppercase; color: var(--color-primary); }
   .pf-footer-heading::after { content: ""; display: block; width: 32px; height: 1px; margin-top: 12px; background: var(--color-primary); }
   .pf-footer-compass { opacity: .3; mix-blend-mode: multiply; filter: saturate(1.35) contrast(1.08); mask-image: radial-gradient(circle at center, black 0 54%, rgb(0 0 0 / .68) 70%, transparent 88%); }
