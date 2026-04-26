@@ -78,38 +78,38 @@ export function Footer() {
   ] as const;
 
   return (
-    <footer className="relative overflow-hidden border-t border-foreground/10 bg-footer py-9 text-foreground">
+    <footer className="relative overflow-hidden border-t border-foreground/10 bg-footer py-7 text-foreground">
       <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="absolute -right-8 top-6 hidden h-56 w-56 object-contain opacity-10 lg:block" />
-      <div className="pf-container relative z-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr_0.9fr_1.1fr] lg:gap-10">
+      <div className="pf-container relative z-10 grid gap-7 lg:grid-cols-[1.1fr_0.9fr_0.9fr_1.1fr] lg:gap-9">
         <div className="lg:pr-8">
           <Logo light />
-          <p className="mt-5 max-w-[300px] text-[14px] leading-loose text-foreground/60">Guiding homes, businesses and lives with ancient wisdom and intuitive precision.</p>
-          <div className="mt-5 flex items-center gap-4 text-primary" aria-hidden="true"><span className="h-px w-16 bg-primary/35" /><span className="text-xl leading-none">✧</span><span className="h-px w-16 bg-primary/35" /></div>
+          <p className="mt-4 max-w-[300px] text-[13px] leading-relaxed text-foreground/60">Guiding homes, businesses and lives with ancient wisdom and intuitive precision.</p>
+          <div className="mt-4 flex items-center gap-4 text-primary" aria-hidden="true"><span className="h-px w-16 bg-primary/35" /><span className="text-xl leading-none">✧</span><span className="h-px w-16 bg-primary/35" /></div>
         </div>
         <nav className="border-foreground/10 lg:border-l lg:pl-12" aria-label="Footer services navigation">
           <h2 className="pf-footer-heading">Services</h2>
-          <div className="mt-5 space-y-3.5">
+          <div className="mt-4 space-y-2">
             {footerServices.map((service) => {
               const Icon = service.icon;
               return <Link key={service.slug} to="/services/$serviceSlug" params={{ serviceSlug: service.slug }} className="flex items-center gap-3 text-[14px] text-foreground/60 transition hover:text-primary"><Icon className="h-4 w-4 shrink-0 text-primary" strokeWidth={1.45} />{service.name}</Link>;
             })}
           </div>
-          <Link to="/services" className="mt-5 inline-flex items-center gap-2 text-[13px] font-medium text-primary">View all services <ArrowRight className="h-3.5 w-3.5" /></Link>
+          <Link to="/services" className="mt-4 inline-flex items-center gap-2 text-[13px] font-medium text-primary">View all services <ArrowRight className="h-3.5 w-3.5" /></Link>
         </nav>
         <nav className="border-foreground/10 lg:border-l lg:pl-12" aria-label="Footer quick links navigation">
           <h2 className="pf-footer-heading">Quick Links</h2>
-          <div className="mt-5 space-y-4">
+          <div className="mt-4 space-y-3">
             {quickLinks.map((item) => <Link key={item.label} to={item.to} className="flex items-center justify-between gap-4 text-[14px] text-foreground/60 transition hover:text-primary"><span>{item.label}</span><ArrowRight className="h-3.5 w-3.5 opacity-70" /></Link>)}
           </div>
         </nav>
         <div className="border-foreground/10 lg:border-l lg:pl-12">
           <h2 className="pf-footer-heading">Connect</h2>
-          <div className="mt-5 space-y-4 text-[14px] leading-relaxed text-foreground/60">
+          <div className="mt-4 space-y-3 text-[14px] leading-relaxed text-foreground/60">
             <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-start gap-4 transition hover:text-primary"><Phone className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.6} /><span>+91 XXXXX XXXXX</span></a>
             <a href="mailto:hello@prachifulfagar.com" className="flex items-start gap-4 transition hover:text-primary"><Mail className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.6} /><span>hello@prachifulfagar.com</span></a>
             <p className="flex items-start gap-4"><MapPin className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.6} /><span>Mumbai, Pune, Nashik & Kopargaon</span></p>
           </div>
-          <Button asChild variant="outline" className="mt-5 w-full justify-center border-primary/45 bg-transparent px-6 text-primary hover:bg-primary/10"><Link to="/contact">Book a Consultation <ArrowRight className="h-4 w-4" /></Link></Button>
+          <Button asChild variant="outline" className="mt-4 w-full justify-center border-primary/45 bg-transparent px-6 text-primary hover:bg-primary/10"><Link to="/contact">Book a Consultation <ArrowRight className="h-4 w-4" /></Link></Button>
           <div className="mt-4 flex justify-center gap-4">
             <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="pf-footer-social"><Instagram className="h-4 w-4" /></a>
             <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="pf-footer-social"><Youtube className="h-4 w-4" /></a>
@@ -117,7 +117,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="pf-container relative z-10 mt-8 flex items-center justify-center gap-4 text-center text-[13px] text-foreground/55"><span className="text-primary">✦</span><span>© 2025 Prachi Fulfagar. All rights reserved.</span><span className="text-primary">✦</span></div>
+      <div className="pf-container relative z-10 mt-6 flex items-center justify-center gap-4 text-center text-[13px] text-foreground/55 before:h-px before:flex-1 before:bg-primary/15 after:h-px after:flex-1 after:bg-primary/15"><span className="text-primary">✦</span><span>© 2025 Prachi Fulfagar. All rights reserved.</span><span className="text-primary">✦</span></div>
     </footer>
   );
 }
