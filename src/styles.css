@@ -198,7 +198,7 @@
   .pf-about-side-wrap::after { content: "✦"; position: absolute; right: 82px; top: 66px; z-index: 4; color: var(--color-accent); font-size: 17px; line-height: 1; opacity: .82; }
   .pf-footer-heading { position: relative; width: fit-content; font-size: 12px; font-weight: 500; letter-spacing: 4px; line-height: 1.2; text-transform: uppercase; color: var(--color-primary); }
   .pf-footer-heading::after { content: ""; display: block; width: 32px; height: 1px; margin-top: 12px; background: var(--color-primary); }
-  .pf-footer-compass { opacity: .16; mix-blend-mode: multiply; mask-image: radial-gradient(circle at center, black 0 50%, rgb(0 0 0 / .58) 66%, transparent 84%); }
+  .pf-footer-compass { opacity: .3; mix-blend-mode: multiply; filter: saturate(1.35) contrast(1.08); mask-image: radial-gradient(circle at center, black 0 54%, rgb(0 0 0 / .68) 70%, transparent 88%); }
   .pf-footer-social { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 999px; border: 1px solid color-mix(in oklab, var(--foreground) 34%, transparent); color: color-mix(in oklab, var(--foreground) 58%, transparent); transition: border-color .2s ease, color .2s ease, transform .2s ease; }
   .pf-footer-social:hover { border-color: var(--color-primary); color: var(--color-primary); transform: translateY(-2px); }
   .pf-story-marquee { mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent); }
