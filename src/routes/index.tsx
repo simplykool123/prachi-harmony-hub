@@ -38,9 +38,9 @@ const stats = [
 ];
 
 const impactItems = [
-  ["Health", "Restful rooms, balanced elements and less environmental stress support calmer daily routines."],
-  ["Relationships", "Shared spaces are corrected for warmth, communication and emotional steadiness."],
-  ["Business", "Entrances, seating and decision zones are aligned for confidence, clarity and growth."],
+  ["Health", "Restful rooms, balanced elements and less environmental stress support calmer daily routines.", "sunrise"],
+  ["Relationships", "Shared spaces are corrected for warmth, communication and emotional steadiness.", "hands"],
+  ["Business", "Entrances, seating and decision zones are aligned for confidence, clarity and growth.", "growth"],
 ];
 
 const processItems = [
@@ -49,6 +49,51 @@ const processItems = [
   [SunMoon, "Design"],
   [Leaf, "Alignment"],
 ] as const;
+
+function CelestialMotion({ className = "" }: { className?: string }) {
+  return (
+    <div className={`pointer-events-none text-accent ${className}`} aria-hidden="true">
+      <div className="pf-celestial-orbit relative h-full w-full rounded-full border border-accent/25">
+        <SunMoon className="absolute left-1/2 top-1/2 h-[78px] w-[78px] -translate-x-1/2 -translate-y-1/2" strokeWidth={1.1} />
+        <Moon className="pf-moon-orbit absolute left-1/2 top-1/2 h-7 w-7" strokeWidth={1.25} />
+      </div>
+    </div>
+  );
+}
+
+function ImpactIllustration({ type }: { type: string }) {
+  if (type === "hands") {
+    return (
+      <div className="relative h-32 w-32 shrink-0 text-accent/70">
+        <div className="absolute inset-x-6 top-0 h-full rounded-t-full border border-current" />
+        <Moon className="absolute left-1/2 top-7 h-9 w-9 -translate-x-1/2" strokeWidth={1.15} />
+        <Hand className="absolute bottom-4 left-4 h-10 w-10 rotate-[-18deg]" strokeWidth={1.1} />
+        <Hand className="absolute bottom-4 right-4 h-10 w-10 scale-x-[-1] rotate-[-18deg]" strokeWidth={1.1} />
+      </div>
+    );
+  }
+
+  if (type === "growth") {
+    return (
+      <div className="relative h-32 w-32 shrink-0 text-accent/70">
+        <div className="absolute inset-x-6 top-0 h-full rounded-t-full border border-current border-b-0" />
+        <SunMoon className="absolute right-9 top-5 h-12 w-12" strokeWidth={1.05} />
+        <div className="absolute bottom-2 right-4 flex items-end gap-1.5">
+          {[28, 44, 62, 82].map((height) => <span key={height} className="w-3 border border-current" style={{ height }} />)}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative h-32 w-32 shrink-0 text-accent/70">
+      <div className="absolute inset-x-6 top-0 h-full rounded-t-full border border-current border-b-0" />
+      <SunMoon className="absolute left-1/2 top-10 h-14 w-14 -translate-x-1/2" strokeWidth={1.05} />
+      <div className="absolute bottom-6 left-8 h-10 w-16 rounded-t-full border-t border-current" />
+      <div className="absolute bottom-2 left-1/2 h-px w-10 -translate-x-1/2 bg-current" />
+    </div>
+  );
+}
 
 function Index() {
   return (
