@@ -180,11 +180,11 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="relative overflow-hidden bg-warm py-20">
+      <MotionSection className="relative overflow-hidden bg-warm py-12">
         <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="pf-process-side-image left-4 top-8 h-28 w-28 md:left-10 md:h-40 md:w-40" />
         <img src={celestialRingImage} alt="" loading="lazy" decoding="async" className="pf-process-side-image bottom-8 right-4 h-32 w-32 md:right-10 md:h-44 md:w-44" />
         <div className="pf-container relative z-10">
-          <div className="mx-auto grid max-w-[920px] grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-4 md:gap-y-0">
+          <div className="mx-auto grid max-w-[920px] grid-cols-2 gap-x-8 gap-y-7 md:grid-cols-4 md:gap-y-0">
             {processItems.map((item, index) => {
               const Icon = item.icon;
               return (
@@ -192,9 +192,9 @@ function Index() {
                 <div className="pf-process-icon-frame">
                   <Icon className="h-8 w-8 text-accent" strokeWidth={1.45} />
                 </div>
-                <span className="mt-5 font-heading text-[30px] font-light leading-none text-accent/30">0{index + 1}</span>
-                <p className="mt-2 font-heading text-[30px] font-normal leading-none text-foreground">{item.label}</p>
-                <p className="mx-auto mt-4 max-w-[190px] text-[14px] font-light leading-relaxed text-muted-foreground">{item.copy}</p>
+                <span className="mt-3 font-heading text-[26px] font-light leading-none text-accent/30">0{index + 1}</span>
+                <p className="mt-1 font-heading text-[26px] font-normal leading-none text-foreground">{item.label}</p>
+                <p className="mx-auto mt-2 max-w-[180px] text-[13px] font-light leading-snug text-muted-foreground">{item.copy}</p>
               </div>
               );
             })}
