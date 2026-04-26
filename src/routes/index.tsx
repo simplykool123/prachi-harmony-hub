@@ -225,7 +225,7 @@ function Index() {
                   <Icon className="h-6 w-6 text-accent" strokeWidth={1.45} />
                 </div>
                 <span className="mt-2 font-heading text-[23px] font-light leading-none text-accent/30">0{index + 1}</span>
-                <p className="mt-0.5 font-heading text-[24px] font-normal leading-none text-foreground">{item.label}</p>
+                <p className="mt-0.5 font-heading leading-none text-foreground text-lg font-normal">{item.label}</p>
                 <p className="mx-auto mt-1.5 max-w-[175px] text-[12px] font-light leading-snug text-muted-foreground">{item.copy}</p>
               </div>
               );
