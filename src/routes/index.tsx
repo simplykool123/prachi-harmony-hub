@@ -120,7 +120,7 @@ function ImpactIllustration({ type }: { type: string }) {
 function Index() {
   return (
     <>
-      <section className="relative overflow-hidden bg-hero-cream">
+      <section className="relative bg-hero-cream">
         <div className="pf-hero-motion-bg absolute inset-0" aria-hidden="true" />
         <div className="pf-hero-cream-overlay absolute inset-0" aria-hidden="true" />
         <div className="pf-hero-vignette absolute inset-0" aria-hidden="true" />
