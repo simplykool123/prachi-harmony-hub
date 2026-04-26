@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Compass, Hand, Leaf, MessageCircle, Moon, SunMoon } from "lucide-react";
+import { Compass, Flower, Hand, Leaf, MessageCircle, Moon, SunMoon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CountUp, MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
@@ -53,7 +53,7 @@ const impactItems = [
 const processItems = [
   [Compass, "Discovery"],
   [Moon, "Diagnosis"],
-  [SunMoon, "Design"],
+  [Flower, "Design"],
   [Leaf, "Alignment"],
 ] as const;
 
