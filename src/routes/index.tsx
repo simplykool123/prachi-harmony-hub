@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Compass, Flower, Hand, Leaf, MessageCircle, Moon, SunMoon } from "lucide-react";
+import { Hand, MessageCircle, Moon, SunMoon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CountUp, MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
@@ -51,10 +51,10 @@ const impactItems = [
 ];
 
 const processItems = [
-  [Compass, "Discovery"],
-  [Moon, "Diagnosis"],
-  [Flower, "Design"],
-  [Leaf, "Alignment"],
+  [celestialSunImage, "Discovery"],
+  [celestialMoonImage, "Diagnosis"],
+  [orangeArtworkImage, "Design"],
+  [celestialRingImage, "Alignment"],
 ] as const;
 
 function CelestialMotion({ className = "" }: { className?: string }) {
@@ -180,15 +180,21 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="relative overflow-hidden bg-warm py-12">
-        <div className="absolute left-[-8%] top-[-90px] h-[260px] w-[260px] rounded-full border border-accent/10" />
-        <div className="pf-container flex flex-wrap items-center justify-center gap-x-12 gap-y-5">
-          {processItems.map(([Icon, label]) => (
-            <div key={label} className="flex items-center gap-3 text-[13px] font-medium tracking-[0.6px] text-foreground">
-              <Icon className="h-4 w-4 text-accent" strokeWidth={1.8} />
-              <span>{label}</span>
-            </div>
-          ))}
+      <MotionSection className="relative overflow-hidden bg-warm py-20">
+        <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="pf-process-side-image left-4 top-8 h-28 w-28 md:left-10 md:h-40 md:w-40" />
+        <img src={celestialRingImage} alt="" loading="lazy" decoding="async" className="pf-process-side-image bottom-8 right-4 h-32 w-32 md:right-10 md:h-44 md:w-44" />
+        <div className="pf-container relative z-10">
+          <div className="mx-auto grid max-w-[820px] grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-4">
+            {processItems.map(([image, label], index) => (
+              <div key={label} className="relative flex flex-col items-center text-center">
+                <div className="pf-process-icon-frame">
+                  <img src={image} alt={`${label} visual`} loading="lazy" decoding="async" className="h-full w-full object-contain" />
+                </div>
+                <span className="mt-4 text-[10px] font-medium tracking-[2px] text-accent">0{index + 1}</span>
+                <p className="mt-1 font-heading text-[24px] font-normal leading-none text-foreground">{label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </MotionSection>
 
