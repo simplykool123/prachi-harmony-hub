@@ -248,7 +248,6 @@ function Index() {
       <MotionSection className="relative overflow-hidden bg-card py-16">
         <div className="pf-container relative z-10 grid items-center gap-10 lg:grid-cols-[31fr_38fr_31fr]">
           <div className="pf-about-portrait-wrap relative mx-auto min-h-[470px] w-full max-w-[320px]">
-            <div className="pf-about-orbit pf-about-orbit-left" aria-hidden="true" />
             <div className="pf-about-image-frame pf-about-image-arch absolute inset-x-0 top-0 mx-auto h-[455px] w-[88%]">
               <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_8%]" />
             </div>
@@ -257,8 +256,12 @@ function Index() {
             </div>
           </div>
           <div className="text-center">
-            <div className="pf-about-top-mark mx-auto" aria-hidden="true">
-              <img src={orangeArtworkImage} alt="" loading="lazy" decoding="async" className="h-12 w-12 object-contain" />
+            <div className="pf-about-title-mark mx-auto" aria-hidden="true">
+              <span />
+              <div className="pf-about-top-mark">
+                <img src={orangeArtworkImage} alt="" loading="lazy" decoding="async" className="h-12 w-12 object-contain" />
+              </div>
+              <span />
             </div>
             <p className="pf-eyebrow pf-eyebrow-center mt-7 py-0">ABOUT PRACHI</p>
             <h2 className="pf-h2 mx-auto mt-7 max-w-[430px]">Two decades. One rare combination.</h2>
@@ -279,7 +282,6 @@ function Index() {
             <Link to="/about" className="group mt-8 inline-flex text-[13px] font-medium text-accent">Read her full story <span className="transition group-hover:translate-x-1">→</span></Link>
           </div>
           <div className="pf-about-side-wrap relative mx-auto min-h-[430px] w-full max-w-[330px]">
-            <div className="pf-about-orbit pf-about-orbit-right" aria-hidden="true" />
             <div className="pf-about-image-frame pf-about-image-soft absolute inset-x-0 bottom-0 mx-auto h-[385px] w-[92%]">
               <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={1120} height={1328} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_42%]" />
             </div>
