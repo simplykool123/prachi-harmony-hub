@@ -78,13 +78,13 @@ export function Footer() {
   ] as const;
 
   return (
-    <footer className="relative overflow-hidden border-t border-foreground/10 bg-footer py-12 text-foreground">
-      <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="absolute -right-10 top-8 hidden h-64 w-64 object-contain opacity-10 lg:block" />
-      <div className="pf-container relative z-10 grid gap-10 lg:grid-cols-[1.1fr_0.9fr_0.9fr_1.1fr] lg:gap-12">
+    <footer className="relative overflow-hidden border-t border-foreground/10 bg-footer py-9 text-foreground">
+      <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="absolute -right-8 top-6 hidden h-56 w-56 object-contain opacity-10 lg:block" />
+      <div className="pf-container relative z-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr_0.9fr_1.1fr] lg:gap-10">
         <div className="lg:pr-8">
           <Logo light />
-          <p className="mt-7 max-w-[300px] text-[14px] leading-loose text-foreground/60">Guiding homes, businesses and lives with ancient wisdom and intuitive precision.</p>
-          <div className="mt-8 flex items-center gap-4 text-primary" aria-hidden="true"><span className="h-px w-16 bg-primary/35" /><span className="text-xl leading-none">✧</span><span className="h-px w-16 bg-primary/35" /></div>
+          <p className="mt-5 max-w-[300px] text-[14px] leading-loose text-foreground/60">Guiding homes, businesses and lives with ancient wisdom and intuitive precision.</p>
+          <div className="mt-5 flex items-center gap-4 text-primary" aria-hidden="true"><span className="h-px w-16 bg-primary/35" /><span className="text-xl leading-none">✧</span><span className="h-px w-16 bg-primary/35" /></div>
         </div>
         <nav className="border-foreground/10 lg:border-l lg:pl-12" aria-label="Footer services navigation">
           <h2 className="pf-footer-heading">Services</h2>
@@ -109,15 +109,15 @@ export function Footer() {
             <a href="mailto:hello@prachifulfagar.com" className="flex items-start gap-4 transition hover:text-primary"><Mail className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.6} /><span>hello@prachifulfagar.com</span></a>
             <p className="flex items-start gap-4"><MapPin className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.6} /><span>Mumbai, Pune, Nashik & Kopargaon</span></p>
           </div>
-          <Button asChild variant="outline" className="mt-6 border-primary/45 bg-transparent px-6 text-primary hover:bg-primary/10"><Link to="/contact">Book a Consultation <ArrowRight className="h-4 w-4" /></Link></Button>
-          <div className="mt-6 flex gap-4">
+          <Button asChild variant="outline" className="mt-5 w-full justify-center border-primary/45 bg-transparent px-6 text-primary hover:bg-primary/10"><Link to="/contact">Book a Consultation <ArrowRight className="h-4 w-4" /></Link></Button>
+          <div className="mt-4 flex justify-center gap-4">
             <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="pf-footer-social"><Instagram className="h-4 w-4" /></a>
             <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="pf-footer-social"><Youtube className="h-4 w-4" /></a>
             <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="pf-footer-social"><Facebook className="h-4 w-4" /></a>
           </div>
         </div>
       </div>
-      <div className="pf-container relative z-10 mt-12 flex items-center justify-center gap-6 border-t border-primary/15 pt-6 text-center text-[13px] text-foreground/55 before:h-px before:flex-1 before:bg-primary/15 after:h-px after:flex-1 after:bg-primary/15"><span className="text-primary">✦</span><span>© 2025 Prachi Fulfagar. All rights reserved.</span><span className="text-primary">✦</span></div>
+      <div className="pf-container relative z-10 mt-8 flex items-center justify-center gap-4 text-center text-[13px] text-foreground/55"><span className="text-primary">✦</span><span>© 2025 Prachi Fulfagar. All rights reserved.</span><span className="text-primary">✦</span></div>
     </footer>
   );
 }
