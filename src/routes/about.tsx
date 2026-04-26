@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Hand, MapPin } from "lucide-react";
 import { PageHero } from "@/components/prachi/PageHero";
 import { MotionSection, SectionIntro } from "@/components/prachi/Motion";
+import { CelestialDecor, DoubleLineMark } from "@/components/prachi/CelestialDecor";
 import { awards, cities, globalPresence } from "@/components/prachi/site-data";
 
 const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
@@ -20,12 +21,19 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return <>
     <PageHero eyebrow="ABOUT" title="Where ancient wisdom meets modern clarity" copy="A rare combination of Palmistry and Vastu Shastra — personally guided." />
-    <MotionSection className="pf-section overflow-hidden bg-card">
-      <div className="pf-container grid items-center gap-10 lg:grid-cols-[31fr_38fr_31fr]">
-        <div className="relative min-h-[440px]">
-          <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="absolute inset-x-0 top-0 mx-auto h-[440px] w-[88%] rounded-t-full object-cover object-[center_8%] shadow-card" />
+    <MotionSection className="pf-section pf-celestial-section overflow-hidden bg-card">
+      <CelestialDecor variant="compass" className="pointer-events-none absolute -left-12 top-12 hidden h-52 w-52 text-accent/10 lg:block" />
+      <CelestialDecor variant="moon" className="pointer-events-none absolute right-10 bottom-10 hidden h-32 w-32 text-accent/12 lg:block" />
+      <div className="pf-container relative z-10 grid items-center gap-10 lg:grid-cols-[31fr_38fr_31fr]">
+        <div className="pf-about-portrait-wrap relative mx-auto min-h-[440px] w-full max-w-[320px]">
+          <span className="pf-about-arch-orbit pf-about-arch-orbit-outer" aria-hidden="true" />
+          <span className="pf-about-arch-orbit pf-about-arch-orbit-inner" aria-hidden="true" />
+          <div className="pf-about-image-frame pf-about-image-arch absolute inset-x-0 top-0 mx-auto h-[430px] w-[88%]">
+            <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_8%]" />
+          </div>
         </div>
         <div className="text-center">
+          <DoubleLineMark className="mx-auto mb-7 w-[250px] text-accent/55" />
           <p className="pf-eyebrow pf-eyebrow-center">HER STORY</p>
           <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>
           <p className="pf-body mx-auto mt-5 max-w-[430px]">For over two decades, Prachi Fulfagar has been a trusted guide for thousands of people seeking clarity — through their palms, their homes, and the stars.</p>
