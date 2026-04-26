@@ -7,6 +7,7 @@ import { Facebook, Instagram, MapPin, MessageCircle, Youtube, CheckCircle2 } fro
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/prachi/PageHero";
 import { MotionSection } from "@/components/prachi/Motion";
+import { CelestialDecor } from "@/components/prachi/CelestialDecor";
 import { cities, services, whatsappUrl } from "@/components/prachi/site-data";
 import { supabase } from "@/lib/supabase";
 
@@ -46,8 +47,10 @@ function ContactPage() {
         title="Begin your journey"
         copy="In-person across India, or online from anywhere in the world."
       />
-      <MotionSection className="pf-section bg-background pt-10">
-        <div className="pf-container grid gap-14 lg:grid-cols-[1fr_.9fr] lg:gap-[60px]">
+      <MotionSection className="pf-section pf-celestial-section bg-background pt-10">
+        <CelestialDecor variant="sun" className="pointer-events-none absolute -right-12 top-16 hidden h-56 w-56 text-accent/10 lg:block" />
+        <CelestialDecor variant="star" className="pointer-events-none absolute left-8 bottom-12 hidden h-24 w-24 text-accent/12 lg:block" />
+        <div className="pf-container relative z-10 grid gap-14 lg:grid-cols-[1fr_.9fr] lg:gap-[60px]">
           <ContactForm />
           <ContactAside />
         </div>
