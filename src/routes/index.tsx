@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Compass, Flower, Hand, Leaf, MessageCircle, Moon, SunMoon } from "lucide-react";
+import { Hand, MessageCircle, Moon, SunMoon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CountUp, MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
@@ -51,10 +51,10 @@ const impactItems = [
 ];
 
 const processItems = [
-  [Compass, "Discovery"],
-  [Moon, "Diagnosis"],
-  [Flower, "Design"],
-  [Leaf, "Alignment"],
+  [celestialSunImage, "Discovery"],
+  [celestialMoonImage, "Diagnosis"],
+  [orangeArtworkImage, "Design"],
+  [celestialRingImage, "Alignment"],
 ] as const;
 
 function CelestialMotion({ className = "" }: { className?: string }) {
