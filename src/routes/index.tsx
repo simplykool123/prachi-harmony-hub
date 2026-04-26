@@ -249,17 +249,17 @@ function Index() {
         <div className="pf-container relative z-10 grid items-center gap-10 lg:grid-cols-[31fr_38fr_31fr]">
           <div className="pf-about-portrait-wrap relative mx-auto min-h-[470px] w-full max-w-[320px]">
             <div className="pf-about-image-frame pf-about-image-arch absolute inset-x-0 top-0 mx-auto h-[455px] w-[88%]">
-              <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_8%]" />
+              <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_6%]" />
             </div>
             <div className="pf-about-badge pf-about-badge-left">
               <Hand className="h-12 w-12" strokeWidth={1.25} />
             </div>
           </div>
-          <div className="text-center">
+          <div className="text-center lg:self-center">
             <div className="pf-about-title-mark mx-auto" aria-hidden="true">
               <span />
               <div className="pf-about-top-mark">
-                <img src={orangeArtworkImage} alt="" loading="lazy" decoding="async" className="h-12 w-12 object-contain" />
+                <img src={orangeArtworkImage} alt="" loading="lazy" decoding="async" className="h-13 w-13 object-contain" />
               </div>
               <span />
             </div>
