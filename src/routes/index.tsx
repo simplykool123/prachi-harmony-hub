@@ -221,20 +221,23 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="relative overflow-hidden bg-background py-14">
+      <MotionSection className="relative overflow-hidden bg-background py-16">
         <img src={vastuPlanImage} alt="Faint Vastu plan background" width={960} height={655} loading="lazy" decoding="async" className="absolute left-0 top-0 h-full w-[46%] object-cover opacity-[0.08]" />
-        <div className="absolute right-[11%] top-16 h-44 w-44 rounded-full border border-border" />
+        <CelestialMotion className="absolute right-[7%] top-14 hidden h-44 w-44 lg:block" />
         <div className="pf-container relative z-10">
           <SectionIntro eyebrow="BEFORE & AFTER" title="The impact of alignment" copy="The goal is not decoration — it is a home or workplace that starts supporting the life inside it." />
-          <div className="mt-9 grid gap-4 lg:grid-cols-3">
-            {impactItems.map(([title, copy], index) => (
-              <article key={title} className="pf-card p-5">
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {impactItems.map(([title, copy, type], index) => (
+              <article key={title} className="pf-card grid min-h-[178px] grid-cols-[1fr_auto] items-center gap-4 overflow-hidden p-5">
+                <div>
                 <p className="text-[10px] font-medium uppercase tracking-[2px] text-accent">Impact 0{index + 1}</p>
                 <h3 className="pf-h3 mt-3">{title}</h3>
                 <div className="my-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-[11px] text-muted-foreground">
                   <span>Blocked</span><span className="text-accent">→</span><span className="text-foreground">Aligned</span>
                 </div>
                 <p className="text-[12px] font-light leading-relaxed text-muted-foreground">{copy}</p>
+                </div>
+                <ImpactIllustration type={String(type)} />
               </article>
             ))}
           </div>
