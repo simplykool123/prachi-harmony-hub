@@ -39,6 +39,8 @@
   --color-badge-foreground: var(--badge-foreground);
   --color-footer: var(--footer);
   --color-whatsapp: var(--whatsapp);
+  --color-hero-cream: var(--hero-cream);
+  --color-hero-orange: var(--hero-orange);
   --shadow-card: var(--shadow-card);
   --shadow-card-hover: var(--shadow-card-hover);
   --shadow-nav: var(--shadow-nav);
@@ -49,6 +51,8 @@
   --font-heading: "Cormorant Garamond", serif;
   --font-body: "DM Sans", sans-serif;
   --background: oklch(0.985 0.003 85.87);
+  --hero-cream: oklch(0.983 0.023 77.5);
+  --hero-orange: oklch(0.705 0.19 45.4);
   --foreground: oklch(0.21 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.21 0 0);
@@ -141,6 +145,10 @@
   .pf-compass-drift { animation: pf-compass-drift 9s ease-in-out infinite alternate; }
   .pf-moon-orbit { animation: pf-moon-circle 8s linear infinite; transform-origin: 0 0; }
   .pf-png-moon-orbit { animation: pf-png-moon-circle 9s linear infinite; transform-origin: 50% 50%; }
+  .pf-hero-halo { border-radius: 999px; background: radial-gradient(circle, color-mix(in oklab, var(--hero-orange) 24%, transparent) 0%, color-mix(in oklab, var(--hero-orange) 10%, transparent) 38%, transparent 68%); filter: blur(24px); }
+  .pf-sacred-geometry { border-radius: 999px; opacity: 0.2; background: radial-gradient(circle, transparent 0 28%, color-mix(in oklab, var(--hero-orange) 28%, transparent) 28.2% 28.6%, transparent 28.8% 100%), radial-gradient(circle at 50% 18%, transparent 0 29%, color-mix(in oklab, var(--hero-orange) 24%, transparent) 29.2% 29.7%, transparent 30% 100%), radial-gradient(circle at 18% 68%, transparent 0 29%, color-mix(in oklab, var(--hero-orange) 24%, transparent) 29.2% 29.7%, transparent 30% 100%), radial-gradient(circle at 82% 68%, transparent 0 29%, color-mix(in oklab, var(--hero-orange) 24%, transparent) 29.2% 29.7%, transparent 30% 100%); }
+  .pf-sacred-geometry::before, .pf-sacred-geometry::after { content: ""; position: absolute; inset: 13%; border: 1px solid color-mix(in oklab, var(--hero-orange) 24%, transparent); border-radius: 999px; }
+  .pf-sacred-geometry::after { inset: 27%; }
   .pf-story-marquee { mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent); }
   .pf-story-track { animation: pf-story-scroll 42s linear infinite; }
   .pf-story-marquee:hover .pf-story-track { animation-play-state: paused; }
