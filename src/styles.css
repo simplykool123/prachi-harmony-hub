@@ -179,10 +179,10 @@
   .pf-about-image-frame img { border: 1px solid color-mix(in oklab, var(--hero-orange) 10%, transparent); }
   .pf-about-portrait-wrap::before { content: ""; position: absolute; left: -20px; top: 312px; z-index: 3; width: 124px; height: 1px; background: color-mix(in oklab, var(--hero-orange) 18%, transparent); }
   .pf-about-portrait-wrap::after { content: "✦"; position: absolute; left: 82px; top: 300px; z-index: 16; color: var(--color-hero-orange); font-size: 14px; line-height: 1; opacity: .66; }
-  .pf-about-image-arch, .pf-about-image-arch img { border-radius: 999px 999px 38px 108px / 999px 999px 34px 86px; }
+  .pf-about-image-arch, .pf-about-image-arch img { border-radius: 999px 999px 38px 142px / 999px 999px 34px 112px; }
   .pf-about-arch-orbit { position: absolute; pointer-events: none; border-color: color-mix(in oklab, var(--hero-orange) 22%, transparent); }
-  .pf-about-arch-orbit-outer { left: -22px; top: -24px; z-index: 1; width: 352px; height: 482px; border-width: 1px; border-style: dashed; border-radius: 999px 999px 52px 124px / 999px 999px 44px 96px; }
-  .pf-about-arch-orbit-inner { left: 24px; top: -10px; z-index: 1; width: 286px; height: 452px; border-width: 1px; border-style: solid; border-radius: 999px 999px 42px 112px / 999px 999px 36px 88px; opacity: .62; }
+  .pf-about-arch-orbit-outer { left: -22px; top: -24px; z-index: 1; width: 352px; height: 482px; border-width: 1px; border-style: dashed; border-radius: 999px 999px 52px 158px / 999px 999px 44px 122px; }
+  .pf-about-arch-orbit-inner { left: 24px; top: -10px; z-index: 1; width: 286px; height: 452px; border-width: 1px; border-style: solid; border-radius: 999px 999px 42px 146px / 999px 999px 36px 112px; opacity: .62; }
   .pf-about-arch-dot { position: absolute; z-index: 4; width: 8px; height: 8px; border: 2px solid color-mix(in oklab, var(--hero-orange) 54%, transparent); border-radius: 999px; background: var(--color-card); }
   .pf-about-arch-dot-a { left: -7px; top: 170px; }
   .pf-about-arch-dot-b { right: 8px; top: 34px; }
