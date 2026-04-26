@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Compass, Flower2, Hand, Leaf, MessageCircle, Moon, MoonStar, SunMoon } from "lucide-react";
+import { Award, Compass, Flower2, Globe2, Hand, Leaf, MessageCircle, Moon, MoonStar, ShieldCheck, SunMoon, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CountUp, MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
@@ -55,6 +55,13 @@ const processItems = [
   { icon: MoonStar, label: "Diagnosis", copy: "Analyzing energy patterns & identifying imbalances" },
   { icon: Flower2, label: "Design", copy: "Creating a Vastu-aligned space plan" },
   { icon: Leaf, label: "Alignment", copy: "Fine-tuning elements for harmony & flow" },
+] as const;
+
+const aboutStats = [
+  { icon: Award, value: "20+", label: "Years of Practice" },
+  { icon: Users, value: "5000+", label: "Clients Worldwide" },
+  { icon: Globe2, value: "India &", label: "Worldwide" },
+  { icon: ShieldCheck, value: "Trusted by", label: "Generations" },
 ] as const;
 
 function CelestialMotion({ className = "" }: { className?: string }) {
@@ -239,22 +246,45 @@ function Index() {
       </MotionSection>
 
       <MotionSection className="relative overflow-hidden bg-card py-16">
-        <div className="pf-container relative z-10 grid items-center gap-8 lg:grid-cols-[32fr_36fr_32fr]">
-          <div className="relative min-h-[430px]">
-            <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="absolute inset-x-0 top-0 mx-auto h-[430px] w-[86%] rounded-t-full object-cover object-[center_8%] shadow-card" />
+        <div className="pf-container relative z-10 grid items-center gap-10 lg:grid-cols-[31fr_38fr_31fr]">
+          <div className="pf-about-portrait-wrap relative mx-auto min-h-[470px] w-full max-w-[320px]">
+            <div className="pf-about-orbit pf-about-orbit-left" aria-hidden="true" />
+            <div className="pf-about-image-frame pf-about-image-arch absolute inset-x-0 top-0 mx-auto h-[455px] w-[88%]">
+              <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_8%]" />
+            </div>
+            <div className="pf-about-badge pf-about-badge-left">
+              <Hand className="h-12 w-12" strokeWidth={1.25} />
+            </div>
           </div>
           <div className="text-center">
-            <p className="pf-eyebrow pf-eyebrow-center py-0">ABOUT PRACHI</p>
-            <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>
-            <p className="pf-body mx-auto mt-5 max-w-[420px]">Prachi Fulfagar is one of India's most credentialled Vastu and Palmistry consultants — combining both in a rare integrated practice that aligns you from the inside out.</p>
-            <p className="pf-body mx-auto mt-4 max-w-[420px]">Consulting from Mumbai, Pune, Nashik and Kopargaon, she works with clients across India and internationally.</p>
-            <Link to="/about" className="group mt-7 inline-flex text-[13px] font-medium text-accent">Read her full story <span className="transition group-hover:translate-x-1">→</span></Link>
+            <div className="pf-about-top-mark mx-auto" aria-hidden="true">
+              <img src={orangeArtworkImage} alt="" loading="lazy" decoding="async" className="h-12 w-12 object-contain" />
+            </div>
+            <p className="pf-eyebrow pf-eyebrow-center mt-7 py-0">ABOUT PRACHI</p>
+            <h2 className="pf-h2 mx-auto mt-7 max-w-[430px]">Two decades. One rare combination.</h2>
+            <p className="pf-body mx-auto mt-5 max-w-[430px]">Prachi Fulfagar is one of India's most credentialled Vastu and Palmistry consultants — combining both in a rare integrated practice that aligns you from the inside out.</p>
+            <p className="pf-body mx-auto mt-4 max-w-[430px]">Consulting from Mumbai, Pune, Nashik and Kopargaon, she works with clients across India and internationally.</p>
+            <div className="mt-9 grid grid-cols-2 gap-y-7 sm:grid-cols-4 sm:divide-x sm:divide-border">
+              {aboutStats.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.label} className="px-3 text-center">
+                    <div className="pf-about-stat-icon mx-auto"><Icon className="h-6 w-6 text-accent" strokeWidth={1.35} /></div>
+                    <p className="mt-3 font-heading text-[22px] font-light leading-none text-accent">{item.value}</p>
+                    <p className="mt-1 text-[12px] font-light leading-snug text-muted-foreground">{item.label}</p>
+                  </div>
+                );
+              })}
+            </div>
+            <Link to="/about" className="group mt-8 inline-flex text-[13px] font-medium text-accent">Read her full story <span className="transition group-hover:translate-x-1">→</span></Link>
           </div>
-          <div className="relative min-h-[430px]">
-            <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={1120} height={1328} loading="lazy" decoding="async" className="absolute inset-x-0 bottom-0 mx-auto h-[360px] w-[86%] rounded-b-full object-cover shadow-card" />
-            <div className="absolute left-0 top-8 hidden h-px w-[72%] bg-accent/45 md:block" />
-            <div className="absolute left-1/2 top-0 grid h-28 w-28 -translate-x-1/2 place-items-center rounded-t-full border border-border bg-background text-accent shadow-card">
-              <Hand className="h-12 w-12" strokeWidth={1.3} />
+          <div className="pf-about-side-wrap relative mx-auto min-h-[430px] w-full max-w-[330px]">
+            <div className="pf-about-orbit pf-about-orbit-right" aria-hidden="true" />
+            <div className="pf-about-image-frame pf-about-image-soft absolute inset-x-0 bottom-0 mx-auto h-[385px] w-[92%]">
+              <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={1120} height={1328} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_42%]" />
+            </div>
+            <div className="pf-about-badge pf-about-badge-right">
+              <Hand className="h-12 w-12" strokeWidth={1.25} />
             </div>
           </div>
         </div>
