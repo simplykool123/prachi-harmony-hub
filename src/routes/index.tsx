@@ -15,7 +15,6 @@ const orangeArtworkImage = "/site-images/prachi-orange-artwork.png";
 const celestialRingImage = "/site-images/prachi-celestial-ring.png";
 const celestialSunImage = "/site-images/prachi-celestial-sun.png";
 const celestialMoonImage = "/site-images/prachi-celestial-moon.png";
-const servicesBackgroundSymbolImage = "/site-images/prachi-services-background-symbol-orange.png";
 const impactHealthImage = "/site-images/prachi-impact-health.png";
 const impactRelationshipImage = "/site-images/prachi-impact-relationship.png";
 const impactBusinessImage = "/site-images/prachi-impact-business.png";
@@ -171,14 +170,13 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="relative overflow-hidden bg-background py-9">
-        <img src={servicesBackgroundSymbolImage} alt="" loading="lazy" decoding="async" className="pf-services-bg-symbol pointer-events-none absolute -right-20 top-1/2 hidden h-[560px] w-[330px] -translate-y-1/2 object-contain lg:block xl:-right-10" />
-        <div className="pf-container relative z-10">
+      <MotionSection className="bg-background py-12">
+        <div className="pf-container">
           <SectionIntro eyebrow="WHAT WE OFFER" title="Services for every space and soul" copy="From your palm to your home — a complete system of ancient wisdom." />
-          <div className="mx-auto mt-6 grid max-w-[940px] gap-3 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-8 grid max-w-[980px] gap-4 md:grid-cols-2 lg:grid-cols-3">
             {services.slice(0, 6).map((service, index) => <ServiceCard key={service.name} service={service} index={index} />)}
           </div>
-          <div className="mt-5 text-center"><Link to="/services" className="text-[12px] font-medium text-accent underline-offset-4 hover:underline">See all 12 services →</Link></div>
+          <div className="mt-7 text-center"><Link to="/services" className="text-[13px] font-medium text-accent underline-offset-4 hover:underline">See all 12 services →</Link></div>
         </div>
       </MotionSection>
 
