@@ -180,28 +180,6 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="relative overflow-hidden bg-warm py-12">
-        <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="pf-process-side-image left-4 top-8 h-28 w-28 md:left-10 md:h-40 md:w-40" />
-        <img src={celestialRingImage} alt="" loading="lazy" decoding="async" className="pf-process-side-image bottom-8 right-4 h-32 w-32 md:right-10 md:h-44 md:w-44" />
-        <div className="pf-container relative z-10">
-          <div className="mx-auto grid max-w-[920px] grid-cols-2 gap-x-8 gap-y-7 md:grid-cols-4 md:gap-y-0">
-            {processItems.map((item, index) => {
-              const Icon = item.icon;
-              return (
-              <div key={item.label} className="pf-process-step relative flex flex-col items-center text-center">
-                <div className="pf-process-icon-frame">
-                  <Icon className="h-8 w-8 text-accent" strokeWidth={1.45} />
-                </div>
-                <span className="mt-3 font-heading text-[26px] font-light leading-none text-accent/30">0{index + 1}</span>
-                <p className="mt-1 font-heading text-[26px] font-normal leading-none text-foreground">{item.label}</p>
-                <p className="mx-auto mt-2 max-w-[180px] text-[13px] font-light leading-snug text-muted-foreground">{item.copy}</p>
-              </div>
-              );
-            })}
-          </div>
-        </div>
-      </MotionSection>
-
       <MotionSection className="relative overflow-hidden bg-card py-16">
         <div className="absolute -right-24 top-12 h-[360px] w-[360px] rounded-full border border-accent/10" />
         <div className="pf-container grid items-center gap-12 lg:grid-cols-[45fr_55fr] lg:gap-16">
@@ -230,6 +208,28 @@ function Index() {
               <SunMoon className="absolute h-10 w-10 text-accent" strokeWidth={1.3} />
             </div>
             <img src={energyElementsImage} alt="Vastu energy elements with plant water candle and stone" width={1120} height={1328} loading="lazy" decoding="async" className="-mt-16 h-[390px] w-full rounded-t-full object-cover shadow-card" />
+          </div>
+        </div>
+      </MotionSection>
+
+      <MotionSection className="relative overflow-hidden bg-warm py-8">
+        <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="pf-process-side-image left-4 top-6 h-24 w-24 md:left-10 md:h-32 md:w-32" />
+        <img src={celestialRingImage} alt="" loading="lazy" decoding="async" className="pf-process-side-image bottom-6 right-4 h-28 w-28 md:right-10 md:h-36 md:w-36" />
+        <div className="pf-container relative z-10">
+          <div className="mx-auto grid max-w-[920px] grid-cols-2 gap-x-8 gap-y-6 md:grid-cols-4 md:gap-y-0">
+            {processItems.map((item, index) => {
+              const Icon = item.icon;
+              return (
+              <div key={item.label} className="pf-process-step relative flex flex-col items-center text-center">
+                <div className="pf-process-icon-frame">
+                  <Icon className="h-6 w-6 text-accent" strokeWidth={1.45} />
+                </div>
+                <span className="mt-2 font-heading text-[23px] font-light leading-none text-accent/30">0{index + 1}</span>
+                <p className="mt-0.5 font-heading text-[24px] font-normal leading-none text-foreground">{item.label}</p>
+                <p className="mx-auto mt-1.5 max-w-[175px] text-[12px] font-light leading-snug text-muted-foreground">{item.copy}</p>
+              </div>
+              );
+            })}
           </div>
         </div>
       </MotionSection>
