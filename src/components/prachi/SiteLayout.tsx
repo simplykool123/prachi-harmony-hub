@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUp, Instagram, MessageCircle, Youtube } from "lucide-react";
+import { ArrowUp, Instagram, MapPin, MessageCircle, Phone, Youtube } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { navItems, services, whatsappUrl } from "./site-data";
@@ -67,24 +67,44 @@ export function Header() {
 }
 
 export function Footer() {
-  const footerLinks = navItems.filter((item) => item.to !== "/blog");
   return (
-    <footer className="border-t border-foreground/10 bg-footer py-10 text-foreground">
-      <div className="pf-container grid gap-8 md:grid-cols-3 md:items-start">
+    <footer className="border-t border-foreground/10 bg-footer py-12 text-foreground">
+      <div className="pf-container grid gap-10 lg:grid-cols-[1fr_1.25fr_1fr] lg:items-start">
         <div>
           <Logo light />
-          <p className="mt-4 text-[11px] text-foreground/55">© 2025 PrachiFulfagar.com</p>
+          <h2 className="mt-5 font-heading text-[26px] font-light leading-tight">About Prachi Fulfagar</h2>
+          <p className="mt-3 max-w-[280px] text-[12px] leading-relaxed text-foreground/60">
+            Vastu, Palmistry and Vedic Astrology guidance for homes, businesses and life decisions across India and worldwide.
+          </p>
+          <Link to="/about" className="mt-4 inline-flex text-[12px] font-medium text-primary underline-offset-4 hover:underline">Know more about Prachi</Link>
+          <p className="mt-6 text-[11px] text-foreground/55">© 2025 PrachiFulfagar.com</p>
         </div>
-        <nav className="flex flex-wrap gap-x-6 gap-y-3 md:justify-center" aria-label="Footer navigation">
-          {footerLinks.map((item) => (
-            <Link key={item.to} to={item.to} className="text-xs text-foreground/60 transition hover:text-primary">
-              {item.label}
-            </Link>
-          ))}
+        <nav aria-label="Footer services navigation">
+          <h2 className="font-heading text-[26px] font-light leading-tight">Full Services Menu</h2>
+          <div className="mt-4 grid gap-x-6 gap-y-2 sm:grid-cols-2">
+            {services.map((service) => (
+              <Link key={service.slug} to="/services/$serviceSlug" params={{ serviceSlug: service.slug }} className="text-[12px] leading-relaxed text-foreground/60 transition hover:text-primary">
+                {service.name}
+              </Link>
+            ))}
+          </div>
         </nav>
-        <div className="md:text-right">
-          <p className="text-xs text-foreground/55">prachifulfagar.com</p>
-          <div className="mt-4 flex gap-4 md:justify-end">
+        <div>
+          <h2 className="font-heading text-[26px] font-light leading-tight">Contact Details</h2>
+          <div className="mt-4 space-y-3 text-[12px] leading-relaxed text-foreground/60">
+            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-start gap-3 transition hover:text-primary">
+              <Phone className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.7} />
+              <span>+91 XXXXX XXXXX</span>
+            </a>
+            <p className="flex items-start gap-3">
+              <MapPin className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.7} />
+              <span>Mumbai, Pune, Nashik and Kopargaon consultations by appointment.</span>
+            </p>
+            <Link to="/contact" className="inline-flex font-medium text-primary underline-offset-4 hover:underline">
+              Book a consultation
+            </Link>
+          </div>
+          <div className="mt-6 flex gap-4">
             <Instagram className="h-[18px] w-[18px] text-foreground/55 transition hover:text-primary" />
             <Youtube className="h-[18px] w-[18px] text-foreground/55 transition hover:text-primary" />
           </div>
