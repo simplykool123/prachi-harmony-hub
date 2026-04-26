@@ -140,7 +140,7 @@
   .pf-compass-orbit { animation: pf-compass-spin 42s linear infinite; }
   .pf-compass-drift { animation: pf-compass-drift 9s ease-in-out infinite alternate; }
   .pf-moon-orbit { animation: pf-moon-circle 8s linear infinite; transform-origin: 0 0; }
-  .pf-png-moon-orbit { animation: pf-png-moon-circle 9s linear infinite; transform-origin: 0 0; }
+  .pf-png-moon-orbit { animation: pf-png-moon-circle 9s linear infinite; transform-origin: 50% 50%; }
   .pf-story-marquee { mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent); }
   .pf-story-track { animation: pf-story-scroll 42s linear infinite; }
   .pf-story-marquee:hover .pf-story-track { animation-play-state: paused; }
@@ -157,8 +157,8 @@
     to { transform: rotate(360deg) translateX(82px) rotate(-360deg); }
   }
   @keyframes pf-png-moon-circle {
-    from { transform: rotate(0deg) translateX(92px) rotate(0deg) translate(-50%, -50%); }
-    to { transform: rotate(360deg) translateX(92px) rotate(-360deg) translate(-50%, -50%); }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
   @keyframes pf-story-scroll {
     from { transform: translateX(0); }
