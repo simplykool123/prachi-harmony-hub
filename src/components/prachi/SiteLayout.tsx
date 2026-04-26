@@ -31,7 +31,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-40 border-b border-foreground/10 bg-footer text-foreground transition-shadow ${scrolled ? "shadow-nav" : ""}`}>
+    <header className={`sticky top-0 z-40 border-b border-foreground/10 text-foreground transition-[background-color,box-shadow,backdrop-filter] duration-300 ${scrolled ? "bg-footer/82 shadow-nav backdrop-blur-md" : "bg-footer"}`}>
       <div className="pf-container flex items-center justify-between gap-5 py-3">
         <Logo />
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
