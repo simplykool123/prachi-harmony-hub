@@ -6,7 +6,7 @@ import { navItems, services, socialLinks, whatsappUrl } from "./site-data";
 
 const logoMark = "/site-images/prachi-logo-mark.png";
 const logoWordmark = "/site-images/prachi-logo-wordmark.png";
-const celestialSunImage = "/site-images/prachi-celestial-sun.png";
+const footerCompassImage = "/site-images/prachi-footer-compass.png";
 
 function Logo({ placement = "header" }: { placement?: "header" | "footer" }) {
   const isFooter = placement === "footer";
@@ -83,7 +83,7 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden border-t border-foreground/10 bg-footer py-7 text-foreground">
-      <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="absolute -right-8 top-6 hidden h-56 w-56 object-contain opacity-10 lg:block" />
+      <img src={footerCompassImage} alt="" loading="lazy" decoding="async" className="pf-footer-compass absolute -right-24 bottom-[-150px] hidden h-[440px] w-[440px] object-contain lg:block xl:-right-10" />
       <div className="pf-container relative z-10 grid gap-7 lg:grid-cols-[1.1fr_0.9fr_0.9fr_1.1fr] lg:gap-9">
         <div className="flex flex-col items-center text-center lg:pr-8">
           <Logo placement="footer" />
