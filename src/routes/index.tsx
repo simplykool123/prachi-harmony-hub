@@ -51,10 +51,10 @@ const impactItems = [
 ];
 
 const processItems = [
-  [celestialSunImage, "Discovery"],
-  [celestialMoonImage, "Diagnosis"],
-  [orangeArtworkImage, "Design"],
-  [celestialRingImage, "Alignment"],
+  { image: celestialSunImage, label: "Discovery" },
+  { image: celestialMoonImage, label: "Diagnosis" },
+  { image: orangeArtworkImage, label: "Design" },
+  { image: celestialRingImage, label: "Alignment" },
 ] as const;
 
 function CelestialMotion({ className = "" }: { className?: string }) {
@@ -185,13 +185,13 @@ function Index() {
         <img src={celestialRingImage} alt="" loading="lazy" decoding="async" className="pf-process-side-image bottom-8 right-4 h-32 w-32 md:right-10 md:h-44 md:w-44" />
         <div className="pf-container relative z-10">
           <div className="mx-auto grid max-w-[820px] grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-4">
-            {processItems.map(([image, label], index) => (
-              <div key={label} className="relative flex flex-col items-center text-center">
+            {processItems.map((item, index) => (
+              <div key={item.label} className="relative flex flex-col items-center text-center">
                 <div className="pf-process-icon-frame">
-                  <img src={image} alt={`${label} visual`} loading="lazy" decoding="async" className="h-full w-full object-contain" />
+                  <img src={item.image} alt={`${item.label} visual`} loading="lazy" decoding="async" className="h-full w-full object-contain" />
                 </div>
                 <span className="mt-4 text-[10px] font-medium tracking-[2px] text-accent">0{index + 1}</span>
-                <p className="mt-1 font-heading text-[24px] font-normal leading-none text-foreground">{label}</p>
+                <p className="mt-1 font-heading text-[24px] font-normal leading-none text-foreground">{item.label}</p>
               </div>
             ))}
           </div>
