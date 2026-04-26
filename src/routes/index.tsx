@@ -142,7 +142,7 @@ function Index() {
           </div>
           <div className="relative grid min-h-[540px] grid-cols-2 gap-5">
             <img src={homeRemediesImage} alt="Practical Vastu home remedy with flowers and water in a real living room" width={1280} height={960} loading="lazy" decoding="async" className="h-[310px] w-full rounded-[28px] rounded-br-[120px] object-cover shadow-card" />
-            <div className="relative flex h-[310px] w-full items-center justify-center rounded-full bg-badge shadow-card">
+            <div className="relative h-[310px] w-full items-center justify-center rounded-full bg-badge shadow-card flex flex-row bg-[#cac2b4]">
               <img src={orangeArtworkImage} alt="Orange spiritual harmony artwork" width={1280} height={1280} loading="lazy" decoding="async" className="h-[72%] w-[72%] object-contain" />
             </div>
             <div className="relative mt-6 flex items-center justify-center rounded-t-full border border-border bg-background p-8">
