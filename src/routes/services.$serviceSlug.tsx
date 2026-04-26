@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CelestialDecor, DoubleLineMark } from "@/components/prachi/CelestialDecor";
 import { cities, services, whatsappUrl } from "@/components/prachi/site-data";
 
 export const Route = createFileRoute("/services/$serviceSlug")({
@@ -231,12 +232,14 @@ function ServiceDetailPage() {
         </Link>
 
         <header className="relative mt-6 grid overflow-hidden rounded-[28px] border border-border bg-card shadow-card lg:grid-cols-[54fr_46fr]">
+          <CelestialDecor variant="moon" className="pointer-events-none absolute -left-8 top-8 h-32 w-32 text-accent/10" />
           <div className="p-7 sm:p-9">
             {detail.badge && (
               <span className="mb-5 inline-flex rounded-full bg-badge px-4 py-2 text-[10px] font-medium uppercase tracking-[2px] text-badge-foreground">
                 {detail.badge}
               </span>
             )}
+            <DoubleLineMark className="mb-6 w-[190px] text-accent/45" />
             <div className="flex items-center gap-5">
               <div className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-badge text-accent">
                 <Icon size={34} strokeWidth={1.45} />
