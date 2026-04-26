@@ -7,6 +7,7 @@ import { awards, customerStories, globalPresence, remedyHighlights, services, wh
 
 const vastuPlanImage = "/site-images/prachi-vastu-plan.jpg";
 const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
+const premiumPalmReadingImage = "/site-images/prachi-premium-palm-reading.jpg";
 const homeRemediesImage = "/site-images/prachi-home-remedies.jpg";
 const energyElementsImage = "/site-images/prachi-energy-elements.jpg";
 const prachiPortraitImage = "/site-images/prachi-fulfagar-portrait.jpg";
@@ -117,35 +118,36 @@ function ImpactIllustration({ type }: { type: string }) {
 function Index() {
   return (
     <>
-      <section className="relative min-h-[600px] overflow-hidden bg-background">
-        <div className="pf-container relative z-10 grid min-h-[600px] items-center gap-8 pt-8 lg:grid-cols-[340px_minmax(0,1fr)_360px]">
-          <div className="relative order-2 hidden min-h-[400px] lg:order-1 lg:block">
-            <div className="pf-compass-drift absolute -left-14 top-4 h-[360px] w-[360px] overflow-hidden rounded-full border border-accent/25 bg-card shadow-card xl:-left-28">
+      <section className="relative overflow-hidden bg-hero-cream">
+        <div className="absolute inset-x-0 top-0 h-px bg-hero-orange/25" />
+        <div className="pf-container relative z-10 grid min-h-[720px] items-center gap-10 py-20 md:py-24 lg:grid-cols-[310px_minmax(0,1fr)_330px] lg:gap-6 lg:py-28">
+          <div className="relative order-2 hidden min-h-[430px] lg:order-1 lg:block">
+            <div className="pf-compass-drift absolute -left-10 top-10 h-[330px] w-[330px] overflow-hidden rounded-full border border-hero-orange/25 bg-card shadow-card xl:-left-24">
               <img src={vastuPlanImage} alt="Animated Vastu compass and floor plan" width={960} height={655} loading="eager" decoding="async" fetchPriority="high" className="h-full w-full scale-110 object-cover opacity-90" />
             </div>
-            <div className="pf-compass-orbit absolute left-[38px] top-[88px] h-[174px] w-[174px] rounded-full border border-accent/45 before:absolute before:left-1/2 before:top-0 before:h-full before:w-px before:bg-accent/25 after:absolute after:left-0 after:top-1/2 after:h-px after:w-full after:bg-accent/25 xl:-left-[2px]" />
+            <div className="pf-compass-orbit absolute left-[42px] top-[118px] h-[158px] w-[158px] rounded-full border border-hero-orange/45 before:absolute before:left-1/2 before:top-0 before:h-full before:w-px before:bg-hero-orange/25 after:absolute after:left-0 after:top-1/2 after:h-px after:w-full after:bg-hero-orange/25 xl:-left-[14px]" />
           </div>
-          <div className="order-1 mx-auto max-w-[620px] text-center lg:order-2">
-            <p className="pf-eyebrow text-[12px] sm:text-[13px]">Vastu • Palmistry • Astrology</p>
-            <h1 className="mt-8 max-w-3xl font-heading text-[56px] font-light leading-[1.04] text-foreground sm:text-[72px] lg:text-[86px]">
+          <div className="relative order-1 mx-auto max-w-[680px] text-center lg:order-2">
+            <div className="pf-hero-halo absolute left-1/2 top-1/2 -z-10 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2" aria-hidden="true" />
+            <div className="pf-sacred-geometry absolute left-1/2 top-[42%] -z-10 h-[430px] w-[430px] -translate-x-1/2 -translate-y-1/2" aria-hidden="true" />
+            <p className="pf-eyebrow pf-eyebrow-center text-[12px] sm:text-[13px]">Vastu • Palmistry • Astrology</p>
+            <h1 className="mx-auto mt-10 max-w-3xl font-heading text-[64px] font-light leading-[0.98] text-foreground sm:text-[82px] lg:text-[98px]">
               See the unseen change
             </h1>
-            <p className="mt-6 max-w-[520px] text-[16px] font-light leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-8 max-w-[500px] text-[15px] font-light leading-relaxed text-muted-foreground sm:text-[16px]">
               Personal guidance for homes, businesses and life decisions through Vastu, Palmistry and Career Astrology.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3.5">
-              <Button asChild variant="hero"><Link to="/contact">Book A Consultation</Link></Button>
-              <Button asChild variant="porcelain"><Link to="/services">Explore Services</Link></Button>
+            <div className="mt-11 flex flex-wrap justify-center gap-4">
+              <Button asChild variant="hero" className="bg-hero-orange text-primary-foreground shadow-[0_18px_36px_color-mix(in_oklab,var(--hero-orange)_24%,transparent)]"><Link to="/contact">Book A Consultation</Link></Button>
+              <Button asChild variant="porcelain" className="border-hero-orange/35 bg-transparent text-foreground hover:border-hero-orange"><Link to="/services">Explore Services</Link></Button>
             </div>
           </div>
-          <div className="relative order-3 hidden min-h-[450px] lg:block">
-            <div className="absolute -right-10 top-0 h-[390px] w-[285px] overflow-hidden rounded-t-full rounded-bl-[90px] shadow-card xl:-right-24">
-              <img src={energyElementsImage} alt="Vastu energy elements arranged for harmony" width={1120} height={1328} loading="eager" decoding="async" className="h-full w-full object-cover" />
+          <div className="relative order-3 hidden min-h-[470px] lg:block">
+            <div className="absolute -right-5 top-8 h-[420px] w-[300px] overflow-hidden rounded-t-full rounded-bl-[110px] border border-hero-orange/20 bg-card shadow-card xl:-right-20">
+              <img src={premiumPalmReadingImage} alt="Premium close-up palm reading consultation" width={1024} height={1280} loading="eager" decoding="async" className="h-full w-full object-cover object-[50%_45%]" />
             </div>
-            <div className="absolute bottom-2 -left-4 h-[230px] w-[190px] overflow-hidden rounded-br-[85px] rounded-tl-[85px] border-[10px] border-background shadow-card xl:-left-10">
-              <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={759} height={900} loading="eager" decoding="async" className="h-full w-full object-cover" />
-            </div>
-            <div className="absolute bottom-28 right-5 h-px w-44 bg-accent/35" />
+            <div className="absolute bottom-8 left-2 h-px w-40 bg-hero-orange/35" />
+            <div className="absolute bottom-5 left-0 h-2 w-2 rounded-full bg-hero-orange" />
           </div>
         </div>
       </section>
