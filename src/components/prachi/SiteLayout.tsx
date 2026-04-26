@@ -4,14 +4,15 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { navItems, services, socialLinks, whatsappUrl } from "./site-data";
 
-const logoWhite = "/site-images/prachi-fulfagar-logo-white.png";
+const logoGolden = "/site-images/prachi-logo-golden.png";
 const footerCompassLineArt = "/site-images/prachi-footer-compass-lineart.png";
 
-function Logo({ light = false }: { light?: boolean }) {
+function Logo({ placement = "header" }: { placement?: "header" | "footer" }) {
+  const isFooter = placement === "footer";
   return (
     <Link to="/" className="block leading-none" aria-label="Prachi Fulfagar home">
-      <div className={light ? "inline-flex px-1 py-1" : "inline-flex px-1 py-1"}>
-        <img src={logoWhite} alt="Prachi Fulfagar" width={360} height={246} loading="eager" decoding="async" className="h-11 w-auto object-contain" />
+      <div className={isFooter ? "flex justify-center px-1 py-1" : "inline-flex px-1 py-1"}>
+        <img src={logoGolden} alt="Prachi Fulfagar" width={360} height={246} loading="eager" decoding="async" className={isFooter ? "h-20 w-auto object-contain" : "h-12 w-auto object-contain"} />
       </div>
     </Link>
   );
@@ -81,8 +82,8 @@ export function Footer() {
     <footer className="relative overflow-hidden border-t border-foreground/10 bg-footer py-7 text-foreground">
       <img src={footerCompassLineArt} alt="" loading="lazy" decoding="async" className="pf-footer-compass absolute right-[-260px] top-1/2 hidden h-[520px] w-[520px] -translate-y-1/2 object-contain lg:block xl:right-[-250px]" />
       <div className="pf-container relative z-10 grid gap-7 lg:grid-cols-[1.1fr_0.9fr_0.9fr_1.1fr] lg:gap-9">
-        <div className="lg:pr-8">
-          <Logo light />
+        <div className="flex flex-col items-center text-center lg:pr-8">
+          <Logo placement="footer" />
           <p className="mt-4 max-w-[300px] text-[13px] leading-relaxed text-foreground/60">Guiding homes, businesses and lives with ancient wisdom and intuitive precision.</p>
           <div className="mt-4 flex items-center gap-4 text-primary" aria-hidden="true"><span className="h-px w-16 bg-primary/35" /><span className="text-xl leading-none">✧</span><span className="h-px w-16 bg-primary/35" /></div>
         </div>

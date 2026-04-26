@@ -18,12 +18,14 @@ export function ServiceCard({ service, index = 0 }: { service: Service; index?: 
             Signature
           </span>
         )}
-        <div className={cn("pf-infographic-icon", service.featured && "text-accent") }>
-          <Icon size={26} strokeWidth={1.45} />
+        <div className="flex w-full items-center gap-3">
+          <div className={cn("pf-infographic-icon", service.featured && "text-accent") }>
+            <Icon size={17} strokeWidth={1.35} />
+          </div>
+          <h3 className={cn("font-heading text-[20px] font-normal leading-tight text-foreground", service.featured && "text-accent")}>{service.name}</h3>
         </div>
-        <h3 className={cn("mt-6 font-heading text-[23px] font-normal leading-tight text-foreground", service.featured && "text-accent")}>{service.name}</h3>
-        <p className="mt-3 max-w-[245px] text-[13px] font-light leading-relaxed text-muted-foreground">{service.description}</p>
-        <span className="mt-auto pt-5 text-[12px] font-medium text-primary underline-offset-4 transition hover:underline">Read More</span>
+        <p className="mt-3 text-[12px] font-light leading-[1.55] text-muted-foreground">{service.description}</p>
+        <span className="mt-3 text-[11px] font-medium text-primary underline-offset-4 transition hover:underline">Read More</span>
       </Link>
     </div>
   );
