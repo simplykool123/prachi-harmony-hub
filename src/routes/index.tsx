@@ -18,8 +18,8 @@ const impactHealthImage = "/site-images/prachi-impact-health.png";
 const impactRelationshipImage = "/site-images/prachi-impact-relationship.png";
 const impactBusinessImage = "/site-images/prachi-impact-business.png";
 const heroLeftImage = "/site-images/prachi-hero-left-reference.png";
-const heroRightImage = "/site-images/prachi-hero-right-reference.png";
-const heroCompassImage = "/site-images/prachi-hero-compass-reference.png";
+const heroRightImage = "/site-images/prachi-hero-right-upload.png";
+const heroMandalaImage = "/site-images/prachi-hero-mandala-upload.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -125,8 +125,8 @@ function Index() {
         <div className="pf-hero-cream-overlay absolute inset-0" aria-hidden="true" />
         <div className="pf-hero-vignette absolute inset-0" aria-hidden="true" />
         <img src={heroLeftImage} alt="Vastu consultation still life with compass, candle and crystals" width={670} height={1020} loading="eager" decoding="async" fetchPriority="high" className="pf-hero-side-image pf-hero-side-left" />
-        <img src={heroRightImage} alt="Palmistry chart with crystal sphere and celestial artwork" width={709} height={1020} loading="eager" decoding="async" className="pf-hero-side-image pf-hero-side-right" />
-        <img src={heroCompassImage} alt="" width={655} height={690} loading="eager" decoding="async" className="pf-hero-center-compass" aria-hidden="true" />
+        <img src={heroRightImage} alt="Palmistry chart with crystal sphere" width={1080} height={1920} loading="eager" decoding="async" className="pf-hero-side-image pf-hero-side-right" />
+        <img src={heroMandalaImage} alt="" width={1792} height={1536} loading="eager" decoding="async" className="pf-hero-center-compass" aria-hidden="true" />
         <div className="pf-container relative z-10 grid min-h-[630px] items-center py-16 md:min-h-[680px] md:py-20 lg:min-h-[700px]">
           <div className="relative mx-auto max-w-[720px] text-center">
             <div className="pf-hero-mini-rule mx-auto mb-8 text-hero-orange/70" aria-hidden="true"><span />✦<span /></div>
@@ -145,9 +145,9 @@ function Index() {
         </div>
       </section>
 
-      <MotionSection className="relative overflow-hidden bg-card py-7">
+      <MotionSection className="pf-hero-stats-band relative overflow-hidden py-6">
         <div className="pf-container">
-          <div className="grid divide-y divide-border/80 md:grid-cols-4 md:divide-x md:divide-y-0">
+          <div className="pf-hero-stats-grid grid divide-y md:grid-cols-4 md:divide-x md:divide-y-0">
             {stats.map(({ value, suffix, label, icon: Icon }) => (
               <div key={label} className="flex items-center justify-center gap-5 py-5 text-left md:py-0">
                 <div className="pf-hero-stat-icon"><Icon className="h-7 w-7" strokeWidth={1.35} /></div>
