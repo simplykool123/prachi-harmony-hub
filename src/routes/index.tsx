@@ -61,8 +61,8 @@ function CelestialMotion({ className = "" }: { className?: string }) {
       <div className="relative h-full w-full">
         <img src={celestialRingImage} alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-contain opacity-80" />
         <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="absolute left-1/2 top-1/2 h-[58%] w-[58%] -translate-x-1/2 -translate-y-1/2 object-contain" />
-        <div className="pf-png-moon-orbit absolute inset-[5.5%]">
-          <img src={celestialMoonImage} alt="" loading="lazy" decoding="async" className="absolute left-1/2 top-0 h-[28%] w-[28%] -translate-x-1/2 -translate-y-1/2 object-contain" />
+        <div className="pf-png-moon-orbit absolute inset-0">
+          <img src={celestialMoonImage} alt="" loading="lazy" decoding="async" className="absolute left-1/2 top-[1%] h-[24%] w-[24%] -translate-x-1/2 -translate-y-1/2 object-contain" />
         </div>
       </div>
     </div>
@@ -74,8 +74,8 @@ function ImpactIllustration({ type }: { type: string }) {
 
   if (image) {
     return (
-      <div className="relative h-32 w-28 shrink-0 overflow-hidden rounded-t-full bg-foreground">
-        <img src={image} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover object-top" />
+      <div className="relative h-36 w-24 shrink-0">
+        <img src={image} alt="" loading="lazy" decoding="async" className="h-full w-full object-contain" />
       </div>
     );
   }
