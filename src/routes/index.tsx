@@ -125,7 +125,7 @@ function Index() {
         <div className="pf-container relative z-10 grid min-h-[780px] items-center gap-12 py-28 md:py-32 lg:grid-cols-[300px_minmax(0,1fr)_300px] lg:gap-10 lg:py-36">
           <div className="relative order-2 hidden min-h-[420px] lg:order-1 lg:block">
             <div className="pf-hero-image-shadow pf-hero-slide-left pf-hero-image-frame absolute left-0 top-1/2 h-[300px] w-[300px] -translate-y-1/2 overflow-hidden rounded-full border border-hero-orange/15 bg-card">
-              <img src={vastuPlanImage} alt="Bright Vastu compass and floor plan" width={960} height={655} loading="eager" decoding="async" fetchPriority="high" className="pf-hero-image-hover h-full w-full scale-105 object-cover" />
+              <img src={vastuPlanImage} alt="Bright Vastu compass and floor plan" width={960} height={655} loading="eager" decoding="async" fetchPriority="high" className="pf-hero-image-hover h-full w-full object-cover" />
             </div>
           </div>
           <div className="relative order-1 mx-auto max-w-[680px] text-center lg:order-2">
