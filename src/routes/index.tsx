@@ -11,6 +11,9 @@ const homeRemediesImage = "/site-images/prachi-home-remedies.jpg";
 const energyElementsImage = "/site-images/prachi-energy-elements.jpg";
 const prachiPortraitImage = "/site-images/prachi-fulfagar-portrait.jpg";
 const orangeArtworkImage = "/site-images/prachi-orange-artwork.png";
+const celestialRingImage = "/site-images/prachi-celestial-ring.png";
+const celestialSunImage = "/site-images/prachi-celestial-sun.png";
+const celestialMoonImage = "/site-images/prachi-celestial-moon.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,10 +55,11 @@ const processItems = [
 
 function CelestialMotion({ className = "" }: { className?: string }) {
   return (
-    <div className={`pointer-events-none text-accent ${className}`} aria-hidden="true">
-      <div className="pf-celestial-orbit relative h-full w-full rounded-full border border-accent/25">
-        <SunMoon className="absolute left-1/2 top-1/2 h-[78px] w-[78px] -translate-x-1/2 -translate-y-1/2" strokeWidth={1.1} />
-        <Moon className="pf-moon-orbit absolute left-1/2 top-1/2 h-7 w-7" strokeWidth={1.25} />
+    <div className={`pointer-events-none ${className}`} aria-hidden="true">
+      <div className="relative h-full w-full">
+        <img src={celestialRingImage} alt="" loading="lazy" decoding="async" className="pf-celestial-ring absolute inset-0 h-full w-full object-contain opacity-80" />
+        <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="absolute left-1/2 top-1/2 h-[46%] w-[46%] -translate-x-1/2 -translate-y-1/2 object-contain" />
+        <img src={celestialMoonImage} alt="" loading="lazy" decoding="async" className="pf-png-moon-orbit absolute left-1/2 top-1/2 h-[26%] w-[26%] object-contain" />
       </div>
     </div>
   );
@@ -223,7 +227,7 @@ function Index() {
 
       <MotionSection className="relative overflow-hidden bg-background py-16">
         <img src={vastuPlanImage} alt="Faint Vastu plan background" width={960} height={655} loading="lazy" decoding="async" className="absolute left-0 top-0 h-full w-[46%] object-cover opacity-[0.08]" />
-        <CelestialMotion className="absolute right-[7%] top-14 hidden h-44 w-44 lg:block" />
+        <CelestialMotion className="absolute right-[6%] top-10 hidden h-52 w-52 lg:block" />
         <div className="pf-container relative z-10">
           <SectionIntro eyebrow="BEFORE & AFTER" title="The impact of alignment" copy="The goal is not decoration — it is a home or workplace that starts supporting the life inside it." />
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
