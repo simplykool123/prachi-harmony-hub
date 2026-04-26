@@ -53,16 +53,16 @@ const processItems = [
 function Index() {
   return (
     <>
-      <section className="relative min-h-[700px] overflow-hidden bg-background">
-        <div className="pf-container relative z-10 grid min-h-[700px] items-center gap-8 pt-24 lg:grid-cols-[280px_minmax(0,1fr)_320px]">
-          <div className="relative order-2 hidden min-h-[430px] lg:order-1 lg:block">
-            <div className="pf-compass-drift absolute left-0 top-10 h-[330px] w-[330px] overflow-hidden rounded-full border border-accent/25 bg-card shadow-card">
+      <section className="relative min-h-[600px] overflow-hidden bg-background">
+        <div className="pf-container relative z-10 grid min-h-[600px] items-center gap-8 pt-8 lg:grid-cols-[340px_minmax(0,1fr)_360px]">
+          <div className="relative order-2 hidden min-h-[400px] lg:order-1 lg:block">
+            <div className="pf-compass-drift absolute -left-14 top-4 h-[360px] w-[360px] overflow-hidden rounded-full border border-accent/25 bg-card shadow-card xl:-left-28">
               <img src={vastuPlanImage} alt="Animated Vastu compass and floor plan" width={960} height={655} loading="eager" decoding="async" fetchPriority="high" className="h-full w-full scale-110 object-cover opacity-90" />
             </div>
-            <div className="pf-compass-orbit absolute left-[78px] top-[88px] h-[174px] w-[174px] rounded-full border border-accent/45 before:absolute before:left-1/2 before:top-0 before:h-full before:w-px before:bg-accent/25 after:absolute after:left-0 after:top-1/2 after:h-px after:w-full after:bg-accent/25" />
+            <div className="pf-compass-orbit absolute left-[38px] top-[88px] h-[174px] w-[174px] rounded-full border border-accent/45 before:absolute before:left-1/2 before:top-0 before:h-full before:w-px before:bg-accent/25 after:absolute after:left-0 after:top-1/2 after:h-px after:w-full after:bg-accent/25 xl:-left-[2px]" />
           </div>
           <div className="order-1 mx-auto max-w-[620px] text-center lg:order-2">
-            <p className="pf-eyebrow">Vastu • Palmistry • Astrology</p>
+            <p className="pf-eyebrow text-[12px] sm:text-[13px]">Vastu • Palmistry • Astrology</p>
             <h1 className="mt-8 max-w-3xl font-heading text-[56px] font-light leading-[1.04] text-foreground sm:text-[72px] lg:text-[86px]">
               See the unseen change
             </h1>
@@ -74,11 +74,11 @@ function Index() {
               <Button asChild variant="porcelain"><Link to="/services">Explore Services</Link></Button>
             </div>
           </div>
-          <div className="relative order-3 hidden min-h-[500px] lg:block">
-            <div className="absolute right-0 top-0 h-[390px] w-[270px] overflow-hidden rounded-t-full rounded-bl-[90px] shadow-card">
+          <div className="relative order-3 hidden min-h-[450px] lg:block">
+            <div className="absolute -right-10 top-0 h-[390px] w-[285px] overflow-hidden rounded-t-full rounded-bl-[90px] shadow-card xl:-right-24">
               <img src={energyElementsImage} alt="Vastu energy elements arranged for harmony" width={1120} height={1328} loading="eager" decoding="async" className="h-full w-full object-cover" />
             </div>
-            <div className="absolute bottom-2 left-0 h-[230px] w-[185px] overflow-hidden rounded-br-[85px] rounded-tl-[85px] border-[10px] border-background shadow-card">
+            <div className="absolute bottom-2 -left-4 h-[230px] w-[190px] overflow-hidden rounded-br-[85px] rounded-tl-[85px] border-[10px] border-background shadow-card xl:-left-10">
               <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={759} height={900} loading="eager" decoding="async" className="h-full w-full object-cover" />
             </div>
             <div className="absolute bottom-28 right-5 h-px w-44 bg-accent/35" />
