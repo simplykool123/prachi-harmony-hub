@@ -168,9 +168,7 @@
   .pf-story-track { animation: pf-story-scroll 42s linear infinite; }
   .pf-story-marquee:hover .pf-story-track { animation-play-state: paused; }
   @media (max-width: 767px) {
-    .pf-process-panel { padding: 44px 22px; border-radius: 24px; }
     .pf-process-step::before, .pf-process-step::after { display: none; }
-    .pf-process-sun, .pf-process-orbit { opacity: .14; }
   }
   @keyframes pf-compass-spin {
     from { rotate: 0deg; }
