@@ -75,7 +75,7 @@ function ImpactIllustration({ type }: { type: string }) {
 
   if (image) {
     return (
-      <div className="relative h-40 w-28 shrink-0">
+      <div className={`relative shrink-0 ${type === "growth" ? "h-44 w-32" : "h-40 w-28"}`}>
         <img src={image} alt="" loading="lazy" decoding="async" className="h-full w-full object-contain" />
       </div>
     );
