@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { navItems, services, socialLinks, whatsappUrl } from "./site-data";
 
 const logoWhite = "/site-images/prachi-fulfagar-logo-white.png";
-const celestialSunImage = "/site-images/prachi-celestial-sun.png";
+const footerCompassLineArt = "/site-images/prachi-footer-compass-lineart.png";
 
 function Logo({ light = false }: { light?: boolean }) {
   return (
@@ -79,7 +79,7 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden border-t border-foreground/10 bg-footer py-7 text-foreground">
-      <img src={celestialSunImage} alt="" loading="lazy" decoding="async" className="absolute -right-8 top-6 hidden h-56 w-56 object-contain opacity-10 lg:block" />
+      <img src={footerCompassLineArt} alt="" loading="lazy" decoding="async" className="pf-footer-compass absolute right-[-260px] top-1/2 hidden h-[520px] w-[520px] -translate-y-1/2 object-contain lg:block xl:right-[-250px]" />
       <div className="pf-container relative z-10 grid gap-7 lg:grid-cols-[1.1fr_0.9fr_0.9fr_1.1fr] lg:gap-9">
         <div className="lg:pr-8">
           <Logo light />
