@@ -237,12 +237,12 @@ function Index() {
         </div>
       </MotionSection>
 
-      <MotionSection className="relative min-h-[520px] overflow-hidden border-y border-border bg-warm py-20 text-center">
+      <MotionSection className="relative min-h-[520px] overflow-hidden border-y border-border bg-warm pb-20 pt-28 text-center">
         <img src={vastuPlanImage} alt="Vastu floor plan with brass compass" width={960} height={655} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-35" />
         <div className="absolute inset-0 bg-background/62" />
-        <div className="absolute -top-[190px] left-1/2 h-[310px] w-[150vw] -translate-x-1/2 rounded-b-[100%] bg-background" />
-        <div className="pf-compass-orbit absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/20" />
-        <div className="pf-container relative z-10">
+        <div className="absolute -top-[130px] left-1/2 h-[250px] w-[150vw] -translate-x-1/2 rounded-b-[100%] bg-background" />
+        <div className="pf-compass-orbit absolute left-1/2 top-[60%] h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/20" />
+        <div className="pf-container relative z-10 pt-20">
           <div className="mx-auto mb-8 h-px w-12 bg-accent" />
           <h2 className="pf-h2">Begin your journey to harmony</h2>
           <p className="pf-body mx-auto mt-4 max-w-xl">Book a consultation — in person or online, across India and internationally.</p>
