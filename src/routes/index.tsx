@@ -205,7 +205,7 @@ function Index() {
               <div className="pf-remedy-orbits" aria-hidden="true" />
               <span className="pf-remedy-star pf-remedy-star-a" aria-hidden="true">✦</span>
               <span className="pf-remedy-star pf-remedy-star-b" aria-hidden="true">✦</span>
-              <div className="pf-remedy-image-shell relative z-10 h-[420px] w-full">
+              <div className="pf-remedy-image-shell relative z-10 h-[500px] w-full">
                 <img src={homeRemediesImage} alt="Practical Vastu home remedy with flowers and water in a real living room" width={1280} height={960} loading="lazy" decoding="async" className="h-full w-full object-cover" />
               </div>
               <div className="pf-remedy-artwork absolute left-0 top-[34%] z-20 grid h-28 w-28 -translate-x-1/3 place-items-center rounded-full border border-accent/45 bg-card shadow-card md:h-32 md:w-32">
