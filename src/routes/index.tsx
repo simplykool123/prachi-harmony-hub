@@ -143,7 +143,7 @@ function Index() {
           <div className="relative grid min-h-[540px] grid-cols-2 gap-5">
             <img src={homeRemediesImage} alt="Practical Vastu home remedy with flowers and water in a real living room" width={1280} height={960} loading="lazy" decoding="async" className="h-[310px] w-full rounded-[28px] rounded-br-[120px] object-cover shadow-card" />
             <div className="relative h-[310px] w-full items-center justify-center rounded-full bg-badge shadow-card flex flex-row bg-[#cac2b4]">
-              <img src={orangeArtworkImage} alt="Orange spiritual harmony artwork" width={1280} height={1280} loading="lazy" decoding="async" className="h-[72%] w-[72%] object-contain" />
+              <img src={orangeArtworkImage} alt="Orange spiritual harmony artwork" width={1280} height={1280} loading="lazy" decoding="async" className="h-[72%] w-[72%] object-cover" />
             </div>
             <div className="relative mt-6 flex items-center justify-center rounded-t-full border border-border bg-background p-8">
               <div className="pf-compass-orbit h-36 w-36 rounded-full border border-accent/25" />
@@ -160,7 +160,7 @@ function Index() {
             <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="absolute inset-x-0 top-0 mx-auto h-[430px] w-[86%] rounded-t-full object-cover object-[center_8%] shadow-card" />
           </div>
           <div className="text-center">
-            <p className="pf-eyebrow pf-eyebrow-center">ABOUT PRACHI</p>
+            <p className="pf-eyebrow pf-eyebrow-center py-0">ABOUT PRACHI</p>
             <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>
             <p className="pf-body mx-auto mt-5 max-w-[420px]">Prachi Fulfagar is one of India's most credentialled Vastu and Palmistry consultants — combining both in a rare integrated practice that aligns you from the inside out.</p>
             <p className="pf-body mx-auto mt-4 max-w-[420px]">Consulting from Mumbai, Pune, Nashik and Kopargaon, she works with clients across India and internationally.</p>
