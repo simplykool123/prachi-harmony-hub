@@ -7,7 +7,6 @@ import { awards, customerStories, globalPresence, remedyHighlights, services, wh
 
 const vastuPlanImage = "/site-images/prachi-vastu-plan.jpg";
 const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
-const premiumPalmReadingImage = "/site-images/prachi-premium-palm-reading.jpg";
 const homeRemediesImage = "/site-images/prachi-home-remedies.jpg";
 const energyElementsImage = "/site-images/prachi-energy-elements.jpg";
 const prachiPortraitImage = "/site-images/prachi-fulfagar-portrait.jpg";
