@@ -173,7 +173,7 @@ function Index() {
       <MotionSection className="bg-background py-12">
         <div className="pf-container">
           <SectionIntro eyebrow="WHAT WE OFFER" title="Services for every space and soul" copy="From your palm to your home — a complete system of ancient wisdom." />
-          <div className="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-8 grid max-w-[980px] gap-4 md:grid-cols-2 lg:grid-cols-3">
             {services.slice(0, 6).map((service, index) => <ServiceCard key={service.name} service={service} index={index} />)}
           </div>
           <div className="mt-7 text-center"><Link to="/services" className="text-[13px] font-medium text-accent underline-offset-4 hover:underline">See all 12 services →</Link></div>
