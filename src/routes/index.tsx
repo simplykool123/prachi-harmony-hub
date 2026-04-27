@@ -126,7 +126,7 @@ function Index() {
         <div className="pf-hero-vignette absolute inset-0" aria-hidden="true" />
         <img src={heroLeftImage} alt="Vastu consultation still life with compass, candle and crystals" width={670} height={1020} loading="eager" decoding="async" fetchPriority="high" className="pf-hero-side-image pf-hero-side-left" />
         <img src={heroMandalaImage} alt="" width={1792} height={1536} loading="eager" decoding="async" className="pf-hero-center-compass" aria-hidden="true" />
-        <div className="pf-container relative z-10 grid min-h-[700px] items-center pb-36 pt-24 md:min-h-[735px] lg:min-h-[760px]">
+        <div className="pf-container relative z-10 grid min-h-[720px] items-center pb-40 pt-24 md:min-h-[760px] lg:min-h-[790px]">
           <div className="relative mx-auto max-w-[800px] text-center">
             <p className="pf-eyebrow pf-eyebrow-center text-[12px] sm:text-[13px]">Vastu • Palmistry • Astrology</p>
             <div className="pf-hero-mini-rule mx-auto mt-8 text-hero-orange/70" aria-hidden="true"><span />✦<span /></div>
