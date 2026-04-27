@@ -17,7 +17,7 @@ const celestialMoonImage = "/site-images/prachi-celestial-moon.png";
 const impactHealthImage = "/site-images/prachi-impact-health.png";
 const impactRelationshipImage = "/site-images/prachi-impact-relationship.png";
 const impactBusinessImage = "/site-images/prachi-impact-business.png";
-const heroLeftImage = "/site-images/prachi-hero-left-reference.png";
+const heroLeftImage = "/site-images/prachi-hero-left-upload.png";
 const heroRightImage = "/site-images/prachi-hero-right-cropped.png";
 const heroMandalaImage = "/site-images/prachi-hero-mandala-upload.png";
 
@@ -127,17 +127,18 @@ function Index() {
         <img src={heroLeftImage} alt="Vastu consultation still life with compass, candle and crystals" width={670} height={1020} loading="eager" decoding="async" fetchPriority="high" className="pf-hero-side-image pf-hero-side-left" />
         <img src={heroRightImage} alt="Palmistry chart with crystal sphere" width={1012} height={970} loading="eager" decoding="async" className="pf-hero-side-image pf-hero-side-right" />
         <img src={heroMandalaImage} alt="" width={1792} height={1536} loading="eager" decoding="async" className="pf-hero-center-compass" aria-hidden="true" />
-        <div className="pf-container relative z-10 grid min-h-[630px] items-center py-16 md:min-h-[680px] md:py-20 lg:min-h-[700px]">
-          <div className="relative mx-auto max-w-[720px] text-center">
-            <div className="pf-hero-mini-rule mx-auto mb-8 text-hero-orange/70" aria-hidden="true"><span />✦<span /></div>
+        <div className="pf-container relative z-10 grid min-h-[635px] items-center pb-28 pt-20 md:min-h-[675px] lg:min-h-[690px]">
+          <div className="relative mx-auto max-w-[800px] text-center">
             <p className="pf-eyebrow pf-eyebrow-center text-[12px] sm:text-[13px]">Vastu • Palmistry • Astrology</p>
-            <h1 className="pf-hero-fade-up mx-auto mt-9 max-w-[760px] font-heading text-[52px] font-light leading-[1.04] text-foreground sm:text-[72px] lg:text-[82px]">
-              Ancient wisdom. <em className="font-heading font-light italic text-hero-orange">A balanced,</em> peaceful life.
+            <div className="pf-hero-mini-rule mx-auto mt-8 text-hero-orange/70" aria-hidden="true"><span />✦<span /></div>
+            <h1 className="pf-hero-fade-up mx-auto mt-8 max-w-[820px] font-heading text-[50px] font-light leading-[1.03] text-foreground sm:text-[70px] lg:text-[78px]">
+              Ancient wisdom.<br />A <em className="font-heading font-light italic text-hero-orange">balanced,</em> peaceful life.
             </h1>
-            <p className="pf-hero-fade-up pf-hero-delay-1 mx-auto mt-8 max-w-[590px] text-[15px] font-light leading-relaxed text-hero-muted sm:text-[16px]">
+            <div className="pf-hero-mini-rule mx-auto mt-8 text-hero-orange/70" aria-hidden="true"><span />✦<span /></div>
+            <p className="pf-hero-fade-up pf-hero-delay-1 mx-auto mt-7 max-w-[560px] text-[15px] font-light leading-relaxed text-hero-muted sm:text-[16px]">
               Prachi Fulfagar guides you through Vastu Shastra, Palmistry and Vedic Astrology — helping homes, businesses and lives find their natural harmony.
             </p>
-            <div className="pf-hero-fade-up pf-hero-delay-2 mt-10 flex flex-wrap justify-center gap-5">
+            <div className="pf-hero-fade-up pf-hero-delay-2 mt-8 flex flex-wrap justify-center gap-5">
               <Button asChild variant="hero" className="bg-hero-orange text-primary-foreground shadow-none hover:bg-hero-orange"><Link to="/contact">Book A Consultation</Link></Button>
               <Button asChild variant="porcelain" className="border-foreground/15 bg-transparent text-foreground hover:border-hero-orange/45"><Link to="/services">Explore Services</Link></Button>
             </div>
@@ -145,7 +146,7 @@ function Index() {
         </div>
       </section>
 
-      <MotionSection className="pf-hero-stats-band relative overflow-hidden py-6">
+      <MotionSection className="pf-hero-stats-band relative py-6">
         <div className="pf-container">
           <div className="pf-hero-stats-grid grid divide-y md:grid-cols-4 md:divide-x md:divide-y-0">
             {stats.map(({ value, suffix, label, icon: Icon }) => (
