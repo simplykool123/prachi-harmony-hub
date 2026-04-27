@@ -126,6 +126,7 @@ function Index() {
         <div className="pf-hero-vignette absolute inset-0" aria-hidden="true" />
         <img src={heroLeftImage} alt="Vastu consultation still life with compass, candle and crystals" width={670} height={1020} loading="eager" decoding="async" fetchPriority="high" className="pf-hero-side-image pf-hero-side-left" />
         <img src={heroMandalaImage} alt="" width={1792} height={1536} loading="eager" decoding="async" className="pf-hero-center-compass" aria-hidden="true" />
+        <img src={heroRightImage} alt="" width={1012} height={970} loading="eager" decoding="async" className="pf-hero-side-image pf-hero-side-right" aria-hidden="true" />
         <div className="pf-container relative z-10 grid min-h-[690px] items-center pb-32 pt-24 md:min-h-[720px] lg:min-h-[740px]">
           <div className="relative mx-auto max-w-[800px] text-center">
             <p className="pf-eyebrow pf-eyebrow-center text-[12px] sm:text-[13px]">Vastu • Palmistry • Astrology</p>
@@ -147,7 +148,6 @@ function Index() {
 
       <MotionSection className="pf-hero-stats-band relative pt-10 pb-28">
         <div className="pf-container">
-          <img src={heroRightImage} alt="" width={1012} height={970} loading="eager" decoding="async" className="pf-hero-stats-overlap" aria-hidden="true" />
           <div className="pf-hero-stats-grid grid divide-y md:grid-cols-4 md:divide-x md:divide-y-0">
             {stats.map(({ value, suffix, label, icon: Icon }) => (
               <div key={label} className="flex items-center justify-center gap-5 py-5 text-left md:py-0">
