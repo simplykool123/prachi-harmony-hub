@@ -144,7 +144,7 @@ function Index() {
             </div>
           </div>
         </div>
-        <div className="pf-hero-stats-band relative pt-10 pb-9">
+        <div className="pf-hero-stats-band relative pt-10 pb-0">
           <div className="pf-container">
             <div className="pf-hero-stats-grid grid gap-y-5 md:grid-cols-4">
             {stats.map(({ value, suffix, label, icon: Icon }) => (
