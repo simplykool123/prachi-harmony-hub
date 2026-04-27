@@ -127,11 +127,11 @@ function Index() {
         <img src={heroLeftImage} alt="Vastu consultation still life with compass, candle and crystals" width={670} height={1020} loading="eager" decoding="async" fetchPriority="high" className="pf-hero-side-image pf-hero-side-left" />
         <img src={heroMandalaImage} alt="" width={1792} height={1536} loading="eager" decoding="async" className="pf-hero-center-compass" aria-hidden="true" />
         <img src={heroRightImage} alt="" width={1012} height={970} loading="eager" decoding="async" className="pf-hero-side-image pf-hero-side-right" aria-hidden="true" />
-        <div className="pf-container relative z-10 grid min-h-[690px] items-center pb-32 pt-24 md:min-h-[720px] lg:min-h-[740px]">
-          <div className="relative mx-auto max-w-[800px] text-center">
+        <div className="pf-container relative z-10 grid min-h-[650px] items-center pb-28 pt-20 md:min-h-[680px] lg:min-h-[700px]">
+          <div className="relative mx-auto max-w-[760px] -translate-y-8 text-center">
             <p className="pf-eyebrow pf-eyebrow-center text-[12px] sm:text-[13px]">Vastu • Palmistry • Astrology</p>
             <div className="pf-hero-mini-rule mx-auto mt-8 text-hero-orange/70" aria-hidden="true"><span />✦<span /></div>
-            <h1 className="pf-hero-fade-up mx-auto mt-8 max-w-[820px] font-heading font-light leading-[1.03] text-foreground sm:text-[70px] lg:text-[78px] text-6xl">
+            <h1 className="pf-hero-fade-up mx-auto mt-8 max-w-[760px] font-heading text-[48px] font-light leading-[1.03] text-foreground sm:text-[60px] lg:text-[66px]">
               Ancient wisdom.<br />A <em className="font-heading font-light italic text-hero-orange">balanced,</em> peaceful life.
             </h1>
             <div className="pf-hero-mini-rule mx-auto mt-8 text-hero-orange/70" aria-hidden="true"><span />✦<span /></div>
