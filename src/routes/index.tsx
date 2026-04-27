@@ -125,7 +125,6 @@ function Index() {
         <div className="pf-hero-cream-overlay absolute inset-0" aria-hidden="true" />
         <div className="pf-hero-vignette absolute inset-0" aria-hidden="true" />
         <img src={heroLeftImage} alt="Vastu consultation still life with compass, candle and crystals" width={670} height={1020} loading="eager" decoding="async" fetchPriority="high" className="pf-hero-side-image pf-hero-side-left" />
-        <img src={heroRightImage} alt="Palmistry chart with crystal sphere" width={1012} height={970} loading="eager" decoding="async" className="pf-hero-side-image pf-hero-side-right" />
         <img src={heroMandalaImage} alt="" width={1792} height={1536} loading="eager" decoding="async" className="pf-hero-center-compass" aria-hidden="true" />
         <div className="pf-container relative z-10 grid min-h-[635px] items-center pb-28 pt-20 md:min-h-[675px] lg:min-h-[690px]">
           <div className="relative mx-auto max-w-[800px] text-center">
