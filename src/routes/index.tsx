@@ -123,7 +123,7 @@ function Index() {
       <section className="pf-home-hero relative bg-hero-cream">
         <div className="pf-hero-motion-bg absolute inset-0" aria-hidden="true" />
         <div className="pf-hero-cream-overlay absolute inset-0" aria-hidden="true" />
-        <div className="pf-hero-vignette absolute inset-0" aria-hidden="true" />
+        {/* Vignette removed to eliminate shaded line at bottom */}
         <img src={heroLeftImage} alt="Vastu consultation still life with compass, candle and crystals" width={670} height={1020} loading="eager" decoding="async" fetchPriority="high" className="pf-hero-side-image pf-hero-side-left" />
         <img src={heroMandalaImage} alt="" width={1792} height={1536} loading="eager" decoding="async" className="pf-hero-center-compass" aria-hidden="true" />
         <img src={heroRightImage} alt="" width={1012} height={970} loading="eager" decoding="async" className="pf-hero-side-image pf-hero-side-right" aria-hidden="true" />
