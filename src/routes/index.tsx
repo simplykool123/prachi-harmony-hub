@@ -131,7 +131,7 @@ function Index() {
           <div className="relative mx-auto max-w-[800px] text-center">
             <p className="pf-eyebrow pf-eyebrow-center text-[12px] sm:text-[13px]">Vastu • Palmistry • Astrology</p>
             <div className="pf-hero-mini-rule mx-auto mt-8 text-hero-orange/70" aria-hidden="true"><span />✦<span /></div>
-            <h1 className="pf-hero-fade-up mx-auto mt-8 max-w-[820px] font-heading text-[50px] font-light leading-[1.03] text-foreground sm:text-[70px] lg:text-[78px]">
+            <h1 className="pf-hero-fade-up mx-auto mt-8 max-w-[820px] font-heading font-light leading-[1.03] text-foreground sm:text-[70px] lg:text-[78px] text-6xl">
               Ancient wisdom.<br />A <em className="font-heading font-light italic text-hero-orange">balanced,</em> peaceful life.
             </h1>
             <div className="pf-hero-mini-rule mx-auto mt-8 text-hero-orange/70" aria-hidden="true"><span />✦<span /></div>
