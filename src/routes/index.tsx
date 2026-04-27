@@ -144,11 +144,9 @@ function Index() {
             </div>
           </div>
         </div>
-      </section>
-
-      <MotionSection className="pf-hero-stats-band relative pt-10 pb-28">
-        <div className="pf-container">
-          <div className="pf-hero-stats-grid grid divide-y md:grid-cols-4 md:divide-x md:divide-y-0">
+        <div className="pf-hero-stats-band relative pt-10 pb-9">
+          <div className="pf-container">
+            <div className="pf-hero-stats-grid grid gap-y-5 md:grid-cols-4">
             {stats.map(({ value, suffix, label, icon: Icon }) => (
               <div key={label} className="flex items-center justify-center gap-5 py-5 text-left md:py-0">
                 <div className="pf-hero-stat-icon"><Icon className="h-7 w-7" strokeWidth={1.35} /></div>
@@ -158,9 +156,10 @@ function Index() {
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </div>
-      </MotionSection>
+      </section>
 
       <MotionSection className="relative overflow-hidden bg-background py-9">
         <div className="pf-container relative z-10">
