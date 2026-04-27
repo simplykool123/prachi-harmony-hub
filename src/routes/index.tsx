@@ -17,8 +17,8 @@ const celestialMoonImage = "/site-images/prachi-celestial-moon.png";
 const impactHealthImage = "/site-images/prachi-impact-health.png";
 const impactRelationshipImage = "/site-images/prachi-impact-relationship.png";
 const impactBusinessImage = "/site-images/prachi-impact-business.png";
-const heroLeftImage = "/site-images/prachi-hero-left-extended-clean.png";
-const heroRightImage = "/site-images/prachi-hero-right-cropped.png";
+const heroLeftImage = "/site-images/prachi-hero-left.png";
+const heroRightImage = "/site-images/prachi-hero-right.png";
 const heroMandalaImage = "/site-images/prachi-hero-mandala-upload.png";
 
 export const Route = createFileRoute("/")({
