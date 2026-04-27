@@ -146,7 +146,7 @@ function Index() {
         </div>
       </section>
 
-      <MotionSection className="pf-hero-stats-band relative overflow-hidden py-6">
+      <MotionSection className="pf-hero-stats-band relative py-6">
         <div className="pf-container">
           <div className="pf-hero-stats-grid grid divide-y md:grid-cols-4 md:divide-x md:divide-y-0">
             {stats.map(({ value, suffix, label, icon: Icon }) => (
