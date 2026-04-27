@@ -145,7 +145,7 @@ function Index() {
         </div>
       </section>
 
-      <MotionSection className="pf-hero-stats-band relative pt-12 pb-20">
+      <MotionSection className="pf-hero-stats-band relative pt-10 pb-28">
         <div className="pf-container">
           <img src={heroRightImage} alt="" width={1012} height={970} loading="eager" decoding="async" className="pf-hero-stats-overlap" aria-hidden="true" />
           <div className="pf-hero-stats-grid grid divide-y md:grid-cols-4 md:divide-x md:divide-y-0">
