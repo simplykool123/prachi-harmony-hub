@@ -161,7 +161,7 @@
   .pf-hero-stats-band { position: relative; z-index: 12; margin-top: -154px; background: transparent; border-block: 0; overflow: visible; }
   .pf-hero-stats-band .pf-container { margin-left: max(0px, calc((100vw - 1100px) / 2 - 78px)); margin-right: auto; }
   .pf-hero-stats-grid { border-color: color-mix(in oklab, var(--hero-orange) 16%, transparent); }
-  .pf-hero-stats-overlap { position: absolute; right: -8px; bottom: -92px; z-index: 20; width: min(31vw, 440px); height: auto; pointer-events: none; opacity: .96; mix-blend-mode: multiply; mask-image: linear-gradient(270deg, black 0 78%, rgb(0 0 0 / .78) 90%, transparent 100%), linear-gradient(180deg, transparent 0, black 12%, black 94%, transparent 100%); mask-composite: intersect; }
+  .pf-hero-stats-overlap { position: absolute; right: -8px; bottom: 0; z-index: 20; width: min(31vw, 440px); height: auto; pointer-events: none; opacity: .96; mix-blend-mode: multiply; mask-image: linear-gradient(270deg, black 0 78%, rgb(0 0 0 / .78) 90%, transparent 100%), linear-gradient(180deg, transparent 0, black 12%, black 100%); mask-composite: intersect; }
   .pf-hero-stat-icon { position: relative; display: grid; place-items: center; width: 58px; height: 58px; flex: 0 0 auto; border-radius: 999px; border: 1px solid color-mix(in oklab, var(--hero-orange) 24%, transparent); color: var(--color-hero-orange); background: color-mix(in oklab, var(--hero-cream) 38%, var(--card)); }
   .pf-hero-stat-icon::before { content: ""; position: absolute; inset: 8px; border-radius: inherit; border: 1px solid color-mix(in oklab, var(--hero-orange) 13%, transparent); }
   .pf-sacred-symbol { display: flex; width: fit-content; animation: pf-sacred-float 7s ease-in-out infinite; }
