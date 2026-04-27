@@ -148,6 +148,7 @@ function Index() {
 
       <MotionSection className="pf-hero-stats-band relative py-6">
         <div className="pf-container">
+          <img src={heroRightImage} alt="" width={1012} height={970} loading="eager" decoding="async" className="pf-hero-stats-overlap" aria-hidden="true" />
           <div className="pf-hero-stats-grid grid divide-y md:grid-cols-4 md:divide-x md:divide-y-0">
             {stats.map(({ value, suffix, label, icon: Icon }) => (
               <div key={label} className="flex items-center justify-center gap-5 py-5 text-left md:py-0">
