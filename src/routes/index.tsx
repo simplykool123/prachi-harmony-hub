@@ -123,7 +123,7 @@ function Index() {
       <section className="pf-home-hero relative bg-hero-cream">
         <div className="pf-hero-motion-bg absolute inset-0" aria-hidden="true" />
         <div className="pf-hero-cream-overlay absolute inset-0" aria-hidden="true" />
-        <div className="pf-hero-vignette absolute inset-0" aria-hidden="true" />
+        {/* Vignette removed to eliminate shaded line at bottom */}
         <img src={heroLeftImage} alt="Vastu consultation still life with compass, candle and crystals" width={670} height={1020} loading="eager" decoding="async" fetchPriority="high" className="pf-hero-side-image pf-hero-side-left" />
         <img src={heroMandalaImage} alt="" width={1792} height={1536} loading="eager" decoding="async" className="pf-hero-center-compass" aria-hidden="true" />
         <img src={heroRightImage} alt="" width={1012} height={970} loading="eager" decoding="async" className="pf-hero-side-image pf-hero-side-right" aria-hidden="true" />
@@ -131,7 +131,7 @@ function Index() {
           <div className="relative mx-auto max-w-[800px] text-center">
             <p className="pf-eyebrow pf-eyebrow-center text-[12px] sm:text-[13px]">Vastu • Palmistry • Astrology</p>
             <div className="pf-hero-mini-rule mx-auto mt-8 text-hero-orange/70" aria-hidden="true"><span />✦<span /></div>
-            <h1 className="pf-hero-fade-up mx-auto mt-8 max-w-[820px] font-heading text-[50px] font-light leading-[1.03] text-foreground sm:text-[70px] lg:text-[78px]">
+            <h1 className="pf-hero-fade-up mx-auto mt-8 max-w-[820px] font-heading font-light leading-[1.03] text-foreground sm:text-[70px] lg:text-[78px] text-6xl">
               Ancient wisdom.<br />A <em className="font-heading font-light italic text-hero-orange">balanced,</em> peaceful life.
             </h1>
             <div className="pf-hero-mini-rule mx-auto mt-8 text-hero-orange/70" aria-hidden="true"><span />✦<span /></div>
@@ -144,7 +144,7 @@ function Index() {
             </div>
           </div>
         </div>
-        <div className="pf-hero-stats-band relative pt-10 pb-9">
+        <div className="pf-hero-stats-band relative pt-10 pb-0">
           <div className="pf-container">
             <div className="pf-hero-stats-grid grid gap-y-5 md:grid-cols-4">
             {stats.map(({ value, suffix, label, icon: Icon }) => (
