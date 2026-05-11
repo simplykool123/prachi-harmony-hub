@@ -238,7 +238,7 @@ function Index() {
           <div className="text-center lg:self-center">
             <div className="pf-about-title-mark mx-auto" aria-hidden="true">
               <span />
-              <img src={orangeArtworkImage} alt="" loading="lazy" decoding="async" className="h-32 w-32 object-contain" />
+              <img src={orangeArtworkImage} alt="" loading="lazy" decoding="async" className="h-44 w-44 object-contain" />
               <span />
             </div>
             <p className="pf-eyebrow pf-eyebrow-center mt-7 py-0">ABOUT PRACHI</p>
