@@ -201,7 +201,7 @@
   .pf-about-badge::before { content: ""; position: absolute; inset: 11px; border-radius: inherit; border: 1px solid color-mix(in oklab, var(--hero-orange) 19%, transparent); }
   .pf-about-badge-left { left: -38px; bottom: 84px; }
   .pf-about-badge-right { right: -8px; top: 52px; }
-  .pf-about-title-mark { display: grid; width: min(420px, 100%); grid-template-columns: minmax(92px, 1fr) auto minmax(92px, 1fr); align-items: center; justify-content: center; gap: 22px; }
+  .pf-about-title-mark { display: grid; width: min(520px, 100%); grid-template-columns: minmax(92px, 1fr) auto minmax(92px, 1fr); align-items: center; justify-content: center; gap: 22px; }
   .pf-about-title-mark > span { position: relative; height: 1px; background: color-mix(in oklab, var(--accent) 44%, transparent); }
   .pf-about-title-mark > span::after { content: "✦"; position: absolute; top: 50%; color: var(--color-accent); font-size: 17px; line-height: 1; opacity: .9; transform: translateY(-50%); }
   .pf-about-title-mark > span:first-child::after { right: -10px; }
