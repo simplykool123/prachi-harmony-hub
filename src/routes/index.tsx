@@ -236,7 +236,13 @@ function Index() {
             </div>
           </div>
           <div className="text-center lg:self-center">
-            <img src={orangeArtworkImage} alt="" loading="lazy" decoding="async" className="mx-auto h-24 w-24 object-contain" aria-hidden="true" />
+            <div className="pf-about-title-mark mx-auto" aria-hidden="true">
+              <span />
+              <div className="pf-about-top-mark">
+                <img src={orangeArtworkImage} alt="" loading="lazy" decoding="async" className="h-24 w-24 object-contain" />
+              </div>
+              <span />
+            </div>
             <p className="pf-eyebrow pf-eyebrow-center mt-7 py-0">ABOUT PRACHI</p>
             <h2 className="pf-h2 mx-auto mt-7 max-w-[430px]">Two decades. One rare combination.</h2>
             <p className="pf-body mx-auto mt-5 max-w-[430px]">Prachi Fulfagar is one of India's most credentialled Vastu and Palmistry consultants — combining both in a rare integrated practice that aligns you from the inside out.</p>
