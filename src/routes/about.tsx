@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Hand, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
+import palmBadge from "@/assets/palm-badge.png";
 import { PageHero } from "@/components/prachi/PageHero";
 import { MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { CelestialDecor, DoubleLineMark } from "@/components/prachi/CelestialDecor";
@@ -45,7 +46,7 @@ function AboutPage() {
         </div>
         <div className="pf-about-side-wrap relative min-h-[440px]">
           <img src={celestialPalmImage} alt="Palmistry consultation details in warm light" width={1120} height={1328} loading="lazy" decoding="async" className="absolute inset-x-0 bottom-0 mx-auto h-[360px] w-[88%] rounded-b-full border border-accent/20 object-cover p-1.5 shadow-card" />
-          <div className="absolute left-1/2 top-0 grid h-28 w-28 -translate-x-1/2 place-items-center rounded-t-full border border-border bg-background text-accent shadow-card"><Hand className="h-12 w-12" strokeWidth={1.3} /></div>
+          <div className="absolute left-1/2 top-0 grid h-28 w-28 -translate-x-1/2 place-items-center rounded-t-full border border-border bg-background text-accent shadow-card"><img src={palmBadge} alt="" width={48} height={48} loading="lazy" className="h-12 w-12 object-contain" /></div>
         </div>
       </div>
     </MotionSection>
