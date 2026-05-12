@@ -15,12 +15,12 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact Prachi Fulfagar | Book a Consultation" },
-      {
-        name: "description",
-        content: "Book an in-person or remote Vastu, Palmistry or Astrology consultation with Prachi Fulfagar.",
-      },
+      { name: "description", content: "Book an in-person or remote Vastu, Palmistry or Astrology consultation with Prachi Fulfagar. Call or WhatsApp +91 82752 67680." },
       { property: "og:title", content: "Contact Prachi Fulfagar" },
       { property: "og:description", content: "Begin your journey — in person across India, or online worldwide." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "Contact Prachi Fulfagar" },
+      { name: "twitter:description", content: "Begin your journey — in person across India, or online worldwide." },
     ],
   }),
   component: ContactPage,

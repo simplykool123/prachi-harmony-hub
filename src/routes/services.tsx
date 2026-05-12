@@ -12,6 +12,9 @@ export const Route = createFileRoute("/services")({
     { name: "description", content: "Explore twelve Vastu, Palmistry, Astrology and energy-balancing services by Prachi Fulfagar." },
     { property: "og:title", content: "Prachi Fulfagar Services" },
     { property: "og:description", content: "From your palm to your home — twelve services, one vision." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:title", content: "Prachi Fulfagar Services" },
+    { name: "twitter:description", content: "From your palm to your home — twelve services, one vision." },
   ]}),
   component: ServicesPage,
 });
