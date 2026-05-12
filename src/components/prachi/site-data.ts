@@ -154,5 +154,8 @@ export const socialLinks = {
   youtube: "https://youtube.com",
 } as const;
 
+export const phoneNumber = "+918275267680";
+export const phoneDisplay = "+91 82752 67680";
+
 export const whatsappUrl =
-  "https://wa.me/91XXXXXXXXXX?text=Hi%20Prachi%2C%20I%20would%20like%20to%20book%20a%20consultation.";
+  "https://wa.me/918275267680?text=Hi%20Prachi%2C%20I%20would%20like%20to%20book%20a%20consultation.";

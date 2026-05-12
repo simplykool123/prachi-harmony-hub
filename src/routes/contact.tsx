@@ -232,21 +232,40 @@ function ContactAside() {
     <aside>
       <h2 className="font-heading text-[28px] font-light text-foreground">How to reach Prachi</h2>
       <div className="mt-8">
-        {cities.map((city) => (
-          <div key={city} className="flex gap-4 border-b border-border py-4">
-            <MapPin className="mt-1 h-4 w-4 flex-shrink-0 text-accent" />
-            <div>
-              <p className="text-[13px] font-medium text-foreground">{city}</p>
-              <p className="mt-0.5 text-[11px] text-muted-foreground">
-                {city === "Nashik"
-                  ? "Primary office · 202, V N Pledge, Manik Nagar, Nashik:422013"
-                  : city === "Kopargaon"
-                    ? "Regional office · Travels all over India on request"
-                    : "Office space ·Gokul Nagri, Kopargaon"}
-              </p>
+        {cities.map((city) => {
+          let detail: React.ReactNode;
+          switch (city) {
+            case "Mumbai":
+              detail = "Office space · By appointment";
+              break;
+            case "Pune":
+              detail = "Office space in Baner · By appointment";
+              break;
+            case "Nashik":
+              detail = "Primary office : 202, V N Pledge, Manik Nagar, Nashik : 422013";
+              break;
+            case "Kopargaon":
+              detail = (
+                <>
+                  Regional office : Gokul Nagri, Kopargaon
+                  <br />
+                  <strong className="font-semibold text-foreground">Travels all over India on request</strong>
+                </>
+              );
+              break;
+            default:
+              detail = null;
+          }
+          return (
+            <div key={city} className="flex gap-4 border-b border-border py-4">
+              <MapPin className="mt-1 h-4 w-4 flex-shrink-0 text-accent" />
+              <div>
+                <p className="text-[13px] font-medium text-foreground">{city}</p>
+                <p className="mt-0.5 text-[11px] text-muted-foreground">{detail}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
         <p className="mt-4 text-[12px] italic text-muted-foreground">
           Remote consultations available worldwide — via Zoom, WhatsApp or phone.
         </p>

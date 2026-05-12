@@ -108,7 +108,7 @@ export function Footer() {
         <div className="border-foreground/10 lg:border-l lg:pl-12">
           <h2 className="pf-footer-heading">Connect</h2>
           <div className="mt-4 space-y-3 text-[14px] leading-relaxed text-foreground/60">
-            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-start gap-4 transition hover:text-primary"><Phone className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.6} /><span>+91 XXXXX XXXXX</span></a>
+            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-start gap-4 transition hover:text-primary"><Phone className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.6} /><span>+91 82752 67680</span></a>
             <a href="mailto:hello@prachifulfagar.com" className="flex items-start gap-4 transition hover:text-primary"><Mail className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.6} /><span>hello@prachifulfagar.com</span></a>
             <p className="flex items-start gap-4"><MapPin className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.6} /><span>Mumbai, Pune, Nashik & Kopargaon</span></p>
           </div>
