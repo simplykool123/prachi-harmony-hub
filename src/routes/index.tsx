@@ -45,6 +45,16 @@ export const Route = createFileRoute("/")({
           description: "Award-winning Vastu, Palmistry and Vedic Astrology consultations across India and internationally.",
           url: "https://prachi-harmony-hub.lovable.app/",
           telephone: "+918275267680",
+          email: "hello@prachifulfagar.com",
+          priceRange: "₹₹",
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              opens: "10:00",
+              closes: "19:00",
+            },
+          ],
           areaServed: ["India", "UAE", "UK", "USA", "Singapore", "Australia"],
           founder: { "@type": "Person", name: "Prachi Fulfagar" },
           address: {
