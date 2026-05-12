@@ -15,7 +15,10 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact Prachi Fulfagar | Book a Consultation" },
-      { name: "description", content: "Book an in-person or remote Vastu, Palmistry or Astrology consultation with Prachi Fulfagar." },
+      {
+        name: "description",
+        content: "Book an in-person or remote Vastu, Palmistry or Astrology consultation with Prachi Fulfagar.",
+      },
       { property: "og:title", content: "Contact Prachi Fulfagar" },
       { property: "og:description", content: "Begin your journey — in person across India, or online worldwide." },
     ],
@@ -24,18 +27,20 @@ export const Route = createFileRoute("/contact")({
 });
 
 // ── Form schema ───────────────────────────────────────────────
-const formSchema = z.object({
-  full_name: z.string().min(2, "Please enter your name"),
-  email: z.string().email("Please enter a valid email").or(z.literal("")),
-  phone: z.string().min(6, "Please enter a valid phone number").or(z.literal("")),
-  city_country: z.string().optional(),
-  service_interested: z.string().optional(),
-  preferred_mode: z.enum(["In-person", "Remote", "Home Visit"]).optional(),
-  message: z.string().optional(),
-}).refine((d) => d.email || d.phone, {
-  message: "Please provide at least an email or phone number",
-  path: ["email"],
-});
+const formSchema = z
+  .object({
+    full_name: z.string().min(2, "Please enter your name"),
+    email: z.string().email("Please enter a valid email").or(z.literal("")),
+    phone: z.string().min(6, "Please enter a valid phone number").or(z.literal("")),
+    city_country: z.string().optional(),
+    service_interested: z.string().optional(),
+    preferred_mode: z.enum(["In-person", "Remote", "Home Visit"]).optional(),
+    message: z.string().optional(),
+  })
+  .refine((d) => d.email || d.phone, {
+    message: "Please provide at least an email or phone number",
+    path: ["email"],
+  });
 
 type FormData = z.infer<typeof formSchema>;
 
@@ -48,8 +53,14 @@ function ContactPage() {
         copy="In-person across India, or online from anywhere in the world."
       />
       <MotionSection className="pf-section pf-celestial-section bg-background pt-10">
-        <CelestialDecor variant="sun" className="pointer-events-none absolute -right-12 top-16 hidden h-56 w-56 text-accent/10 lg:block" />
-        <CelestialDecor variant="star" className="pointer-events-none absolute left-8 bottom-12 hidden h-24 w-24 text-accent/12 lg:block" />
+        <CelestialDecor
+          variant="sun"
+          className="pointer-events-none absolute -right-12 top-16 hidden h-56 w-56 text-accent/10 lg:block"
+        />
+        <CelestialDecor
+          variant="star"
+          className="pointer-events-none absolute left-8 bottom-12 hidden h-24 w-24 text-accent/12 lg:block"
+        />
         <div className="pf-container relative z-10 grid gap-14 lg:grid-cols-[1fr_.9fr] lg:gap-[60px]">
           <ContactForm />
           <ContactAside />
@@ -105,8 +116,7 @@ function ContactForm() {
       <div className="pf-card flex flex-col items-center justify-center rounded-2xl p-12 text-center">
         <CheckCircle2 className="h-10 w-10 text-accent" />
         <h2 className="pf-h3 mt-6">
-          Thank you,{" "}
-          <span className="text-accent">{watch("full_name").split(" ")[0]}</span>
+          Thank you, <span className="text-accent">{watch("full_name").split(" ")[0]}</span>
         </h2>
         <p className="pf-body mt-3 max-w-sm">
           Your enquiry has been received. Prachi will reach out to you personally within 24 hours.
@@ -148,7 +158,12 @@ function ContactForm() {
         {/* City */}
         <div>
           <label className={labelClass}>City / Country</label>
-          <input {...register("city_country")} type="text" placeholder="e.g. Mumbai, Dubai, London" className={inputClass} />
+          <input
+            {...register("city_country")}
+            type="text"
+            placeholder="e.g. Mumbai, Dubai, London"
+            className={inputClass}
+          />
         </div>
 
         {/* Service */}
@@ -195,11 +210,7 @@ function ContactForm() {
         </div>
 
         {/* Server error */}
-        {serverError && (
-          <div className="rounded-lg bg-red-50 px-4 py-3 text-[13px] text-red-600">
-            {serverError}
-          </div>
-        )}
+        {serverError && <div className="rounded-lg bg-red-50 px-4 py-3 text-[13px] text-red-600">{serverError}</div>}
 
         <Button type="submit" variant="hero" className="w-full" disabled={isSubmitting}>
           {isSubmitting ? "Sending..." : "Send Message"}
@@ -228,10 +239,10 @@ function ContactAside() {
               <p className="text-[13px] font-medium text-foreground">{city}</p>
               <p className="mt-0.5 text-[11px] text-muted-foreground">
                 {city === "Nashik"
-                  ? "Primary office · Home base"
+                  ? "Primary office · 202, V N Pledge, Manik Nagar, Nashik:422013"
                   : city === "Kopargaon"
-                  ? "Regional office · Travels all over India on request"
-                  : "Office space · By appointment"}
+                    ? "Regional office · Travels all over India on request"
+                    : "Office space ·Gokul Nagri, Kopargaon"}
               </p>
             </div>
           </div>
