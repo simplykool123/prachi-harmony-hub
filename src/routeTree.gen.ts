@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VastuGuideRouteImport } from './routes/vastu-guide'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogRouteImport } from './routes/blog'
@@ -28,6 +29,11 @@ import { Route as AdminBlogRouteImport } from './routes/admin/blog'
 const VastuGuideRoute = VastuGuideRouteImport.update({
   id: '/vastu-guide',
   path: '/vastu-guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -108,6 +114,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vastu-guide': typeof VastuGuideRoute
   '/admin/blog': typeof AdminBlogRoute
   '/admin/calendar': typeof AdminCalendarRoute
@@ -124,6 +131,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vastu-guide': typeof VastuGuideRoute
   '/admin/blog': typeof AdminBlogRoute
   '/admin/calendar': typeof AdminCalendarRoute
@@ -142,6 +150,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vastu-guide': typeof VastuGuideRoute
   '/admin/blog': typeof AdminBlogRoute
   '/admin/calendar': typeof AdminCalendarRoute
@@ -161,6 +170,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/services'
+    | '/sitemap.xml'
     | '/vastu-guide'
     | '/admin/blog'
     | '/admin/calendar'
@@ -177,6 +187,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/services'
+    | '/sitemap.xml'
     | '/vastu-guide'
     | '/admin/blog'
     | '/admin/calendar'
@@ -194,6 +205,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contact'
     | '/services'
+    | '/sitemap.xml'
     | '/vastu-guide'
     | '/admin/blog'
     | '/admin/calendar'
@@ -212,6 +224,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
   ServicesRoute: typeof ServicesRouteWithChildren
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VastuGuideRoute: typeof VastuGuideRoute
 }
 
@@ -222,6 +235,13 @@ declare module '@tanstack/react-router' {
       path: '/vastu-guide'
       fullPath: '/vastu-guide'
       preLoaderRoute: typeof VastuGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -374,6 +394,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
   ServicesRoute: ServicesRouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   VastuGuideRoute: VastuGuideRoute,
 }
 export const routeTree = rootRouteImport
