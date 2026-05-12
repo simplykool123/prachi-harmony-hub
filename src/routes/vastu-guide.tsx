@@ -10,6 +10,9 @@ export const Route = createFileRoute("/vastu-guide")({
     { name: "description", content: "A premium Vastu directional guide for homes, offices, shops, restaurants and sacred spaces." },
     { property: "og:title", content: "The Vastu Directional Guide" },
     { property: "og:description", content: "Ancient principles — one room at a time." },
+    { property: "og:type", content: "article" },
+    { name: "twitter:title", content: "The Vastu Directional Guide" },
+    { name: "twitter:description", content: "Ancient principles — one room at a time." },
   ]}),
   component: VastuGuidePage,
 });

@@ -7,12 +7,22 @@ import { supabase, type VpBlogPost } from "@/lib/supabase";
 import { whatsappUrl } from "@/components/prachi/site-data";
 
 export const Route = createFileRoute("/blog/$slug")({
-  head: ({ params }) => ({
-    meta: [
-      { title: `${params.slug.replace(/-/g, " ")} | Prachi Fulfagar` },
-      { name: "description", content: "Expert Vastu, Palmistry and Astrology insights from Prachi Fulfagar." },
-    ],
-  }),
+  head: ({ params }) => {
+    const title = `${params.slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())} | Prachi Fulfagar`;
+    const description = "Expert Vastu, Palmistry and Astrology insights from internationally awarded consultant Prachi Fulfagar.";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "article" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+      ],
+    };
+  },
   component: BlogPostPage,
 });
 

@@ -14,6 +14,9 @@ export const Route = createFileRoute("/about")({
     { name: "description", content: "Learn about Prachi Fulfagar's two-decade practice and international recognition in Vastu and Palmistry." },
     { property: "og:title", content: "About Prachi Fulfagar" },
     { property: "og:description", content: "A rare combination of Palmistry and Vastu Shastra, guided with modern clarity." },
+    { property: "og:type", content: "profile" },
+    { name: "twitter:title", content: "About Prachi Fulfagar" },
+    { name: "twitter:description", content: "A rare combination of Palmistry and Vastu Shastra, guided with modern clarity." },
   ]}),
   component: AboutPage,
 });

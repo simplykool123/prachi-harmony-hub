@@ -7,11 +7,16 @@ import { cities, services, whatsappUrl } from "@/components/prachi/site-data";
 export const Route = createFileRoute("/services/$serviceSlug")({
   head: ({ params }) => {
     const service = services.find((item) => item.slug === params.serviceSlug);
+    const title = service ? `${service.name} | Prachi Fulfagar Services` : "Service | Prachi Fulfagar";
+    const description = service?.description ?? "Premium Vastu, Palmistry and Astrology services by Prachi Fulfagar.";
     return { meta: [
-      { title: service ? `${service.name} | Prachi Fulfagar Services` : "Service | Prachi Fulfagar" },
-      { name: "description", content: service?.description ?? "Premium Vastu, Palmistry and Astrology services by Prachi Fulfagar." },
-      { property: "og:title", content: service ? `${service.name} | Prachi Fulfagar` : "Prachi Fulfagar Service" },
-      { property: "og:description", content: service?.description ?? "Premium Vastu, Palmistry and Astrology consultations." },
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
     ] };
   },
   component: ServiceDetailPage,
