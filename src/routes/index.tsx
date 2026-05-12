@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { CountUp, MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { ServiceCard } from "@/components/prachi/ServiceCard";
 import { awards, customerStories, globalPresence, remedyHighlights, services, whatsappUrl } from "@/components/prachi/site-data";
+import compassBadge from "@/assets/compass-badge.png";
+import palmBadge from "@/assets/palm-badge.png";
 
 const vastuPlanImage = "/site-images/prachi-vastu-plan.jpg";
 const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
@@ -275,7 +277,7 @@ function Index() {
               <img src={prachiPortraitImage} alt="Prachi Fulfagar in her Vastu and Palmistry consultation studio" width={900} height={1350} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_6%]" />
             </div>
             <div className="pf-about-badge pf-about-badge-left">
-              <Hand className="h-12 w-12" strokeWidth={1.25} />
+              <img src={compassBadge} alt="Compass emblem" className="h-12 w-12 object-contain" loading="lazy" />
             </div>
           </div>
           <div className="text-center lg:self-center">
@@ -295,7 +297,7 @@ function Index() {
               <img src={celestialPalmImage} alt="Palmistry and astrology consultation details" width={1120} height={1328} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_42%]" />
             </div>
             <div className="pf-about-badge pf-about-badge-right">
-              <Hand className="h-12 w-12" strokeWidth={1.25} />
+              <img src={palmBadge} alt="Palmistry hand illustration" className="h-12 w-12 object-contain" loading="lazy" />
             </div>
           </div>
         </div>
