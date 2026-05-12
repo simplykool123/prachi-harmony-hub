@@ -120,7 +120,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="pf-container relative z-10 mt-6 flex items-center justify-center gap-4 text-center text-[13px] text-foreground/55 before:h-px before:flex-1 before:bg-primary/15 after:h-px after:flex-1 after:bg-primary/15"><span className="text-primary">✦</span><span>© 2025 Prachi Fulfagar. All rights reserved.</span><span className="text-primary">✦</span></div>
+      <div className="pf-container relative z-10 mt-6 flex items-center justify-center gap-4 text-center text-[13px] text-foreground/55 before:h-px before:flex-1 before:bg-primary/15 after:h-px after:flex-1 after:bg-primary/15"><span className="text-primary">✦</span><span>© 2026 Prachi Fulfagar. All rights reserved.</span><span className="text-primary">✦</span></div>
     </footer>
   );
 }
