@@ -96,6 +96,26 @@ function AboutPage() {
         </div>
       </div>
     </MotionSection>
+    <MotionSection className="pf-section bg-background">
+      <div className="pf-container relative z-10">
+        <SectionIntro eyebrow="MOMENTS & MILESTONES" title="From the practice" />
+        <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            { src: "/site-images/awards/thailand-honorary-doctorate.jpg", alt: "Prachi Fulfagar at Thailand Triangle Summit, Pattaya", aspect: "aspect-[4/5]" },
+            { src: "/site-images/awards/international-astro-purohit-award.jpg", alt: "Award ceremony — International Astro Purohit honour", aspect: "aspect-[4/3]" },
+            { src: "/site-images/prachi-celestial-palm.jpg", alt: "Palmistry consultation studio detail", aspect: "aspect-[4/3]" },
+            { src: "/site-images/awards/indo-thailand-vastu-brihaspati-award.jpg", alt: "Indo-Thailand Vastu Brihaspati Award presentation", aspect: "aspect-[4/3]" },
+            { src: "/site-images/prachi-fulfagar-portrait.jpg", alt: "Prachi Fulfagar in her consultation studio", aspect: "aspect-[4/5]" },
+            { src: "/site-images/awards/certified-medical-astrological-proficiency.jpg", alt: "Certification — Medical Astrological Proficiency", aspect: "aspect-[4/3]" },
+          ].map((item) => (
+            <figure key={item.src + item.alt} className={`overflow-hidden rounded-2xl border border-border bg-card-soft ${item.aspect}`}>
+              <img src={item.src} alt={item.alt} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]" />
+            </figure>
+          ))}
+        </div>
+        <p className="mt-6 text-center text-[12px] font-light italic text-muted-foreground">More moments from the practice — updated regularly.</p>
+      </div>
+    </MotionSection>
     <MotionSection className="pf-section pf-celestial-section bg-card">
       <CelestialDecor variant="star" className="pointer-events-none absolute left-10 top-14 hidden h-24 w-24 text-accent/12 lg:block" />
       <div className="pf-container relative z-10 text-center">
