@@ -29,11 +29,33 @@ function ServicesPage() {
   return <>
     <PageHero eyebrow="SERVICES" title="Every dimension of harmony" copy="From your palm to your home — twelve services, one vision." />
     <MotionSection className="pf-section pf-celestial-section bg-background pt-10">
-      <CelestialDecor variant="compass" className="pointer-events-none absolute -right-20 top-16 hidden h-72 w-72 text-accent/10 lg:block" />
-      <CelestialDecor variant="moon" className="pointer-events-none absolute -left-12 bottom-12 hidden h-44 w-44 text-accent/10 lg:block" />
+      <CelestialDecor variant="compass" className="pf-services-spin-slow pointer-events-none absolute -right-24 top-20 hidden h-80 w-80 text-accent/15 lg:block" />
+      <CelestialDecor variant="sun" className="pf-services-float pointer-events-none absolute -left-16 top-40 hidden h-48 w-48 text-accent/15 lg:block" />
+      <CelestialDecor variant="moon" className="pf-services-drift pointer-events-none absolute -left-10 bottom-24 hidden h-44 w-44 text-accent/15 lg:block" />
+      <CelestialDecor variant="star" className="pf-services-float pointer-events-none absolute right-12 bottom-32 hidden h-24 w-24 text-accent/20 lg:block" style={{ animationDelay: "1.5s" }} />
+
+      <div className="pf-services-rail pointer-events-none left-6 hidden lg:block">
+        <span className="pf-services-dot" style={{ top: "12%", left: "-2.5px" }} />
+        <span className="pf-services-dot" style={{ top: "48%", left: "-2.5px" }} />
+        <span className="pf-services-dot" style={{ top: "82%", left: "-2.5px" }} />
+      </div>
+      <div className="pf-services-rail pointer-events-none right-6 hidden lg:block" style={{ animationDelay: ".3s" }}>
+        <span className="pf-services-dot" style={{ top: "22%", left: "-2.5px" }} />
+        <span className="pf-services-dot" style={{ top: "60%", left: "-2.5px" }} />
+        <span className="pf-services-dot" style={{ top: "90%", left: "-2.5px" }} />
+      </div>
+
       <div className="pf-container relative z-10">
         <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => <ServiceCard key={service.name} service={service} index={index} />)}
+          {services.map((service, index) => (
+            <div
+              key={service.name}
+              className="pf-services-card-enter"
+              style={{ animationDelay: `${index * 80}ms` }}
+            >
+              <ServiceCard service={service} index={index} />
+            </div>
+          ))}
         </div>
         <div className="mt-12 text-center"><Button asChild variant="hero"><Link to="/contact">Book Any Service</Link></Button></div>
       </div>
