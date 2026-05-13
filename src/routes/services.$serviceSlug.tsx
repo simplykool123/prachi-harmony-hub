@@ -247,13 +247,26 @@ function DetailSection({ label, heading, children }: { label: string; heading: s
   );
 }
 
+function renderItem(item: string) {
+  const marker = "houseofremedies.in";
+  const idx = item.indexOf(marker);
+  if (idx === -1) return item;
+  return (
+    <>
+      {item.slice(0, idx)}
+      <a href="https://houseofremedies.in" target="_blank" rel="noreferrer" className="text-accent underline underline-offset-4 hover:text-primary">houseofremedies.in</a>
+      {item.slice(idx + marker.length)}
+    </>
+  );
+}
+
 function DotList({ items }: { items: string[] }) {
   return (
     <ul className="grid gap-3 sm:grid-cols-2">
       {items.map((item) => (
         <li key={item} className="grid grid-cols-[auto_1fr] gap-3 rounded-xl border border-border bg-card p-4 text-[13px] font-light leading-relaxed text-foreground">
           <span className="mt-[0.65em] h-1.5 w-1.5 rounded-full bg-accent" />
-          <span>{item}</span>
+          <span>{renderItem(item)}</span>
         </li>
       ))}
     </ul>
