@@ -334,7 +334,7 @@ function ServiceDetailPage() {
                 {detail.badge}
               </span>
             )}
-            <DoubleLineMark className="mb-6 w-[190px] text-accent/45" />
+            <DoubleLineMark className="mx-auto mb-6 w-[190px] text-accent/45" />
             <div className="flex items-center gap-5">
               <div className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-badge text-accent">
                 <Icon size={34} strokeWidth={1.45} />
