@@ -67,9 +67,9 @@ export const Route = createFileRoute("/")({
             addressCountry: "IN",
           },
           sameAs: [
-            "https://instagram.com",
-            "https://facebook.com",
-            "https://youtube.com",
+            "https://www.instagram.com/prachifulfagar/",
+            "https://www.facebook.com/prachi.fulfagar",
+            "https://www.youtube.com/@prachifulfagar6709",
           ],
         }),
       },

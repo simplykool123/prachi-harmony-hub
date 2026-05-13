@@ -41,7 +41,7 @@ const introHeadings: Record<string, string> = {
   remote: "Distance is no barrier to Vastu",
   "plot-selection": "What to check before you sign",
   "career-astrology": "Read the timing, not just the intention",
-  "geo-stress": "The hidden factor in health and sleep",
+  "marriage-astrology": "Clarity before commitment — and harmony within it",
 };
 
 type Faq = { q: string; a: string };
