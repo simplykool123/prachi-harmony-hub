@@ -310,7 +310,7 @@ function ServiceDetailPage() {
           <img src={image.src} alt={image.alt} width={900} height={680} loading="eager" decoding="async" className="h-[240px] w-full object-cover object-center lg:h-full" />
         </header>
 
-        <DetailSection label="Introduction" heading="A personal, practical approach">
+        <DetailSection label="Introduction" heading={introHeadings[serviceSlug] ?? "A personal, practical approach"}>
           <p className="text-[15px] font-light leading-[1.85] text-muted-foreground">{detail.intro}</p>
         </DetailSection>
 
@@ -328,7 +328,6 @@ function ServiceDetailPage() {
               <article key={step.number} className="relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-card">
                 <div className="absolute -right-2 -top-4 font-heading text-[74px] font-light leading-none text-accent/10">{step.number}</div>
                 <div>
-                  <p className="font-heading text-[30px] font-light leading-none text-accent">{step.number}</p>
                   <h3 className="mt-4 font-body text-[13px] font-medium leading-tight text-foreground">{step.title}</h3>
                   <p className="mt-2 text-[12px] font-light leading-relaxed text-muted-foreground">{step.description}</p>
                 </div>
@@ -336,6 +335,19 @@ function ServiceDetailPage() {
             ))}
           </div>
         </DetailSection>
+
+        {serviceFaqs[serviceSlug] && (
+          <DetailSection label="FAQ" heading="Frequently asked questions">
+            <div className="grid gap-3">
+              {serviceFaqs[serviceSlug].map((faq) => (
+                <div key={faq.q} className="rounded-xl border border-border bg-card p-5">
+                  <p className="font-heading text-[16px] font-normal text-foreground">{faq.q}</p>
+                  <p className="mt-2 text-[13px] font-light leading-relaxed text-muted-foreground">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </DetailSection>
+        )}
 
         <section className="mt-10 rounded-[28px] border border-accent/25 bg-warm p-7 text-center sm:p-9">
           <h2 className="font-heading text-[32px] font-light leading-tight text-foreground">Ready to begin?</h2>
@@ -347,7 +359,8 @@ function ServiceDetailPage() {
           <div className="mt-6 flex flex-wrap justify-center gap-2.5">
             {cities.map((city) => <span key={city} className="rounded-full border border-border bg-card px-4 py-2 text-[11px] text-muted-foreground">{city}</span>)}
           </div>
-          <p className="mt-4 text-[12px] font-light text-muted-foreground">Remote sessions available worldwide</p>
+          <p className="mt-3 text-[12px] font-light text-muted-foreground">Also serving clients across Maharashtra, Hyderabad, Delhi, Bangalore and internationally via remote consultation.</p>
+          <p className="mt-2 text-[12px] font-light text-muted-foreground">Remote sessions available worldwide</p>
         </section>
       </div>
     </main>
