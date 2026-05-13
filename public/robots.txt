@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/
 
-Sitemap: https://prachi-harmony-hub.lovable.app/sitemap.xml
+Sitemap: https://prachifulfagar.com/sitemap.xml

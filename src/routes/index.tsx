@@ -374,7 +374,7 @@ function Index() {
         <div className="pf-compass-orbit absolute left-1/2 top-[60%] h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/20" />
         <div className="pf-container relative z-10 pt-20">
           <div className="mx-auto mb-8 h-px w-12 bg-accent" />
-          <h2 className="pf-h2">Begin your journey to harmony</h2>
+          <h2 className="pf-h2">Bring balance to your space</h2>
           <p className="pf-body mx-auto mt-4 max-w-xl">Book a consultation — in person or online, across India and internationally.</p>
           <div className="mt-10 flex flex-wrap justify-center gap-3.5">
             <Button asChild variant="hero"><Link to="/contact">Book a Consultation</Link></Button>

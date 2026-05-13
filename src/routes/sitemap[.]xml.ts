@@ -3,7 +3,7 @@ import type {} from "@tanstack/react-start";
 import { services } from "@/components/prachi/site-data";
 import { supabase } from "@/lib/supabase";
 
-const BASE_URL = "https://prachi-harmony-hub.lovable.app";
+const BASE_URL = "https://prachifulfagar.com";
 
 interface SitemapEntry {
   path: string;
