@@ -1,10 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { MapPin } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { MapPin, MessageCircle } from "lucide-react";
 import palmBadge from "@/assets/palm-badge.png";
+import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/prachi/PageHero";
 import { MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { CelestialDecor, DoubleLineMark } from "@/components/prachi/CelestialDecor";
-import { awards, cities, globalPresence } from "@/components/prachi/site-data";
+import { awards, cities, globalPresence, whatsappUrl } from "@/components/prachi/site-data";
 
 const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
 const prachiPortraitImage = "/site-images/prachi-fulfagar-portrait.jpg";
@@ -108,6 +109,16 @@ function AboutPage() {
           </article>)}
         </div>
         <p className="mt-9 font-heading text-base italic text-muted-foreground">Remote consultations available worldwide — via Zoom, WhatsApp or phone.</p>
+      </div>
+    </MotionSection>
+    <MotionSection className="pf-section bg-warm">
+      <div className="pf-container relative z-10 text-center">
+        <h2 className="pf-h2">Ready to work with Prachi?</h2>
+        <p className="pf-body mx-auto mt-4 max-w-xl">Book your first consultation — in person or online.</p>
+        <div className="mt-8 flex flex-wrap justify-center gap-3.5">
+          <Button asChild variant="hero"><Link to="/contact">Book a Consultation</Link></Button>
+          <Button asChild variant="porcelain"><a href={whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle className="text-whatsapp" />WhatsApp Prachi</a></Button>
+        </div>
       </div>
     </MotionSection>
   </>;
