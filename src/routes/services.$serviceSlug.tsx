@@ -8,7 +8,7 @@ export const Route = createFileRoute("/services/$serviceSlug")({
   head: ({ params }) => {
     const service = services.find((item) => item.slug === params.serviceSlug);
     const title = service ? `${service.name} | Prachi Fulfagar Services` : "Service | Prachi Fulfagar";
-    const description = service?.description ?? "Premium Vastu, Palmistry and Astrology services by Prachi Fulfagar.";
+    const description = serviceMeta[params.serviceSlug] ?? service?.description ?? "Premium Vastu, Palmistry and Astrology services by Prachi Fulfagar.";
     return { meta: [
       { title },
       { name: "description", content: description },
@@ -21,6 +21,47 @@ export const Route = createFileRoute("/services/$serviceSlug")({
   },
   component: ServiceDetailPage,
 });
+
+const serviceMeta: Record<string, string> = {
+  "residential-vastu": "Residential Vastu consultation by Prachi Fulfagar — room-by-room corrections for sleep, health and relationships. Available in-person in Nashik, Pune, Mumbai and remotely worldwide.",
+  "commercial-vastu": "Commercial Vastu for offices, shops, showrooms and hotels. Prachi Fulfagar offers on-site and remote Vastu consultations across India.",
+  "career-astrology": "Vedic astrology for career decisions and business timing. Book a chart reading with Prachi Fulfagar — available online for India and international clients.",
+  palmistry: "Palm reading by internationally recognised palmist Prachi Fulfagar — personality, timing, strengths, career and relationships. Book online or in-person.",
+};
+
+const introHeadings: Record<string, string> = {
+  "palm-vastu-combo": "Where your inner patterns meet your outer space",
+  "residential-vastu": "Your home, room by room",
+  "commercial-vastu": "Align your business from the entrance in",
+  "industrial-vastu": "Built for flow, safety and productivity",
+  palmistry: "What your hand has already recorded",
+  pyramidology: "Non-invasive corrections, immediate results",
+  "energy-balancing": "Reset the five elements in your space",
+  "colour-guidelines": "Colour that works with energy, not against it",
+  remote: "Distance is no barrier to Vastu",
+  "plot-selection": "What to check before you sign",
+  "career-astrology": "Read the timing, not just the intention",
+  "geo-stress": "The hidden factor in health and sleep",
+};
+
+type Faq = { q: string; a: string };
+const serviceFaqs: Record<string, Faq[]> = {
+  "residential-vastu": [
+    { q: "Do I need to renovate my home for Vastu corrections?", a: "No. Most corrections involve furniture placement, colour, objects and plants. Structural changes are rarely required." },
+    { q: "Can Vastu be done remotely?", a: "Yes. Prachi works from floor plans, photos and video walk-throughs for clients across India and internationally." },
+    { q: "How long does a session take?", a: "A typical residential assessment takes 90 minutes to 2 hours in person, or one consultation call for remote sessions." },
+  ],
+  "career-astrology": [
+    { q: "Do I need my exact birth time?", a: "Yes, birth time significantly improves chart accuracy. If unavailable, Prachi will note this and work with available data." },
+    { q: "Is Career Astrology suitable for business owners?", a: "Absolutely. Business launch timing, partner compatibility and growth windows are all covered." },
+    { q: "Can international clients book?", a: "Yes. Sessions are available via Zoom or phone for clients in any country." },
+  ],
+  "geo-stress": [
+    { q: "What causes geopathic stress?", a: "Underground water, geological fault lines and electromagnetic disturbances that pass through the space where you sleep or work." },
+    { q: "Is this different from Vastu?", a: "They complement each other. Vastu addresses directional energy; geo stress addresses earth-based energies beneath the structure." },
+    { q: "Can it be corrected without renovation?", a: "Yes. Pyramid placements, repositioning beds and desks, and specific remedies are all non-invasive." },
+  ],
+};
 
 type Step = { number: string; title: string; description: string };
 type Detail = {
