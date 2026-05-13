@@ -280,6 +280,28 @@
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
+  @keyframes pf-services-float-y {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+  @keyframes pf-services-drift {
+    0%, 100% { transform: translate3d(0,0,0) rotate(0deg); }
+    50% { transform: translate3d(8px, -10px, 0) rotate(2deg); }
+  }
+  @keyframes pf-services-card-in {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pf-services-line-grow {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+  }
+  .pf-services-spin-slow { animation: pf-compass-spin 90s linear infinite; transform-origin: 50% 50%; }
+  .pf-services-float { animation: pf-services-float-y 9s ease-in-out infinite; }
+  .pf-services-drift { animation: pf-services-drift 14s ease-in-out infinite; }
+  .pf-services-card-enter { opacity: 0; animation: pf-services-card-in .7s ease-out forwards; }
+  .pf-services-rail { position: absolute; top: 60px; bottom: 60px; width: 1px; background: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--accent) 35%, transparent), transparent); transform-origin: top; animation: pf-services-line-grow 1.6s ease-out forwards; }
+  .pf-services-dot { position: absolute; width: 6px; height: 6px; border-radius: 9999px; background: color-mix(in oklab, var(--accent) 70%, transparent); box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent) 12%, transparent); }
 }
 
 @media (prefers-reduced-motion: reduce) {
