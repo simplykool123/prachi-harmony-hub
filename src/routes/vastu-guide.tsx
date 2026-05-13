@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/prachi/PageHero";
 import { MotionSection } from "@/components/prachi/Motion";
 import { CelestialDecor } from "@/components/prachi/CelestialDecor";
+import vastuGuideHeroBg from "@/assets/vastu-guide-hero-bg.jpg";
 
 export const Route = createFileRoute("/vastu-guide")({
   head: () => ({ meta: [
@@ -34,7 +35,7 @@ const rows = [
 
 function VastuGuidePage() {
   return <>
-    <PageHero eyebrow="FREE RESOURCE" title="The Vastu directional guide" copy="Ancient principles — one room at a time. A starting point before your personal consultation with Prachi." />
+    <PageHero eyebrow="FREE RESOURCE" title="The Vastu directional guide" copy="Ancient principles — one room at a time. A starting point before your personal consultation with Prachi." backgroundImage={vastuGuideHeroBg} />
     <MotionSection className="pf-section pf-celestial-section bg-background pt-10">
       <CelestialDecor variant="compass" className="pointer-events-none absolute -right-16 top-12 hidden h-64 w-64 text-accent/10 lg:block" />
       <div className="pf-container relative z-10">
