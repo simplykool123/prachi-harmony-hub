@@ -32,7 +32,9 @@ function ServicesPage() {
       <CelestialDecor variant="compass" className="pf-services-spin-slow pointer-events-none absolute -right-24 top-20 hidden h-80 w-80 text-accent/15 lg:block" />
       <CelestialDecor variant="sun" className="pf-services-float pointer-events-none absolute -left-16 top-40 hidden h-48 w-48 text-accent/15 lg:block" />
       <CelestialDecor variant="moon" className="pf-services-drift pointer-events-none absolute -left-10 bottom-24 hidden h-44 w-44 text-accent/15 lg:block" />
-      <CelestialDecor variant="star" className="pf-services-float pointer-events-none absolute right-12 bottom-32 hidden h-24 w-24 text-accent/20 lg:block" style={{ animationDelay: "1.5s" }} />
+      <div className="pointer-events-none absolute right-12 bottom-32 hidden lg:block pf-services-float" style={{ animationDelay: "1.5s" }}>
+        <CelestialDecor variant="star" className="h-24 w-24 text-accent/20" />
+      </div>
 
       <div className="pf-services-rail pointer-events-none left-6 hidden lg:block">
         <span className="pf-services-dot" style={{ top: "12%", left: "-2.5px" }} />
