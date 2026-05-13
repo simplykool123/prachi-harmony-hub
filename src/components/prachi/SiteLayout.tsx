@@ -63,7 +63,7 @@ export function Header() {
           ))}
         </nav>
         <Button asChild size="sm" className="px-5 py-2.5 text-xs">
-          <Link to="/contact">Book a Session</Link>
+          <Link to="/contact">Book a Consultation</Link>
         </Button>
       </div>
     </header>
@@ -77,7 +77,7 @@ export function Footer() {
     { label: "Vastu Guide", to: "/vastu-guide" },
     { label: "Blog", to: "/blog" },
     { label: "Contact", to: "/contact" },
-    { label: "Book a Session", to: "/contact" },
+    { label: "Book a Consultation", to: "/contact" },
   ] as const;
 
   return (

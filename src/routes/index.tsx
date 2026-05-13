@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Prachi Fulfagar | Vastu, Palmistry & Astrology" },
-      { name: "description", content: "Award-winning Vastu, Palmistry and Vedic Astrology consultant serving India and international clients." },
+      { name: "description", content: "Prachi Fulfagar — award-winning Vastu Shastra, Palmistry and Vedic Astrology consultant in Nashik, Pune and Mumbai. Serving 5,000+ clients across India and internationally for 20+ years." },
       { name: "keywords", content: "Vastu Shastra, Palmistry, Vedic Astrology, Prachi Fulfagar, Nashik Vastu consultant, Pune Vastu, Mumbai astrology, palm reading India" },
       { property: "og:title", content: "Prachi Fulfagar | Ancient Wisdom for Harmony" },
       { property: "og:description", content: "Premium Vastu, Palmistry and Vedic Astrology consultations in India and worldwide." },
@@ -184,7 +184,7 @@ function Index() {
               Prachi Fulfagar guides you through Vastu Shastra, Palmistry and Vedic Astrology — helping homes, businesses and lives find their natural harmony.
             </p>
             <div className="pf-hero-fade-up pf-hero-delay-2 mt-8 flex flex-wrap justify-center gap-5">
-              <Button asChild variant="hero" className="bg-hero-orange text-primary-foreground shadow-none hover:bg-hero-orange"><Link to="/contact">Book A Consultation</Link></Button>
+              <Button asChild variant="hero" className="bg-hero-orange text-primary-foreground shadow-none hover:bg-hero-orange"><Link to="/contact">Book a Consultation</Link></Button>
               <Button asChild variant="porcelain" className="border-foreground/15 bg-transparent text-foreground hover:border-hero-orange/45"><Link to="/services">Explore Services</Link></Button>
             </div>
           </div>
@@ -377,8 +377,8 @@ function Index() {
           <h2 className="pf-h2">Begin your journey to harmony</h2>
           <p className="pf-body mx-auto mt-4 max-w-xl">Book a consultation — in person or online, across India and internationally.</p>
           <div className="mt-10 flex flex-wrap justify-center gap-3.5">
-            <Button asChild variant="hero"><Link to="/contact">Book a Session</Link></Button>
-            <Button asChild variant="porcelain"><a href={whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle className="text-whatsapp" />WhatsApp Now</a></Button>
+            <Button asChild variant="hero"><Link to="/contact">Book a Consultation</Link></Button>
+            <Button asChild variant="porcelain"><a href={whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle className="text-whatsapp" />WhatsApp Prachi</a></Button>
           </div>
         </div>
       </MotionSection>

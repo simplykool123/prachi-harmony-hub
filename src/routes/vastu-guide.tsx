@@ -7,7 +7,7 @@ import { CelestialDecor } from "@/components/prachi/CelestialDecor";
 export const Route = createFileRoute("/vastu-guide")({
   head: () => ({ meta: [
     { title: "Vastu Directional Guide | Prachi Fulfagar" },
-    { name: "description", content: "A premium Vastu directional guide for homes, offices, shops, restaurants and sacred spaces." },
+    { name: "description", content: "Free Vastu directional guide by Prachi Fulfagar. Learn the ideal room directions, five elements and common Vastu mistakes for homes and offices." },
     { property: "og:title", content: "The Vastu Directional Guide" },
     { property: "og:description", content: "Ancient principles — one room at a time." },
     { property: "og:type", content: "article" },

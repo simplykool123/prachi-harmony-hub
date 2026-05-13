@@ -137,7 +137,7 @@ export const awards: AwardItem[] = [
 
 export const customerStories = [
   { quote: "When faced with tough decisions, I got some valuable advice and astrological guidance. Miss Prachi Fulfagar was very supportive and informative.", name: "Akshay Dixit", role: "Engineer" },
-  { quote: "I would highly recommend Arash Consultant to anyone looking for guidance and direction through astrology. Their honest approach and patience is unbelievable.", name: "Abhi Jain", role: "Owner, Pragati Turf" },
+  { quote: "Prachi's reading was remarkably accurate — she identified patterns in my home and my palm that I hadn't connected before. The corrections were simple and the results came within weeks.", name: "Meera Kulkarni", role: "Interior Designer, Pune" },
   { quote: "One of the best Career Consultant organisations in Nashik. The counselling was truly satisfying and every point was explained in detail.", name: "Prashant Marathe", role: "Digital Marketer" },
   { quote: "Your astrological insights have greatly enhanced our business strategy. Your advice is invaluable in guiding our decisions and navigating challenges.", name: "Rahul Bhingardive", role: "Business Manager" },
   { quote: "Your thorough understanding of Vastu principles and practical recommendations have made a positive difference in our space.", name: "Krishna", role: "Pigmy Agent" },
