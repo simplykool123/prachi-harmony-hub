@@ -78,32 +78,18 @@ function BlogPage() {
             </div>
           )}
 
-          {!loading && !hasSupabase && (
-            <div className="mx-auto max-w-lg rounded-2xl border border-border bg-warm p-10 text-center">
+          {!loading && (!hasSupabase || posts.length === 0) && (
+            <div className="mx-auto max-w-xl rounded-2xl border border-border bg-warm p-10 text-center">
               <BookOpen className="mx-auto mb-4 h-8 w-8 text-accent" />
               <p className="pf-eyebrow pf-eyebrow-center mb-3">Coming soon</p>
-              <h2 className="font-heading text-2xl font-light text-foreground">Blog posts are on their way</h2>
+              <h2 className="font-heading text-2xl font-light text-foreground">New articles coming soon</h2>
               <p className="pf-body mt-3">
-                Prachi's insights on Vastu, Palmistry and Astrology will appear here soon.
-                Use the admin dashboard to write and publish your first post.
+                In the meantime, explore the Vastu Directional Guide or get in touch with Prachi directly.
               </p>
-              <Button asChild variant="porcelain" className="mt-6">
-                <Link to="/services">Explore Services</Link>
-              </Button>
-            </div>
-          )}
-
-          {!loading && hasSupabase && posts.length === 0 && (
-            <div className="mx-auto max-w-lg rounded-2xl border border-border bg-warm p-10 text-center">
-              <BookOpen className="mx-auto mb-4 h-8 w-8 text-accent" />
-              <p className="pf-eyebrow pf-eyebrow-center mb-3">Coming soon</p>
-              <h2 className="font-heading text-2xl font-light text-foreground">First posts are being prepared</h2>
-              <p className="pf-body mt-3">
-                Insights on Vastu Shastra, Palmistry and Vedic Astrology for readers in India and worldwide.
-              </p>
-              <Button asChild variant="porcelain" className="mt-6">
-                <Link to="/contact">Book a consultation</Link>
-              </Button>
+              <div className="mt-6 flex flex-wrap justify-center gap-3">
+                <Button asChild variant="porcelain"><Link to="/vastu-guide">View Vastu Guide</Link></Button>
+                <Button asChild variant="hero"><Link to="/contact">Book a Consultation</Link></Button>
+              </div>
             </div>
           )}
 

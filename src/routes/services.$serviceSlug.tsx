@@ -8,7 +8,7 @@ export const Route = createFileRoute("/services/$serviceSlug")({
   head: ({ params }) => {
     const service = services.find((item) => item.slug === params.serviceSlug);
     const title = service ? `${service.name} | Prachi Fulfagar Services` : "Service | Prachi Fulfagar";
-    const description = service?.description ?? "Premium Vastu, Palmistry and Astrology services by Prachi Fulfagar.";
+    const description = serviceMeta[params.serviceSlug] ?? service?.description ?? "Premium Vastu, Palmistry and Astrology services by Prachi Fulfagar.";
     return { meta: [
       { title },
       { name: "description", content: description },
@@ -21,6 +21,47 @@ export const Route = createFileRoute("/services/$serviceSlug")({
   },
   component: ServiceDetailPage,
 });
+
+const serviceMeta: Record<string, string> = {
+  "residential-vastu": "Residential Vastu consultation by Prachi Fulfagar — room-by-room corrections for sleep, health and relationships. Available in-person in Nashik, Pune, Mumbai and remotely worldwide.",
+  "commercial-vastu": "Commercial Vastu for offices, shops, showrooms and hotels. Prachi Fulfagar offers on-site and remote Vastu consultations across India.",
+  "career-astrology": "Vedic astrology for career decisions and business timing. Book a chart reading with Prachi Fulfagar — available online for India and international clients.",
+  palmistry: "Palm reading by internationally recognised palmist Prachi Fulfagar — personality, timing, strengths, career and relationships. Book online or in-person.",
+};
+
+const introHeadings: Record<string, string> = {
+  "palm-vastu-combo": "Where your inner patterns meet your outer space",
+  "residential-vastu": "Your home, room by room",
+  "commercial-vastu": "Align your business from the entrance in",
+  "industrial-vastu": "Built for flow, safety and productivity",
+  palmistry: "What your hand has already recorded",
+  pyramidology: "Non-invasive corrections, immediate results",
+  "energy-balancing": "Reset the five elements in your space",
+  "colour-guidelines": "Colour that works with energy, not against it",
+  remote: "Distance is no barrier to Vastu",
+  "plot-selection": "What to check before you sign",
+  "career-astrology": "Read the timing, not just the intention",
+  "geo-stress": "The hidden factor in health and sleep",
+};
+
+type Faq = { q: string; a: string };
+const serviceFaqs: Record<string, Faq[]> = {
+  "residential-vastu": [
+    { q: "Do I need to renovate my home for Vastu corrections?", a: "No. Most corrections involve furniture placement, colour, objects and plants. Structural changes are rarely required." },
+    { q: "Can Vastu be done remotely?", a: "Yes. Prachi works from floor plans, photos and video walk-throughs for clients across India and internationally." },
+    { q: "How long does a session take?", a: "A typical residential assessment takes 90 minutes to 2 hours in person, or one consultation call for remote sessions." },
+  ],
+  "career-astrology": [
+    { q: "Do I need my exact birth time?", a: "Yes, birth time significantly improves chart accuracy. If unavailable, Prachi will note this and work with available data." },
+    { q: "Is Career Astrology suitable for business owners?", a: "Absolutely. Business launch timing, partner compatibility and growth windows are all covered." },
+    { q: "Can international clients book?", a: "Yes. Sessions are available via Zoom or phone for clients in any country." },
+  ],
+  "geo-stress": [
+    { q: "What causes geopathic stress?", a: "Underground water, geological fault lines and electromagnetic disturbances that pass through the space where you sleep or work." },
+    { q: "Is this different from Vastu?", a: "They complement each other. Vastu addresses directional energy; geo stress addresses earth-based energies beneath the structure." },
+    { q: "Can it be corrected without renovation?", a: "Yes. Pyramid placements, repositioning beds and desks, and specific remedies are all non-invasive." },
+  ],
+};
 
 type Step = { number: string; title: string; description: string };
 type Detail = {
@@ -206,13 +247,26 @@ function DetailSection({ label, heading, children }: { label: string; heading: s
   );
 }
 
+function renderItem(item: string) {
+  const marker = "houseofremedies.in";
+  const idx = item.indexOf(marker);
+  if (idx === -1) return item;
+  return (
+    <>
+      {item.slice(0, idx)}
+      <a href="https://houseofremedies.in" target="_blank" rel="noreferrer" className="text-accent underline underline-offset-4 hover:text-primary">houseofremedies.in</a>
+      {item.slice(idx + marker.length)}
+    </>
+  );
+}
+
 function DotList({ items }: { items: string[] }) {
   return (
     <ul className="grid gap-3 sm:grid-cols-2">
       {items.map((item) => (
         <li key={item} className="grid grid-cols-[auto_1fr] gap-3 rounded-xl border border-border bg-card p-4 text-[13px] font-light leading-relaxed text-foreground">
           <span className="mt-[0.65em] h-1.5 w-1.5 rounded-full bg-accent" />
-          <span>{item}</span>
+          <span>{renderItem(item)}</span>
         </li>
       ))}
     </ul>
@@ -256,7 +310,7 @@ function ServiceDetailPage() {
           <img src={image.src} alt={image.alt} width={900} height={680} loading="eager" decoding="async" className="h-[240px] w-full object-cover object-center lg:h-full" />
         </header>
 
-        <DetailSection label="Introduction" heading="A personal, practical approach">
+        <DetailSection label="Introduction" heading={introHeadings[serviceSlug] ?? "A personal, practical approach"}>
           <p className="text-[15px] font-light leading-[1.85] text-muted-foreground">{detail.intro}</p>
         </DetailSection>
 
@@ -274,7 +328,6 @@ function ServiceDetailPage() {
               <article key={step.number} className="relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-card">
                 <div className="absolute -right-2 -top-4 font-heading text-[74px] font-light leading-none text-accent/10">{step.number}</div>
                 <div>
-                  <p className="font-heading text-[30px] font-light leading-none text-accent">{step.number}</p>
                   <h3 className="mt-4 font-body text-[13px] font-medium leading-tight text-foreground">{step.title}</h3>
                   <p className="mt-2 text-[12px] font-light leading-relaxed text-muted-foreground">{step.description}</p>
                 </div>
@@ -282,6 +335,19 @@ function ServiceDetailPage() {
             ))}
           </div>
         </DetailSection>
+
+        {serviceFaqs[serviceSlug] && (
+          <DetailSection label="FAQ" heading="Frequently asked questions">
+            <div className="grid gap-3">
+              {serviceFaqs[serviceSlug].map((faq) => (
+                <div key={faq.q} className="rounded-xl border border-border bg-card p-5">
+                  <p className="font-heading text-[16px] font-normal text-foreground">{faq.q}</p>
+                  <p className="mt-2 text-[13px] font-light leading-relaxed text-muted-foreground">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </DetailSection>
+        )}
 
         <section className="mt-10 rounded-[28px] border border-accent/25 bg-warm p-7 text-center sm:p-9">
           <h2 className="font-heading text-[32px] font-light leading-tight text-foreground">Ready to begin?</h2>
@@ -293,7 +359,8 @@ function ServiceDetailPage() {
           <div className="mt-6 flex flex-wrap justify-center gap-2.5">
             {cities.map((city) => <span key={city} className="rounded-full border border-border bg-card px-4 py-2 text-[11px] text-muted-foreground">{city}</span>)}
           </div>
-          <p className="mt-4 text-[12px] font-light text-muted-foreground">Remote sessions available worldwide</p>
+          <p className="mt-3 text-[12px] font-light text-muted-foreground">Also serving clients across Maharashtra, Hyderabad, Delhi, Bangalore and internationally via remote consultation.</p>
+          <p className="mt-2 text-[12px] font-light text-muted-foreground">Remote sessions available worldwide</p>
         </section>
       </div>
     </main>

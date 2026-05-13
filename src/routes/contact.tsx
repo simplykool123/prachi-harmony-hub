@@ -15,7 +15,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact Prachi Fulfagar | Book a Consultation" },
-      { name: "description", content: "Book an in-person or remote Vastu, Palmistry or Astrology consultation with Prachi Fulfagar. Call or WhatsApp +91 82752 67680." },
+      { name: "description", content: "Book a Vastu, Palmistry or Astrology consultation with Prachi Fulfagar. Offices in Nashik, Pune, Mumbai and Kopargaon. Remote sessions available worldwide." },
       { property: "og:title", content: "Contact Prachi Fulfagar" },
       { property: "og:description", content: "Begin your journey — in person across India, or online worldwide." },
       { property: "og:type", content: "website" },
@@ -49,7 +49,7 @@ function ContactPage() {
     <>
       <PageHero
         eyebrow="CONTACT"
-        title="Begin your journey"
+        title="Let's talk — book your consultation"
         copy="In-person across India, or online from anywhere in the world."
       />
       <MotionSection className="pf-section pf-celestial-section bg-background pt-10">
