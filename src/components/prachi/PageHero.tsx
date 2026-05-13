@@ -1,11 +1,40 @@
-
 import { CelestialDecor, DoubleLineMark } from "./CelestialDecor";
 
-export function PageHero({ eyebrow, title, copy }: { eyebrow: string; title: string; copy: string }) {
+export function PageHero({
+  eyebrow,
+  title,
+  copy,
+  backgroundImage,
+}: {
+  eyebrow: string;
+  title: string;
+  copy: string;
+  backgroundImage?: string;
+}) {
+  const hasBg = Boolean(backgroundImage);
   return (
     <section className="relative overflow-hidden bg-background pb-10 pt-10 text-center">
-      <CelestialDecor variant="moon" className="pointer-events-none absolute left-[7%] top-7 hidden h-28 w-28 text-accent/10 lg:block" />
-      <CelestialDecor variant="sun" className="pointer-events-none absolute right-[8%] top-10 hidden h-24 w-24 text-accent/12 lg:block" />
+      {hasBg && (
+        <>
+          <div
+            className="pointer-events-none absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${backgroundImage})` }}
+            aria-hidden="true"
+          />
+          {/* Cream wash for legibility */}
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{ background: "linear-gradient(to bottom, color-mix(in oklab, var(--background) 78%, transparent), color-mix(in oklab, var(--background) 88%, transparent))" }}
+            aria-hidden="true"
+          />
+        </>
+      )}
+      {!hasBg && (
+        <>
+          <CelestialDecor variant="moon" className="pointer-events-none absolute left-[7%] top-7 hidden h-28 w-28 text-accent/10 lg:block" />
+          <CelestialDecor variant="sun" className="pointer-events-none absolute right-[8%] top-10 hidden h-24 w-24 text-accent/12 lg:block" />
+        </>
+      )}
       <div className="pf-container relative z-10">
         <DoubleLineMark className="mx-auto mb-5 w-[190px] text-accent/65" />
         <p className="pf-eyebrow pf-eyebrow-center">{eyebrow}</p>
