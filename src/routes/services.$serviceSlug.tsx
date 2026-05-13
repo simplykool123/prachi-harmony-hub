@@ -244,18 +244,18 @@ const serviceDetails: Record<string, Detail> = {
   },
 };
 
-import palmVastuComboImg from "@/assets/services/palm-vastu-combo.png";
-import residentialVastuImg from "@/assets/services/residential-vastu.png";
-import commercialVastuImg from "@/assets/services/commercial-vastu.png";
-import industrialVastuImg from "@/assets/services/industrial-vastu.png";
-import palmistryImg from "@/assets/services/palmistry.png";
-import pyramidologyImg from "@/assets/services/pyramidology.png";
-import energyBalancingImg from "@/assets/services/energy-balancing.png";
-import colourGuidelinesImg from "@/assets/services/colour-guidelines.png";
-import remoteImg from "@/assets/services/remote.png";
-import plotSelectionImg from "@/assets/services/plot-selection.png";
-import careerAstrologyImg from "@/assets/services/career-astrology.png";
-import marriageAstrologyImg from "@/assets/services/marriage-astrology.png";
+import palmVastuComboImg from "@/assets/services/palm-vastu-combo.webp";
+import residentialVastuImg from "@/assets/services/residential-vastu.webp";
+import commercialVastuImg from "@/assets/services/commercial-vastu.webp";
+import industrialVastuImg from "@/assets/services/industrial-vastu.webp";
+import palmistryImg from "@/assets/services/palmistry.webp";
+import pyramidologyImg from "@/assets/services/pyramidology.webp";
+import energyBalancingImg from "@/assets/services/energy-balancing.webp";
+import colourGuidelinesImg from "@/assets/services/colour-guidelines.webp";
+import remoteImg from "@/assets/services/remote.webp";
+import plotSelectionImg from "@/assets/services/plot-selection.webp";
+import careerAstrologyImg from "@/assets/services/career-astrology.webp";
+import marriageAstrologyImg from "@/assets/services/marriage-astrology.webp";
 
 const serviceImages: Record<string, { src: string; alt: string }> = {
   "palm-vastu-combo": { src: palmVastuComboImg, alt: "Palm + Vastu Combo consultation illustration" },
