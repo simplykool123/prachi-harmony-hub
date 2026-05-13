@@ -41,7 +41,7 @@ const introHeadings: Record<string, string> = {
   remote: "Distance is no barrier to Vastu",
   "plot-selection": "What to check before you sign",
   "career-astrology": "Read the timing, not just the intention",
-  "geo-stress": "The hidden factor in health and sleep",
+  "marriage-astrology": "Clarity before commitment — and harmony within it",
 };
 
 type Faq = { q: string; a: string };
@@ -220,6 +220,28 @@ const serviceDetails: Record<string, Detail> = {
       { number: "03", title: "Session and report", description: "45–60 minute session — video or in-person. Key timing windows and recommendations shared in writing." },
     ],
   },
+  "marriage-astrology": {
+    intro: "Prachi uses Vedic astrology and palmistry to assess compatibility, identify timing for marriage, and address friction within existing relationships. The session covers kundli matching, dasha timing and palm compatibility reading — giving couples and families a grounded, multi-layered view of their relationship before and after commitment.",
+    included: [
+      "Compatibility chart analysis (Ashtakoota / kundli matching)",
+      "Marriage timing windows from current and upcoming dashas",
+      "Identification of relationship friction zones in the chart",
+      "Palm reading for both partners (if palm photos are available)",
+      "Written report summarising findings and recommendations",
+      "Session conducted online or in-person",
+    ],
+    for: [
+      "Couples evaluating compatibility before marriage",
+      "Families assessing prospective matches",
+      "Individuals navigating recurring relationship challenges",
+      "Married couples seeking clarity on friction or timing of major decisions",
+    ],
+    steps: [
+      { number: "01", title: "Share birth details", description: "Date, time and place of birth for both partners. Palm photos in natural light are welcome but optional." },
+      { number: "02", title: "Chart and palm analysis", description: "Prachi reviews compatibility, dasha timing and palm indicators across both partners." },
+      { number: "03", title: "Report and session", description: "Written report shared, followed by a 45–60 minute session — video or in-person — to walk through findings." },
+    ],
+  },
 };
 
 const serviceImages: Record<string, { src: string; alt: string }> = {
@@ -235,6 +257,7 @@ const serviceImages: Record<string, { src: string; alt: string }> = {
   remote: { src: "/site-images/prachi-fulfagar-portrait.jpg", alt: "Prachi Fulfagar ready for online consultation" },
   "plot-selection": { src: "/site-images/prachi-vastu-plan.jpg", alt: "Plot and floor plan review for Vastu selection" },
   "career-astrology": { src: "/site-images/prachi-celestial-palm.jpg", alt: "Astrology and palmistry chart for career guidance" },
+  "marriage-astrology": { src: "/site-images/prachi-celestial-palm.jpg", alt: "Palmistry and astrology compatibility reading for couples" },
 };
 
 function DetailSection({ label, heading, children }: { label: string; heading: string; children: React.ReactNode }) {

@@ -7,6 +7,7 @@ import {
   Gem,
   Globe2,
   Hand,
+  Heart,
   Home,
   Landmark,
   Leaf,
@@ -113,10 +114,10 @@ export const services: Service[] = [
     icon: Star,
   },
   {
-    name: "Geo Stress Correction",
-    slug: "geo-stress",
-    description: "Identify disturbed zones and apply non-invasive remedies for beds, desks and high-use areas.",
-    icon: Zap,
+    name: "Marriage & Relationships",
+    slug: "marriage-astrology",
+    description: "Vedic astrology and palmistry for compatibility, marriage timing and resolving relationship friction.",
+    icon: Heart,
   },
 ];
 
@@ -137,7 +138,7 @@ export const awards: AwardItem[] = [
 
 export const customerStories = [
   { quote: "When faced with tough decisions, I got some valuable advice and astrological guidance. Miss Prachi Fulfagar was very supportive and informative.", name: "Akshay Dixit", role: "Engineer" },
-  { quote: "Prachi's reading was remarkably accurate — she identified patterns in my home and my palm that I hadn't connected before. The corrections were simple and the results came within weeks.", name: "Meera Kulkarni", role: "Interior Designer, Pune" },
+  { quote: "Prachi's reading gave me clarity I hadn't found anywhere else. Her approach is grounded, patient and remarkably accurate.", name: "Suresh Patil", role: "Business Owner, Nashik" },
   { quote: "One of the best Career Consultant organisations in Nashik. The counselling was truly satisfying and every point was explained in detail.", name: "Prashant Marathe", role: "Digital Marketer" },
   { quote: "Your astrological insights have greatly enhanced our business strategy. Your advice is invaluable in guiding our decisions and navigating challenges.", name: "Rahul Bhingardive", role: "Business Manager" },
   { quote: "Your thorough understanding of Vastu principles and practical recommendations have made a positive difference in our space.", name: "Krishna", role: "Pigmy Agent" },
@@ -149,9 +150,9 @@ export const globalPresence = ["India", "UAE", "UK", "USA", "Singapore", "Austra
 export const cities = ["Mumbai", "Pune", "Nashik", "Kopargaon"];
 
 export const socialLinks = {
-  instagram: "https://instagram.com",
-  facebook: "https://facebook.com",
-  youtube: "https://youtube.com",
+  instagram: "https://www.instagram.com/prachifulfagar/",
+  facebook: "https://www.facebook.com/prachi.fulfagar",
+  youtube: "https://www.youtube.com/@prachifulfagar6709",
 } as const;
 
 export const phoneNumber = "+918275267680";
