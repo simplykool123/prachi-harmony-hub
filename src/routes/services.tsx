@@ -5,6 +5,7 @@ import { ServiceCard } from "@/components/prachi/ServiceCard";
 import { MotionSection } from "@/components/prachi/Motion";
 import { CelestialDecor } from "@/components/prachi/CelestialDecor";
 import { services } from "@/components/prachi/site-data";
+import servicesHeroBg from "@/assets/services-hero-bg.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({ meta: [
