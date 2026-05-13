@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/prachi/PageHero";
 import { MotionSection } from "@/components/prachi/Motion";
 import { CelestialDecor } from "@/components/prachi/CelestialDecor";
+import vastuGuideHeroBg from "@/assets/vastu-guide-hero-bg.jpg";
 
 export const Route = createFileRoute("/vastu-guide")({
   head: () => ({ meta: [
