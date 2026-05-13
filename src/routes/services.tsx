@@ -28,7 +28,7 @@ function ServicesPage() {
   }
 
   return <>
-    <PageHero eyebrow="SERVICES" title="Every dimension of harmony" copy="From your palm to your home — twelve services, one vision." />
+    <PageHero eyebrow="SERVICES" title="Every dimension of harmony" copy="From your palm to your home — twelve services, one vision." backgroundImage={servicesHeroBg} />
     <MotionSection className="pf-section pf-celestial-section bg-background pt-10">
       <CelestialDecor variant="compass" className="pf-services-spin-slow pointer-events-none absolute -right-24 top-20 hidden h-80 w-80 text-accent/15 lg:block" />
       <CelestialDecor variant="sun" className="pf-services-float pointer-events-none absolute -left-16 top-40 hidden h-48 w-48 text-accent/15 lg:block" />
