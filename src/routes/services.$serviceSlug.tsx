@@ -244,20 +244,33 @@ const serviceDetails: Record<string, Detail> = {
   },
 };
 
+import palmVastuComboImg from "@/assets/services/palm-vastu-combo.png";
+import residentialVastuImg from "@/assets/services/residential-vastu.png";
+import commercialVastuImg from "@/assets/services/commercial-vastu.png";
+import industrialVastuImg from "@/assets/services/industrial-vastu.png";
+import palmistryImg from "@/assets/services/palmistry.png";
+import pyramidologyImg from "@/assets/services/pyramidology.png";
+import energyBalancingImg from "@/assets/services/energy-balancing.png";
+import colourGuidelinesImg from "@/assets/services/colour-guidelines.png";
+import remoteImg from "@/assets/services/remote.png";
+import plotSelectionImg from "@/assets/services/plot-selection.png";
+import careerAstrologyImg from "@/assets/services/career-astrology.png";
+import marriageAstrologyImg from "@/assets/services/marriage-astrology.png";
+
 const serviceImages: Record<string, { src: string; alt: string }> = {
-  "palm-vastu-combo": { src: "/site-images/prachi-celestial-palm.jpg", alt: "Palmistry and Vastu consultation table with charts" },
-  "residential-vastu": { src: "/site-images/prachi-family-home.jpg", alt: "Calm residential home interior arranged for Vastu balance" },
-  "commercial-vastu": { src: "/site-images/prachi-office-vastu.jpg", alt: "Office Vastu consultation with workspace planning" },
-  "industrial-vastu": { src: "/site-images/prachi-vastu-plan.jpg", alt: "Detailed Vastu floor plan for industrial layout planning" },
-  palmistry: { src: "/site-images/prachi-celestial-palm.jpg", alt: "Palmistry reading with hand and astrology chart" },
-  "geo-stress": { src: "/site-images/prachi-energy-elements.jpg", alt: "Energy elements used for geopathic stress correction" },
-  pyramidology: { src: "/site-images/prachi-vastu-plan.jpg", alt: "Vastu plan analysis for pyramidology remedies" },
-  "energy-balancing": { src: "/site-images/prachi-energy-elements.jpg", alt: "Five element balancing objects for space healing" },
-  "colour-guidelines": { src: "/site-images/prachi-home-remedies.jpg", alt: "Warm home styling and colour-based Vastu remedies" },
-  remote: { src: "/site-images/prachi-fulfagar-portrait.jpg", alt: "Prachi Fulfagar ready for online consultation" },
-  "plot-selection": { src: "/site-images/prachi-vastu-plan.jpg", alt: "Plot and floor plan review for Vastu selection" },
-  "career-astrology": { src: "/site-images/prachi-celestial-palm.jpg", alt: "Astrology and palmistry chart for career guidance" },
-  "marriage-astrology": { src: "/site-images/prachi-celestial-palm.jpg", alt: "Palmistry and astrology compatibility reading for couples" },
+  "palm-vastu-combo": { src: palmVastuComboImg, alt: "Palm + Vastu Combo consultation illustration" },
+  "residential-vastu": { src: residentialVastuImg, alt: "Residential Vastu consultation illustration" },
+  "commercial-vastu": { src: commercialVastuImg, alt: "Commercial Vastu consultation illustration" },
+  "industrial-vastu": { src: industrialVastuImg, alt: "Industrial Vastu consultation illustration" },
+  palmistry: { src: palmistryImg, alt: "Palmistry reading illustration" },
+  "geo-stress": { src: pyramidologyImg, alt: "Geopathic stress correction illustration" },
+  pyramidology: { src: pyramidologyImg, alt: "Pyramidology remedies illustration" },
+  "energy-balancing": { src: energyBalancingImg, alt: "Energy balancing illustration" },
+  "colour-guidelines": { src: colourGuidelinesImg, alt: "Colour guidelines illustration" },
+  remote: { src: remoteImg, alt: "Remote consultation illustration" },
+  "plot-selection": { src: plotSelectionImg, alt: "Plot selection illustration" },
+  "career-astrology": { src: careerAstrologyImg, alt: "Career astrology illustration" },
+  "marriage-astrology": { src: marriageAstrologyImg, alt: "Marriage and relationships astrology illustration" },
 };
 
 function DetailSection({ label, heading, children }: { label: string; heading: string; children: React.ReactNode }) {
