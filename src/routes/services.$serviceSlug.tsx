@@ -192,7 +192,7 @@ const serviceDetails: Record<string, Detail> = {
   },
   remote: {
     intro: "Distance is no barrier to a thorough Vastu or palmistry consultation. Prachi has worked with clients across the UAE, UK, USA, Singapore, Australia and across India — entirely remotely — with results that match and often exceed in-person sessions. All that is needed is a clear floor plan, a set of photographs and a video call.",
-    included: ["Full Vastu assessment via floor plan and photos", "Palmistry reading via high-resolution palm photographs", "Video call session (Zoom or WhatsApp) — recorded if requested", "Written correction report shared within 48 hours", "Supports all services — Residential, Commercial, Industrial, Geo Stress, Pyramidology, Palmistry", "Time zones accommodated — early morning or evening slots for overseas clients"],
+    included: ["Full Vastu assessment via floor plan and photos", "Palmistry reading via high-resolution palm photographs", "Video call session (Zoom or WhatsApp) — recorded if requested", "Written correction report shared within 48 hours", "Supports all services — Residential, Commercial, Industrial, Marriage & Relationships, Pyramidology, Palmistry", "Time zones accommodated — early morning or evening slots for overseas clients"],
     for: ["Indian clients overseas — UAE, UK, USA, Singapore, Canada, Australia", "Clients across India who are not in Mumbai, Pune, Nashik or Kopargaon", "Anyone who prefers a flexible, time-efficient consultation format"],
     steps: [
       { number: "01", title: "Submit documents", description: "Floor plan with North direction, clear photographs of each room. For palmistry: palm photos in natural light." },
