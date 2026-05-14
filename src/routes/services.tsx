@@ -14,6 +14,7 @@ export const Route = createFileRoute("/services")({
     { property: "og:title", content: "Prachi Fulfagar Services" },
     { property: "og:description", content: "From your palm to your home — twelve services, one vision." },
     { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://prachifulfagar.com/services" },
     { name: "twitter:title", content: "Prachi Fulfagar Services" },
     { name: "twitter:description", content: "From your palm to your home — twelve services, one vision." },
   ]}),

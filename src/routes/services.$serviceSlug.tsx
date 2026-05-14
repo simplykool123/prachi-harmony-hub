@@ -15,6 +15,7 @@ export const Route = createFileRoute("/services/$serviceSlug")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `https://prachifulfagar.com/services/${params.serviceSlug}` },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
     ] };

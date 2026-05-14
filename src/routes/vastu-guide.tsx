@@ -12,6 +12,7 @@ export const Route = createFileRoute("/vastu-guide")({
     { property: "og:title", content: "The Vastu Directional Guide" },
     { property: "og:description", content: "Ancient principles — one room at a time." },
     { property: "og:type", content: "article" },
+    { property: "og:url", content: "https://prachifulfagar.com/vastu-guide" },
     { name: "twitter:title", content: "The Vastu Directional Guide" },
     { name: "twitter:description", content: "Ancient principles — one room at a time." },
   ]}),
