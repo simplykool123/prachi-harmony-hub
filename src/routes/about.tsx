@@ -42,9 +42,9 @@ function AboutPage() {
           <DoubleLineMark className="mx-auto mb-7 w-[250px] text-accent/55" />
           <p className="pf-eyebrow pf-eyebrow-center">HER STORY</p>
           <h2 className="pf-h2 mt-7">Two decades. One rare combination.</h2>
-          <p className="pf-body mx-auto mt-5 max-w-[430px]">For over two decades, Prachi Fulfagar has been a trusted guide for thousands of people seeking clarity — through their palms, their homes, and the stars.</p>
-          <p className="pf-body mx-auto mt-4 max-w-[430px]">What sets Prachi apart is her rare combination of Palmistry and Vastu Shastra — a pairing that allows her to read both the person and their environment, aligning them together for results neither practice achieves alone.</p>
-          <p className="pf-body mx-auto mt-4 max-w-[430px]">Today, Prachi consults from offices in Mumbai, Pune, Nashik and Kopargaon, and works with clients across India and internationally.</p>
+          <p className="pf-body mx-auto mt-5 max-w-[430px]">Prachi Fulfagar began her journey into Palmistry more than two decades ago — drawn not by theory, but by an early recognition that the lines on a hand tell a story most people never get to hear clearly. Over time, that curiosity deepened into a full practice combining Palmistry, Vastu Shastra and Vedic Astrology — three disciplines that, together, can address a person from the inside out.</p>
+          <p className="pf-body mx-auto mt-4 max-w-[430px]">What makes Prachi's practice distinctive is not just the combination — it is the integration. A home that is Vastu-aligned but out of step with its owner's personal energy will still feel off. Reading both together, Prachi can identify what is actually creating the friction — and what will actually correct it.</p>
+          <p className="pf-body mx-auto mt-4 max-w-[430px]">Today she consults from offices in Mumbai, Pune, Nashik and Kopargaon, and works with clients across India and internationally — from professionals navigating career crossroads to families who simply want their home to feel more like home.</p>
         </div>
         <div className="pf-about-side-wrap relative min-h-[440px]">
           <img src={celestialPalmImage} alt="Palmistry consultation details in warm light" width={1120} height={1328} loading="lazy" decoding="async" className="absolute inset-x-0 bottom-0 mx-auto h-[360px] w-[88%] rounded-b-full border border-accent/20 object-cover p-1.5 shadow-card" />
@@ -122,12 +122,19 @@ function AboutPage() {
       <div className="pf-container relative z-10 text-center">
         <SectionIntro eyebrow="OFFICES" title="Where you can find Prachi" />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {cities.map((city) => <article key={city} className="rounded-xl border border-border bg-card-soft p-7 text-center">
-            <MapPin className="mx-auto h-5 w-5 text-accent" />
-            <h3 className="pf-h3 mt-3 text-[22px]">{city}</h3>
-            <p className="mt-1 text-[11px] text-muted-foreground">Office space</p>
-            {city === "Kopargaon" && <p className="mt-1.5 text-[10px] text-accent">+ travels all over India on request</p>}
-          </article>)}
+          {cities.map((city) => {
+            const detail =
+              city === "Mumbai" ? "By appointment — contact for address" :
+              city === "Pune" ? "Office in Baner · By appointment" :
+              city === "Nashik" ? "202, V N Pledge, Manik Nagar, Nashik 422013" :
+              city === "Kopargaon" ? "Gokul Nagri, Kopargaon" : "";
+            return <article key={city} className="rounded-xl border border-border bg-card-soft p-7 text-center">
+              <MapPin className="mx-auto h-5 w-5 text-accent" />
+              <h3 className="pf-h3 mt-3 text-[22px]">{city}</h3>
+              <p className="mt-1 text-[11px] text-muted-foreground">{detail}</p>
+              {city === "Kopargaon" && <p className="mt-1.5 text-[10px] text-accent">+ travels all over India on request</p>}
+            </article>;
+          })}
         </div>
         <p className="mt-9 font-heading text-base italic text-muted-foreground">Remote consultations available worldwide — via Zoom, WhatsApp or phone.</p>
       </div>

@@ -32,7 +32,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Prachi Fulfagar | Ancient Wisdom for Harmony" },
       { property: "og:description", content: "Premium Vastu, Palmistry and Vedic Astrology consultations in India and worldwide." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://prachi-harmony-hub.lovable.app/" },
+      { property: "og:url", content: "https://prachifulfagar.com/" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Prachi Fulfagar | Ancient Wisdom for Harmony" },
       { name: "twitter:description", content: "Premium Vastu, Palmistry and Vedic Astrology consultations in India and worldwide." },
@@ -45,7 +45,7 @@ export const Route = createFileRoute("/")({
           "@type": "ProfessionalService",
           name: "Prachi Fulfagar — Vastu, Palmistry & Astrology",
           description: "Award-winning Vastu, Palmistry and Vedic Astrology consultations across India and internationally.",
-          url: "https://prachi-harmony-hub.lovable.app/",
+          url: "https://prachifulfagar.com/",
           telephone: "+918275267680",
           email: "hello@prachifulfagar.com",
           priceRange: "₹₹",
@@ -290,6 +290,7 @@ function Index() {
             <h2 className="pf-h2 mx-auto mt-7 max-w-[430px]">Two decades. One rare combination.</h2>
             <p className="pf-body mx-auto mt-5 max-w-[430px]">Prachi Fulfagar is one of India's most credentialled Vastu and Palmistry consultants — combining both in a rare integrated practice that aligns you from the inside out.</p>
             <p className="pf-body mx-auto mt-4 max-w-[430px]">Consulting from Mumbai, Pune, Nashik and Kopargaon, she works with clients across India and internationally.</p>
+            <p className="pf-body mx-auto mt-4 max-w-[430px]">Her philosophy is simple: ancient wisdom should produce modern results. Every consultation ends with something practical — a correction, a direction, a decision made with more clarity.</p>
             <Link to="/about" className="group mt-7 inline-flex text-[13px] font-medium text-accent">Read her full story <span className="transition group-hover:translate-x-1">→</span></Link>
           </div>
           <div className="pf-about-side-wrap relative mx-auto min-h-[430px] w-full max-w-[330px]">

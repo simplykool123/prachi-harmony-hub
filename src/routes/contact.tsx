@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/prachi/PageHero";
 import { MotionSection } from "@/components/prachi/Motion";
 import { CelestialDecor } from "@/components/prachi/CelestialDecor";
-import { cities, services, whatsappUrl } from "@/components/prachi/site-data";
+import { cities, services, socialLinks, whatsappUrl } from "@/components/prachi/site-data";
 import { supabase } from "@/lib/supabase";
 
 export const Route = createFileRoute("/contact")({
@@ -283,13 +283,13 @@ function ContactAside() {
       </div>
 
       <div className="mt-8 flex gap-5 text-muted-foreground">
-        <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+        <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
           <Instagram className="h-[18px] w-[18px] transition hover:text-accent" />
         </a>
-        <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">
+        <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
           <Youtube className="h-[18px] w-[18px] transition hover:text-accent" />
         </a>
-        <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
+        <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
           <Facebook className="h-[18px] w-[18px] transition hover:text-accent" />
         </a>
       </div>
