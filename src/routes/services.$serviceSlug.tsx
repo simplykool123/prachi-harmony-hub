@@ -248,7 +248,7 @@ const serviceImages: Record<string, { src: string; alt: string }> = {
   "commercial-vastu": { src: commercialVastuImg, alt: "Commercial Vastu consultation illustration" },
   "industrial-vastu": { src: industrialVastuImg, alt: "Industrial Vastu consultation illustration" },
   palmistry: { src: palmistryImg, alt: "Palmistry reading illustration" },
-  "geo-stress": { src: pyramidologyImg, alt: "Geopathic stress correction illustration" },
+  
   pyramidology: { src: pyramidologyImg, alt: "Pyramidology remedies illustration" },
   "energy-balancing": { src: energyBalancingImg, alt: "Energy balancing illustration" },
   "colour-guidelines": { src: colourGuidelinesImg, alt: "Colour guidelines illustration" },
