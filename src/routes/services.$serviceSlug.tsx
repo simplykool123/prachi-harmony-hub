@@ -56,11 +56,6 @@ const serviceFaqs: Record<string, Faq[]> = {
     { q: "Is Career Astrology suitable for business owners?", a: "Absolutely. Business launch timing, partner compatibility and growth windows are all covered." },
     { q: "Can international clients book?", a: "Yes. Sessions are available via Zoom or phone for clients in any country." },
   ],
-  "geo-stress": [
-    { q: "What causes geopathic stress?", a: "Underground water, geological fault lines and electromagnetic disturbances that pass through the space where you sleep or work." },
-    { q: "Is this different from Vastu?", a: "They complement each other. Vastu addresses directional energy; geo stress addresses earth-based energies beneath the structure." },
-    { q: "Can it be corrected without renovation?", a: "Yes. Pyramid placements, repositioning beds and desks, and specific remedies are all non-invasive." },
-  ],
 };
 
 type Step = { number: string; title: string; description: string };
@@ -148,16 +143,6 @@ const serviceDetails: Record<string, Detail> = {
       { number: "01", title: "Send palm photographs", description: "High-resolution photos of both palms — front and back — in natural light. Include date of birth." },
       { number: "02", title: "The reading session", description: "A 45–60 minute session — video call or in-person. Prachi walks through each element of your palm in detail." },
       { number: "03", title: "Notes and follow-up", description: "Key insights shared in writing. Short follow-up questions welcome within 7 days of session." },
-    ],
-  },
-  "geo-stress": {
-    intro: "Geopathic stress refers to natural earth energies — underground water veins, geological fault lines and electromagnetic disturbances — that, when they pass through spaces where people sleep or spend long hours, contribute to chronic fatigue, poor sleep, anxiety and unexplained health issues. It is one of the most overlooked factors in home and workplace well-being, and one of the most impactful to correct.",
-    included: ["Geo stress mapping of your home or workspace", "Identification of disturbed zones affecting beds, desks and seating areas", "Non-invasive correction methods — no demolition, no structural changes", "Pyramid or energetic remedy placement guidance", "Advice on repositioning furniture to avoid high-stress zones", "Available remotely via floor plan and photos"],
-    for: ["People suffering from chronic poor sleep despite a healthy routine", "Anyone experiencing unexplained fatigue, anxiety or recurring illness", "Families where one room consistently causes discomfort or illness", "Businesses with unusually high staff sick days or low energy in specific areas"],
-    steps: [
-      { number: "01", title: "Share your floor plan", description: "Mark where people sleep, sit and spend long hours. Note any recurring complaints." },
-      { number: "02", title: "Geo stress assessment", description: "Prachi identifies the disturbed zones and their likely source." },
-      { number: "03", title: "Corrections and remedies", description: "Non-invasive remedies placed or repositioned. Practical and immediate to implement." },
     ],
   },
   pyramidology: {
