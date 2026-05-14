@@ -1,13 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MapPin, MessageCircle } from "lucide-react";
 import palmBadge from "@/assets/palm-badge.png";
+import celestialPalmImage from "@/assets/new-celestial-palm.png";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/prachi/PageHero";
 import { MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { CelestialDecor, DoubleLineMark } from "@/components/prachi/CelestialDecor";
 import { awards, cities, globalPresence, whatsappUrl } from "@/components/prachi/site-data";
 
-const celestialPalmImage = "/site-images/prachi-celestial-palm.jpg";
+// celestialPalmImage imported from @/assets/new-celestial-palm.png
 const prachiPortraitImage = "/site-images/prachi-fulfagar-portrait.jpg";
 
 export const Route = createFileRoute("/about")({
@@ -103,7 +104,7 @@ function AboutPage() {
           {[
             { src: "/site-images/awards/thailand-honorary-doctorate.jpg", alt: "Prachi Fulfagar at Thailand Triangle Summit, Pattaya", aspect: "aspect-[4/5]" },
             { src: "/site-images/awards/international-astro-purohit-award.jpg", alt: "Award ceremony — International Astro Purohit honour", aspect: "aspect-[4/3]" },
-            { src: "/site-images/prachi-celestial-palm.jpg", alt: "Palmistry consultation studio detail", aspect: "aspect-[4/3]" },
+            { src: celestialPalmImage, alt: "Palmistry consultation studio detail", aspect: "aspect-[4/3]" },
             { src: "/site-images/awards/indo-thailand-vastu-brihaspati-award.jpg", alt: "Indo-Thailand Vastu Brihaspati Award presentation", aspect: "aspect-[4/3]" },
             { src: "/site-images/prachi-fulfagar-portrait.jpg", alt: "Prachi Fulfagar in her consultation studio", aspect: "aspect-[4/5]" },
             { src: "/site-images/awards/certified-medical-astrological-proficiency.jpg", alt: "Certification — Medical Astrological Proficiency", aspect: "aspect-[4/3]" },
