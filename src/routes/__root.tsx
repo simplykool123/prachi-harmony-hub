@@ -31,6 +31,7 @@ export const Route = createRootRoute({
       { property: "og:title", content: "Prachi Fulfagar | Vastu, Palmistry & Astrology" },
       { property: "og:description", content: "Award-winning Vastu, Palmistry and Vedic Astrology consultations across India and internationally." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://prachifulfagar.com/" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Prachi Fulfagar | Vastu, Palmistry & Astrology" },
       { name: "twitter:description", content: "Award-winning Vastu, Palmistry and Vedic Astrology consultations across India and internationally." },

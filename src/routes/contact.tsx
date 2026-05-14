@@ -19,6 +19,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact Prachi Fulfagar" },
       { property: "og:description", content: "Book a Vastu, Palmistry or Astrology consultation with Prachi Fulfagar — in person across India, or online worldwide." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://prachifulfagar.com/contact" },
       { name: "twitter:title", content: "Contact Prachi Fulfagar" },
       { name: "twitter:description", content: "Book a Vastu, Palmistry or Astrology consultation with Prachi Fulfagar — in person across India, or online worldwide." },
     ],

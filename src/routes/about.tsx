@@ -18,6 +18,7 @@ export const Route = createFileRoute("/about")({
     { property: "og:title", content: "About Prachi Fulfagar" },
     { property: "og:description", content: "A rare combination of Palmistry and Vastu Shastra, guided with modern clarity." },
     { property: "og:type", content: "profile" },
+    { property: "og:url", content: "https://prachifulfagar.com/about" },
     { name: "twitter:title", content: "About Prachi Fulfagar" },
     { name: "twitter:description", content: "A rare combination of Palmistry and Vastu Shastra, guided with modern clarity." },
   ]}),
