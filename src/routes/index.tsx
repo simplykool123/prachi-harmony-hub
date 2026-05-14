@@ -290,6 +290,7 @@ function Index() {
             <h2 className="pf-h2 mx-auto mt-7 max-w-[430px]">Two decades. One rare combination.</h2>
             <p className="pf-body mx-auto mt-5 max-w-[430px]">Prachi Fulfagar is one of India's most credentialled Vastu and Palmistry consultants — combining both in a rare integrated practice that aligns you from the inside out.</p>
             <p className="pf-body mx-auto mt-4 max-w-[430px]">Consulting from Mumbai, Pune, Nashik and Kopargaon, she works with clients across India and internationally.</p>
+            <p className="pf-body mx-auto mt-4 max-w-[430px]">Her philosophy is simple: ancient wisdom should produce modern results. Every consultation ends with something practical — a correction, a direction, a decision made with more clarity.</p>
             <Link to="/about" className="group mt-7 inline-flex text-[13px] font-medium text-accent">Read her full story <span className="transition group-hover:translate-x-1">→</span></Link>
           </div>
           <div className="pf-about-side-wrap relative mx-auto min-h-[430px] w-full max-w-[330px]">

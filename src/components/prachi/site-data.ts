@@ -140,9 +140,9 @@ export const customerStories = [
   { quote: "When faced with tough decisions, I got some valuable advice and astrological guidance. Miss Prachi Fulfagar was very supportive and informative.", name: "Akshay Dixit", role: "Engineer" },
   { quote: "Prachi's reading gave me clarity I hadn't found anywhere else. Her approach is grounded, patient and remarkably accurate.", name: "Suresh Patil", role: "Business Owner, Nashik" },
   { quote: "One of the best Career Consultant organisations in Nashik. The counselling was truly satisfying and every point was explained in detail.", name: "Prashant Marathe", role: "Digital Marketer" },
-  { quote: "Your astrological insights have greatly enhanced our business strategy. Your advice is invaluable in guiding our decisions and navigating challenges.", name: "Rahul Bhingardive", role: "Business Manager" },
-  { quote: "Your thorough understanding of Vastu principles and practical recommendations have made a positive difference in our space.", name: "Krishna", role: "Pigmy Agent" },
-  { quote: "Your insights into astrological trends have been invaluable in identifying new business opportunities and have significantly contributed to our growth.", name: "Vaishali", role: "Business Development Manager" },
+  { quote: "Prachi's astrological insights completely shifted how we approach business decisions. Her ability to identify timing and opportunity from the chart is something we now rely on regularly.", name: "Rahul Bhingardive", role: "Business Manager" },
+  { quote: "Your thorough understanding of Vastu principles and practical recommendations have made a positive difference in our space.", name: "Krishna", role: "Financial Services Professional, Nashik" },
+  { quote: "Prachi has a way of connecting astrological patterns to real business situations. Her guidance opened up opportunities I hadn't seen clearly before.", name: "Vaishali", role: "Business Development Manager" },
 ];
 
 export const globalPresence = ["India", "UAE", "UK", "USA", "Singapore", "Australia"];
