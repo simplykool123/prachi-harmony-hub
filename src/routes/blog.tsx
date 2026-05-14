@@ -14,6 +14,7 @@ export const Route = createFileRoute("/blog")({
       { property: "og:title", content: "Blog | Prachi Fulfagar" },
       { property: "og:description", content: "Vastu, Palmistry and Astrology insights — for India and international readers." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://prachifulfagar.com/blog" },
       { name: "twitter:title", content: "Blog | Prachi Fulfagar" },
       { name: "twitter:description", content: "Vastu, Palmistry and Astrology insights — for India and international readers." },
     ],
