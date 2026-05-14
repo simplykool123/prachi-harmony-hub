@@ -1,14 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MapPin, MessageCircle } from "lucide-react";
 import palmBadge from "@/assets/palm-badge.png";
-import celestialPalmImage from "@/assets/new-celestial-palm.png";
+import celestialPalmImage from "@/assets/new-celestial-palm.webp";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/prachi/PageHero";
 import { MotionSection, SectionIntro } from "@/components/prachi/Motion";
 import { CelestialDecor, DoubleLineMark } from "@/components/prachi/CelestialDecor";
 import { awards, cities, globalPresence, whatsappUrl } from "@/components/prachi/site-data";
 
-// celestialPalmImage imported from @/assets/new-celestial-palm.png
+// celestialPalmImage imported from @/assets/new-celestial-palm.webp
 const prachiPortraitImage = "/site-images/prachi-fulfagar-portrait.jpg";
 
 export const Route = createFileRoute("/about")({

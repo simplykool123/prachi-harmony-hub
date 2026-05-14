@@ -8,7 +8,7 @@ import compassBadge from "@/assets/compass-badge.png";
 import palmBadge from "@/assets/palm-badge.png";
 
 const vastuPlanImage = "/site-images/prachi-vastu-plan.jpg";
-import celestialPalmImage from "@/assets/new-celestial-palm.png";
+import celestialPalmImage from "@/assets/new-celestial-palm.webp";
 const homeRemediesImage = "/site-images/prachi-home-remedies.jpg";
 const energyElementsImage = "/site-images/prachi-energy-elements.jpg";
 const prachiPortraitImage = "/site-images/prachi-fulfagar-portrait.jpg";
